@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(node:*)",
+      "Bash(del srcappapiadminforgot-passwordroute.js)",
+      "Bash(npm run dev:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(npm run build:*)",
+      "Bash(curl:*)",
+      "Bash(del \"C:\\Users\\Admin\\Desktop\\Bissbay\\.env\")",
+      "Bash(npm run lint)",
+      "Bash(del \".next\" /s /q)",
+      "WebSearch",
+      "WebFetch(domain:primereact.org)",
+      "Bash(netsh advfirewall firewall show rule:*)",
+      "Bash(netsh:*)",
+      "Bash(del \"C:\\Users\\Admin\\Desktop\\Bissbay\\src\\app\\company\\about-us\\AboutMap.jsx\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

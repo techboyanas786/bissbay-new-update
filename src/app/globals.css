@@ -1,0 +1,766 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #1F2937;
+  --font-family: "Quicksand", sans-serif;
+  --text-color: #FFFFFF;
+  --primary: 255, 66, 0;
+  --bissbay-green: #72bf44;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-family);
+  --font-mono: var(--font-geist-mono);
+}
+
+@theme {
+  --color-primary: #ff4200;
+  --color-button: #1f2937;
+  --color-bissbay-green: #72bf44;
+}
+
+html {
+  overflow-x: hidden;
+  scrollbar-gutter: stable;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-family);
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+* {
+  font-family: "Quicksand", sans-serif !important;
+}
+
+.p-component {
+  font-family: "Quicksand", sans-serif !important;
+}
+
+::selection {
+  background: rgba(255, 134, 90, 0.903);
+}
+
+.google-visualization-tooltip {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-size: 0 !important;
+}
+
+.google-visualization-tooltip-item {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.rfm-marquee-container {
+  overflow-x: visible !important;
+}
+
+/* Full-bleed helper that collapses on tablets/iPad to prevent overflow */
+.full-bleed {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+@media (max-width: 1180px) {
+  .full-bleed {
+    width: 100%;
+    left: auto;
+    right: auto;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: env(safe-area-inset-left, 0);
+    padding-right: env(safe-area-inset-right, 0);
+    overflow-x: hidden;
+  }
+}
+
+/* iPad Pro and tablet hardening */
+@media (max-width: 1180px) {
+  html {
+    scrollbar-gutter: auto;
+    width: 100%;
+    overflow-x: clip;
+  }
+
+  body,
+  main,
+  #__next {
+    max-width: 100%;
+    width: 100%;
+    overflow-x: clip;
+  }
+
+  .rfm-marquee-container {
+    overflow-x: hidden !important;
+  }
+
+  .header-default,
+  .main-nav,
+  nav,
+  footer,
+  .container-wide {
+    max-width: 100%;
+    width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+.metric-card {
+  @apply flex flex-col items-start justify-center text-left p-4 md:p-6 rounded-md bg-white shadow-md hover:shadow-xl transition-all duration-300;
+}
+
+.section-title {
+  @apply text-[1.5rem] md:text-[1.875rem] font-semibold mb-4 lg:mb-6;
+}
+
+/* @media screen and (max-width: 767.98px) {
+  .section-title {
+    @apply text-xl md:text-4xl font-semibold mb-8;
+  }
+} */
+
+.card {
+  @apply bg-white rounded-md shadow-md p-4 md:p-6 hover:shadow-xl;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg,
+      rgb(var(--primary)) 0%,
+      rgb(255, 126, 90) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.scroll-animation {
+  animation: scroll 240s linear infinite;
+  display: flex;
+}
+
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3s steps(34, end) forwards;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*Common Services CSS*/
+
+.animate-on-scroll {
+  opacity: 1;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.7s ease-in forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.7s ease-out forwards;
+}
+
+/*Services 02 CSS*/
+
+.ai-circle {
+  @apply absolute rounded-full blur-2xl opacity-20 animate-pulse;
+}
+
+.container-wide {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.ai-grid {
+  @apply absolute inset-0 opacity-10;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-120px * 49 * 2));
+    /* Adjust based on your logo width and count */
+  }
+}
+
+.animate-rotate-slow {
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.stat-card {
+  @apply p-6 rounded-md bg-white shadow text-center;
+}
+
+/*Services 03 CSS*/
+
+.animate-spin-slow {
+  animation: spin 20s linear infinite;
+}
+
+/* Add these new animations at the end of your globals.css file */
+@keyframes gradient-x {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient-x {
+  animation: gradient-x 2s linear infinite alternate;
+}
+
+@keyframes pulse-opacity {
+
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.pulse-opacity {
+  animation: pulse-opacity 2s ease-in-out infinite;
+}
+
+/* Add this to your existing animations */
+@keyframes pulse-line {
+
+  0%,
+  100% {
+    opacity: 0.7;
+    height: calc(100% - 3rem);
+  }
+
+  50% {
+    opacity: 1;
+    height: calc(100% - 2.8rem);
+  }
+}
+
+/* Add this at the end of your globals.css file */
+.perfect-circle {
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+}
+
+/* Lead Generation */
+.hover-lift {
+  transition: all 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(255, 66, 0, 0.2);
+}
+
+.hover-card {
+  @apply border-white border-2 hover:border-[#FF4200] transition-all duration-300
+}
+
+/* Heading styles override */
+h1 {
+  font-size: 3rem;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  color: #1F2937;
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: 1.875rem;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  color: #1F2937;
+  line-height: 1.25;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  color: #5C6371;
+}
+
+h4 {
+  font-size: 1.125rem;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  color: #1F2937;
+}
+
+h5 {
+  font-size: 1.5rem !important;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  line-height: 32px;
+  color: #1F2937;
+}
+
+h6 {
+  font-size: 1rem;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  color: #1F2937;
+  line-height: normal;
+}
+
+p {
+  font-size: 1rem;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  color: #5C6371;
+}
+
+/* Tablet (768px - 1023px) */
+@media screen and (max-width: 1023px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    line-height: normal;
+  }
+
+  h4 {
+    font-size: 1.1rem;
+  }
+
+  h5 {
+    font-size: 1.1rem !important;
+  }
+
+  h6 {
+    font-size: 1rem;
+    line-height: normal;
+  }
+}
+
+/* Tablet (768px - 1023px) */
+@media screen and (max-width: 1366px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    line-height: normal;
+  }
+
+  h4 {
+    font-size: 1.1rem;
+  }
+
+  h5 {
+    font-size: 1.1rem !important;
+  }
+
+  h6 {
+    font-size: 1rem;
+    line-height: normal;
+  }
+  
+  }
+
+/* Mobile (480px - 767px) */
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    line-height: normal;
+  }
+
+  h4 {
+    font-size: 1.1rem;
+  }
+
+  h5 {
+    font-size: 1.1rem !important;
+  }
+
+  h6 {
+    font-size: 1rem;
+    line-height: normal;
+  }
+}
+
+/* Extra Small Mobile (Below 480px)*/
+@media screen and (max-width: 479px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    line-height: normal;
+  }
+
+  h4 {
+    font-size: 1.1rem;
+  }
+
+  h5 {
+    font-size: 1.125rem !important;
+  }
+
+  h6 {
+    font-size: 1.0625rem;
+    line-height: normal;
+  }
+}
+
+hr {
+  background-color: #ff4200;
+  height: 5px;
+  width: 100%;
+  border: none;
+}
+
+@media (max-width: 700px) {
+  .funnel-container1 {
+    width: 360px;
+    height: 116px;
+    margin: 0 auto;
+  }
+
+  #funnel-panel-1 {
+    top: 0 !important;
+  }
+
+  .funnel-container2 {
+    width: 310px;
+    height: 116px;
+    margin: 0 auto;
+  }
+
+  #funnel-panel-2 {
+    top: 0 !important;
+  }
+
+  .funnel-container3 {
+    width: 270px;
+    height: 112px;
+    margin: 0 auto;
+  }
+
+  #funnel-panel-3 {
+    top: 0 !important;
+  }
+
+  .funnel-container4 {
+    width: 235px;
+    height: 89px;
+    margin: 0 auto;
+  }
+
+  #funnel-panel-4 {
+    top: 0 !important;
+  }
+
+}
+
+.svg-footer-container {
+  background-position: 96% center;
+  background-repeat: no-repeat;
+  background-size: auto 95%;
+  position: relative;
+}
+
+.svg-footer-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/footer-svg.svg');
+  background-position: 96% center;
+  background-repeat: no-repeat;
+  background-size: auto 95%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.svg-footer-container>* {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 767.98px) {
+  .svg-footer-container::before {
+    background-position: 50% 100%;
+    background-size: auto 50%;
+    opacity: 0.5;
+  }
+}
+
+/* DEFINING ICONS */
+
+.medium-icon {
+  @apply text-primary w-[2.25rem] h-[2.25rem] flex-shrink-0;
+}
+
+.small-icon {
+  @apply text-primary w-4 h-4 flex-shrink-0;
+}
+
+.large-icon {
+  @apply text-primary w-12 h-12 flex flex-shrink-0;
+}
+
+.bullet-point {
+  @apply w-2 h-2 bg-primary rounded-full flex-shrink-0;
+}
+
+.p-datepicker table td>span.p-highlight {
+  background: #ff4200 !important;
+  color: white !important;
+  border-color: transparent !important;
+}
+
+.p-datepicker table td>span:hover {
+  background: rgba(255, 66, 0, 0.1) !important;
+  color: #ff4200 !important;
+  border-color: transparent !important;
+}
+
+.p-datepicker table td>span.p-highlight:hover {
+  background: #e63900 !important;
+  color: white !important;
+}
+
+.p-datepicker .p-datepicker-header .p-datepicker-prev,
+.p-datepicker .p-datepicker-header .p-datepicker-next {
+  color: #ff4200 !important;
+}
+
+.p-datepicker .p-datepicker-header .p-datepicker-prev:hover,
+.p-datepicker .p-datepicker-header .p-datepicker-next:hover {
+  background: rgba(255, 66, 0, 0.1) !important;
+}
+
+.p-datepicker .p-monthpicker .p-monthpicker-month.p-highlight,
+.p-datepicker .p-yearpicker .p-yearpicker-year.p-highlight,
+.p-datepicker .p-monthpicker .p-highlight,
+.p-datepicker .p-yearpicker .p-highlight {
+  background: #ff4200 !important;
+  color: white !important;
+}
+
+.p-datepicker .p-monthpicker .p-monthpicker-month:hover,
+.p-datepicker .p-yearpicker .p-yearpicker-year:hover,
+.p-datepicker .p-monthpicker .p-monthpicker-month:not(.p-highlight):hover,
+.p-datepicker .p-yearpicker .p-yearpicker-year:not(.p-highlight):hover {
+  background: rgba(255, 66, 0, 0.1) !important;
+  color: #ff4200 !important;
+}
+
+/* Title/header when in month/year view */
+.p-datepicker .p-datepicker-title .p-datepicker-month,
+.p-datepicker .p-datepicker-title .p-datepicker-year {
+  color: #ff4200 !important;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff4200;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e63900;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ff4200 white;
+}
+
+@media (max-width: 80rem) {
+  .service-card {
+    max-width: 370px;
+  }
+  .ht-fit{
+    max-width: 540px;
+  }
+}
+@media (max-width: 640px) {
+  .service-card {
+    max-width: 370px;
+    
+  }
+}
+
+/* Scroll Stack CSS */
+
+.scroll-stack-scroller {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: visible;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: scroll-position;
+}
+
+.scroll-stack-inner {
+  padding: 20vh 5rem 50rem;
+  min-height: 100vh;
+}
+
+.scroll-stack-card-wrapper {
+  position: relative;
+}
+
+.scroll-stack-card {
+  transform-origin: top center;
+  will-change: transform, filter;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  height: 20rem;
+  width: 100%;
+  margin: 30px 0;
+  padding: 3rem;
+  border-radius: 40px;
+  box-sizing: border-box;
+  /* Improve mobile performance */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  position: relative;
+}
+
+.scroll-stack-end {
+  width: 100%;
+  height: 1px;
+}

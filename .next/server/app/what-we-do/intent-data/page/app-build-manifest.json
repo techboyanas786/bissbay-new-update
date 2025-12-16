@@ -1,0 +1,34 @@
+{
+  "pages": {
+    "/what-we-do/intent-data/page": [
+      "static/chunks/8406e_next_dist_f4da8958._.js",
+      "static/chunks/Downloads_bissbay-new-main_bissbay-new-main_src_app_favicon_ico_mjs_e67e42ee._.js",
+      "static/chunks/8406e_cross-fetch_dist_browser-ponyfill_f9de0f88.js",
+      "static/chunks/Downloads_bissbay-new-main_bissbay-new-main_src_f611c987._.js",
+      "static/chunks/8406e_react-icons_fa_index_mjs_2705955a._.js",
+      "static/chunks/8406e_react-icons_fa6_index_mjs_fc340434._.js",
+      "static/chunks/8406e_react-icons_io5_index_mjs_6ab7fa1d._.js",
+      "static/chunks/8406e_react-icons_md_index_mjs_1727a3d7._.js",
+      "static/chunks/8406e_react-icons_fi_index_mjs_cb344b49._.js",
+      "static/chunks/8406e_react-icons_lib_2bf3390b._.js",
+      "static/chunks/8406e_motion-dom_dist_es_a0bc635d._.js",
+      "static/chunks/8406e_framer-motion_dist_es_a622901c._.js",
+      "static/chunks/8406e_e7a9a8e3._.js",
+      "static/chunks/Downloads_bissbay-new-main_bissbay-new-main_37987092._.css",
+      "static/chunks/Downloads_bissbay-new-main_bissbay-new-main_src_app_layout_35c39628.js",
+      "static/chunks/8406e_next_dist_client_components_builtin_global-error_0344b995.js",
+      "static/chunks/6c7f9_bissbay-new-main_bissbay-new-main_src_app_what-we-do_intent-data_038d9f4a._.js",
+      "static/chunks/6c7f9_bissbay-new-main_bissbay-new-main_src_app_what-we-do_intent-data_page_c9790410.js",
+      "static/chunks/6c7f9_bissbay-new-main_bissbay-new-main_src_app_what-we-do_intent-data_page_0344b995.js",
+      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_76b55d29._.js",
+      "static/chunks/8406e_next_dist_compiled_react-dom_0bcd6357._.js",
+      "static/chunks/8406e_next_dist_compiled_next-devtools_index_6fd82dd9.js",
+      "static/chunks/8406e_next_dist_compiled_b18c05e3._.js",
+      "static/chunks/8406e_next_dist_client_c50be5ff._.js",
+      "static/chunks/8406e_next_dist_d09da21b._.js",
+      "static/chunks/8406e_@swc_helpers_cjs_9d76dba3._.js",
+      "static/chunks/Downloads_bissbay-new-main_bissbay-new-main_a0ff3932._.js",
+      "static/chunks/turbopack-Downloads_bissbay-new-main_bissbay-new-main_3d0bb1b8._.js"
+    ]
+  }
+}

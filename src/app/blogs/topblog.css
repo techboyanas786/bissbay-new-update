@@ -1,0 +1,19 @@
+.top-blog-swiper .swiper-pagination-bullet {
+  background-color: #FF6B35 !important;
+  opacity: 0.5;
+}
+
+.top-blog-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+.top-blog-swiper .swiper-button-next,
+.top-blog-swiper .swiper-button-prev {
+  color: #FF6B35 !important;
+}
+
+.top-blog-swiper .swiper-button-next::after,
+.top-blog-swiper .swiper-button-prev::after {
+  font-size: 24px;
+  font-weight: bold;
+}

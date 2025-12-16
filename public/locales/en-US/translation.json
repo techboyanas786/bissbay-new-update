@@ -1,0 +1,249 @@
+{
+  "navbar": {
+
+    "button":"Contact Us",
+
+    "titles": {
+      "whatWeDo": "What We Do",
+      "audiences": "Audiences",
+      "whoWeHelp": "Who We Help",
+      "resources": "Resources",
+      "company": "Company",
+      "language": "Language"
+    },
+    "dropdown": {
+      "whatWeDo": {
+        "overview": "Overview",
+        "titles": {
+          "abm": "Account-Based Marketing",
+          "appointment": "Appointment Setting",
+          "content": "Content Syndication",
+          "data": "Intelligent Data Enrichment",
+          "demand": "Demand Generation",
+          "ads": "Digital Advertising",
+          "email": "Email Marketing",
+          "events": "Events (Seminar & Webinar)",
+          "intent": "Intent Data",
+          "lead": "Lead Generation"
+        },
+        "descriptions": {
+          "abm": "Win and grow your highest-value accounts with hyper-personalized marketing strategies.",
+          "appointment": "Secure qualified meetings with key decision-makers to accelerate your sales cycle.",
+          "content": "Amplify your content's reach and authority by distributing it across targeted external networks.",
+          "data": "Power precision marketing and sales with clean, complete, and actionable insights for better targeting.",
+          "demand": "Create and capture sustained market interest to build a predictable revenue pipeline.",
+          "ads": "Boost online visibility and attract high-intent leads through strategic search and paid media campaigns.",
+          "email": "Nurture leads, engage subscribers, and drive conversions directly through targeted inbox messaging.",
+          "events": "Generate high-intent leads through engaging live or virtual experiences.",
+          "intent": "Identify and engage prospects actively searching for your solutions.",
+          "lead": "Fill your sales pipeline with a consistent stream of high-quality, validated prospects."
+        }
+      },
+      "audiences": {
+        "overview": "Demographics",
+        "titles": {
+          "bfsi": "Our BFSI audience",
+          "healthcare": "Our Healthcare audience",
+          "hr": "Our HR audience",
+          "it": "Our IT audience",
+          "manufacturing": "Our Manufacturing audience",
+          "marketing": "Our Marketing audience",
+          "sales": "Our Sales audience"
+        },
+        "descriptions": {
+          "bfsi": "Engage high-intent decision-makers in BFSI.",
+          "healthcare": "Reach key decision-makers at scale.",
+          "hr": "Connect with HR decision-makers seeking solutions.",
+          "it": "Influence top IT buyers with a data-driven approach.",
+          "manufacturing": "Engage leaders ready to purchase.",
+          "marketing": "Find buyers ready for your solutions, exclusively with BISSBAY.",
+          "sales": "Intelligently engage prospects who are ready to buy."
+        }
+      },
+      "whoWeHelp": {
+        "titles": {
+          "enterprises": "Enterprises",
+          "founders": "Ambitious Founders",
+          "marketingLeaders": "Marketing Leaders",
+          "ventureCapital": "Venture Capital"
+        },
+        "descriptions": {
+          "enterprises": "New markets, streamlined operations, measurable results. We turn possibilities into performance.",
+          "founders": "Your market entry sets the tone for everything. Let's make it unbeatable.",
+          "marketingLeaders": "Empower your team to shatter targets and turn impact into influence.",
+          "ventureCapital": "Every portfolio company deserves exponential growth. We help make it happen."
+        }
+      },
+      "resources": {
+        "titles": {
+          "blog": "Blog",
+          "caseStudies": "Case Studies",
+          "glossary": "Glossary",
+          "infographics": "Infographics",
+          "mediaKit": "Media Kit",
+          "proposal": "Request Proposal",
+          "roiCalculator": "ROI Calculator",
+          "siteMap": "Site Map",
+          "trustSite": "Trust Site"
+        }
+      },
+      "company": {
+        "titles": {
+          "about": "About Us",
+          "brand": "Brand Guidelines",
+          "careers": "Careers",
+          "contact": "Contact Us",
+          "process": "Our Process",
+          "standards": "Standard Of Excellence"
+        }
+      },
+      "language": {
+        "choose":"Choose your language",
+        "Arabic": "Arabic",
+        "Dutch": "Dutch",
+        "English": "English",
+        "French": "French",
+        "German": "German",
+        "Italian": "Italian",
+        "Japanese": "Japanese",
+        "Spanish": "Spanish"
+      }
+    }
+  },
+
+  "hero": {
+    "tagline": {
+      "part1": "Where",
+      "highlight1": "Intelligence",
+      "part2": "Meets",
+      "highlight2": "Connections"
+    },
+    "description1": "Accelerate demand,",
+    "description2": "engage key decision-makers,",
+    "description3": " and maximize your sales pipeline.",
+    "description4": "Powered by intelligence and precision, Bissbay delivers over 570K+ qualified leads annually, enabling businesses to scale faster and smarter.",
+
+    "descriptionMobile2": "Powered by intelligence, Bissbay delivers over 570K+ qualified leads annually with precision & performance, enabling businesses to scale faster & smarter.",
+
+    "button": "Get a Quote",
+    "description5": "Trusted by Industry Leaders Worldwide."
+  },
+  "card": {
+    "tagline": "Integrated B2B Solutions That Deliver Powerful Results",
+    "description-part1": "Data-driven solutions built to attract your ideal audience, drive pipeline and accelerate revenue growth.",
+    "description-part2": "Powered by intent data, omnichannel campaigns, CRM integration, and real-time analytics.",
+
+    "card1-title": "Account-Based Marketing (ABM)",
+    "card1-description": "Engage high-value accounts with personalized strategies that drive real business growth.",
+
+    "card2-title": "Appointment Setting",
+    "card2-description": "Secure meetings with key decision-makers to accelerate your sales pipeline.",
+
+    "card3-title": "Content Syndication",
+    "card3-description": "Expand your reach by delivering valuable content to the right audience.",
+
+    "card4-title": "Data Enrichment",
+    "card4-description": "Strengthen your database with accurate, actionable insights for better targeting.",
+
+    "card5-title": "Demand Generation",
+    "card5-description": "Create demand, nurture prospects, and drive revenue with targeted campaigns.",
+
+    "card6-title": "Email Marketing",
+    "card6-description": "Engage and convert your audience with strategic, data-driven email campaigns.",
+
+    "card7-title": "Lead Generation",
+    "card7-description": "Delivering high-quality leads that fuel business growth and sales success.",
+
+    "card8-title": "Events (Seminars & Webinars)",
+    "card8-description": "We host impactful events that educate, engage, and generate high-intent leads.",
+
+    "card9-title": "Intent Data",
+    "card9-description": "Identify and engage prospects actively searching for your solutions.",
+
+    "button": "Learn More"
+  },
+  "map": {
+    "tagline": "Connecting Businesses to a Worldwide Network of Opportunities",
+    "description1": "Bissbay has built a global network of highly engaged technology buyers and influencers, driving meaningful business impact.",
+    "description2": "Where global reach meets smart precision, making every connection count.",
+    "button": "Explore Further"
+  },
+  "solutions": {
+    "tagline1": "Many of our clients struggled with pipeline gaps until BISSBAY stepped in.",
+    "tagline4": "Facing the same challenges?",
+    "tagline3":"We turn challenges into scalable revenue, executing your go-to-market with precision and purpose.",
+    "description2": "Let us help you tackle these hurdles.",
+    "description3": "We turn challenges into scalable revenue, executing your go-to-market with precision and purpose.",
+    "description4": "Accelerate Growth with a Proven Strategy",
+
+    "h1-title": "Revenue Stagnation",
+    "h1-desc": "Stalled revenue growth is limiting your expansion.",
+    "h1-bold": "Let’s break through this plateau.",
+
+    "h2-title": "Slow Deal Closure",
+    "h2-desc": "Your sales cycle is dragging, delaying revenue and costing you valuable opportunities.",
+    "h2-bold": "We help you close faster.",
+
+    "h3-title": "Disconnected Sales and Marketing",
+    "h3-desc": "When sales and marketing don’t align, leads slip through the cracks.",
+    "h3-bold": "Alignment is the key to unlocking growth.",
+
+    "h4-title": "Internal Constraints and Bottlenecks",
+    "h4-desc": "Operational inefficiencies are holding you back.",
+    "h4-bold": "Let’s remove roadblocks and scale faster.",
+
+    "h5-title": "Inconsistent Lead Quality",
+    "h5-desc": "Unqualified leads are draining resources.",
+    "h5-bold": "It’s time to attract the right prospects and boost conversions.",
+
+    "h6-title": "Frustrating Vendor Experiences",
+    "h6-desc": "If past vendors let you down, it’s time to work with a team that delivers real, measurable results.",
+    "h6-bold": "You need better ones.",
+
+    "s1-title": "Defining Clear Goals",
+    "s1-desc": "We analyze your growth targets and past performance to craft a strategic roadmap that aligns with your business vision-ensuring measurable success.",
+
+    "s2-title": "Pinpointing Your Ideal Customers",
+    "s2-desc": "Through data-driven research, we identify your Ideal Customer Profile (ICP) and key-decision makers, so you focus on the right prospects from day one.",
+
+    "s3-title": "Sharpening Positioning & Messaging",
+    "s3-desc": "By working closely with your sales team, we uncover real customer pain points and craft compelling, conversion-driven messaging that resonates and builds trust.",
+
+    "s4-title": "Activating the Right Channels",
+    "s4-desc": "Your audience is actively searching for solutions. We position you where it matters most, capturing immediate opportunities and establishing a consistent demand-generation system.",
+
+    "s5-title": "Creating Impactful, Lead-Generating Content",
+    "s5-desc": "From thought leadership to sales-driven assets, we develop high-value content that engages, nurtures, and positions you as a trusted industry leader.",
+
+    "s6-title": "Testing, Refining & Scaling for Maximum ROI",
+    "s6-desc": "Marketing isn’t static. We continuously test, optimize, and scale campaigns, refining creative, messaging, and targeting to accelerate conversions and revenue growth."
+  },
+  "booking": {
+    "title": "Get Started",
+    "subtitle": "Book your free consultation today",
+    "pickYourSpot": "Pick your spot",
+    "availability": "Availability for {{date}}",
+    "showAll": "Show all sessions",
+    "showLess": "Show less sessions",
+    "serviceDetails": "Service Details",
+    "freeConsultation": "Free Consultation",
+    "location": "India",
+    "staff": "Staff Member #1",
+    "duration": "1 hr",
+    "next": "Next",
+    "days": {
+      "sun": "Sun",
+      "mon": "Mon",
+      "tue": "Tue",
+      "wed": "Wed",
+      "thu": "Thu",
+      "fri": "Fri",
+      "sat": "Sat"
+    },
+    "button": "Book a call"
+  },
+
+  "footer": {
+    "text": "All rights reserved."
+  }
+}

@@ -1,0 +1,244 @@
+{
+  "navbar": {
+    "titles": {
+      "whatWeDo": "Wat We Doen",
+      "audiences": "Doelgroepen",
+      "whoWeHelp": "Wie We Helpen",
+      "resources": "Bronnen",
+      "company": "Bedrijf",
+      "language": "Taal"
+    },
+    "dropdown": {
+      "whatWeDo": {
+        "titles": {
+          "abm": "Accountgebaseerde Marketing",
+          "appointment": "Afspraakplanning",
+          "content": "Contentverspreiding",
+          "data": "Intelligente Gegevensverrijkingsoplossingen",
+          "demand": "Vraaggeneratie",
+          "ads": "Digitale Advertenties",
+          "email": "E-mailmarketing",
+          "events": "Evenementen (Seminar & Webinar)",
+          "intent": "Intentiegegevens",
+          "lead": "Leadgeneratie"
+        },
+        "descriptions": {
+          "abm": "Win en groei je meest waardevolle accounts met hyper-gepersonaliseerde marketingstrategieën.",
+          "appointment": "Beveilig gekwalificeerde afspraken met beslissers om je verkoopcyclus te versnellen.",
+          "content": "Vergroot het bereik en de autoriteit van je content door deze te verspreiden via gerichte externe netwerken.",
+          "data": "Stimuleer gerichte marketing en verkoop met schone, complete en bruikbare inzichten.",
+          "demand": "Creëer en vang aanhoudende marktinteresse om een voorspelbare omzetstroom op te bouwen.",
+          "ads": "Vergroot online zichtbaarheid en trek leads met hoge intentie aan via strategische zoek- en betaalde mediacampagnes.",
+          "email": "Koester leads, betrek abonnees en stimuleer conversies via gerichte inboxberichten.",
+          "events": "Genereer leads met hoge intentie via boeiende live of virtuele ervaringen.",
+          "intent": "Identificeer en betrek prospects die actief zoeken naar jouw oplossingen.",
+          "lead": "Vul je verkoopfunnel met een constante stroom van hoogwaardige, gevalideerde prospects."
+        }
+      },
+      "audiences": {
+        "titles": {
+          "bfsi": "Onze BFSI-doelgroep",
+          "healthcare": "Onze Zorg-doelgroep",
+          "hr": "Onze HR-doelgroep",
+          "it": "Onze IT-doelgroep",
+          "manufacturing": "Onze Productie-doelgroep",
+          "marketing": "Onze Marketing-doelgroep",
+          "sales": "Onze Verkoop-doelgroep"
+        },
+        "descriptions": {
+          "bfsi": "BFSI Betrek beslissers met hoge intentie in BFSI.",
+          "healthcare": "Zorg Bereik beslissers op schaal.",
+          "hr": "HR Verbind met HR-beslissers die op zoek zijn naar oplossingen.",
+          "it": "IT Beïnvloed top IT-kopers met een datagedreven aanpak.",
+          "manufacturing": "Productie Betrek leiders die klaar zijn om te kopen.",
+          "marketing": "Marketing Vind kopers die klaar zijn voor jouw oplossingen — exclusief bij BISSBAY.",
+          "sales": "Verkoop Benader prospects die klaar zijn om te kopen op intelligente wijze."
+        }
+      },
+      "whoWeHelp": {
+        "titles": {
+          "enterprises": "Ondernemingen",
+          "founders": "Oprichters",
+          "marketingLeaders": "Marketingleiders",
+          "ventureCapital": "Durfkapitaal"
+        },
+        "descriptions": {
+          "enterprises": "Nieuwe markten, gestroomlijnde operaties, meetbare resultaten. Wij zetten mogelijkheden om in prestaties.",
+          "founders": "Je markttoetreding zet de toon voor alles. Laten we het onovertroffen maken.",
+          "marketingLeaders": "Geef je team de kracht om doelstellingen te overtreffen en impact om te zetten in invloed.",
+          "ventureCapital": "Elke portefeuillebedrijf verdient exponentiële groei. Wij helpen dit mogelijk te maken."
+        }
+      },
+      "resources": {
+        "titles": {
+          "blog": "Blog",
+          "caseStudies": "Case Studies",
+          "glossary": "Woordenlijst",
+          "infographics": "Infographics",
+          "mediaKit": "Media Kit",
+          "proposal": "Offerte aanvragen",
+          "roiCalculator": "ROI Calculator",
+          "siteMap": "Sitemap",
+          "trustSite": "Vertrouwen"
+        }
+      },
+      "company": {
+        "titles": {
+          "about": "Over Ons",
+          "brand": "Merkrichtlijnen",
+          "career": "Carrière",
+          "contact": "Contact",
+          "process": "Ons Proces",
+          "standards": "Standaard Van Excellentie"
+        }
+      },
+      "language": {
+        "choose": "Kies je taal",
+        "Arabic": "Arabisch",
+        "Dutch": "Nederlands",
+        "English": "Engels",
+        "French": "Frans",
+        "German": "Duits",
+        "Italian": "Italiaans",
+        "Japanese": "Japans",
+        "Spanish": "Spaans"
+      }
+    },
+    "button": "Contact"
+  },
+
+  "hero": {
+    "tagline": {
+      "part1": "Waar",
+      "highlight1": "Intelligentie",
+      "part2": "Ontmoet",
+      "highlight2": "Verbindingen"
+    },
+    "description1": "Versnel de vraag, betrek beslissers en maximaliseer je verkoopfunnel met precisie en prestaties, aangedreven door Intelligentie.",
+    "description2": "Met jaarlijks meer dan 570K gekwalificeerde leads levert BISSBAY AI-gestuurde omnichannelstrategieën die bedrijven sneller en slimmer laten groeien.",
+    "button": "Ontvang een Offerte",
+    "description3": "BISSBAY zet realtime intentiegegevens en AI-gestuurde outreach om in voorspelbare omzet, vertrouwd door sales- en marketingleiders wereldwijd."
+  },
+
+  "card": {
+    "tagline": "Geïntegreerde B2B-oplossingen die krachtige resultaten opleveren",
+    "description-part1": "Datagedreven oplossingen ontworpen om je ideale doelgroep aan te trekken, pipelinegroei te stimuleren en de omzet te versnellen",
+    "description-part2": "aangedreven door intentiegegevens, omnichannelcampagnes, CRM-integratie en realtime analytics.",
+
+    "card1-title": "Account-Based Marketing (ABM)",
+    "card1-description": "Betrek waardevolle accounts met gepersonaliseerde strategieën die echte bedrijfsgroei stimuleren.",
+
+    "card2-title": "Afspraakplanning",
+    "card2-description": "Regel afspraken met belangrijke beslissers om je verkoopfunnel te versnellen.",
+
+    "card3-title": "Contentverspreiding",
+    "card3-description": "Vergroot je bereik door waardevolle content bij het juiste publiek af te leveren.",
+
+    "card4-title": "Gegevensoplossingen",
+    "card4-description": "Versterk je database met nauwkeurige, bruikbare inzichten voor betere targeting.",
+
+    "card5-title": "Vraaggeneratie",
+    "card5-description": "Creëer vraag, verzorg prospects en genereer omzet met gerichte campagnes.",
+
+    "card6-title": "Op zoek naar E-mailmarketing",
+    "card6-description": "Betrek en converteer je publiek met strategische, datagedreven e-mailcampagnes.",
+
+    "card7-title": "Leadgeneratie",
+    "card7-description": "Levering van hoogwaardige leads die bedrijfsgroei en verkoopsucces stimuleren.",
+
+    "card8-title": "Evenementen (Seminar & Webinar)",
+    "card8-description": "Wij organiseren impactvolle evenementen die informeren, betrekken en leads met hoge intentie genereren.",
+
+    "card9-title": "Intentiegegevens",
+    "card9-description": "Identificeer en betrek prospects die actief zoeken naar jouw oplossingen.",
+
+    "button": "Meer weten"
+  },
+
+  "map": {
+    "tagline": "Bedrijven verbinden met een wereldwijd netwerk van kansen",
+    "description1": "BISSBAY bouwt al bijna een decennium op maat gemaakte doelgroepen, waarmee een wereldwijd netwerk van betrokken technologie-kopers en beïnvloeders wordt opgebouwd.",
+    "description2": "Waar groot bereik slimme precisie ontmoet, telt elke verbinding.",
+    "button": "VERDER VERKENNEN"
+  },
+
+  "solutions": {
+    "tagline1": "Veel van onze klanten hadden te maken met pipelineproblemen tot BISSBAY ingreep.",
+    "tagline2": "Wij zijn gespecialiseerd in schaalbare go-to-marketstrategieën die uitdagingen omzetten in omzet.",
+    "description1": "Heb jij hetzelfde ervaren?",
+    "description2": "Laat ons je helpen deze obstakels te overwinnen.",
+    "description3": "Wij voeren jouw go-to-marketstrategie uit met precisie en doelgerichtheid, terwijl wij de uitdagingen op ons nemen.",
+    "description4": "Versnel Groei met een Bewezen Strategie",
+
+    "h1-title": "Omzetstagnatie",
+    "h1-desc": "Stagnerende omzetgroei beperkt je uitbreiding.",
+    "h1-bold": "Laten we deze plateau doorbreken.",
+
+    "h2-title": "Trage Afsluiting van Deals",
+    "h2-desc": "Je verkoopcyclus sleept aan, vertraagt de omzet en kost waardevolle kansen.",
+    "h2-bold": "Wij helpen je sneller te sluiten.",
+
+    "h3-title": "Geen Afstemming tussen Verkoop en Marketing",
+    "h3-desc": "Als verkoop en marketing niet op één lijn zitten, gaan leads verloren.",
+    "h3-bold": "Afstemming is de sleutel tot groei.",
+
+    "h4-title": "Interne Beperkingen en Knelpunten",
+    "h4-desc": "Operationele inefficiënties houden je tegen.",
+    "h4-bold": "Laten we obstakels verwijderen en sneller opschalen.",
+
+    "h5-title": "Inconsistente Leadkwaliteit",
+    "h5-desc": "Ongekwalificeerde leads verspillen middelen.",
+    "h5-bold": "Het is tijd om de juiste prospects aan te trekken en conversies te verhogen.",
+
+    "h6-title": "Frustrerende Ervaring met Vorige Leverancier",
+    "h6-desc": "Als vorige leveranciers je hebben teleurgesteld, is het tijd om te werken met een team dat echte, meetbare resultaten levert.",
+    "h6-bold": "Je verdient betere.",
+
+    "s1-title": "Duidelijke Doelen Bepalen",
+    "s1-desc": "Wij analyseren je groeidoelstellingen en prestaties uit het verleden om een strategisch plan te ontwikkelen dat aansluit bij jouw visie en meetbaar succes garandeert.",
+
+    "s2-title": "Ideale Klanten Bepalen",
+    "s2-desc": "Via datagedreven onderzoek identificeren we je ideale klantprofiel (ICP) en de belangrijkste beslissers — zodat jij je vanaf dag één op de juiste prospects richt.",
+
+    "s3-title": "Positionering & Boodschap Aanscherpen",
+    "s3-desc": "Samen met je verkoopteam ontdekken we echte klantproblemen en creëren we overtuigende, conversiegerichte boodschappen die vertrouwen opbouwen.",
+
+    "s4-title": "De Juiste Kanalen Activeren",
+    "s4-desc": "Je doelgroep is actief op zoek naar oplossingen — wij positioneren je waar het telt, zodat je directe kansen benut en een consistente vraaggeneratie opbouwt.",
+
+    "s5-title": "Effectieve Content Creëren",
+    "s5-desc": "Van thought leadership tot salesgerichte middelen, we ontwikkelen waardevolle content die betrokkenheid genereert, leads verzorgt en jou positioneert als betrouwbare leider in je branche.",
+
+    "s6-title": "Testen, Optimaliseren & Opschalen",
+    "s6-desc": "Marketing is nooit statisch. Wij testen continu, optimaliseren en schalen campagnes — verbeteren creatie, boodschap en targeting om conversies en omzetgroei te versnellen."
+  },
+
+  "booking": {
+    "title": "Begin Nu",
+    "subtitle": "Boek vandaag nog je gratis consult",
+    "pickYourSpot": "Kies je tijdslot",
+    "availability": "Beschikbaarheid voor {{date}}",
+    "showAll": "Toon alle sessies",
+    "showLess": "Toon minder sessies",
+    "serviceDetails": "Details van de Dienst",
+    "freeConsultation": "Gratis Consult",
+    "location": "India",
+    "staff": "Medewerker #1",
+    "duration": "1 uur",
+    "next": "Volgende",
+    "days": {
+      "sun": "Zo",
+      "mon": "Ma",
+      "tue": "Di",
+      "wed": "Wo",
+      "thu": "Do",
+      "fri": "Vr",
+      "sat": "Za"
+    },
+    "button": "Boek een Gesprek"
+  },
+
+  "footer": {
+    "text": "Jouw Bedrijfsnaam. Alle rechten voorbehouden."
+  }
+}

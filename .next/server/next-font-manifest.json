@@ -1,0 +1,20 @@
+{
+  "app": {
+    "[project]/Downloads/bissbay-new-main/bissbay-new-main/src/app/_not-found/page": [],
+    "[project]/Downloads/bissbay-new-main/bissbay-new-main/src/app/page": [],
+    "[project]/Downloads/bissbay-new-main/bissbay-new-main/src/app/what-we-do/account-based-marketing/page": [],
+    "[project]/Downloads/bissbay-new-main/bissbay-new-main/src/app/what-we-do/appointment-setting/page": [],
+    "[project]/Downloads/bissbay-new-main/bissbay-new-main/src/app/what-we-do/content-syndication/page": [],
+    "[project]/Downloads/bissbay-new-main/bissbay-new-main/src/app/what-we-do/demand-generation/page": [],
+    "[project]/Downloads/bissbay-new-main/bissbay-new-main/src/app/what-we-do/digital-advertising/page": [],
+    "[project]/Downloads/bissbay-new-main/bissbay-new-main/src/app/what-we-do/email-marketing/page": [],
+    "[project]/Downloads/bissbay-new-main/bissbay-new-main/src/app/what-we-do/events/page": [],
+    "[project]/Downloads/bissbay-new-main/bissbay-new-main/src/app/what-we-do/intelligent-data-enrichment/page": [],
+    "[project]/Downloads/bissbay-new-main/bissbay-new-main/src/app/what-we-do/intent-data/page": [],
+    "[project]/Downloads/bissbay-new-main/bissbay-new-main/src/app/what-we-do/lead-generation/page": [],
+    "[project]/Downloads/bissbay-new-main/bissbay-new-main/src/app/what-we-do/page": []
+  },
+  "appUsingSizeAdjust": false,
+  "pages": {},
+  "pagesUsingSizeAdjust": false
+}

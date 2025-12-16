@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/Downloads/bissbay-new-main/bissbay-new-main/src/components/Footer.css"],"sourcesContent":[".copyright {\n    background-color: #333;\n    color: white;\n    text-align: center;\n    padding: 1rem;\n    bottom: 0;\n    width: 100%;\n  }"],"names":[],"mappings":"AAAA"}}]
+}

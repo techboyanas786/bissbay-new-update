@@ -1,0 +1,16 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/page": "app/page.js",
+  "/what-we-do/account-based-marketing/page": "app/what-we-do/account-based-marketing/page.js",
+  "/what-we-do/appointment-setting/page": "app/what-we-do/appointment-setting/page.js",
+  "/what-we-do/content-syndication/page": "app/what-we-do/content-syndication/page.js",
+  "/what-we-do/demand-generation/page": "app/what-we-do/demand-generation/page.js",
+  "/what-we-do/digital-advertising/page": "app/what-we-do/digital-advertising/page.js",
+  "/what-we-do/email-marketing/page": "app/what-we-do/email-marketing/page.js",
+  "/what-we-do/events/page": "app/what-we-do/events/page.js",
+  "/what-we-do/intelligent-data-enrichment/page": "app/what-we-do/intelligent-data-enrichment/page.js",
+  "/what-we-do/intent-data/page": "app/what-we-do/intent-data/page.js",
+  "/what-we-do/lead-generation/page": "app/what-we-do/lead-generation/page.js",
+  "/what-we-do/page": "app/what-we-do/page.js"
+}

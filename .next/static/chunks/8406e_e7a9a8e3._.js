@@ -1,0 +1,9873 @@
+(globalThis.TURBOPACK || (globalThis.TURBOPACK = [])).push([typeof document === "object" ? document.currentScript : undefined,
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/compiled/react/cjs/react-jsx-dev-runtime.development.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/**
+ * @license React
+ * react-jsx-dev-runtime.development.js
+ *
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+"use strict";
+"production" !== ("TURBOPACK compile-time value", "development") && function() {
+    function getComponentNameFromType(type) {
+        if (null == type) return null;
+        if ("function" === typeof type) return type.$$typeof === REACT_CLIENT_REFERENCE ? null : type.displayName || type.name || null;
+        if ("string" === typeof type) return type;
+        switch(type){
+            case REACT_FRAGMENT_TYPE:
+                return "Fragment";
+            case REACT_PROFILER_TYPE:
+                return "Profiler";
+            case REACT_STRICT_MODE_TYPE:
+                return "StrictMode";
+            case REACT_SUSPENSE_TYPE:
+                return "Suspense";
+            case REACT_SUSPENSE_LIST_TYPE:
+                return "SuspenseList";
+            case REACT_ACTIVITY_TYPE:
+                return "Activity";
+        }
+        if ("object" === typeof type) switch("number" === typeof type.tag && console.error("Received an unexpected object in getComponentNameFromType(). This is likely a bug in React. Please file an issue."), type.$$typeof){
+            case REACT_PORTAL_TYPE:
+                return "Portal";
+            case REACT_CONTEXT_TYPE:
+                return type.displayName || "Context";
+            case REACT_CONSUMER_TYPE:
+                return (type._context.displayName || "Context") + ".Consumer";
+            case REACT_FORWARD_REF_TYPE:
+                var innerType = type.render;
+                type = type.displayName;
+                type || (type = innerType.displayName || innerType.name || "", type = "" !== type ? "ForwardRef(" + type + ")" : "ForwardRef");
+                return type;
+            case REACT_MEMO_TYPE:
+                return innerType = type.displayName || null, null !== innerType ? innerType : getComponentNameFromType(type.type) || "Memo";
+            case REACT_LAZY_TYPE:
+                innerType = type._payload;
+                type = type._init;
+                try {
+                    return getComponentNameFromType(type(innerType));
+                } catch (x) {}
+        }
+        return null;
+    }
+    function testStringCoercion(value) {
+        return "" + value;
+    }
+    function checkKeyStringCoercion(value) {
+        try {
+            testStringCoercion(value);
+            var JSCompiler_inline_result = !1;
+        } catch (e) {
+            JSCompiler_inline_result = !0;
+        }
+        if (JSCompiler_inline_result) {
+            JSCompiler_inline_result = console;
+            var JSCompiler_temp_const = JSCompiler_inline_result.error;
+            var JSCompiler_inline_result$jscomp$0 = "function" === typeof Symbol && Symbol.toStringTag && value[Symbol.toStringTag] || value.constructor.name || "Object";
+            JSCompiler_temp_const.call(JSCompiler_inline_result, "The provided key is an unsupported type %s. This value must be coerced to a string before using it here.", JSCompiler_inline_result$jscomp$0);
+            return testStringCoercion(value);
+        }
+    }
+    function getTaskName(type) {
+        if (type === REACT_FRAGMENT_TYPE) return "<>";
+        if ("object" === typeof type && null !== type && type.$$typeof === REACT_LAZY_TYPE) return "<...>";
+        try {
+            var name = getComponentNameFromType(type);
+            return name ? "<" + name + ">" : "<...>";
+        } catch (x) {
+            return "<...>";
+        }
+    }
+    function getOwner() {
+        var dispatcher = ReactSharedInternals.A;
+        return null === dispatcher ? null : dispatcher.getOwner();
+    }
+    function UnknownOwner() {
+        return Error("react-stack-top-frame");
+    }
+    function hasValidKey(config) {
+        if (hasOwnProperty.call(config, "key")) {
+            var getter = Object.getOwnPropertyDescriptor(config, "key").get;
+            if (getter && getter.isReactWarning) return !1;
+        }
+        return void 0 !== config.key;
+    }
+    function defineKeyPropWarningGetter(props, displayName) {
+        function warnAboutAccessingKey() {
+            specialPropKeyWarningShown || (specialPropKeyWarningShown = !0, console.error("%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://react.dev/link/special-props)", displayName));
+        }
+        warnAboutAccessingKey.isReactWarning = !0;
+        Object.defineProperty(props, "key", {
+            get: warnAboutAccessingKey,
+            configurable: !0
+        });
+    }
+    function elementRefGetterWithDeprecationWarning() {
+        var componentName = getComponentNameFromType(this.type);
+        didWarnAboutElementRef[componentName] || (didWarnAboutElementRef[componentName] = !0, console.error("Accessing element.ref was removed in React 19. ref is now a regular prop. It will be removed from the JSX Element type in a future release."));
+        componentName = this.props.ref;
+        return void 0 !== componentName ? componentName : null;
+    }
+    function ReactElement(type, key, props, owner, debugStack, debugTask) {
+        var refProp = props.ref;
+        type = {
+            $$typeof: REACT_ELEMENT_TYPE,
+            type: type,
+            key: key,
+            props: props,
+            _owner: owner
+        };
+        null !== (void 0 !== refProp ? refProp : null) ? Object.defineProperty(type, "ref", {
+            enumerable: !1,
+            get: elementRefGetterWithDeprecationWarning
+        }) : Object.defineProperty(type, "ref", {
+            enumerable: !1,
+            value: null
+        });
+        type._store = {};
+        Object.defineProperty(type._store, "validated", {
+            configurable: !1,
+            enumerable: !1,
+            writable: !0,
+            value: 0
+        });
+        Object.defineProperty(type, "_debugInfo", {
+            configurable: !1,
+            enumerable: !1,
+            writable: !0,
+            value: null
+        });
+        Object.defineProperty(type, "_debugStack", {
+            configurable: !1,
+            enumerable: !1,
+            writable: !0,
+            value: debugStack
+        });
+        Object.defineProperty(type, "_debugTask", {
+            configurable: !1,
+            enumerable: !1,
+            writable: !0,
+            value: debugTask
+        });
+        Object.freeze && (Object.freeze(type.props), Object.freeze(type));
+        return type;
+    }
+    function jsxDEVImpl(type, config, maybeKey, isStaticChildren, debugStack, debugTask) {
+        var children = config.children;
+        if (void 0 !== children) if (isStaticChildren) if (isArrayImpl(children)) {
+            for(isStaticChildren = 0; isStaticChildren < children.length; isStaticChildren++)validateChildKeys(children[isStaticChildren]);
+            Object.freeze && Object.freeze(children);
+        } else console.error("React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead.");
+        else validateChildKeys(children);
+        if (hasOwnProperty.call(config, "key")) {
+            children = getComponentNameFromType(type);
+            var keys = Object.keys(config).filter(function(k) {
+                return "key" !== k;
+            });
+            isStaticChildren = 0 < keys.length ? "{key: someKey, " + keys.join(": ..., ") + ": ...}" : "{key: someKey}";
+            didWarnAboutKeySpread[children + isStaticChildren] || (keys = 0 < keys.length ? "{" + keys.join(": ..., ") + ": ...}" : "{}", console.error('A props object containing a "key" prop is being spread into JSX:\n  let props = %s;\n  <%s {...props} />\nReact keys must be passed directly to JSX without using spread:\n  let props = %s;\n  <%s key={someKey} {...props} />', isStaticChildren, children, keys, children), didWarnAboutKeySpread[children + isStaticChildren] = !0);
+        }
+        children = null;
+        void 0 !== maybeKey && (checkKeyStringCoercion(maybeKey), children = "" + maybeKey);
+        hasValidKey(config) && (checkKeyStringCoercion(config.key), children = "" + config.key);
+        if ("key" in config) {
+            maybeKey = {};
+            for(var propName in config)"key" !== propName && (maybeKey[propName] = config[propName]);
+        } else maybeKey = config;
+        children && defineKeyPropWarningGetter(maybeKey, "function" === typeof type ? type.displayName || type.name || "Unknown" : type);
+        return ReactElement(type, children, maybeKey, getOwner(), debugStack, debugTask);
+    }
+    function validateChildKeys(node) {
+        "object" === typeof node && null !== node && node.$$typeof === REACT_ELEMENT_TYPE && node._store && (node._store.validated = 1);
+    }
+    var React = __turbopack_context__.r("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"), REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy"), REACT_ACTIVITY_TYPE = Symbol.for("react.activity"), REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), ReactSharedInternals = React.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, hasOwnProperty = Object.prototype.hasOwnProperty, isArrayImpl = Array.isArray, createTask = console.createTask ? console.createTask : function() {
+        return null;
+    };
+    React = {
+        react_stack_bottom_frame: function(callStackForError) {
+            return callStackForError();
+        }
+    };
+    var specialPropKeyWarningShown;
+    var didWarnAboutElementRef = {};
+    var unknownOwnerDebugStack = React.react_stack_bottom_frame.bind(React, UnknownOwner)();
+    var unknownOwnerDebugTask = createTask(getTaskName(UnknownOwner));
+    var didWarnAboutKeySpread = {};
+    exports.Fragment = REACT_FRAGMENT_TYPE;
+    exports.jsxDEV = function(type, config, maybeKey, isStaticChildren) {
+        var trackActualOwner = 1e4 > ReactSharedInternals.recentlyCreatedOwnerStacks++;
+        return jsxDEVImpl(type, config, maybeKey, isStaticChildren, trackActualOwner ? Error("react-stack-top-frame") : unknownOwnerDebugStack, trackActualOwner ? createTask(getTaskName(type)) : unknownOwnerDebugTask);
+    };
+}();
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+'use strict';
+if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+;
+else {
+    module.exports = __turbopack_context__.r("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/compiled/react/cjs/react-jsx-dev-runtime.development.js [app-client] (ecmascript)");
+}
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/compiled/client-only/index.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/shared/lib/router/utils/querystring.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    assign: null,
+    searchParamsToUrlQuery: null,
+    urlQueryToSearchParams: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    assign: function() {
+        return assign;
+    },
+    searchParamsToUrlQuery: function() {
+        return searchParamsToUrlQuery;
+    },
+    urlQueryToSearchParams: function() {
+        return urlQueryToSearchParams;
+    }
+});
+function searchParamsToUrlQuery(searchParams) {
+    const query = {};
+    for (const [key, value] of searchParams.entries()){
+        const existing = query[key];
+        if (typeof existing === 'undefined') {
+            query[key] = value;
+        } else if (Array.isArray(existing)) {
+            existing.push(value);
+        } else {
+            query[key] = [
+                existing,
+                value
+            ];
+        }
+    }
+    return query;
+}
+function stringifyUrlQueryParam(param) {
+    if (typeof param === 'string') {
+        return param;
+    }
+    if (typeof param === 'number' && !isNaN(param) || typeof param === 'boolean') {
+        return String(param);
+    } else {
+        return '';
+    }
+}
+function urlQueryToSearchParams(query) {
+    const searchParams = new URLSearchParams();
+    for (const [key, value] of Object.entries(query)){
+        if (Array.isArray(value)) {
+            for (const item of value){
+                searchParams.append(key, stringifyUrlQueryParam(item));
+            }
+        } else {
+            searchParams.set(key, stringifyUrlQueryParam(value));
+        }
+    }
+    return searchParams;
+}
+function assign(target) {
+    for(var _len = arguments.length, searchParamsList = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++){
+        searchParamsList[_key - 1] = arguments[_key];
+    }
+    for (const searchParams of searchParamsList){
+        for (const key of searchParams.keys()){
+            target.delete(key);
+        }
+        for (const [key, value] of searchParams.entries()){
+            target.append(key, value);
+        }
+    }
+    return target;
+} //# sourceMappingURL=querystring.js.map
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/shared/lib/router/utils/format-url.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+// Format function modified from nodejs
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    formatUrl: null,
+    formatWithValidation: null,
+    urlObjectKeys: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    formatUrl: function() {
+        return formatUrl;
+    },
+    formatWithValidation: function() {
+        return formatWithValidation;
+    },
+    urlObjectKeys: function() {
+        return urlObjectKeys;
+    }
+});
+const _interop_require_wildcard = __turbopack_context__.r("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@swc/helpers/cjs/_interop_require_wildcard.cjs [app-client] (ecmascript)");
+const _querystring = /*#__PURE__*/ _interop_require_wildcard._(__turbopack_context__.r("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/shared/lib/router/utils/querystring.js [app-client] (ecmascript)"));
+const slashedProtocols = /https?|ftp|gopher|file/;
+function formatUrl(urlObj) {
+    let { auth, hostname } = urlObj;
+    let protocol = urlObj.protocol || '';
+    let pathname = urlObj.pathname || '';
+    let hash = urlObj.hash || '';
+    let query = urlObj.query || '';
+    let host = false;
+    auth = auth ? encodeURIComponent(auth).replace(/%3A/i, ':') + '@' : '';
+    if (urlObj.host) {
+        host = auth + urlObj.host;
+    } else if (hostname) {
+        host = auth + (~hostname.indexOf(':') ? "[" + hostname + "]" : hostname);
+        if (urlObj.port) {
+            host += ':' + urlObj.port;
+        }
+    }
+    if (query && typeof query === 'object') {
+        query = String(_querystring.urlQueryToSearchParams(query));
+    }
+    let search = urlObj.search || query && "?" + query || '';
+    if (protocol && !protocol.endsWith(':')) protocol += ':';
+    if (urlObj.slashes || (!protocol || slashedProtocols.test(protocol)) && host !== false) {
+        host = '//' + (host || '');
+        if (pathname && pathname[0] !== '/') pathname = '/' + pathname;
+    } else if (!host) {
+        host = '';
+    }
+    if (hash && hash[0] !== '#') hash = '#' + hash;
+    if (search && search[0] !== '?') search = '?' + search;
+    pathname = pathname.replace(/[?#]/g, encodeURIComponent);
+    search = search.replace('#', '%23');
+    return "" + protocol + host + pathname + search + hash;
+}
+const urlObjectKeys = [
+    'auth',
+    'hash',
+    'host',
+    'hostname',
+    'href',
+    'path',
+    'pathname',
+    'port',
+    'protocol',
+    'query',
+    'search',
+    'slashes'
+];
+function formatWithValidation(url) {
+    if ("TURBOPACK compile-time truthy", 1) {
+        if (url !== null && typeof url === 'object') {
+            Object.keys(url).forEach((key)=>{
+                if (!urlObjectKeys.includes(key)) {
+                    console.warn("Unknown key passed via urlObject into url.format: " + key);
+                }
+            });
+        }
+    }
+    return formatUrl(url);
+} //# sourceMappingURL=format-url.js.map
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/client/use-merged-ref.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "useMergedRef", {
+    enumerable: true,
+    get: function() {
+        return useMergedRef;
+    }
+});
+const _react = __turbopack_context__.r("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+function useMergedRef(refA, refB) {
+    const cleanupA = (0, _react.useRef)(null);
+    const cleanupB = (0, _react.useRef)(null);
+    // NOTE: In theory, we could skip the wrapping if only one of the refs is non-null.
+    // (this happens often if the user doesn't pass a ref to Link/Form/Image)
+    // But this can cause us to leak a cleanup-ref into user code (e.g. via `<Link legacyBehavior>`),
+    // and the user might pass that ref into ref-merging library that doesn't support cleanup refs
+    // (because it hasn't been updated for React 19)
+    // which can then cause things to blow up, because a cleanup-returning ref gets called with `null`.
+    // So in practice, it's safer to be defensive and always wrap the ref, even on React 19.
+    return (0, _react.useCallback)((current)=>{
+        if (current === null) {
+            const cleanupFnA = cleanupA.current;
+            if (cleanupFnA) {
+                cleanupA.current = null;
+                cleanupFnA();
+            }
+            const cleanupFnB = cleanupB.current;
+            if (cleanupFnB) {
+                cleanupB.current = null;
+                cleanupFnB();
+            }
+        } else {
+            if (refA) {
+                cleanupA.current = applyRef(refA, current);
+            }
+            if (refB) {
+                cleanupB.current = applyRef(refB, current);
+            }
+        }
+    }, [
+        refA,
+        refB
+    ]);
+}
+function applyRef(refA, current) {
+    if (typeof refA === 'function') {
+        const cleanup = refA(current);
+        if (typeof cleanup === 'function') {
+            return cleanup;
+        } else {
+            return ()=>refA(null);
+        }
+    } else {
+        refA.current = current;
+        return ()=>{
+            refA.current = null;
+        };
+    }
+}
+if ((typeof exports.default === 'function' || typeof exports.default === 'object' && exports.default !== null) && typeof exports.default.__esModule === 'undefined') {
+    Object.defineProperty(exports.default, '__esModule', {
+        value: true
+    });
+    Object.assign(exports.default, exports);
+    module.exports = exports.default;
+} //# sourceMappingURL=use-merged-ref.js.map
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/shared/lib/utils.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    DecodeError: null,
+    MiddlewareNotFoundError: null,
+    MissingStaticPage: null,
+    NormalizeError: null,
+    PageNotFoundError: null,
+    SP: null,
+    ST: null,
+    WEB_VITALS: null,
+    execOnce: null,
+    getDisplayName: null,
+    getLocationOrigin: null,
+    getURL: null,
+    isAbsoluteUrl: null,
+    isResSent: null,
+    loadGetInitialProps: null,
+    normalizeRepeatedSlashes: null,
+    stringifyError: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    DecodeError: function() {
+        return DecodeError;
+    },
+    MiddlewareNotFoundError: function() {
+        return MiddlewareNotFoundError;
+    },
+    MissingStaticPage: function() {
+        return MissingStaticPage;
+    },
+    NormalizeError: function() {
+        return NormalizeError;
+    },
+    PageNotFoundError: function() {
+        return PageNotFoundError;
+    },
+    SP: function() {
+        return SP;
+    },
+    ST: function() {
+        return ST;
+    },
+    WEB_VITALS: function() {
+        return WEB_VITALS;
+    },
+    execOnce: function() {
+        return execOnce;
+    },
+    getDisplayName: function() {
+        return getDisplayName;
+    },
+    getLocationOrigin: function() {
+        return getLocationOrigin;
+    },
+    getURL: function() {
+        return getURL;
+    },
+    isAbsoluteUrl: function() {
+        return isAbsoluteUrl;
+    },
+    isResSent: function() {
+        return isResSent;
+    },
+    loadGetInitialProps: function() {
+        return loadGetInitialProps;
+    },
+    normalizeRepeatedSlashes: function() {
+        return normalizeRepeatedSlashes;
+    },
+    stringifyError: function() {
+        return stringifyError;
+    }
+});
+const WEB_VITALS = [
+    'CLS',
+    'FCP',
+    'FID',
+    'INP',
+    'LCP',
+    'TTFB'
+];
+function execOnce(fn) {
+    let used = false;
+    let result;
+    return function() {
+        for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++){
+            args[_key] = arguments[_key];
+        }
+        if (!used) {
+            used = true;
+            result = fn(...args);
+        }
+        return result;
+    };
+}
+// Scheme: https://tools.ietf.org/html/rfc3986#section-3.1
+// Absolute URL: https://tools.ietf.org/html/rfc3986#section-4.3
+const ABSOLUTE_URL_REGEX = /^[a-zA-Z][a-zA-Z\d+\-.]*?:/;
+const isAbsoluteUrl = (url)=>ABSOLUTE_URL_REGEX.test(url);
+function getLocationOrigin() {
+    const { protocol, hostname, port } = window.location;
+    return protocol + "//" + hostname + (port ? ':' + port : '');
+}
+function getURL() {
+    const { href } = window.location;
+    const origin = getLocationOrigin();
+    return href.substring(origin.length);
+}
+function getDisplayName(Component) {
+    return typeof Component === 'string' ? Component : Component.displayName || Component.name || 'Unknown';
+}
+function isResSent(res) {
+    return res.finished || res.headersSent;
+}
+function normalizeRepeatedSlashes(url) {
+    const urlParts = url.split('?');
+    const urlNoQuery = urlParts[0];
+    return urlNoQuery // first we replace any non-encoded backslashes with forward
+    // then normalize repeated forward slashes
+    .replace(/\\/g, '/').replace(/\/\/+/g, '/') + (urlParts[1] ? "?" + urlParts.slice(1).join('?') : '');
+}
+async function loadGetInitialProps(App, ctx) {
+    if ("TURBOPACK compile-time truthy", 1) {
+        var _App_prototype;
+        if ((_App_prototype = App.prototype) == null ? void 0 : _App_prototype.getInitialProps) {
+            const message = '"' + getDisplayName(App) + '.getInitialProps()" is defined as an instance method - visit https://nextjs.org/docs/messages/get-initial-props-as-an-instance-method for more information.';
+            throw Object.defineProperty(new Error(message), "__NEXT_ERROR_CODE", {
+                value: "E394",
+                enumerable: false,
+                configurable: true
+            });
+        }
+    }
+    // when called from _app `ctx` is nested in `ctx`
+    const res = ctx.res || ctx.ctx && ctx.ctx.res;
+    if (!App.getInitialProps) {
+        if (ctx.ctx && ctx.Component) {
+            // @ts-ignore pageProps default
+            return {
+                pageProps: await loadGetInitialProps(ctx.Component, ctx.ctx)
+            };
+        }
+        return {};
+    }
+    const props = await App.getInitialProps(ctx);
+    if (res && isResSent(res)) {
+        return props;
+    }
+    if (!props) {
+        const message = '"' + getDisplayName(App) + '.getInitialProps()" should resolve to an object. But found "' + props + '" instead.';
+        throw Object.defineProperty(new Error(message), "__NEXT_ERROR_CODE", {
+            value: "E394",
+            enumerable: false,
+            configurable: true
+        });
+    }
+    if ("TURBOPACK compile-time truthy", 1) {
+        if (Object.keys(props).length === 0 && !ctx.ctx) {
+            console.warn("" + getDisplayName(App) + " returned an empty object from `getInitialProps`. This de-optimizes and prevents automatic static optimization. https://nextjs.org/docs/messages/empty-object-getInitialProps");
+        }
+    }
+    return props;
+}
+const SP = typeof performance !== 'undefined';
+const ST = SP && [
+    'mark',
+    'measure',
+    'getEntriesByName'
+].every((method)=>typeof performance[method] === 'function');
+class DecodeError extends Error {
+}
+class NormalizeError extends Error {
+}
+class PageNotFoundError extends Error {
+    constructor(page){
+        super();
+        this.code = 'ENOENT';
+        this.name = 'PageNotFoundError';
+        this.message = "Cannot find module for page: " + page;
+    }
+}
+class MissingStaticPage extends Error {
+    constructor(page, message){
+        super();
+        this.message = "Failed to load static file for page: " + page + " " + message;
+    }
+}
+class MiddlewareNotFoundError extends Error {
+    constructor(){
+        super();
+        this.code = 'ENOENT';
+        this.message = "Cannot find the middleware module";
+    }
+}
+function stringifyError(error) {
+    return JSON.stringify({
+        message: error.message,
+        stack: error.stack
+    });
+} //# sourceMappingURL=utils.js.map
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/shared/lib/router/utils/is-local-url.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "isLocalURL", {
+    enumerable: true,
+    get: function() {
+        return isLocalURL;
+    }
+});
+const _utils = __turbopack_context__.r("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/shared/lib/utils.js [app-client] (ecmascript)");
+const _hasbasepath = __turbopack_context__.r("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/client/has-base-path.js [app-client] (ecmascript)");
+function isLocalURL(url) {
+    // prevent a hydration mismatch on href for url with anchor refs
+    if (!(0, _utils.isAbsoluteUrl)(url)) return true;
+    try {
+        // absolute urls can be local if they are on the same origin
+        const locationOrigin = (0, _utils.getLocationOrigin)();
+        const resolved = new URL(url, locationOrigin);
+        return resolved.origin === locationOrigin && (0, _hasbasepath.hasBasePath)(resolved.pathname);
+    } catch (_) {
+        return false;
+    }
+} //# sourceMappingURL=is-local-url.js.map
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/shared/lib/utils/error-once.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "errorOnce", {
+    enumerable: true,
+    get: function() {
+        return errorOnce;
+    }
+});
+let errorOnce = (_)=>{};
+if ("TURBOPACK compile-time truthy", 1) {
+    const errors = new Set();
+    errorOnce = (msg)=>{
+        if (!errors.has(msg)) {
+            console.error(msg);
+        }
+        errors.add(msg);
+    };
+} //# sourceMappingURL=error-once.js.map
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+'use client';
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+0 && (module.exports = {
+    default: null,
+    useLinkStatus: null
+});
+function _export(target, all) {
+    for(var name in all)Object.defineProperty(target, name, {
+        enumerable: true,
+        get: all[name]
+    });
+}
+_export(exports, {
+    /**
+ * A React component that extends the HTML `<a>` element to provide
+ * [prefetching](https://nextjs.org/docs/app/building-your-application/routing/linking-and-navigating#2-prefetching)
+ * and client-side navigation. This is the primary way to navigate between routes in Next.js.
+ *
+ * @remarks
+ * - Prefetching is only enabled in production.
+ *
+ * @see https://nextjs.org/docs/app/api-reference/components/link
+ */ default: function() {
+        return LinkComponent;
+    },
+    useLinkStatus: function() {
+        return useLinkStatus;
+    }
+});
+const _interop_require_wildcard = __turbopack_context__.r("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@swc/helpers/cjs/_interop_require_wildcard.cjs [app-client] (ecmascript)");
+const _jsxruntime = __turbopack_context__.r("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/compiled/react/jsx-runtime.js [app-client] (ecmascript)");
+const _react = /*#__PURE__*/ _interop_require_wildcard._(__turbopack_context__.r("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"));
+const _formaturl = __turbopack_context__.r("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/shared/lib/router/utils/format-url.js [app-client] (ecmascript)");
+const _approutercontextsharedruntime = __turbopack_context__.r("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/shared/lib/app-router-context.shared-runtime.js [app-client] (ecmascript)");
+const _usemergedref = __turbopack_context__.r("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/client/use-merged-ref.js [app-client] (ecmascript)");
+const _utils = __turbopack_context__.r("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/shared/lib/utils.js [app-client] (ecmascript)");
+const _addbasepath = __turbopack_context__.r("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/client/add-base-path.js [app-client] (ecmascript)");
+const _warnonce = __turbopack_context__.r("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/shared/lib/utils/warn-once.js [app-client] (ecmascript)");
+const _links = __turbopack_context__.r("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/client/components/links.js [app-client] (ecmascript)");
+const _islocalurl = __turbopack_context__.r("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/shared/lib/router/utils/is-local-url.js [app-client] (ecmascript)");
+const _approuterinstance = __turbopack_context__.r("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/client/components/app-router-instance.js [app-client] (ecmascript)");
+const _erroronce = __turbopack_context__.r("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/shared/lib/utils/error-once.js [app-client] (ecmascript)");
+const _segmentcache = __turbopack_context__.r("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/client/components/segment-cache.js [app-client] (ecmascript)");
+function isModifiedEvent(event) {
+    const eventTarget = event.currentTarget;
+    const target = eventTarget.getAttribute('target');
+    return target && target !== '_self' || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || // triggers resource download
+    event.nativeEvent && event.nativeEvent.which === 2;
+}
+function linkClicked(e, href, as, linkInstanceRef, replace, scroll, onNavigate) {
+    const { nodeName } = e.currentTarget;
+    // anchors inside an svg have a lowercase nodeName
+    const isAnchorNodeName = nodeName.toUpperCase() === 'A';
+    if (isAnchorNodeName && isModifiedEvent(e) || e.currentTarget.hasAttribute('download')) {
+        // ignore click for browser’s default behavior
+        return;
+    }
+    if (!(0, _islocalurl.isLocalURL)(href)) {
+        if (replace) {
+            // browser default behavior does not replace the history state
+            // so we need to do it manually
+            e.preventDefault();
+            location.replace(href);
+        }
+        // ignore click for browser’s default behavior
+        return;
+    }
+    e.preventDefault();
+    if (onNavigate) {
+        let isDefaultPrevented = false;
+        onNavigate({
+            preventDefault: ()=>{
+                isDefaultPrevented = true;
+            }
+        });
+        if (isDefaultPrevented) {
+            return;
+        }
+    }
+    _react.default.startTransition(()=>{
+        (0, _approuterinstance.dispatchNavigateAction)(as || href, replace ? 'replace' : 'push', scroll != null ? scroll : true, linkInstanceRef.current);
+    });
+}
+function formatStringOrUrl(urlObjOrString) {
+    if (typeof urlObjOrString === 'string') {
+        return urlObjOrString;
+    }
+    return (0, _formaturl.formatUrl)(urlObjOrString);
+}
+function LinkComponent(props) {
+    const [linkStatus, setOptimisticLinkStatus] = (0, _react.useOptimistic)(_links.IDLE_LINK_STATUS);
+    let children;
+    const linkInstanceRef = (0, _react.useRef)(null);
+    const { href: hrefProp, as: asProp, children: childrenProp, prefetch: prefetchProp = null, passHref, replace, shallow, scroll, onClick, onMouseEnter: onMouseEnterProp, onTouchStart: onTouchStartProp, legacyBehavior = false, onNavigate, ref: forwardedRef, unstable_dynamicOnHover, ...restProps } = props;
+    children = childrenProp;
+    if (legacyBehavior && (typeof children === 'string' || typeof children === 'number')) {
+        children = /*#__PURE__*/ (0, _jsxruntime.jsx)("a", {
+            children: children
+        });
+    }
+    const router = _react.default.useContext(_approutercontextsharedruntime.AppRouterContext);
+    const prefetchEnabled = prefetchProp !== false;
+    const fetchStrategy = prefetchProp !== false ? getFetchStrategyFromPrefetchProp(prefetchProp) : _segmentcache.FetchStrategy.PPR;
+    if ("TURBOPACK compile-time truthy", 1) {
+        function createPropError(args) {
+            return Object.defineProperty(new Error("Failed prop type: The prop `" + args.key + "` expects a " + args.expected + " in `<Link>`, but got `" + args.actual + "` instead." + (typeof window !== 'undefined' ? "\nOpen your browser's console to view the Component stack trace." : '')), "__NEXT_ERROR_CODE", {
+                value: "E319",
+                enumerable: false,
+                configurable: true
+            });
+        }
+        // TypeScript trick for type-guarding:
+        const requiredPropsGuard = {
+            href: true
+        };
+        const requiredProps = Object.keys(requiredPropsGuard);
+        requiredProps.forEach((key)=>{
+            if (key === 'href') {
+                if (props[key] == null || typeof props[key] !== 'string' && typeof props[key] !== 'object') {
+                    throw createPropError({
+                        key,
+                        expected: '`string` or `object`',
+                        actual: props[key] === null ? 'null' : typeof props[key]
+                    });
+                }
+            } else {
+                // TypeScript trick for type-guarding:
+                // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                const _ = key;
+            }
+        });
+        // TypeScript trick for type-guarding:
+        const optionalPropsGuard = {
+            as: true,
+            replace: true,
+            scroll: true,
+            shallow: true,
+            passHref: true,
+            prefetch: true,
+            unstable_dynamicOnHover: true,
+            onClick: true,
+            onMouseEnter: true,
+            onTouchStart: true,
+            legacyBehavior: true,
+            onNavigate: true
+        };
+        const optionalProps = Object.keys(optionalPropsGuard);
+        optionalProps.forEach((key)=>{
+            const valType = typeof props[key];
+            if (key === 'as') {
+                if (props[key] && valType !== 'string' && valType !== 'object') {
+                    throw createPropError({
+                        key,
+                        expected: '`string` or `object`',
+                        actual: valType
+                    });
+                }
+            } else if (key === 'onClick' || key === 'onMouseEnter' || key === 'onTouchStart' || key === 'onNavigate') {
+                if (props[key] && valType !== 'function') {
+                    throw createPropError({
+                        key,
+                        expected: '`function`',
+                        actual: valType
+                    });
+                }
+            } else if (key === 'replace' || key === 'scroll' || key === 'shallow' || key === 'passHref' || key === 'legacyBehavior' || key === 'unstable_dynamicOnHover') {
+                if (props[key] != null && valType !== 'boolean') {
+                    throw createPropError({
+                        key,
+                        expected: '`boolean`',
+                        actual: valType
+                    });
+                }
+            } else if (key === 'prefetch') {
+                if (props[key] != null && valType !== 'boolean' && props[key] !== 'auto' && props[key] !== 'unstable_forceStale') {
+                    throw createPropError({
+                        key,
+                        expected: '`boolean | "auto" | "unstable_forceStale"`',
+                        actual: valType
+                    });
+                }
+            } else {
+                // TypeScript trick for type-guarding:
+                // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                const _ = key;
+            }
+        });
+    }
+    if ("TURBOPACK compile-time truthy", 1) {
+        if (props.locale) {
+            (0, _warnonce.warnOnce)('The `locale` prop is not supported in `next/link` while using the `app` router. Read more about app router internalization: https://nextjs.org/docs/app/building-your-application/routing/internationalization');
+        }
+        if (!asProp) {
+            let href;
+            if (typeof hrefProp === 'string') {
+                href = hrefProp;
+            } else if (typeof hrefProp === 'object' && typeof hrefProp.pathname === 'string') {
+                href = hrefProp.pathname;
+            }
+            if (href) {
+                const hasDynamicSegment = href.split('/').some((segment)=>segment.startsWith('[') && segment.endsWith(']'));
+                if (hasDynamicSegment) {
+                    throw Object.defineProperty(new Error("Dynamic href `" + href + "` found in <Link> while using the `/app` router, this is not supported. Read more: https://nextjs.org/docs/messages/app-dir-dynamic-href"), "__NEXT_ERROR_CODE", {
+                        value: "E267",
+                        enumerable: false,
+                        configurable: true
+                    });
+                }
+            }
+        }
+    }
+    const { href, as } = _react.default.useMemo({
+        "LinkComponent.useMemo": ()=>{
+            const resolvedHref = formatStringOrUrl(hrefProp);
+            return {
+                href: resolvedHref,
+                as: asProp ? formatStringOrUrl(asProp) : resolvedHref
+            };
+        }
+    }["LinkComponent.useMemo"], [
+        hrefProp,
+        asProp
+    ]);
+    // This will return the first child, if multiple are provided it will throw an error
+    let child;
+    if (legacyBehavior) {
+        if ("TURBOPACK compile-time truthy", 1) {
+            if (onClick) {
+                console.warn('"onClick" was passed to <Link> with `href` of `' + hrefProp + '` but "legacyBehavior" was set. The legacy behavior requires onClick be set on the child of next/link');
+            }
+            if (onMouseEnterProp) {
+                console.warn('"onMouseEnter" was passed to <Link> with `href` of `' + hrefProp + '` but "legacyBehavior" was set. The legacy behavior requires onMouseEnter be set on the child of next/link');
+            }
+            try {
+                child = _react.default.Children.only(children);
+            } catch (err) {
+                if (!children) {
+                    throw Object.defineProperty(new Error("No children were passed to <Link> with `href` of `" + hrefProp + "` but one child is required https://nextjs.org/docs/messages/link-no-children"), "__NEXT_ERROR_CODE", {
+                        value: "E320",
+                        enumerable: false,
+                        configurable: true
+                    });
+                }
+                throw Object.defineProperty(new Error("Multiple children were passed to <Link> with `href` of `" + hrefProp + "` but only one child is supported https://nextjs.org/docs/messages/link-multiple-children" + (typeof window !== 'undefined' ? " \nOpen your browser's console to view the Component stack trace." : '')), "__NEXT_ERROR_CODE", {
+                    value: "E266",
+                    enumerable: false,
+                    configurable: true
+                });
+            }
+        } else //TURBOPACK unreachable
+        ;
+    } else {
+        if ("TURBOPACK compile-time truthy", 1) {
+            if ((children == null ? void 0 : children.type) === 'a') {
+                throw Object.defineProperty(new Error('Invalid <Link> with <a> child. Please remove <a> or use <Link legacyBehavior>.\nLearn more: https://nextjs.org/docs/messages/invalid-new-link-with-extra-anchor'), "__NEXT_ERROR_CODE", {
+                    value: "E209",
+                    enumerable: false,
+                    configurable: true
+                });
+            }
+        }
+    }
+    const childRef = legacyBehavior ? child && typeof child === 'object' && child.ref : forwardedRef;
+    // Use a callback ref to attach an IntersectionObserver to the anchor tag on
+    // mount. In the future we will also use this to keep track of all the
+    // currently mounted <Link> instances, e.g. so we can re-prefetch them after
+    // a revalidation or refresh.
+    const observeLinkVisibilityOnMount = _react.default.useCallback({
+        "LinkComponent.useCallback[observeLinkVisibilityOnMount]": (element)=>{
+            if (router !== null) {
+                linkInstanceRef.current = (0, _links.mountLinkInstance)(element, href, router, fetchStrategy, prefetchEnabled, setOptimisticLinkStatus);
+            }
+            return ({
+                "LinkComponent.useCallback[observeLinkVisibilityOnMount]": ()=>{
+                    if (linkInstanceRef.current) {
+                        (0, _links.unmountLinkForCurrentNavigation)(linkInstanceRef.current);
+                        linkInstanceRef.current = null;
+                    }
+                    (0, _links.unmountPrefetchableInstance)(element);
+                }
+            })["LinkComponent.useCallback[observeLinkVisibilityOnMount]"];
+        }
+    }["LinkComponent.useCallback[observeLinkVisibilityOnMount]"], [
+        prefetchEnabled,
+        href,
+        router,
+        fetchStrategy,
+        setOptimisticLinkStatus
+    ]);
+    const mergedRef = (0, _usemergedref.useMergedRef)(observeLinkVisibilityOnMount, childRef);
+    const childProps = {
+        ref: mergedRef,
+        onClick (e) {
+            if ("TURBOPACK compile-time truthy", 1) {
+                if (!e) {
+                    throw Object.defineProperty(new Error('Component rendered inside next/link has to pass click event to "onClick" prop.'), "__NEXT_ERROR_CODE", {
+                        value: "E312",
+                        enumerable: false,
+                        configurable: true
+                    });
+                }
+            }
+            if (!legacyBehavior && typeof onClick === 'function') {
+                onClick(e);
+            }
+            if (legacyBehavior && child.props && typeof child.props.onClick === 'function') {
+                child.props.onClick(e);
+            }
+            if (!router) {
+                return;
+            }
+            if (e.defaultPrevented) {
+                return;
+            }
+            linkClicked(e, href, as, linkInstanceRef, replace, scroll, onNavigate);
+        },
+        onMouseEnter (e) {
+            if (!legacyBehavior && typeof onMouseEnterProp === 'function') {
+                onMouseEnterProp(e);
+            }
+            if (legacyBehavior && child.props && typeof child.props.onMouseEnter === 'function') {
+                child.props.onMouseEnter(e);
+            }
+            if (!router) {
+                return;
+            }
+            if ("TURBOPACK compile-time truthy", 1) {
+                return;
+            }
+            //TURBOPACK unreachable
+            ;
+            const upgradeToDynamicPrefetch = undefined;
+        },
+        onTouchStart: ("TURBOPACK compile-time falsy", 0) ? "TURBOPACK unreachable" : function onTouchStart(e) {
+            if (!legacyBehavior && typeof onTouchStartProp === 'function') {
+                onTouchStartProp(e);
+            }
+            if (legacyBehavior && child.props && typeof child.props.onTouchStart === 'function') {
+                child.props.onTouchStart(e);
+            }
+            if (!router) {
+                return;
+            }
+            if (!prefetchEnabled) {
+                return;
+            }
+            const upgradeToDynamicPrefetch = unstable_dynamicOnHover === true;
+            (0, _links.onNavigationIntent)(e.currentTarget, upgradeToDynamicPrefetch);
+        }
+    };
+    // If child is an <a> tag and doesn't have a href attribute, or if the 'passHref' property is
+    // defined, we specify the current 'href', so that repetition is not needed by the user.
+    // If the url is absolute, we can bypass the logic to prepend the basePath.
+    if ((0, _utils.isAbsoluteUrl)(as)) {
+        childProps.href = as;
+    } else if (!legacyBehavior || passHref || child.type === 'a' && !('href' in child.props)) {
+        childProps.href = (0, _addbasepath.addBasePath)(as);
+    }
+    let link;
+    if (legacyBehavior) {
+        if ("TURBOPACK compile-time truthy", 1) {
+            (0, _erroronce.errorOnce)('`legacyBehavior` is deprecated and will be removed in a future ' + 'release. A codemod is available to upgrade your components:\n\n' + 'npx @next/codemod@latest new-link .\n\n' + 'Learn more: https://nextjs.org/docs/app/building-your-application/upgrading/codemods#remove-a-tags-from-link-components');
+        }
+        link = /*#__PURE__*/ _react.default.cloneElement(child, childProps);
+    } else {
+        link = /*#__PURE__*/ (0, _jsxruntime.jsx)("a", {
+            ...restProps,
+            ...childProps,
+            children: children
+        });
+    }
+    return /*#__PURE__*/ (0, _jsxruntime.jsx)(LinkStatusContext.Provider, {
+        value: linkStatus,
+        children: link
+    });
+}
+const LinkStatusContext = /*#__PURE__*/ (0, _react.createContext)(_links.IDLE_LINK_STATUS);
+const useLinkStatus = ()=>{
+    return (0, _react.useContext)(LinkStatusContext);
+};
+function getFetchStrategyFromPrefetchProp(prefetchProp) {
+    if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+    ;
+    else {
+        return prefetchProp === null || prefetchProp === 'auto' ? _segmentcache.FetchStrategy.PPR : // (although invalid values should've been filtered out by prop validation in dev)
+        _segmentcache.FetchStrategy.Full;
+    }
+}
+if ((typeof exports.default === 'function' || typeof exports.default === 'object' && exports.default !== null) && typeof exports.default.__esModule === 'undefined') {
+    Object.defineProperty(exports.default, '__esModule', {
+        value: true
+    });
+    Object.assign(exports.default, exports);
+    module.exports = exports.default;
+} //# sourceMappingURL=link.js.map
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/navigation.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+module.exports = __turbopack_context__.r("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/client/components/navigation.js [app-client] (ecmascript)");
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/void-elements/index.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+/**
+ * This file automatically generated from `pre-publish.js`.
+ * Do not manually edit.
+ */ module.exports = {
+    "area": true,
+    "base": true,
+    "br": true,
+    "col": true,
+    "embed": true,
+    "hr": true,
+    "img": true,
+    "input": true,
+    "link": true,
+    "meta": true,
+    "param": true,
+    "source": true,
+    "track": true,
+    "wbr": true
+};
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/html-parse-stringify/dist/html-parse-stringify.module.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$void$2d$elements$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/void-elements/index.js [app-client] (ecmascript)");
+;
+var t = /\s([^'"/\s><]+?)[\s/>]|([^\s=]+)=\s?(".*?"|'.*?')/g;
+function n(n) {
+    var r = {
+        type: "tag",
+        name: "",
+        voidElement: !1,
+        attrs: {},
+        children: []
+    }, i = n.match(/<\/?([^\s]+?)[/\s>]/);
+    if (i && (r.name = i[1], (__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$void$2d$elements$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"][i[1]] || "/" === n.charAt(n.length - 2)) && (r.voidElement = !0), r.name.startsWith("!--"))) {
+        var s = n.indexOf("--\x3e");
+        return {
+            type: "comment",
+            comment: -1 !== s ? n.slice(4, s) : ""
+        };
+    }
+    for(var a = new RegExp(t), c = null; null !== (c = a.exec(n));)if (c[0].trim()) if (c[1]) {
+        var o = c[1].trim(), l = [
+            o,
+            ""
+        ];
+        o.indexOf("=") > -1 && (l = o.split("=")), r.attrs[l[0]] = l[1], a.lastIndex--;
+    } else c[2] && (r.attrs[c[2]] = c[3].trim().substring(1, c[3].length - 1));
+    return r;
+}
+var r = /<[a-zA-Z0-9\-\!\/](?:"[^"]*"|'[^']*'|[^'">])*>/g, i = /^\s*$/, s = Object.create(null);
+function a(e, t) {
+    switch(t.type){
+        case "text":
+            return e + t.content;
+        case "tag":
+            return e += "<" + t.name + (t.attrs ? function(e) {
+                var t = [];
+                for(var n in e)t.push(n + '="' + e[n] + '"');
+                return t.length ? " " + t.join(" ") : "";
+            }(t.attrs) : "") + (t.voidElement ? "/>" : ">"), t.voidElement ? e : e + t.children.reduce(a, "") + "</" + t.name + ">";
+        case "comment":
+            return e + "\x3c!--" + t.comment + "--\x3e";
+    }
+}
+var c = {
+    parse: function(e, t) {
+        t || (t = {}), t.components || (t.components = s);
+        var a, c = [], o = [], l = -1, m = !1;
+        if (0 !== e.indexOf("<")) {
+            var u = e.indexOf("<");
+            c.push({
+                type: "text",
+                content: -1 === u ? e : e.substring(0, u)
+            });
+        }
+        return e.replace(r, function(r, s) {
+            if (m) {
+                if (r !== "</" + a.name + ">") return;
+                m = !1;
+            }
+            var u, f = "/" !== r.charAt(1), h = r.startsWith("\x3c!--"), p = s + r.length, d = e.charAt(p);
+            if (h) {
+                var v = n(r);
+                return l < 0 ? (c.push(v), c) : ((u = o[l]).children.push(v), c);
+            }
+            if (f && (l++, "tag" === (a = n(r)).type && t.components[a.name] && (a.type = "component", m = !0), a.voidElement || m || !d || "<" === d || a.children.push({
+                type: "text",
+                content: e.slice(p, e.indexOf("<", p))
+            }), 0 === l && c.push(a), (u = o[l - 1]) && u.children.push(a), o[l] = a), (!f || a.voidElement) && (l > -1 && (a.voidElement || a.name === r.slice(2, -1)) && (l--, a = -1 === l ? c : o[l]), !m && "<" !== d && d)) {
+                u = -1 === l ? c : o[l].children;
+                var x = e.indexOf("<", p), g = e.slice(p, -1 === x ? void 0 : x);
+                i.test(g) && (g = " "), (x > -1 && l + u.length >= 0 || " " !== g) && u.push({
+                    type: "text",
+                    content: g
+                });
+            }
+        }), c;
+    },
+    stringify: function(e) {
+        return e.reduce(function(e, t) {
+            return e + a("", t);
+        }, "");
+    }
+};
+const __TURBOPACK__default__export__ = c;
+ //# sourceMappingURL=html-parse-stringify.module.js.map
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/utils.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "getDisplayName",
+    ()=>getDisplayName,
+    "hasLoadedNamespace",
+    ()=>hasLoadedNamespace,
+    "isObject",
+    ()=>isObject,
+    "isString",
+    ()=>isString,
+    "loadLanguages",
+    ()=>loadLanguages,
+    "loadNamespaces",
+    ()=>loadNamespaces,
+    "warn",
+    ()=>warn,
+    "warnOnce",
+    ()=>warnOnce
+]);
+const warn = (i18n, code, msg, rest)=>{
+    var _i18n_services_logger, _i18n_services, _i18n_services_logger1, _i18n_services1, _console;
+    const args = [
+        msg,
+        {
+            code,
+            ...rest || {}
+        }
+    ];
+    if (i18n === null || i18n === void 0 ? void 0 : (_i18n_services = i18n.services) === null || _i18n_services === void 0 ? void 0 : (_i18n_services_logger = _i18n_services.logger) === null || _i18n_services_logger === void 0 ? void 0 : _i18n_services_logger.forward) {
+        return i18n.services.logger.forward(args, 'warn', 'react-i18next::', true);
+    }
+    if (isString(args[0])) args[0] = "react-i18next:: ".concat(args[0]);
+    if (i18n === null || i18n === void 0 ? void 0 : (_i18n_services1 = i18n.services) === null || _i18n_services1 === void 0 ? void 0 : (_i18n_services_logger1 = _i18n_services1.logger) === null || _i18n_services_logger1 === void 0 ? void 0 : _i18n_services_logger1.warn) {
+        i18n.services.logger.warn(...args);
+    } else if ((_console = console) === null || _console === void 0 ? void 0 : _console.warn) {
+        console.warn(...args);
+    }
+};
+const alreadyWarned = {};
+const warnOnce = (i18n, code, msg, rest)=>{
+    if (isString(msg) && alreadyWarned[msg]) return;
+    if (isString(msg)) alreadyWarned[msg] = new Date();
+    warn(i18n, code, msg, rest);
+};
+const loadedClb = (i18n, cb)=>()=>{
+        if (i18n.isInitialized) {
+            cb();
+        } else {
+            const initialized = ()=>{
+                setTimeout(()=>{
+                    i18n.off('initialized', initialized);
+                }, 0);
+                cb();
+            };
+            i18n.on('initialized', initialized);
+        }
+    };
+const loadNamespaces = (i18n, ns, cb)=>{
+    i18n.loadNamespaces(ns, loadedClb(i18n, cb));
+};
+const loadLanguages = (i18n, lng, ns, cb)=>{
+    if (isString(ns)) ns = [
+        ns
+    ];
+    if (i18n.options.preload && i18n.options.preload.indexOf(lng) > -1) return loadNamespaces(i18n, ns, cb);
+    ns.forEach((n)=>{
+        if (i18n.options.ns.indexOf(n) < 0) i18n.options.ns.push(n);
+    });
+    i18n.loadLanguages(lng, loadedClb(i18n, cb));
+};
+const hasLoadedNamespace = function(ns, i18n) {
+    let options = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
+    if (!i18n.languages || !i18n.languages.length) {
+        warnOnce(i18n, 'NO_LANGUAGES', 'i18n.languages were undefined or empty', {
+            languages: i18n.languages
+        });
+        return true;
+    }
+    return i18n.hasLoadedNamespace(ns, {
+        lng: options.lng,
+        precheck: (i18nInstance, loadNotPending)=>{
+            if (options.bindI18n && options.bindI18n.indexOf('languageChanging') > -1 && i18nInstance.services.backendConnector.backend && i18nInstance.isLanguageChangingTo && !loadNotPending(i18nInstance.isLanguageChangingTo, ns)) return false;
+        }
+    });
+};
+const getDisplayName = (Component)=>Component.displayName || Component.name || (isString(Component) && Component.length > 0 ? Component : 'Unknown');
+const isString = (obj)=>typeof obj === 'string';
+const isObject = (obj)=>typeof obj === 'object' && obj !== null;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/unescape.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "unescape",
+    ()=>unescape
+]);
+const matchHtmlEntity = /&(?:amp|#38|lt|#60|gt|#62|apos|#39|quot|#34|nbsp|#160|copy|#169|reg|#174|hellip|#8230|#x2F|#47);/g;
+const htmlEntities = {
+    '&amp;': '&',
+    '&#38;': '&',
+    '&lt;': '<',
+    '&#60;': '<',
+    '&gt;': '>',
+    '&#62;': '>',
+    '&apos;': "'",
+    '&#39;': "'",
+    '&quot;': '"',
+    '&#34;': '"',
+    '&nbsp;': ' ',
+    '&#160;': ' ',
+    '&copy;': '©',
+    '&#169;': '©',
+    '&reg;': '®',
+    '&#174;': '®',
+    '&hellip;': '…',
+    '&#8230;': '…',
+    '&#x2F;': '/',
+    '&#47;': '/'
+};
+const unescapeHtmlEntity = (m)=>htmlEntities[m];
+const unescape = (text)=>text.replace(matchHtmlEntity, unescapeHtmlEntity);
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/defaults.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "getDefaults",
+    ()=>getDefaults,
+    "setDefaults",
+    ()=>setDefaults
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$unescape$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/unescape.js [app-client] (ecmascript)");
+;
+let defaultOptions = {
+    bindI18n: 'languageChanged',
+    bindI18nStore: '',
+    transEmptyNodeValue: '',
+    transSupportBasicHtmlNodes: true,
+    transWrapTextNodes: '',
+    transKeepBasicHtmlNodesFor: [
+        'br',
+        'strong',
+        'i',
+        'p'
+    ],
+    useSuspense: true,
+    unescape: __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$unescape$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["unescape"]
+};
+const setDefaults = function() {
+    let options = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
+    defaultOptions = {
+        ...defaultOptions,
+        ...options
+    };
+};
+const getDefaults = ()=>defaultOptions;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/i18nInstance.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "getI18n",
+    ()=>getI18n,
+    "setI18n",
+    ()=>setI18n
+]);
+let i18nInstance;
+const setI18n = (instance)=>{
+    i18nInstance = instance;
+};
+const getI18n = ()=>i18nInstance;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/TransWithoutContext.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Trans",
+    ()=>Trans,
+    "nodesToString",
+    ()=>nodesToString
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$html$2d$parse$2d$stringify$2f$dist$2f$html$2d$parse$2d$stringify$2e$module$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/html-parse-stringify/dist/html-parse-stringify.module.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/utils.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$defaults$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/defaults.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$i18nInstance$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/i18nInstance.js [app-client] (ecmascript)");
+;
+;
+;
+;
+;
+const hasChildren = (node, checkLength)=>{
+    var _node_props;
+    if (!node) return false;
+    var _node_props_children;
+    const base = (_node_props_children = (_node_props = node.props) === null || _node_props === void 0 ? void 0 : _node_props.children) !== null && _node_props_children !== void 0 ? _node_props_children : node.children;
+    if (checkLength) return base.length > 0;
+    return !!base;
+};
+const getChildren = (node)=>{
+    var _node_props, _node_props1;
+    if (!node) return [];
+    var _node_props_children;
+    const children = (_node_props_children = (_node_props = node.props) === null || _node_props === void 0 ? void 0 : _node_props.children) !== null && _node_props_children !== void 0 ? _node_props_children : node.children;
+    return ((_node_props1 = node.props) === null || _node_props1 === void 0 ? void 0 : _node_props1.i18nIsDynamicList) ? getAsArray(children) : children;
+};
+const hasValidReactChildren = (children)=>Array.isArray(children) && children.every(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isValidElement"]);
+const getAsArray = (data)=>Array.isArray(data) ? data : [
+        data
+    ];
+const mergeProps = (source, target)=>{
+    const newTarget = {
+        ...target
+    };
+    newTarget.props = Object.assign(source.props, target.props);
+    return newTarget;
+};
+const nodesToString = (children, i18nOptions, i18n, i18nKey)=>{
+    if (!children) return '';
+    let stringNode = '';
+    const childrenArray = getAsArray(children);
+    var _i18nOptions_transKeepBasicHtmlNodesFor;
+    const keepArray = (i18nOptions === null || i18nOptions === void 0 ? void 0 : i18nOptions.transSupportBasicHtmlNodes) ? (_i18nOptions_transKeepBasicHtmlNodesFor = i18nOptions.transKeepBasicHtmlNodesFor) !== null && _i18nOptions_transKeepBasicHtmlNodesFor !== void 0 ? _i18nOptions_transKeepBasicHtmlNodesFor : [] : [];
+    childrenArray.forEach((child, childIndex)=>{
+        if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isString"])(child)) {
+            stringNode += "".concat(child);
+            return;
+        }
+        if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isValidElement"])(child)) {
+            const { props, type } = child;
+            const childPropsCount = Object.keys(props).length;
+            const shouldKeepChild = keepArray.indexOf(type) > -1;
+            const childChildren = props.children;
+            if (!childChildren && shouldKeepChild && !childPropsCount) {
+                stringNode += "<".concat(type, "/>");
+                return;
+            }
+            if (!childChildren && (!shouldKeepChild || childPropsCount) || props.i18nIsDynamicList) {
+                stringNode += "<".concat(childIndex, "></").concat(childIndex, ">");
+                return;
+            }
+            if (shouldKeepChild && childPropsCount === 1 && (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isString"])(childChildren)) {
+                stringNode += "<".concat(type, ">").concat(childChildren, "</").concat(type, ">");
+                return;
+            }
+            const content = nodesToString(childChildren, i18nOptions, i18n, i18nKey);
+            stringNode += "<".concat(childIndex, ">").concat(content, "</").concat(childIndex, ">");
+            return;
+        }
+        if (child === null) {
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["warn"])(i18n, 'TRANS_NULL_VALUE', "Passed in a null value as child", {
+                i18nKey
+            });
+            return;
+        }
+        if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isObject"])(child)) {
+            const { format, ...clone } = child;
+            const keys = Object.keys(clone);
+            if (keys.length === 1) {
+                const value = format ? "".concat(keys[0], ", ").concat(format) : keys[0];
+                stringNode += "{{".concat(value, "}}");
+                return;
+            }
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["warn"])(i18n, 'TRANS_INVALID_OBJ', "Invalid child - Object should only have keys {{ value, format }} (format is optional).", {
+                i18nKey,
+                child
+            });
+            return;
+        }
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["warn"])(i18n, 'TRANS_INVALID_VAR', "Passed in a variable like {number} - pass variables for interpolation as full objects like {{number}}.", {
+            i18nKey,
+            child
+        });
+    });
+    return stringNode;
+};
+const renderNodes = (children, knownComponentsMap, targetString, i18n, i18nOptions, combinedTOpts, shouldUnescape)=>{
+    if (targetString === '') return [];
+    const keepArray = i18nOptions.transKeepBasicHtmlNodesFor || [];
+    const emptyChildrenButNeedsHandling = targetString && new RegExp(keepArray.map((keep)=>"<".concat(keep)).join('|')).test(targetString);
+    if (!children && !knownComponentsMap && !emptyChildrenButNeedsHandling && !shouldUnescape) return [
+        targetString
+    ];
+    const data = knownComponentsMap !== null && knownComponentsMap !== void 0 ? knownComponentsMap : {};
+    const getData = (childs)=>{
+        const childrenArray = getAsArray(childs);
+        childrenArray.forEach((child)=>{
+            if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isString"])(child)) return;
+            if (hasChildren(child)) getData(getChildren(child));
+            else if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isObject"])(child) && !(0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isValidElement"])(child)) Object.assign(data, child);
+        });
+    };
+    getData(children);
+    const ast = __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$html$2d$parse$2d$stringify$2f$dist$2f$html$2d$parse$2d$stringify$2e$module$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].parse("<0>".concat(targetString, "</0>"));
+    const opts = {
+        ...data,
+        ...combinedTOpts
+    };
+    const renderInner = (child, node, rootReactNode)=>{
+        var _child_props;
+        const childs = getChildren(child);
+        const mappedChildren = mapAST(childs, node.children, rootReactNode);
+        return hasValidReactChildren(childs) && mappedChildren.length === 0 || ((_child_props = child.props) === null || _child_props === void 0 ? void 0 : _child_props.i18nIsDynamicList) ? childs : mappedChildren;
+    };
+    const pushTranslatedJSX = (child, inner, mem, i, isVoid)=>{
+        if (child.dummy) {
+            child.children = inner;
+            mem.push((0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cloneElement"])(child, {
+                key: i
+            }, isVoid ? undefined : inner));
+        } else {
+            mem.push(...__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Children"].map([
+                child
+            ], (c)=>{
+                const props = {
+                    ...c.props
+                };
+                delete props.i18nIsDynamicList;
+                var _c_props_ref;
+                return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"])(c.type, {
+                    ...props,
+                    key: i,
+                    ref: (_c_props_ref = c.props.ref) !== null && _c_props_ref !== void 0 ? _c_props_ref : c.ref
+                }, isVoid ? null : inner);
+            }));
+        }
+    };
+    const mapAST = (reactNode, astNode, rootReactNode)=>{
+        const reactNodes = getAsArray(reactNode);
+        const astNodes = getAsArray(astNode);
+        return astNodes.reduce((mem, node, i)=>{
+            var _node_children_, _node_children;
+            const translationContent = ((_node_children = node.children) === null || _node_children === void 0 ? void 0 : (_node_children_ = _node_children[0]) === null || _node_children_ === void 0 ? void 0 : _node_children_.content) && i18n.services.interpolator.interpolate(node.children[0].content, opts, i18n.language);
+            if (node.type === 'tag') {
+                let tmp = reactNodes[parseInt(node.name, 10)];
+                if (!tmp && knownComponentsMap) tmp = knownComponentsMap[node.name];
+                if (rootReactNode.length === 1 && !tmp) tmp = rootReactNode[0][node.name];
+                if (!tmp) tmp = {};
+                const child = Object.keys(node.attrs).length !== 0 ? mergeProps({
+                    props: node.attrs
+                }, tmp) : tmp;
+                const isElement = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isValidElement"])(child);
+                const isValidTranslationWithChildren = isElement && hasChildren(node, true) && !node.voidElement;
+                const isEmptyTransWithHTML = emptyChildrenButNeedsHandling && (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isObject"])(child) && child.dummy && !isElement;
+                const isKnownComponent = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isObject"])(knownComponentsMap) && Object.hasOwnProperty.call(knownComponentsMap, node.name);
+                if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isString"])(child)) {
+                    const value = i18n.services.interpolator.interpolate(child, opts, i18n.language);
+                    mem.push(value);
+                } else if (hasChildren(child) || isValidTranslationWithChildren) {
+                    const inner = renderInner(child, node, rootReactNode);
+                    pushTranslatedJSX(child, inner, mem, i);
+                } else if (isEmptyTransWithHTML) {
+                    const inner = mapAST(reactNodes, node.children, rootReactNode);
+                    pushTranslatedJSX(child, inner, mem, i);
+                } else if (Number.isNaN(parseFloat(node.name))) {
+                    if (isKnownComponent) {
+                        const inner = renderInner(child, node, rootReactNode);
+                        pushTranslatedJSX(child, inner, mem, i, node.voidElement);
+                    } else if (i18nOptions.transSupportBasicHtmlNodes && keepArray.indexOf(node.name) > -1) {
+                        if (node.voidElement) {
+                            mem.push((0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"])(node.name, {
+                                key: "".concat(node.name, "-").concat(i)
+                            }));
+                        } else {
+                            const inner = mapAST(reactNodes, node.children, rootReactNode);
+                            mem.push((0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"])(node.name, {
+                                key: "".concat(node.name, "-").concat(i)
+                            }, inner));
+                        }
+                    } else if (node.voidElement) {
+                        mem.push("<".concat(node.name, " />"));
+                    } else {
+                        const inner = mapAST(reactNodes, node.children, rootReactNode);
+                        mem.push("<".concat(node.name, ">").concat(inner, "</").concat(node.name, ">"));
+                    }
+                } else if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isObject"])(child) && !isElement) {
+                    const content = node.children[0] ? translationContent : null;
+                    if (content) mem.push(content);
+                } else {
+                    pushTranslatedJSX(child, translationContent, mem, i, node.children.length !== 1 || !translationContent);
+                }
+            } else if (node.type === 'text') {
+                const wrapTextNodes = i18nOptions.transWrapTextNodes;
+                const content = shouldUnescape ? i18nOptions.unescape(i18n.services.interpolator.interpolate(node.content, opts, i18n.language)) : i18n.services.interpolator.interpolate(node.content, opts, i18n.language);
+                if (wrapTextNodes) {
+                    mem.push((0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"])(wrapTextNodes, {
+                        key: "".concat(node.name, "-").concat(i)
+                    }, content));
+                } else {
+                    mem.push(content);
+                }
+            }
+            return mem;
+        }, []);
+    };
+    const result = mapAST([
+        {
+            dummy: true,
+            children: children || []
+        }
+    ], ast, getAsArray(children || []));
+    return getChildren(result[0]);
+};
+const fixComponentProps = (component, index, translation)=>{
+    const componentKey = component.key || index;
+    const comp = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cloneElement"])(component, {
+        key: componentKey
+    });
+    if (!comp.props || !comp.props.children || translation.indexOf("".concat(index, "/>")) < 0 && translation.indexOf("".concat(index, " />")) < 0) {
+        return comp;
+    }
+    function Componentized() {
+        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], null, comp);
+    }
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"])(Componentized, {
+        key: componentKey
+    });
+};
+const generateArrayComponents = (components, translation)=>components.map((c, index)=>fixComponentProps(c, index, translation));
+const generateObjectComponents = (components, translation)=>{
+    const componentMap = {};
+    Object.keys(components).forEach((c)=>{
+        Object.assign(componentMap, {
+            [c]: fixComponentProps(components[c], c, translation)
+        });
+    });
+    return componentMap;
+};
+const generateComponents = (components, translation, i18n, i18nKey)=>{
+    if (!components) return null;
+    if (Array.isArray(components)) {
+        return generateArrayComponents(components, translation);
+    }
+    if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isObject"])(components)) {
+        return generateObjectComponents(components, translation);
+    }
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["warnOnce"])(i18n, 'TRANS_INVALID_COMPONENTS', '<Trans /> "components" prop expects an object or array', {
+        i18nKey
+    });
+    return null;
+};
+const isComponentsMap = (object)=>{
+    if (!(0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isObject"])(object)) return false;
+    if (Array.isArray(object)) return false;
+    return Object.keys(object).reduce((acc, key)=>acc && Number.isNaN(Number.parseFloat(key)), true);
+};
+function Trans(param) {
+    let { children, count, parent, i18nKey, context, tOptions = {}, values, defaults, components, ns, i18n: i18nFromProps, t: tFromProps, shouldUnescape, ...additionalProps } = param;
+    var _i18n_options, _i18n_options1, _i18n_options_interpolation, _i18n_options2, _i18n_options_interpolation1, _i18n_options3;
+    const i18n = i18nFromProps || (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$i18nInstance$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getI18n"])();
+    if (!i18n) {
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["warnOnce"])(i18n, 'NO_I18NEXT_INSTANCE', "Trans: You need to pass in an i18next instance using i18nextReactModule", {
+            i18nKey
+        });
+        return children;
+    }
+    const t = tFromProps || i18n.t.bind(i18n) || ((k)=>k);
+    const reactI18nextOptions = {
+        ...(0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$defaults$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getDefaults"])(),
+        ...(_i18n_options = i18n.options) === null || _i18n_options === void 0 ? void 0 : _i18n_options.react
+    };
+    let namespaces = ns || t.ns || ((_i18n_options1 = i18n.options) === null || _i18n_options1 === void 0 ? void 0 : _i18n_options1.defaultNS);
+    namespaces = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isString"])(namespaces) ? [
+        namespaces
+    ] : namespaces || [
+        'translation'
+    ];
+    const nodeAsString = nodesToString(children, reactI18nextOptions, i18n, i18nKey);
+    const defaultValue = defaults || nodeAsString || reactI18nextOptions.transEmptyNodeValue || i18nKey;
+    const { hashTransKey } = reactI18nextOptions;
+    const key = i18nKey || (hashTransKey ? hashTransKey(nodeAsString || defaultValue) : nodeAsString || defaultValue);
+    if ((_i18n_options2 = i18n.options) === null || _i18n_options2 === void 0 ? void 0 : (_i18n_options_interpolation = _i18n_options2.interpolation) === null || _i18n_options_interpolation === void 0 ? void 0 : _i18n_options_interpolation.defaultVariables) {
+        values = values && Object.keys(values).length > 0 ? {
+            ...values,
+            ...i18n.options.interpolation.defaultVariables
+        } : {
+            ...i18n.options.interpolation.defaultVariables
+        };
+    }
+    const interpolationOverride = values || count !== undefined && !((_i18n_options3 = i18n.options) === null || _i18n_options3 === void 0 ? void 0 : (_i18n_options_interpolation1 = _i18n_options3.interpolation) === null || _i18n_options_interpolation1 === void 0 ? void 0 : _i18n_options_interpolation1.alwaysFormat) || !children ? tOptions.interpolation : {
+        interpolation: {
+            ...tOptions.interpolation,
+            prefix: '#$?',
+            suffix: '?$#'
+        }
+    };
+    const combinedTOpts = {
+        ...tOptions,
+        context: context || tOptions.context,
+        count,
+        ...values,
+        ...interpolationOverride,
+        defaultValue,
+        ns: namespaces
+    };
+    const translation = key ? t(key, combinedTOpts) : defaultValue;
+    const generatedComponents = generateComponents(components, translation, i18n, i18nKey);
+    let indexedChildren = generatedComponents || children;
+    let componentsMap = null;
+    if (isComponentsMap(generatedComponents)) {
+        componentsMap = generatedComponents;
+        indexedChildren = children;
+    }
+    const content = renderNodes(indexedChildren, componentsMap, translation, i18n, reactI18nextOptions, combinedTOpts, shouldUnescape);
+    const useAsParent = parent !== null && parent !== void 0 ? parent : reactI18nextOptions.defaultTransParent;
+    return useAsParent ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"])(useAsParent, additionalProps, content) : content;
+}
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/initReactI18next.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "initReactI18next",
+    ()=>initReactI18next
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$defaults$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/defaults.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$i18nInstance$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/i18nInstance.js [app-client] (ecmascript)");
+;
+;
+const initReactI18next = {
+    type: '3rdParty',
+    init (instance) {
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$defaults$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["setDefaults"])(instance.options.react);
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$i18nInstance$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["setI18n"])(instance);
+    }
+};
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/context.js [app-client] (ecmascript) <locals>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "I18nContext",
+    ()=>I18nContext,
+    "ReportNamespaces",
+    ()=>ReportNamespaces,
+    "composeInitialProps",
+    ()=>composeInitialProps,
+    "getInitialProps",
+    ()=>getInitialProps
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$defaults$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/defaults.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$i18nInstance$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/i18nInstance.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$initReactI18next$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/initReactI18next.js [app-client] (ecmascript)");
+;
+;
+;
+;
+;
+const I18nContext = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createContext"])();
+class ReportNamespaces {
+    addUsedNamespaces(namespaces) {
+        namespaces.forEach((ns)=>{
+            if (!this.usedNamespaces[ns]) this.usedNamespaces[ns] = true;
+        });
+    }
+    getUsedNamespaces() {
+        return Object.keys(this.usedNamespaces);
+    }
+    constructor(){
+        this.usedNamespaces = {};
+    }
+}
+const composeInitialProps = (ForComponent)=>async (ctx)=>{
+        var _ForComponent_getInitialProps;
+        var _ref;
+        const componentsInitialProps = (_ref = await ((_ForComponent_getInitialProps = ForComponent.getInitialProps) === null || _ForComponent_getInitialProps === void 0 ? void 0 : _ForComponent_getInitialProps.call(ForComponent, ctx))) !== null && _ref !== void 0 ? _ref : {};
+        const i18nInitialProps = getInitialProps();
+        return {
+            ...componentsInitialProps,
+            ...i18nInitialProps
+        };
+    };
+const getInitialProps = ()=>{
+    var _i18n_reportNamespaces;
+    const i18n = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$i18nInstance$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getI18n"])();
+    var _i18n_reportNamespaces_getUsedNamespaces;
+    const namespaces = (_i18n_reportNamespaces_getUsedNamespaces = (_i18n_reportNamespaces = i18n.reportNamespaces) === null || _i18n_reportNamespaces === void 0 ? void 0 : _i18n_reportNamespaces.getUsedNamespaces()) !== null && _i18n_reportNamespaces_getUsedNamespaces !== void 0 ? _i18n_reportNamespaces_getUsedNamespaces : [];
+    const ret = {};
+    const initialI18nStore = {};
+    i18n.languages.forEach((l)=>{
+        initialI18nStore[l] = {};
+        namespaces.forEach((ns)=>{
+            initialI18nStore[l][ns] = i18n.getResourceBundle(l, ns) || {};
+        });
+    });
+    ret.initialI18nStore = initialI18nStore;
+    ret.initialLanguage = i18n.language;
+    return ret;
+};
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/Trans.js [app-client] (ecmascript) <locals>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Trans",
+    ()=>Trans
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$TransWithoutContext$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/TransWithoutContext.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$context$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/context.js [app-client] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$i18nInstance$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/i18nInstance.js [app-client] (ecmascript)");
+;
+;
+;
+;
+function Trans(param) {
+    let { children, count, parent, i18nKey, context, tOptions = {}, values, defaults, components, ns, i18n: i18nFromProps, t: tFromProps, shouldUnescape, ...additionalProps } = param;
+    var _i18n_options;
+    const { i18n: i18nFromContext, defaultNS: defaultNSFromContext } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useContext"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$context$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["I18nContext"]) || {};
+    const i18n = i18nFromProps || i18nFromContext || (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$i18nInstance$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getI18n"])();
+    const t = tFromProps || (i18n === null || i18n === void 0 ? void 0 : i18n.t.bind(i18n));
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$TransWithoutContext$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Trans"])({
+        children,
+        count,
+        parent,
+        i18nKey,
+        context,
+        tOptions,
+        values,
+        defaults,
+        components,
+        ns: ns || (t === null || t === void 0 ? void 0 : t.ns) || defaultNSFromContext || (i18n === null || i18n === void 0 ? void 0 : (_i18n_options = i18n.options) === null || _i18n_options === void 0 ? void 0 : _i18n_options.defaultNS),
+        i18n,
+        t: tFromProps,
+        shouldUnescape,
+        ...additionalProps
+    });
+}
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/useTranslation.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "useTranslation",
+    ()=>useTranslation
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$context$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/context.js [app-client] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$i18nInstance$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/i18nInstance.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$defaults$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/defaults.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/utils.js [app-client] (ecmascript)");
+;
+;
+;
+const usePrevious = (value, ignore)=>{
+    const ref = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])();
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "usePrevious.useEffect": ()=>{
+            ref.current = ignore ? ref.current : value;
+        }
+    }["usePrevious.useEffect"], [
+        value,
+        ignore
+    ]);
+    return ref.current;
+};
+const alwaysNewT = (i18n, language, namespace, keyPrefix)=>i18n.getFixedT(language, namespace, keyPrefix);
+const useMemoizedT = (i18n, language, namespace, keyPrefix)=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])(alwaysNewT(i18n, language, namespace, keyPrefix), [
+        i18n,
+        language,
+        namespace,
+        keyPrefix
+    ]);
+const useTranslation = function(ns) {
+    let props = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+    var _i18n_options_react, _i18n_options, _i18n_reportNamespaces_addUsedNamespaces, _i18n_reportNamespaces;
+    const { i18n: i18nFromProps } = props;
+    const { i18n: i18nFromContext, defaultNS: defaultNSFromContext } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useContext"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$context$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["I18nContext"]) || {};
+    const i18n = i18nFromProps || i18nFromContext || (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$i18nInstance$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getI18n"])();
+    if (i18n && !i18n.reportNamespaces) i18n.reportNamespaces = new __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$context$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["ReportNamespaces"]();
+    if (!i18n) {
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["warnOnce"])(i18n, 'NO_I18NEXT_INSTANCE', 'useTranslation: You will need to pass in an i18next instance by using initReactI18next');
+        const notReadyT = (k, optsOrDefaultValue)=>{
+            if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isString"])(optsOrDefaultValue)) return optsOrDefaultValue;
+            if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isObject"])(optsOrDefaultValue) && (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isString"])(optsOrDefaultValue.defaultValue)) return optsOrDefaultValue.defaultValue;
+            return Array.isArray(k) ? k[k.length - 1] : k;
+        };
+        const retNotReady = [
+            notReadyT,
+            {},
+            false
+        ];
+        retNotReady.t = notReadyT;
+        retNotReady.i18n = {};
+        retNotReady.ready = false;
+        return retNotReady;
+    }
+    if ((_i18n_options_react = i18n.options.react) === null || _i18n_options_react === void 0 ? void 0 : _i18n_options_react.wait) (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["warnOnce"])(i18n, 'DEPRECATED_OPTION', 'useTranslation: It seems you are still using the old wait option, you may migrate to the new useSuspense behaviour.');
+    const i18nOptions = {
+        ...(0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$defaults$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getDefaults"])(),
+        ...i18n.options.react,
+        ...props
+    };
+    const { useSuspense, keyPrefix } = i18nOptions;
+    let namespaces = ns || defaultNSFromContext || ((_i18n_options = i18n.options) === null || _i18n_options === void 0 ? void 0 : _i18n_options.defaultNS);
+    namespaces = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isString"])(namespaces) ? [
+        namespaces
+    ] : namespaces || [
+        'translation'
+    ];
+    (_i18n_reportNamespaces_addUsedNamespaces = (_i18n_reportNamespaces = i18n.reportNamespaces).addUsedNamespaces) === null || _i18n_reportNamespaces_addUsedNamespaces === void 0 ? void 0 : _i18n_reportNamespaces_addUsedNamespaces.call(_i18n_reportNamespaces, namespaces);
+    const ready = (i18n.isInitialized || i18n.initializedStoreOnce) && namespaces.every((n)=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["hasLoadedNamespace"])(n, i18n, i18nOptions));
+    const memoGetT = useMemoizedT(i18n, props.lng || null, i18nOptions.nsMode === 'fallback' ? namespaces : namespaces[0], keyPrefix);
+    const getT = ()=>memoGetT;
+    const getNewT = ()=>alwaysNewT(i18n, props.lng || null, i18nOptions.nsMode === 'fallback' ? namespaces : namespaces[0], keyPrefix);
+    const [t, setT] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(getT);
+    let joinedNS = namespaces.join();
+    if (props.lng) joinedNS = "".concat(props.lng).concat(joinedNS);
+    const previousJoinedNS = usePrevious(joinedNS);
+    const isMounted = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(true);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "useTranslation.useEffect": ()=>{
+            const { bindI18n, bindI18nStore } = i18nOptions;
+            isMounted.current = true;
+            if (!ready && !useSuspense) {
+                if (props.lng) {
+                    (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["loadLanguages"])(i18n, props.lng, namespaces, {
+                        "useTranslation.useEffect": ()=>{
+                            if (isMounted.current) setT(getNewT);
+                        }
+                    }["useTranslation.useEffect"]);
+                } else {
+                    (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["loadNamespaces"])(i18n, namespaces, {
+                        "useTranslation.useEffect": ()=>{
+                            if (isMounted.current) setT(getNewT);
+                        }
+                    }["useTranslation.useEffect"]);
+                }
+            }
+            if (ready && previousJoinedNS && previousJoinedNS !== joinedNS && isMounted.current) {
+                setT(getNewT);
+            }
+            const boundReset = {
+                "useTranslation.useEffect.boundReset": ()=>{
+                    if (isMounted.current) setT(getNewT);
+                }
+            }["useTranslation.useEffect.boundReset"];
+            if (bindI18n) i18n === null || i18n === void 0 ? void 0 : i18n.on(bindI18n, boundReset);
+            if (bindI18nStore) i18n === null || i18n === void 0 ? void 0 : i18n.store.on(bindI18nStore, boundReset);
+            return ({
+                "useTranslation.useEffect": ()=>{
+                    isMounted.current = false;
+                    if (i18n && bindI18n) bindI18n === null || bindI18n === void 0 ? void 0 : bindI18n.split(' ').forEach({
+                        "useTranslation.useEffect": (e)=>i18n.off(e, boundReset)
+                    }["useTranslation.useEffect"]);
+                    if (bindI18nStore && i18n) bindI18nStore.split(' ').forEach({
+                        "useTranslation.useEffect": (e)=>i18n.store.off(e, boundReset)
+                    }["useTranslation.useEffect"]);
+                }
+            })["useTranslation.useEffect"];
+        }
+    }["useTranslation.useEffect"], [
+        i18n,
+        joinedNS
+    ]);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "useTranslation.useEffect": ()=>{
+            if (isMounted.current && ready) {
+                setT(getT);
+            }
+        }
+    }["useTranslation.useEffect"], [
+        i18n,
+        keyPrefix,
+        ready
+    ]);
+    const ret = [
+        t,
+        i18n,
+        ready
+    ];
+    ret.t = t;
+    ret.i18n = i18n;
+    ret.ready = ready;
+    if (ready) return ret;
+    if (!ready && !useSuspense) return ret;
+    throw new Promise((resolve)=>{
+        if (props.lng) {
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["loadLanguages"])(i18n, props.lng, namespaces, ()=>resolve());
+        } else {
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["loadNamespaces"])(i18n, namespaces, ()=>resolve());
+        }
+    });
+};
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/withTranslation.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "withTranslation",
+    ()=>withTranslation
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$useTranslation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/useTranslation.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/utils.js [app-client] (ecmascript)");
+;
+;
+;
+const withTranslation = function(ns) {
+    let options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+    return function Extend(WrappedComponent) {
+        function I18nextWithTranslation(param) {
+            let { forwardedRef, ...rest } = param;
+            const [t, i18n, ready] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$useTranslation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useTranslation"])(ns, {
+                ...rest,
+                keyPrefix: options.keyPrefix
+            });
+            const passDownProps = {
+                ...rest,
+                t,
+                i18n,
+                tReady: ready
+            };
+            if (options.withRef && forwardedRef) {
+                passDownProps.ref = forwardedRef;
+            } else if (!options.withRef && forwardedRef) {
+                passDownProps.forwardedRef = forwardedRef;
+            }
+            return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"])(WrappedComponent, passDownProps);
+        }
+        I18nextWithTranslation.displayName = "withI18nextTranslation(".concat((0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getDisplayName"])(WrappedComponent), ")");
+        I18nextWithTranslation.WrappedComponent = WrappedComponent;
+        const forwardRef = (props, ref)=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"])(I18nextWithTranslation, Object.assign({}, props, {
+                forwardedRef: ref
+            }));
+        return options.withRef ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["forwardRef"])(forwardRef) : I18nextWithTranslation;
+    };
+};
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/Translation.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "Translation",
+    ()=>Translation
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$useTranslation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/useTranslation.js [app-client] (ecmascript)");
+;
+const Translation = (param)=>{
+    let { ns, children, ...options } = param;
+    const [t, i18n, ready] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$useTranslation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useTranslation"])(ns, options);
+    return children(t, {
+        i18n,
+        lng: i18n.language
+    }, ready);
+};
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/I18nextProvider.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "I18nextProvider",
+    ()=>I18nextProvider
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$context$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/context.js [app-client] (ecmascript) <locals>");
+;
+;
+function I18nextProvider(param) {
+    let { i18n, defaultNS, children } = param;
+    const value = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
+        "I18nextProvider.useMemo[value]": ()=>({
+                i18n,
+                defaultNS
+            })
+    }["I18nextProvider.useMemo[value]"], [
+        i18n,
+        defaultNS
+    ]);
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$context$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["I18nContext"].Provider, {
+        value
+    }, children);
+}
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/useSSR.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "useSSR",
+    ()=>useSSR
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$context$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/context.js [app-client] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$i18nInstance$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/i18nInstance.js [app-client] (ecmascript)");
+;
+;
+const useSSR = function(initialI18nStore, initialLanguage) {
+    let props = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
+    var _i18n_options;
+    const { i18n: i18nFromProps } = props;
+    const { i18n: i18nFromContext } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useContext"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$context$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["I18nContext"]) || {};
+    const i18n = i18nFromProps || i18nFromContext || (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$i18nInstance$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getI18n"])();
+    if ((_i18n_options = i18n.options) === null || _i18n_options === void 0 ? void 0 : _i18n_options.isClone) return;
+    if (initialI18nStore && !i18n.initializedStoreOnce) {
+        i18n.services.resourceStore.data = initialI18nStore;
+        i18n.options.ns = Object.values(initialI18nStore).reduce((mem, lngResources)=>{
+            Object.keys(lngResources).forEach((ns)=>{
+                if (mem.indexOf(ns) < 0) mem.push(ns);
+            });
+            return mem;
+        }, i18n.options.ns);
+        i18n.initializedStoreOnce = true;
+        i18n.isInitialized = true;
+    }
+    if (initialLanguage && !i18n.initializedLanguageOnce) {
+        i18n.changeLanguage(initialLanguage);
+        i18n.initializedLanguageOnce = true;
+    }
+};
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/withSSR.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "withSSR",
+    ()=>withSSR
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$useSSR$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/useSSR.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$context$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/context.js [app-client] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/utils.js [app-client] (ecmascript)");
+;
+;
+;
+;
+const withSSR = ()=>function Extend(WrappedComponent) {
+        function I18nextWithSSR(param) {
+            let { initialI18nStore, initialLanguage, ...rest } = param;
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$useSSR$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useSSR"])(initialI18nStore, initialLanguage);
+            return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"])(WrappedComponent, {
+                ...rest
+            });
+        }
+        I18nextWithSSR.getInitialProps = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$context$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__["composeInitialProps"])(WrappedComponent);
+        I18nextWithSSR.displayName = "withI18nextSSR(".concat((0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["getDisplayName"])(WrappedComponent), ")");
+        I18nextWithSSR.WrappedComponent = WrappedComponent;
+        return I18nextWithSSR;
+    };
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/index.js [app-client] (ecmascript) <locals>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "date",
+    ()=>date,
+    "number",
+    ()=>number,
+    "plural",
+    ()=>plural,
+    "select",
+    ()=>select,
+    "selectOrdinal",
+    ()=>selectOrdinal,
+    "time",
+    ()=>time
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$Trans$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/Trans.js [app-client] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$TransWithoutContext$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/TransWithoutContext.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$useTranslation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/useTranslation.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$withTranslation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/withTranslation.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$Translation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/Translation.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$I18nextProvider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/I18nextProvider.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$withSSR$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/withSSR.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$useSSR$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/useSSR.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$initReactI18next$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/initReactI18next.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$defaults$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/defaults.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$i18nInstance$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/i18nInstance.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$context$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/context.js [app-client] (ecmascript) <locals>");
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+;
+const date = ()=>'';
+const time = ()=>'';
+const number = ()=>'';
+const select = ()=>'';
+const plural = ()=>'';
+const selectOrdinal = ()=>'';
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/styled-jsx/dist/index/index.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+__turbopack_context__.r("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/compiled/client-only/index.js [app-client] (ecmascript)");
+var React = __turbopack_context__.r("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+function _interopDefaultLegacy(e) {
+    return e && typeof e === 'object' && 'default' in e ? e : {
+        'default': e
+    };
+}
+var React__default = /*#__PURE__*/ _interopDefaultLegacy(React);
+/*
+Based on Glamor's sheet
+https://github.com/threepointone/glamor/blob/667b480d31b3721a905021b26e1290ce92ca2879/src/sheet.js
+*/ function _defineProperties(target, props) {
+    for(var i = 0; i < props.length; i++){
+        var descriptor = props[i];
+        descriptor.enumerable = descriptor.enumerable || false;
+        descriptor.configurable = true;
+        if ("value" in descriptor) descriptor.writable = true;
+        Object.defineProperty(target, descriptor.key, descriptor);
+    }
+}
+function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
+}
+var isProd = typeof __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"] !== "undefined" && __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env && ("TURBOPACK compile-time value", "development") === "production";
+var isString = function(o) {
+    return Object.prototype.toString.call(o) === "[object String]";
+};
+var StyleSheet = /*#__PURE__*/ function() {
+    function StyleSheet(param) {
+        var ref = param === void 0 ? {} : param, _name = ref.name, name = _name === void 0 ? "stylesheet" : _name, _optimizeForSpeed = ref.optimizeForSpeed, optimizeForSpeed = _optimizeForSpeed === void 0 ? isProd : _optimizeForSpeed;
+        invariant$1(isString(name), "`name` must be a string");
+        this._name = name;
+        this._deletedRulePlaceholder = "#" + name + "-deleted-rule____{}";
+        invariant$1(typeof optimizeForSpeed === "boolean", "`optimizeForSpeed` must be a boolean");
+        this._optimizeForSpeed = optimizeForSpeed;
+        this._serverSheet = undefined;
+        this._tags = [];
+        this._injected = false;
+        this._rulesCount = 0;
+        var node = typeof window !== "undefined" && document.querySelector('meta[property="csp-nonce"]');
+        this._nonce = node ? node.getAttribute("content") : null;
+    }
+    var _proto = StyleSheet.prototype;
+    _proto.setOptimizeForSpeed = function setOptimizeForSpeed(bool) {
+        invariant$1(typeof bool === "boolean", "`setOptimizeForSpeed` accepts a boolean");
+        invariant$1(this._rulesCount === 0, "optimizeForSpeed cannot be when rules have already been inserted");
+        this.flush();
+        this._optimizeForSpeed = bool;
+        this.inject();
+    };
+    _proto.isOptimizeForSpeed = function isOptimizeForSpeed() {
+        return this._optimizeForSpeed;
+    };
+    _proto.inject = function inject() {
+        var _this = this;
+        invariant$1(!this._injected, "sheet already injected");
+        this._injected = true;
+        if (typeof window !== "undefined" && this._optimizeForSpeed) {
+            this._tags[0] = this.makeStyleTag(this._name);
+            this._optimizeForSpeed = "insertRule" in this.getSheet();
+            if (!this._optimizeForSpeed) {
+                if ("TURBOPACK compile-time truthy", 1) {
+                    console.warn("StyleSheet: optimizeForSpeed mode not supported falling back to standard mode.");
+                }
+                this.flush();
+                this._injected = true;
+            }
+            return;
+        }
+        this._serverSheet = {
+            cssRules: [],
+            insertRule: function(rule, index) {
+                if (typeof index === "number") {
+                    _this._serverSheet.cssRules[index] = {
+                        cssText: rule
+                    };
+                } else {
+                    _this._serverSheet.cssRules.push({
+                        cssText: rule
+                    });
+                }
+                return index;
+            },
+            deleteRule: function(index) {
+                _this._serverSheet.cssRules[index] = null;
+            }
+        };
+    };
+    _proto.getSheetForTag = function getSheetForTag(tag) {
+        if (tag.sheet) {
+            return tag.sheet;
+        }
+        // this weirdness brought to you by firefox
+        for(var i = 0; i < document.styleSheets.length; i++){
+            if (document.styleSheets[i].ownerNode === tag) {
+                return document.styleSheets[i];
+            }
+        }
+    };
+    _proto.getSheet = function getSheet() {
+        return this.getSheetForTag(this._tags[this._tags.length - 1]);
+    };
+    _proto.insertRule = function insertRule(rule, index) {
+        invariant$1(isString(rule), "`insertRule` accepts only strings");
+        if (typeof window === "undefined") {
+            if (typeof index !== "number") {
+                index = this._serverSheet.cssRules.length;
+            }
+            this._serverSheet.insertRule(rule, index);
+            return this._rulesCount++;
+        }
+        if (this._optimizeForSpeed) {
+            var sheet = this.getSheet();
+            if (typeof index !== "number") {
+                index = sheet.cssRules.length;
+            }
+            // this weirdness for perf, and chrome's weird bug
+            // https://stackoverflow.com/questions/20007992/chrome-suddenly-stopped-accepting-insertrule
+            try {
+                sheet.insertRule(rule, index);
+            } catch (error) {
+                if ("TURBOPACK compile-time truthy", 1) {
+                    console.warn("StyleSheet: illegal rule: \n\n" + rule + "\n\nSee https://stackoverflow.com/q/20007992 for more info");
+                }
+                return -1;
+            }
+        } else {
+            var insertionPoint = this._tags[index];
+            this._tags.push(this.makeStyleTag(this._name, rule, insertionPoint));
+        }
+        return this._rulesCount++;
+    };
+    _proto.replaceRule = function replaceRule(index, rule) {
+        if (this._optimizeForSpeed || typeof window === "undefined") {
+            var sheet = typeof window !== "undefined" ? this.getSheet() : this._serverSheet;
+            if (!rule.trim()) {
+                rule = this._deletedRulePlaceholder;
+            }
+            if (!sheet.cssRules[index]) {
+                // @TBD Should we throw an error?
+                return index;
+            }
+            sheet.deleteRule(index);
+            try {
+                sheet.insertRule(rule, index);
+            } catch (error) {
+                if ("TURBOPACK compile-time truthy", 1) {
+                    console.warn("StyleSheet: illegal rule: \n\n" + rule + "\n\nSee https://stackoverflow.com/q/20007992 for more info");
+                }
+                // In order to preserve the indices we insert a deleteRulePlaceholder
+                sheet.insertRule(this._deletedRulePlaceholder, index);
+            }
+        } else {
+            var tag = this._tags[index];
+            invariant$1(tag, "old rule at index `" + index + "` not found");
+            tag.textContent = rule;
+        }
+        return index;
+    };
+    _proto.deleteRule = function deleteRule(index) {
+        if (typeof window === "undefined") {
+            this._serverSheet.deleteRule(index);
+            return;
+        }
+        if (this._optimizeForSpeed) {
+            this.replaceRule(index, "");
+        } else {
+            var tag = this._tags[index];
+            invariant$1(tag, "rule at index `" + index + "` not found");
+            tag.parentNode.removeChild(tag);
+            this._tags[index] = null;
+        }
+    };
+    _proto.flush = function flush() {
+        this._injected = false;
+        this._rulesCount = 0;
+        if (typeof window !== "undefined") {
+            this._tags.forEach(function(tag) {
+                return tag && tag.parentNode.removeChild(tag);
+            });
+            this._tags = [];
+        } else {
+            // simpler on server
+            this._serverSheet.cssRules = [];
+        }
+    };
+    _proto.cssRules = function cssRules() {
+        var _this = this;
+        if (typeof window === "undefined") {
+            return this._serverSheet.cssRules;
+        }
+        return this._tags.reduce(function(rules, tag) {
+            if (tag) {
+                rules = rules.concat(Array.prototype.map.call(_this.getSheetForTag(tag).cssRules, function(rule) {
+                    return rule.cssText === _this._deletedRulePlaceholder ? null : rule;
+                }));
+            } else {
+                rules.push(null);
+            }
+            return rules;
+        }, []);
+    };
+    _proto.makeStyleTag = function makeStyleTag(name, cssString, relativeToTag) {
+        if (cssString) {
+            invariant$1(isString(cssString), "makeStyleTag accepts only strings as second parameter");
+        }
+        var tag = document.createElement("style");
+        if (this._nonce) tag.setAttribute("nonce", this._nonce);
+        tag.type = "text/css";
+        tag.setAttribute("data-" + name, "");
+        if (cssString) {
+            tag.appendChild(document.createTextNode(cssString));
+        }
+        var head = document.head || document.getElementsByTagName("head")[0];
+        if (relativeToTag) {
+            head.insertBefore(tag, relativeToTag);
+        } else {
+            head.appendChild(tag);
+        }
+        return tag;
+    };
+    _createClass(StyleSheet, [
+        {
+            key: "length",
+            get: function get() {
+                return this._rulesCount;
+            }
+        }
+    ]);
+    return StyleSheet;
+}();
+function invariant$1(condition, message) {
+    if (!condition) {
+        throw new Error("StyleSheet: " + message + ".");
+    }
+}
+function hash(str) {
+    var _$hash = 5381, i = str.length;
+    while(i){
+        _$hash = _$hash * 33 ^ str.charCodeAt(--i);
+    }
+    /* JavaScript does bitwise operations (like XOR, above) on 32-bit signed
+   * integers. Since we want the results to be always positive, convert the
+   * signed int to an unsigned by doing an unsigned bitshift. */ return _$hash >>> 0;
+}
+var stringHash = hash;
+var sanitize = function(rule) {
+    return rule.replace(/\/style/gi, "\\/style");
+};
+var cache = {};
+/**
+ * computeId
+ *
+ * Compute and memoize a jsx id from a basedId and optionally props.
+ */ function computeId(baseId, props) {
+    if (!props) {
+        return "jsx-" + baseId;
+    }
+    var propsToString = String(props);
+    var key = baseId + propsToString;
+    if (!cache[key]) {
+        cache[key] = "jsx-" + stringHash(baseId + "-" + propsToString);
+    }
+    return cache[key];
+}
+/**
+ * computeSelector
+ *
+ * Compute and memoize dynamic selectors.
+ */ function computeSelector(id, css) {
+    var selectoPlaceholderRegexp = /__jsx-style-dynamic-selector/g;
+    // Sanitize SSR-ed CSS.
+    // Client side code doesn't need to be sanitized since we use
+    // document.createTextNode (dev) and the CSSOM api sheet.insertRule (prod).
+    if (typeof window === "undefined") {
+        css = sanitize(css);
+    }
+    var idcss = id + css;
+    if (!cache[idcss]) {
+        cache[idcss] = css.replace(selectoPlaceholderRegexp, id);
+    }
+    return cache[idcss];
+}
+function mapRulesToStyle(cssRules, options) {
+    if (options === void 0) options = {};
+    return cssRules.map(function(args) {
+        var id = args[0];
+        var css = args[1];
+        return /*#__PURE__*/ React__default["default"].createElement("style", {
+            id: "__" + id,
+            // Avoid warnings upon render with a key
+            key: "__" + id,
+            nonce: options.nonce ? options.nonce : undefined,
+            dangerouslySetInnerHTML: {
+                __html: css
+            }
+        });
+    });
+}
+var StyleSheetRegistry = /*#__PURE__*/ function() {
+    function StyleSheetRegistry(param) {
+        var ref = param === void 0 ? {} : param, _styleSheet = ref.styleSheet, styleSheet = _styleSheet === void 0 ? null : _styleSheet, _optimizeForSpeed = ref.optimizeForSpeed, optimizeForSpeed = _optimizeForSpeed === void 0 ? false : _optimizeForSpeed;
+        this._sheet = styleSheet || new StyleSheet({
+            name: "styled-jsx",
+            optimizeForSpeed: optimizeForSpeed
+        });
+        this._sheet.inject();
+        if (styleSheet && typeof optimizeForSpeed === "boolean") {
+            this._sheet.setOptimizeForSpeed(optimizeForSpeed);
+            this._optimizeForSpeed = this._sheet.isOptimizeForSpeed();
+        }
+        this._fromServer = undefined;
+        this._indices = {};
+        this._instancesCounts = {};
+    }
+    var _proto = StyleSheetRegistry.prototype;
+    _proto.add = function add(props) {
+        var _this = this;
+        if (undefined === this._optimizeForSpeed) {
+            this._optimizeForSpeed = Array.isArray(props.children);
+            this._sheet.setOptimizeForSpeed(this._optimizeForSpeed);
+            this._optimizeForSpeed = this._sheet.isOptimizeForSpeed();
+        }
+        if (typeof window !== "undefined" && !this._fromServer) {
+            this._fromServer = this.selectFromServer();
+            this._instancesCounts = Object.keys(this._fromServer).reduce(function(acc, tagName) {
+                acc[tagName] = 0;
+                return acc;
+            }, {});
+        }
+        var ref = this.getIdAndRules(props), styleId = ref.styleId, rules = ref.rules;
+        // Deduping: just increase the instances count.
+        if (styleId in this._instancesCounts) {
+            this._instancesCounts[styleId] += 1;
+            return;
+        }
+        var indices = rules.map(function(rule) {
+            return _this._sheet.insertRule(rule);
+        }) // Filter out invalid rules
+        .filter(function(index) {
+            return index !== -1;
+        });
+        this._indices[styleId] = indices;
+        this._instancesCounts[styleId] = 1;
+    };
+    _proto.remove = function remove(props) {
+        var _this = this;
+        var styleId = this.getIdAndRules(props).styleId;
+        invariant(styleId in this._instancesCounts, "styleId: `" + styleId + "` not found");
+        this._instancesCounts[styleId] -= 1;
+        if (this._instancesCounts[styleId] < 1) {
+            var tagFromServer = this._fromServer && this._fromServer[styleId];
+            if (tagFromServer) {
+                tagFromServer.parentNode.removeChild(tagFromServer);
+                delete this._fromServer[styleId];
+            } else {
+                this._indices[styleId].forEach(function(index) {
+                    return _this._sheet.deleteRule(index);
+                });
+                delete this._indices[styleId];
+            }
+            delete this._instancesCounts[styleId];
+        }
+    };
+    _proto.update = function update(props, nextProps) {
+        this.add(nextProps);
+        this.remove(props);
+    };
+    _proto.flush = function flush() {
+        this._sheet.flush();
+        this._sheet.inject();
+        this._fromServer = undefined;
+        this._indices = {};
+        this._instancesCounts = {};
+    };
+    _proto.cssRules = function cssRules() {
+        var _this = this;
+        var fromServer = this._fromServer ? Object.keys(this._fromServer).map(function(styleId) {
+            return [
+                styleId,
+                _this._fromServer[styleId]
+            ];
+        }) : [];
+        var cssRules = this._sheet.cssRules();
+        return fromServer.concat(Object.keys(this._indices).map(function(styleId) {
+            return [
+                styleId,
+                _this._indices[styleId].map(function(index) {
+                    return cssRules[index].cssText;
+                }).join(_this._optimizeForSpeed ? "" : "\n")
+            ];
+        }) // filter out empty rules
+        .filter(function(rule) {
+            return Boolean(rule[1]);
+        }));
+    };
+    _proto.styles = function styles(options) {
+        return mapRulesToStyle(this.cssRules(), options);
+    };
+    _proto.getIdAndRules = function getIdAndRules(props) {
+        var css = props.children, dynamic = props.dynamic, id = props.id;
+        if (dynamic) {
+            var styleId = computeId(id, dynamic);
+            return {
+                styleId: styleId,
+                rules: Array.isArray(css) ? css.map(function(rule) {
+                    return computeSelector(styleId, rule);
+                }) : [
+                    computeSelector(styleId, css)
+                ]
+            };
+        }
+        return {
+            styleId: computeId(id),
+            rules: Array.isArray(css) ? css : [
+                css
+            ]
+        };
+    };
+    /**
+   * selectFromServer
+   *
+   * Collects style tags from the document with id __jsx-XXX
+   */ _proto.selectFromServer = function selectFromServer() {
+        var elements = Array.prototype.slice.call(document.querySelectorAll('[id^="__jsx-"]'));
+        return elements.reduce(function(acc, element) {
+            var id = element.id.slice(2);
+            acc[id] = element;
+            return acc;
+        }, {});
+    };
+    return StyleSheetRegistry;
+}();
+function invariant(condition, message) {
+    if (!condition) {
+        throw new Error("StyleSheetRegistry: " + message + ".");
+    }
+}
+var StyleSheetContext = /*#__PURE__*/ React.createContext(null);
+StyleSheetContext.displayName = "StyleSheetContext";
+function createStyleRegistry() {
+    return new StyleSheetRegistry();
+}
+function StyleRegistry(param) {
+    var configuredRegistry = param.registry, children = param.children;
+    var rootRegistry = React.useContext(StyleSheetContext);
+    var ref = React.useState({
+        "StyleRegistry.useState[ref]": function() {
+            return rootRegistry || configuredRegistry || createStyleRegistry();
+        }
+    }["StyleRegistry.useState[ref]"]), registry = ref[0];
+    return /*#__PURE__*/ React__default["default"].createElement(StyleSheetContext.Provider, {
+        value: registry
+    }, children);
+}
+function useStyleRegistry() {
+    return React.useContext(StyleSheetContext);
+}
+// Opt-into the new `useInsertionEffect` API in React 18, fallback to `useLayoutEffect`.
+// https://github.com/reactwg/react-18/discussions/110
+var useInsertionEffect = React__default["default"].useInsertionEffect || React__default["default"].useLayoutEffect;
+var defaultRegistry = typeof window !== "undefined" ? createStyleRegistry() : undefined;
+function JSXStyle(props) {
+    var registry = defaultRegistry ? defaultRegistry : useStyleRegistry();
+    // If `registry` does not exist, we do nothing here.
+    if (!registry) {
+        return null;
+    }
+    if (typeof window === "undefined") {
+        registry.add(props);
+        return null;
+    }
+    useInsertionEffect({
+        "JSXStyle.useInsertionEffect": function() {
+            registry.add(props);
+            return ({
+                "JSXStyle.useInsertionEffect": function() {
+                    registry.remove(props);
+                }
+            })["JSXStyle.useInsertionEffect"];
+        // props.children can be string[], will be striped since id is identical
+        }
+    }["JSXStyle.useInsertionEffect"], [
+        props.id,
+        String(props.dynamic)
+    ]);
+    return null;
+}
+JSXStyle.dynamic = function(info) {
+    return info.map(function(tagInfo) {
+        var baseId = tagInfo[0];
+        var props = tagInfo[1];
+        return computeId(baseId, props);
+    }).join(" ");
+};
+exports.StyleRegistry = StyleRegistry;
+exports.createStyleRegistry = createStyleRegistry;
+exports.style = JSXStyle;
+exports.useStyleRegistry = useStyleRegistry;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/styled-jsx/style.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+
+module.exports = __turbopack_context__.r("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/styled-jsx/dist/index/index.js [app-client] (ecmascript)").style;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/i18next/dist/esm/i18next.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "changeLanguage",
+    ()=>changeLanguage,
+    "createInstance",
+    ()=>createInstance,
+    "default",
+    ()=>instance,
+    "dir",
+    ()=>dir,
+    "exists",
+    ()=>exists,
+    "getFixedT",
+    ()=>getFixedT,
+    "hasLoadedNamespace",
+    ()=>hasLoadedNamespace,
+    "init",
+    ()=>init,
+    "loadLanguages",
+    ()=>loadLanguages,
+    "loadNamespaces",
+    ()=>loadNamespaces,
+    "loadResources",
+    ()=>loadResources,
+    "reloadResources",
+    ()=>reloadResources,
+    "setDefaultNamespace",
+    ()=>setDefaultNamespace,
+    "t",
+    ()=>t,
+    "use",
+    ()=>use
+]);
+const isString = (obj)=>typeof obj === 'string';
+const defer = ()=>{
+    let res;
+    let rej;
+    const promise = new Promise((resolve, reject)=>{
+        res = resolve;
+        rej = reject;
+    });
+    promise.resolve = res;
+    promise.reject = rej;
+    return promise;
+};
+const makeString = (object)=>{
+    if (object == null) return '';
+    return '' + object;
+};
+const copy = (a, s, t)=>{
+    a.forEach((m)=>{
+        if (s[m]) t[m] = s[m];
+    });
+};
+const lastOfPathSeparatorRegExp = /###/g;
+const cleanKey = (key)=>key && key.indexOf('###') > -1 ? key.replace(lastOfPathSeparatorRegExp, '.') : key;
+const canNotTraverseDeeper = (object)=>!object || isString(object);
+const getLastOfPath = (object, path, Empty)=>{
+    const stack = !isString(path) ? path : path.split('.');
+    let stackIndex = 0;
+    while(stackIndex < stack.length - 1){
+        if (canNotTraverseDeeper(object)) return {};
+        const key = cleanKey(stack[stackIndex]);
+        if (!object[key] && Empty) object[key] = new Empty();
+        if (Object.prototype.hasOwnProperty.call(object, key)) {
+            object = object[key];
+        } else {
+            object = {};
+        }
+        ++stackIndex;
+    }
+    if (canNotTraverseDeeper(object)) return {};
+    return {
+        obj: object,
+        k: cleanKey(stack[stackIndex])
+    };
+};
+const setPath = (object, path, newValue)=>{
+    const { obj, k } = getLastOfPath(object, path, Object);
+    if (obj !== undefined || path.length === 1) {
+        obj[k] = newValue;
+        return;
+    }
+    let e = path[path.length - 1];
+    let p = path.slice(0, path.length - 1);
+    let last = getLastOfPath(object, p, Object);
+    while(last.obj === undefined && p.length){
+        e = "".concat(p[p.length - 1], ".").concat(e);
+        p = p.slice(0, p.length - 1);
+        last = getLastOfPath(object, p, Object);
+        if ((last === null || last === void 0 ? void 0 : last.obj) && typeof last.obj["".concat(last.k, ".").concat(e)] !== 'undefined') {
+            last.obj = undefined;
+        }
+    }
+    last.obj["".concat(last.k, ".").concat(e)] = newValue;
+};
+const pushPath = (object, path, newValue, concat)=>{
+    const { obj, k } = getLastOfPath(object, path, Object);
+    obj[k] = obj[k] || [];
+    obj[k].push(newValue);
+};
+const getPath = (object, path)=>{
+    const { obj, k } = getLastOfPath(object, path);
+    if (!obj) return undefined;
+    if (!Object.prototype.hasOwnProperty.call(obj, k)) return undefined;
+    return obj[k];
+};
+const getPathWithDefaults = (data, defaultData, key)=>{
+    const value = getPath(data, key);
+    if (value !== undefined) {
+        return value;
+    }
+    return getPath(defaultData, key);
+};
+const deepExtend = (target, source, overwrite)=>{
+    for(const prop in source){
+        if (prop !== '__proto__' && prop !== 'constructor') {
+            if (prop in target) {
+                if (isString(target[prop]) || target[prop] instanceof String || isString(source[prop]) || source[prop] instanceof String) {
+                    if (overwrite) target[prop] = source[prop];
+                } else {
+                    deepExtend(target[prop], source[prop], overwrite);
+                }
+            } else {
+                target[prop] = source[prop];
+            }
+        }
+    }
+    return target;
+};
+const regexEscape = (str)=>str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&');
+var _entityMap = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;',
+    '/': '&#x2F;'
+};
+const escape = (data)=>{
+    if (isString(data)) {
+        return data.replace(/[&<>"'\/]/g, (s)=>_entityMap[s]);
+    }
+    return data;
+};
+class RegExpCache {
+    getRegExp(pattern) {
+        const regExpFromCache = this.regExpMap.get(pattern);
+        if (regExpFromCache !== undefined) {
+            return regExpFromCache;
+        }
+        const regExpNew = new RegExp(pattern);
+        if (this.regExpQueue.length === this.capacity) {
+            this.regExpMap.delete(this.regExpQueue.shift());
+        }
+        this.regExpMap.set(pattern, regExpNew);
+        this.regExpQueue.push(pattern);
+        return regExpNew;
+    }
+    constructor(capacity){
+        this.capacity = capacity;
+        this.regExpMap = new Map();
+        this.regExpQueue = [];
+    }
+}
+const chars = [
+    ' ',
+    ',',
+    '?',
+    '!',
+    ';'
+];
+const looksLikeObjectPathRegExpCache = new RegExpCache(20);
+const looksLikeObjectPath = (key, nsSeparator, keySeparator)=>{
+    nsSeparator = nsSeparator || '';
+    keySeparator = keySeparator || '';
+    const possibleChars = chars.filter((c)=>nsSeparator.indexOf(c) < 0 && keySeparator.indexOf(c) < 0);
+    if (possibleChars.length === 0) return true;
+    const r = looksLikeObjectPathRegExpCache.getRegExp("(".concat(possibleChars.map((c)=>c === '?' ? '\\?' : c).join('|'), ")"));
+    let matched = !r.test(key);
+    if (!matched) {
+        const ki = key.indexOf(keySeparator);
+        if (ki > 0 && !r.test(key.substring(0, ki))) {
+            matched = true;
+        }
+    }
+    return matched;
+};
+const deepFind = function(obj, path) {
+    let keySeparator = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : '.';
+    if (!obj) return undefined;
+    if (obj[path]) {
+        if (!Object.prototype.hasOwnProperty.call(obj, path)) return undefined;
+        return obj[path];
+    }
+    const tokens = path.split(keySeparator);
+    let current = obj;
+    for(let i = 0; i < tokens.length;){
+        if (!current || typeof current !== 'object') {
+            return undefined;
+        }
+        let next;
+        let nextPath = '';
+        for(let j = i; j < tokens.length; ++j){
+            if (j !== i) {
+                nextPath += keySeparator;
+            }
+            nextPath += tokens[j];
+            next = current[nextPath];
+            if (next !== undefined) {
+                if ([
+                    'string',
+                    'number',
+                    'boolean'
+                ].indexOf(typeof next) > -1 && j < tokens.length - 1) {
+                    continue;
+                }
+                i += j - i + 1;
+                break;
+            }
+        }
+        current = next;
+    }
+    return current;
+};
+const getCleanedCode = (code)=>code === null || code === void 0 ? void 0 : code.replace('_', '-');
+const consoleLogger = {
+    type: 'logger',
+    log (args) {
+        this.output('log', args);
+    },
+    warn (args) {
+        this.output('warn', args);
+    },
+    error (args) {
+        this.output('error', args);
+    },
+    output (type, args) {
+        var _console_type_apply, _console_type, _console;
+        (_console = console) === null || _console === void 0 ? void 0 : (_console_type = _console[type]) === null || _console_type === void 0 ? void 0 : (_console_type_apply = _console_type.apply) === null || _console_type_apply === void 0 ? void 0 : _console_type_apply.call(_console_type, console, args);
+    }
+};
+class Logger {
+    init(concreteLogger) {
+        let options1 = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+        this.prefix = options1.prefix || 'i18next:';
+        this.logger = concreteLogger || consoleLogger;
+        this.options = options1;
+        this.debug = options1.debug;
+    }
+    log() {
+        for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++){
+            args[_key] = arguments[_key];
+        }
+        return this.forward(args, 'log', '', true);
+    }
+    warn() {
+        for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++){
+            args[_key] = arguments[_key];
+        }
+        return this.forward(args, 'warn', '', true);
+    }
+    error() {
+        for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++){
+            args[_key] = arguments[_key];
+        }
+        return this.forward(args, 'error', '');
+    }
+    deprecate() {
+        for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++){
+            args[_key] = arguments[_key];
+        }
+        return this.forward(args, 'warn', 'WARNING DEPRECATED: ', true);
+    }
+    forward(args, lvl, prefix, debugOnly) {
+        if (debugOnly && !this.debug) return null;
+        if (isString(args[0])) args[0] = "".concat(prefix).concat(this.prefix, " ").concat(args[0]);
+        return this.logger[lvl](args);
+    }
+    create(moduleName) {
+        return new Logger(this.logger, {
+            ...{
+                prefix: "".concat(this.prefix, ":").concat(moduleName, ":")
+            },
+            ...this.options
+        });
+    }
+    clone(options1) {
+        options1 = options1 || this.options;
+        options1.prefix = options1.prefix || this.prefix;
+        return new Logger(this.logger, options1);
+    }
+    constructor(concreteLogger, options1 = {}){
+        this.init(concreteLogger, options1);
+    }
+}
+var baseLogger = new Logger();
+class EventEmitter {
+    on(events, listener) {
+        events.split(' ').forEach((event)=>{
+            if (!this.observers[event]) this.observers[event] = new Map();
+            const numListeners = this.observers[event].get(listener) || 0;
+            this.observers[event].set(listener, numListeners + 1);
+        });
+        return this;
+    }
+    off(event, listener) {
+        if (!this.observers[event]) return;
+        if (!listener) {
+            delete this.observers[event];
+            return;
+        }
+        this.observers[event].delete(listener);
+    }
+    emit(event) {
+        for(var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++){
+            args[_key - 1] = arguments[_key];
+        }
+        if (this.observers[event]) {
+            const cloned = Array.from(this.observers[event].entries());
+            cloned.forEach((param)=>{
+                let [observer, numTimesAdded] = param;
+                for(let i = 0; i < numTimesAdded; i++){
+                    observer(...args);
+                }
+            });
+        }
+        if (this.observers['*']) {
+            const cloned = Array.from(this.observers['*'].entries());
+            cloned.forEach((param)=>{
+                let [observer, numTimesAdded] = param;
+                for(let i = 0; i < numTimesAdded; i++){
+                    observer.apply(observer, [
+                        event,
+                        ...args
+                    ]);
+                }
+            });
+        }
+    }
+    constructor(){
+        this.observers = {};
+    }
+}
+class ResourceStore extends EventEmitter {
+    addNamespaces(ns) {
+        if (this.options.ns.indexOf(ns) < 0) {
+            this.options.ns.push(ns);
+        }
+    }
+    removeNamespaces(ns) {
+        const index = this.options.ns.indexOf(ns);
+        if (index > -1) {
+            this.options.ns.splice(index, 1);
+        }
+    }
+    getResource(lng, ns, key) {
+        let options1 = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {};
+        var _this_data_lng, _this_data;
+        const keySeparator = options1.keySeparator !== undefined ? options1.keySeparator : this.options.keySeparator;
+        const ignoreJSONStructure = options1.ignoreJSONStructure !== undefined ? options1.ignoreJSONStructure : this.options.ignoreJSONStructure;
+        let path;
+        if (lng.indexOf('.') > -1) {
+            path = lng.split('.');
+        } else {
+            path = [
+                lng,
+                ns
+            ];
+            if (key) {
+                if (Array.isArray(key)) {
+                    path.push(...key);
+                } else if (isString(key) && keySeparator) {
+                    path.push(...key.split(keySeparator));
+                } else {
+                    path.push(key);
+                }
+            }
+        }
+        const result = getPath(this.data, path);
+        if (!result && !ns && !key && lng.indexOf('.') > -1) {
+            lng = path[0];
+            ns = path[1];
+            key = path.slice(2).join('.');
+        }
+        if (result || !ignoreJSONStructure || !isString(key)) return result;
+        return deepFind((_this_data = this.data) === null || _this_data === void 0 ? void 0 : (_this_data_lng = _this_data[lng]) === null || _this_data_lng === void 0 ? void 0 : _this_data_lng[ns], key, keySeparator);
+    }
+    addResource(lng, ns, key, value) {
+        let options1 = arguments.length > 4 && arguments[4] !== void 0 ? arguments[4] : {
+            silent: false
+        };
+        const keySeparator = options1.keySeparator !== undefined ? options1.keySeparator : this.options.keySeparator;
+        let path = [
+            lng,
+            ns
+        ];
+        if (key) path = path.concat(keySeparator ? key.split(keySeparator) : key);
+        if (lng.indexOf('.') > -1) {
+            path = lng.split('.');
+            value = ns;
+            ns = path[1];
+        }
+        this.addNamespaces(ns);
+        setPath(this.data, path, value);
+        if (!options1.silent) this.emit('added', lng, ns, key, value);
+    }
+    addResources(lng, ns, resources) {
+        let options1 = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {
+            silent: false
+        };
+        for(const m in resources){
+            if (isString(resources[m]) || Array.isArray(resources[m])) this.addResource(lng, ns, m, resources[m], {
+                silent: true
+            });
+        }
+        if (!options1.silent) this.emit('added', lng, ns, resources);
+    }
+    addResourceBundle(lng, ns, resources, deep, overwrite) {
+        let options1 = arguments.length > 5 && arguments[5] !== void 0 ? arguments[5] : {
+            silent: false,
+            skipCopy: false
+        };
+        let path = [
+            lng,
+            ns
+        ];
+        if (lng.indexOf('.') > -1) {
+            path = lng.split('.');
+            deep = resources;
+            resources = ns;
+            ns = path[1];
+        }
+        this.addNamespaces(ns);
+        let pack = getPath(this.data, path) || {};
+        if (!options1.skipCopy) resources = JSON.parse(JSON.stringify(resources));
+        if (deep) {
+            deepExtend(pack, resources, overwrite);
+        } else {
+            pack = {
+                ...pack,
+                ...resources
+            };
+        }
+        setPath(this.data, path, pack);
+        if (!options1.silent) this.emit('added', lng, ns, resources);
+    }
+    removeResourceBundle(lng, ns) {
+        if (this.hasResourceBundle(lng, ns)) {
+            delete this.data[lng][ns];
+        }
+        this.removeNamespaces(ns);
+        this.emit('removed', lng, ns);
+    }
+    hasResourceBundle(lng, ns) {
+        return this.getResource(lng, ns) !== undefined;
+    }
+    getResourceBundle(lng, ns) {
+        if (!ns) ns = this.options.defaultNS;
+        return this.getResource(lng, ns);
+    }
+    getDataByLanguage(lng) {
+        return this.data[lng];
+    }
+    hasLanguageSomeTranslations(lng) {
+        const data = this.getDataByLanguage(lng);
+        const n = data && Object.keys(data) || [];
+        return !!n.find((v)=>data[v] && Object.keys(data[v]).length > 0);
+    }
+    toJSON() {
+        return this.data;
+    }
+    constructor(data, options1 = {
+        ns: [
+            'translation'
+        ],
+        defaultNS: 'translation'
+    }){
+        super();
+        this.data = data || {};
+        this.options = options1;
+        if (this.options.keySeparator === undefined) {
+            this.options.keySeparator = '.';
+        }
+        if (this.options.ignoreJSONStructure === undefined) {
+            this.options.ignoreJSONStructure = true;
+        }
+    }
+}
+var postProcessor = {
+    processors: {},
+    addPostProcessor (module) {
+        this.processors[module.name] = module;
+    },
+    handle (processors, value, key, options1, translator) {
+        processors.forEach((processor)=>{
+            var _this_processors_processor;
+            var _this_processors_processor_process;
+            value = (_this_processors_processor_process = (_this_processors_processor = this.processors[processor]) === null || _this_processors_processor === void 0 ? void 0 : _this_processors_processor.process(value, key, options1, translator)) !== null && _this_processors_processor_process !== void 0 ? _this_processors_processor_process : value;
+        });
+        return value;
+    }
+};
+const PATH_KEY = Symbol('i18next/PATH_KEY');
+function createProxy() {
+    const state = [];
+    const handler = Object.create(null);
+    let proxy;
+    handler.get = (target, key)=>{
+        var _proxy_revoke;
+        proxy === null || proxy === void 0 ? void 0 : (_proxy_revoke = proxy.revoke) === null || _proxy_revoke === void 0 ? void 0 : _proxy_revoke.call(proxy);
+        if (key === PATH_KEY) return state;
+        state.push(key);
+        proxy = Proxy.revocable(target, handler);
+        return proxy.proxy;
+    };
+    return Proxy.revocable(Object.create(null), handler).proxy;
+}
+function keysFromSelector(selector, opts) {
+    const { [PATH_KEY]: path } = selector(createProxy());
+    var _opts_keySeparator;
+    return path.join((_opts_keySeparator = opts === null || opts === void 0 ? void 0 : opts.keySeparator) !== null && _opts_keySeparator !== void 0 ? _opts_keySeparator : '.');
+}
+const checkedLoadedFor = {};
+const shouldHandleAsObject = (res)=>!isString(res) && typeof res !== 'boolean' && typeof res !== 'number';
+class Translator extends EventEmitter {
+    changeLanguage(lng) {
+        if (lng) this.language = lng;
+    }
+    exists(key) {
+        let o = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {
+            interpolation: {}
+        };
+        const opt = {
+            ...o
+        };
+        if (key == null) return false;
+        const resolved = this.resolve(key, opt);
+        return (resolved === null || resolved === void 0 ? void 0 : resolved.res) !== undefined;
+    }
+    extractFromKey(key, opt) {
+        let nsSeparator = opt.nsSeparator !== undefined ? opt.nsSeparator : this.options.nsSeparator;
+        if (nsSeparator === undefined) nsSeparator = ':';
+        const keySeparator = opt.keySeparator !== undefined ? opt.keySeparator : this.options.keySeparator;
+        let namespaces = opt.ns || this.options.defaultNS || [];
+        const wouldCheckForNsInKey = nsSeparator && key.indexOf(nsSeparator) > -1;
+        const seemsNaturalLanguage = !this.options.userDefinedKeySeparator && !opt.keySeparator && !this.options.userDefinedNsSeparator && !opt.nsSeparator && !looksLikeObjectPath(key, nsSeparator, keySeparator);
+        if (wouldCheckForNsInKey && !seemsNaturalLanguage) {
+            const m = key.match(this.interpolator.nestingRegexp);
+            if (m && m.length > 0) {
+                return {
+                    key,
+                    namespaces: isString(namespaces) ? [
+                        namespaces
+                    ] : namespaces
+                };
+            }
+            const parts = key.split(nsSeparator);
+            if (nsSeparator !== keySeparator || nsSeparator === keySeparator && this.options.ns.indexOf(parts[0]) > -1) namespaces = parts.shift();
+            key = parts.join(keySeparator);
+        }
+        return {
+            key,
+            namespaces: isString(namespaces) ? [
+                namespaces
+            ] : namespaces
+        };
+    }
+    translate(keys, o, lastKey) {
+        let opt = typeof o === 'object' ? {
+            ...o
+        } : o;
+        if (typeof opt !== 'object' && this.options.overloadTranslationOptionHandler) {
+            opt = this.options.overloadTranslationOptionHandler(arguments);
+        }
+        if (typeof options === 'object') opt = {
+            ...opt
+        };
+        if (!opt) opt = {};
+        if (keys == null) return '';
+        if (typeof keys === 'function') keys = keysFromSelector(keys, opt);
+        if (!Array.isArray(keys)) keys = [
+            String(keys)
+        ];
+        const returnDetails = opt.returnDetails !== undefined ? opt.returnDetails : this.options.returnDetails;
+        const keySeparator = opt.keySeparator !== undefined ? opt.keySeparator : this.options.keySeparator;
+        const { key, namespaces } = this.extractFromKey(keys[keys.length - 1], opt);
+        const namespace = namespaces[namespaces.length - 1];
+        let nsSeparator = opt.nsSeparator !== undefined ? opt.nsSeparator : this.options.nsSeparator;
+        if (nsSeparator === undefined) nsSeparator = ':';
+        const lng = opt.lng || this.language;
+        const appendNamespaceToCIMode = opt.appendNamespaceToCIMode || this.options.appendNamespaceToCIMode;
+        if ((lng === null || lng === void 0 ? void 0 : lng.toLowerCase()) === 'cimode') {
+            if (appendNamespaceToCIMode) {
+                if (returnDetails) {
+                    return {
+                        res: "".concat(namespace).concat(nsSeparator).concat(key),
+                        usedKey: key,
+                        exactUsedKey: key,
+                        usedLng: lng,
+                        usedNS: namespace,
+                        usedParams: this.getUsedParamsDetails(opt)
+                    };
+                }
+                return "".concat(namespace).concat(nsSeparator).concat(key);
+            }
+            if (returnDetails) {
+                return {
+                    res: key,
+                    usedKey: key,
+                    exactUsedKey: key,
+                    usedLng: lng,
+                    usedNS: namespace,
+                    usedParams: this.getUsedParamsDetails(opt)
+                };
+            }
+            return key;
+        }
+        const resolved = this.resolve(keys, opt);
+        let res = resolved === null || resolved === void 0 ? void 0 : resolved.res;
+        const resUsedKey = (resolved === null || resolved === void 0 ? void 0 : resolved.usedKey) || key;
+        const resExactUsedKey = (resolved === null || resolved === void 0 ? void 0 : resolved.exactUsedKey) || key;
+        const noObject = [
+            '[object Number]',
+            '[object Function]',
+            '[object RegExp]'
+        ];
+        const joinArrays = opt.joinArrays !== undefined ? opt.joinArrays : this.options.joinArrays;
+        const handleAsObjectInI18nFormat = !this.i18nFormat || this.i18nFormat.handleAsObject;
+        const needsPluralHandling = opt.count !== undefined && !isString(opt.count);
+        const hasDefaultValue = Translator.hasDefaultValue(opt);
+        const defaultValueSuffix = needsPluralHandling ? this.pluralResolver.getSuffix(lng, opt.count, opt) : '';
+        const defaultValueSuffixOrdinalFallback = opt.ordinal && needsPluralHandling ? this.pluralResolver.getSuffix(lng, opt.count, {
+            ordinal: false
+        }) : '';
+        const needsZeroSuffixLookup = needsPluralHandling && !opt.ordinal && opt.count === 0;
+        const defaultValue = needsZeroSuffixLookup && opt["defaultValue".concat(this.options.pluralSeparator, "zero")] || opt["defaultValue".concat(defaultValueSuffix)] || opt["defaultValue".concat(defaultValueSuffixOrdinalFallback)] || opt.defaultValue;
+        let resForObjHndl = res;
+        if (handleAsObjectInI18nFormat && !res && hasDefaultValue) {
+            resForObjHndl = defaultValue;
+        }
+        const handleAsObject = shouldHandleAsObject(resForObjHndl);
+        const resType = Object.prototype.toString.apply(resForObjHndl);
+        if (handleAsObjectInI18nFormat && resForObjHndl && handleAsObject && noObject.indexOf(resType) < 0 && !(isString(joinArrays) && Array.isArray(resForObjHndl))) {
+            if (!opt.returnObjects && !this.options.returnObjects) {
+                if (!this.options.returnedObjectHandler) {
+                    this.logger.warn('accessing an object - but returnObjects options is not enabled!');
+                }
+                const r = this.options.returnedObjectHandler ? this.options.returnedObjectHandler(resUsedKey, resForObjHndl, {
+                    ...opt,
+                    ns: namespaces
+                }) : "key '".concat(key, " (").concat(this.language, ")' returned an object instead of string.");
+                if (returnDetails) {
+                    resolved.res = r;
+                    resolved.usedParams = this.getUsedParamsDetails(opt);
+                    return resolved;
+                }
+                return r;
+            }
+            if (keySeparator) {
+                const resTypeIsArray = Array.isArray(resForObjHndl);
+                const copy = resTypeIsArray ? [] : {};
+                const newKeyToUse = resTypeIsArray ? resExactUsedKey : resUsedKey;
+                for(const m in resForObjHndl){
+                    if (Object.prototype.hasOwnProperty.call(resForObjHndl, m)) {
+                        const deepKey = "".concat(newKeyToUse).concat(keySeparator).concat(m);
+                        if (hasDefaultValue && !res) {
+                            copy[m] = this.translate(deepKey, {
+                                ...opt,
+                                defaultValue: shouldHandleAsObject(defaultValue) ? defaultValue[m] : undefined,
+                                ...{
+                                    joinArrays: false,
+                                    ns: namespaces
+                                }
+                            });
+                        } else {
+                            copy[m] = this.translate(deepKey, {
+                                ...opt,
+                                ...{
+                                    joinArrays: false,
+                                    ns: namespaces
+                                }
+                            });
+                        }
+                        if (copy[m] === deepKey) copy[m] = resForObjHndl[m];
+                    }
+                }
+                res = copy;
+            }
+        } else if (handleAsObjectInI18nFormat && isString(joinArrays) && Array.isArray(res)) {
+            res = res.join(joinArrays);
+            if (res) res = this.extendTranslation(res, keys, opt, lastKey);
+        } else {
+            let usedDefault = false;
+            let usedKey = false;
+            if (!this.isValidLookup(res) && hasDefaultValue) {
+                usedDefault = true;
+                res = defaultValue;
+            }
+            if (!this.isValidLookup(res)) {
+                usedKey = true;
+                res = key;
+            }
+            const missingKeyNoValueFallbackToKey = opt.missingKeyNoValueFallbackToKey || this.options.missingKeyNoValueFallbackToKey;
+            const resForMissing = missingKeyNoValueFallbackToKey && usedKey ? undefined : res;
+            const updateMissing = hasDefaultValue && defaultValue !== res && this.options.updateMissing;
+            if (usedKey || usedDefault || updateMissing) {
+                this.logger.log(updateMissing ? 'updateKey' : 'missingKey', lng, namespace, key, updateMissing ? defaultValue : res);
+                if (keySeparator) {
+                    const fk = this.resolve(key, {
+                        ...opt,
+                        keySeparator: false
+                    });
+                    if (fk && fk.res) this.logger.warn('Seems the loaded translations were in flat JSON format instead of nested. Either set keySeparator: false on init or make sure your translations are published in nested format.');
+                }
+                let lngs = [];
+                const fallbackLngs = this.languageUtils.getFallbackCodes(this.options.fallbackLng, opt.lng || this.language);
+                if (this.options.saveMissingTo === 'fallback' && fallbackLngs && fallbackLngs[0]) {
+                    for(let i = 0; i < fallbackLngs.length; i++){
+                        lngs.push(fallbackLngs[i]);
+                    }
+                } else if (this.options.saveMissingTo === 'all') {
+                    lngs = this.languageUtils.toResolveHierarchy(opt.lng || this.language);
+                } else {
+                    lngs.push(opt.lng || this.language);
+                }
+                const send = (l, k, specificDefaultValue)=>{
+                    var _this_backendConnector;
+                    const defaultForMissing = hasDefaultValue && specificDefaultValue !== res ? specificDefaultValue : resForMissing;
+                    if (this.options.missingKeyHandler) {
+                        this.options.missingKeyHandler(l, namespace, k, defaultForMissing, updateMissing, opt);
+                    } else if ((_this_backendConnector = this.backendConnector) === null || _this_backendConnector === void 0 ? void 0 : _this_backendConnector.saveMissing) {
+                        this.backendConnector.saveMissing(l, namespace, k, defaultForMissing, updateMissing, opt);
+                    }
+                    this.emit('missingKey', l, namespace, k, res);
+                };
+                if (this.options.saveMissing) {
+                    if (this.options.saveMissingPlurals && needsPluralHandling) {
+                        lngs.forEach((language)=>{
+                            const suffixes = this.pluralResolver.getSuffixes(language, opt);
+                            if (needsZeroSuffixLookup && opt["defaultValue".concat(this.options.pluralSeparator, "zero")] && suffixes.indexOf("".concat(this.options.pluralSeparator, "zero")) < 0) {
+                                suffixes.push("".concat(this.options.pluralSeparator, "zero"));
+                            }
+                            suffixes.forEach((suffix)=>{
+                                send([
+                                    language
+                                ], key + suffix, opt["defaultValue".concat(suffix)] || defaultValue);
+                            });
+                        });
+                    } else {
+                        send(lngs, key, defaultValue);
+                    }
+                }
+            }
+            res = this.extendTranslation(res, keys, opt, resolved, lastKey);
+            if (usedKey && res === key && this.options.appendNamespaceToMissingKey) {
+                res = "".concat(namespace).concat(nsSeparator).concat(key);
+            }
+            if ((usedKey || usedDefault) && this.options.parseMissingKeyHandler) {
+                res = this.options.parseMissingKeyHandler(this.options.appendNamespaceToMissingKey ? "".concat(namespace).concat(nsSeparator).concat(key) : key, usedDefault ? res : undefined, opt);
+            }
+        }
+        if (returnDetails) {
+            resolved.res = res;
+            resolved.usedParams = this.getUsedParamsDetails(opt);
+            return resolved;
+        }
+        return res;
+    }
+    extendTranslation(res, key, opt, resolved, lastKey) {
+        var _this_i18nFormat;
+        if ((_this_i18nFormat = this.i18nFormat) === null || _this_i18nFormat === void 0 ? void 0 : _this_i18nFormat.parse) {
+            res = this.i18nFormat.parse(res, {
+                ...this.options.interpolation.defaultVariables,
+                ...opt
+            }, opt.lng || this.language || resolved.usedLng, resolved.usedNS, resolved.usedKey, {
+                resolved
+            });
+        } else if (!opt.skipInterpolation) {
+            var _this = this;
+            var _opt_interpolation;
+            if (opt.interpolation) this.interpolator.init({
+                ...opt,
+                ...{
+                    interpolation: {
+                        ...this.options.interpolation,
+                        ...opt.interpolation
+                    }
+                }
+            });
+            const skipOnVariables = isString(res) && ((opt === null || opt === void 0 ? void 0 : (_opt_interpolation = opt.interpolation) === null || _opt_interpolation === void 0 ? void 0 : _opt_interpolation.skipOnVariables) !== undefined ? opt.interpolation.skipOnVariables : this.options.interpolation.skipOnVariables);
+            let nestBef;
+            if (skipOnVariables) {
+                const nb = res.match(this.interpolator.nestingRegexp);
+                nestBef = nb && nb.length;
+            }
+            let data = opt.replace && !isString(opt.replace) ? opt.replace : opt;
+            if (this.options.interpolation.defaultVariables) data = {
+                ...this.options.interpolation.defaultVariables,
+                ...data
+            };
+            res = this.interpolator.interpolate(res, data, opt.lng || this.language || resolved.usedLng, opt);
+            if (skipOnVariables) {
+                const na = res.match(this.interpolator.nestingRegexp);
+                const nestAft = na && na.length;
+                if (nestBef < nestAft) opt.nest = false;
+            }
+            if (!opt.lng && resolved && resolved.res) opt.lng = this.language || resolved.usedLng;
+            if (opt.nest !== false) res = this.interpolator.nest(res, function() {
+                for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++){
+                    args[_key] = arguments[_key];
+                }
+                if ((lastKey === null || lastKey === void 0 ? void 0 : lastKey[0]) === args[0] && !opt.context) {
+                    _this.logger.warn("It seems you are nesting recursively key: ".concat(args[0], " in key: ").concat(key[0]));
+                    return null;
+                }
+                return _this.translate(...args, key);
+            }, opt);
+            if (opt.interpolation) this.interpolator.reset();
+        }
+        const postProcess = opt.postProcess || this.options.postProcess;
+        const postProcessorNames = isString(postProcess) ? [
+            postProcess
+        ] : postProcess;
+        if (res != null && (postProcessorNames === null || postProcessorNames === void 0 ? void 0 : postProcessorNames.length) && opt.applyPostProcessor !== false) {
+            res = postProcessor.handle(postProcessorNames, res, key, this.options && this.options.postProcessPassResolved ? {
+                i18nResolved: {
+                    ...resolved,
+                    usedParams: this.getUsedParamsDetails(opt)
+                },
+                ...opt
+            } : opt, this);
+        }
+        return res;
+    }
+    resolve(keys) {
+        let opt = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+        let found;
+        let usedKey;
+        let exactUsedKey;
+        let usedLng;
+        let usedNS;
+        if (isString(keys)) keys = [
+            keys
+        ];
+        keys.forEach((k)=>{
+            if (this.isValidLookup(found)) return;
+            const extracted = this.extractFromKey(k, opt);
+            const key = extracted.key;
+            usedKey = key;
+            let namespaces = extracted.namespaces;
+            if (this.options.fallbackNS) namespaces = namespaces.concat(this.options.fallbackNS);
+            const needsPluralHandling = opt.count !== undefined && !isString(opt.count);
+            const needsZeroSuffixLookup = needsPluralHandling && !opt.ordinal && opt.count === 0;
+            const needsContextHandling = opt.context !== undefined && (isString(opt.context) || typeof opt.context === 'number') && opt.context !== '';
+            const codes = opt.lngs ? opt.lngs : this.languageUtils.toResolveHierarchy(opt.lng || this.language, opt.fallbackLng);
+            namespaces.forEach((ns)=>{
+                var _this_utils, _this_utils1;
+                if (this.isValidLookup(found)) return;
+                usedNS = ns;
+                if (!checkedLoadedFor["".concat(codes[0], "-").concat(ns)] && ((_this_utils = this.utils) === null || _this_utils === void 0 ? void 0 : _this_utils.hasLoadedNamespace) && !((_this_utils1 = this.utils) === null || _this_utils1 === void 0 ? void 0 : _this_utils1.hasLoadedNamespace(usedNS))) {
+                    checkedLoadedFor["".concat(codes[0], "-").concat(ns)] = true;
+                    this.logger.warn('key "'.concat(usedKey, '" for languages "').concat(codes.join(', '), '" won\'t get resolved as namespace "').concat(usedNS, '" was not yet loaded'), 'This means something IS WRONG in your setup. You access the t function before i18next.init / i18next.loadNamespace / i18next.changeLanguage was done. Wait for the callback or Promise to resolve before accessing it!!!');
+                }
+                codes.forEach((code)=>{
+                    var _this_i18nFormat;
+                    if (this.isValidLookup(found)) return;
+                    usedLng = code;
+                    const finalKeys = [
+                        key
+                    ];
+                    if ((_this_i18nFormat = this.i18nFormat) === null || _this_i18nFormat === void 0 ? void 0 : _this_i18nFormat.addLookupKeys) {
+                        this.i18nFormat.addLookupKeys(finalKeys, key, code, ns, opt);
+                    } else {
+                        let pluralSuffix;
+                        if (needsPluralHandling) pluralSuffix = this.pluralResolver.getSuffix(code, opt.count, opt);
+                        const zeroSuffix = "".concat(this.options.pluralSeparator, "zero");
+                        const ordinalPrefix = "".concat(this.options.pluralSeparator, "ordinal").concat(this.options.pluralSeparator);
+                        if (needsPluralHandling) {
+                            if (opt.ordinal && pluralSuffix.indexOf(ordinalPrefix) === 0) {
+                                finalKeys.push(key + pluralSuffix.replace(ordinalPrefix, this.options.pluralSeparator));
+                            }
+                            finalKeys.push(key + pluralSuffix);
+                            if (needsZeroSuffixLookup) {
+                                finalKeys.push(key + zeroSuffix);
+                            }
+                        }
+                        if (needsContextHandling) {
+                            const contextKey = "".concat(key).concat(this.options.contextSeparator || '_').concat(opt.context);
+                            finalKeys.push(contextKey);
+                            if (needsPluralHandling) {
+                                if (opt.ordinal && pluralSuffix.indexOf(ordinalPrefix) === 0) {
+                                    finalKeys.push(contextKey + pluralSuffix.replace(ordinalPrefix, this.options.pluralSeparator));
+                                }
+                                finalKeys.push(contextKey + pluralSuffix);
+                                if (needsZeroSuffixLookup) {
+                                    finalKeys.push(contextKey + zeroSuffix);
+                                }
+                            }
+                        }
+                    }
+                    let possibleKey;
+                    while(possibleKey = finalKeys.pop()){
+                        if (!this.isValidLookup(found)) {
+                            exactUsedKey = possibleKey;
+                            found = this.getResource(code, ns, possibleKey, opt);
+                        }
+                    }
+                });
+            });
+        });
+        return {
+            res: found,
+            usedKey,
+            exactUsedKey,
+            usedLng,
+            usedNS
+        };
+    }
+    isValidLookup(res) {
+        return res !== undefined && !(!this.options.returnNull && res === null) && !(!this.options.returnEmptyString && res === '');
+    }
+    getResource(code, ns, key) {
+        let options1 = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {};
+        var _this_i18nFormat;
+        if ((_this_i18nFormat = this.i18nFormat) === null || _this_i18nFormat === void 0 ? void 0 : _this_i18nFormat.getResource) return this.i18nFormat.getResource(code, ns, key, options1);
+        return this.resourceStore.getResource(code, ns, key, options1);
+    }
+    getUsedParamsDetails() {
+        let options1 = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
+        const optionsKeys = [
+            'defaultValue',
+            'ordinal',
+            'context',
+            'replace',
+            'lng',
+            'lngs',
+            'fallbackLng',
+            'ns',
+            'keySeparator',
+            'nsSeparator',
+            'returnObjects',
+            'returnDetails',
+            'joinArrays',
+            'postProcess',
+            'interpolation'
+        ];
+        const useOptionsReplaceForData = options1.replace && !isString(options1.replace);
+        let data = useOptionsReplaceForData ? options1.replace : options1;
+        if (useOptionsReplaceForData && typeof options1.count !== 'undefined') {
+            data.count = options1.count;
+        }
+        if (this.options.interpolation.defaultVariables) {
+            data = {
+                ...this.options.interpolation.defaultVariables,
+                ...data
+            };
+        }
+        if (!useOptionsReplaceForData) {
+            data = {
+                ...data
+            };
+            for (const key of optionsKeys){
+                delete data[key];
+            }
+        }
+        return data;
+    }
+    static hasDefaultValue(options1) {
+        const prefix = 'defaultValue';
+        for(const option in options1){
+            if (Object.prototype.hasOwnProperty.call(options1, option) && prefix === option.substring(0, prefix.length) && undefined !== options1[option]) {
+                return true;
+            }
+        }
+        return false;
+    }
+    constructor(services, options1 = {}){
+        super();
+        copy([
+            'resourceStore',
+            'languageUtils',
+            'pluralResolver',
+            'interpolator',
+            'backendConnector',
+            'i18nFormat',
+            'utils'
+        ], services, this);
+        this.options = options1;
+        if (this.options.keySeparator === undefined) {
+            this.options.keySeparator = '.';
+        }
+        this.logger = baseLogger.create('translator');
+    }
+}
+class LanguageUtil {
+    getScriptPartFromCode(code) {
+        code = getCleanedCode(code);
+        if (!code || code.indexOf('-') < 0) return null;
+        const p = code.split('-');
+        if (p.length === 2) return null;
+        p.pop();
+        if (p[p.length - 1].toLowerCase() === 'x') return null;
+        return this.formatLanguageCode(p.join('-'));
+    }
+    getLanguagePartFromCode(code) {
+        code = getCleanedCode(code);
+        if (!code || code.indexOf('-') < 0) return code;
+        const p = code.split('-');
+        return this.formatLanguageCode(p[0]);
+    }
+    formatLanguageCode(code) {
+        if (isString(code) && code.indexOf('-') > -1) {
+            let formattedCode;
+            try {
+                formattedCode = Intl.getCanonicalLocales(code)[0];
+            } catch (e) {}
+            if (formattedCode && this.options.lowerCaseLng) {
+                formattedCode = formattedCode.toLowerCase();
+            }
+            if (formattedCode) return formattedCode;
+            if (this.options.lowerCaseLng) {
+                return code.toLowerCase();
+            }
+            return code;
+        }
+        return this.options.cleanCode || this.options.lowerCaseLng ? code.toLowerCase() : code;
+    }
+    isSupportedCode(code) {
+        if (this.options.load === 'languageOnly' || this.options.nonExplicitSupportedLngs) {
+            code = this.getLanguagePartFromCode(code);
+        }
+        return !this.supportedLngs || !this.supportedLngs.length || this.supportedLngs.indexOf(code) > -1;
+    }
+    getBestMatchFromCodes(codes) {
+        if (!codes) return null;
+        let found;
+        codes.forEach((code)=>{
+            if (found) return;
+            const cleanedLng = this.formatLanguageCode(code);
+            if (!this.options.supportedLngs || this.isSupportedCode(cleanedLng)) found = cleanedLng;
+        });
+        if (!found && this.options.supportedLngs) {
+            codes.forEach((code)=>{
+                if (found) return;
+                const lngScOnly = this.getScriptPartFromCode(code);
+                if (this.isSupportedCode(lngScOnly)) return found = lngScOnly;
+                const lngOnly = this.getLanguagePartFromCode(code);
+                if (this.isSupportedCode(lngOnly)) return found = lngOnly;
+                found = this.options.supportedLngs.find((supportedLng)=>{
+                    if (supportedLng === lngOnly) return supportedLng;
+                    if (supportedLng.indexOf('-') < 0 && lngOnly.indexOf('-') < 0) return;
+                    if (supportedLng.indexOf('-') > 0 && lngOnly.indexOf('-') < 0 && supportedLng.substring(0, supportedLng.indexOf('-')) === lngOnly) return supportedLng;
+                    if (supportedLng.indexOf(lngOnly) === 0 && lngOnly.length > 1) return supportedLng;
+                });
+            });
+        }
+        if (!found) found = this.getFallbackCodes(this.options.fallbackLng)[0];
+        return found;
+    }
+    getFallbackCodes(fallbacks, code) {
+        if (!fallbacks) return [];
+        if (typeof fallbacks === 'function') fallbacks = fallbacks(code);
+        if (isString(fallbacks)) fallbacks = [
+            fallbacks
+        ];
+        if (Array.isArray(fallbacks)) return fallbacks;
+        if (!code) return fallbacks.default || [];
+        let found = fallbacks[code];
+        if (!found) found = fallbacks[this.getScriptPartFromCode(code)];
+        if (!found) found = fallbacks[this.formatLanguageCode(code)];
+        if (!found) found = fallbacks[this.getLanguagePartFromCode(code)];
+        if (!found) found = fallbacks.default;
+        return found || [];
+    }
+    toResolveHierarchy(code, fallbackCode) {
+        const fallbackCodes = this.getFallbackCodes((fallbackCode === false ? [] : fallbackCode) || this.options.fallbackLng || [], code);
+        const codes = [];
+        const addCode = (c)=>{
+            if (!c) return;
+            if (this.isSupportedCode(c)) {
+                codes.push(c);
+            } else {
+                this.logger.warn("rejecting language code not found in supportedLngs: ".concat(c));
+            }
+        };
+        if (isString(code) && (code.indexOf('-') > -1 || code.indexOf('_') > -1)) {
+            if (this.options.load !== 'languageOnly') addCode(this.formatLanguageCode(code));
+            if (this.options.load !== 'languageOnly' && this.options.load !== 'currentOnly') addCode(this.getScriptPartFromCode(code));
+            if (this.options.load !== 'currentOnly') addCode(this.getLanguagePartFromCode(code));
+        } else if (isString(code)) {
+            addCode(this.formatLanguageCode(code));
+        }
+        fallbackCodes.forEach((fc)=>{
+            if (codes.indexOf(fc) < 0) addCode(this.formatLanguageCode(fc));
+        });
+        return codes;
+    }
+    constructor(options1){
+        this.options = options1;
+        this.supportedLngs = this.options.supportedLngs || false;
+        this.logger = baseLogger.create('languageUtils');
+    }
+}
+const suffixesOrder = {
+    zero: 0,
+    one: 1,
+    two: 2,
+    few: 3,
+    many: 4,
+    other: 5
+};
+const dummyRule = {
+    select: (count)=>count === 1 ? 'one' : 'other',
+    resolvedOptions: ()=>({
+            pluralCategories: [
+                'one',
+                'other'
+            ]
+        })
+};
+class PluralResolver {
+    addRule(lng, obj) {
+        this.rules[lng] = obj;
+    }
+    clearCache() {
+        this.pluralRulesCache = {};
+    }
+    getRule(code) {
+        let options1 = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+        const cleanedCode = getCleanedCode(code === 'dev' ? 'en' : code);
+        const type = options1.ordinal ? 'ordinal' : 'cardinal';
+        const cacheKey = JSON.stringify({
+            cleanedCode,
+            type
+        });
+        if (cacheKey in this.pluralRulesCache) {
+            return this.pluralRulesCache[cacheKey];
+        }
+        let rule;
+        try {
+            rule = new Intl.PluralRules(cleanedCode, {
+                type
+            });
+        } catch (err) {
+            if (!Intl) {
+                this.logger.error('No Intl support, please use an Intl polyfill!');
+                return dummyRule;
+            }
+            if (!code.match(/-|_/)) return dummyRule;
+            const lngPart = this.languageUtils.getLanguagePartFromCode(code);
+            rule = this.getRule(lngPart, options1);
+        }
+        this.pluralRulesCache[cacheKey] = rule;
+        return rule;
+    }
+    needsPlural(code) {
+        let options1 = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+        let rule = this.getRule(code, options1);
+        if (!rule) rule = this.getRule('dev', options1);
+        return (rule === null || rule === void 0 ? void 0 : rule.resolvedOptions().pluralCategories.length) > 1;
+    }
+    getPluralFormsOfKey(code, key) {
+        let options1 = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
+        return this.getSuffixes(code, options1).map((suffix)=>"".concat(key).concat(suffix));
+    }
+    getSuffixes(code) {
+        let options1 = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+        let rule = this.getRule(code, options1);
+        if (!rule) rule = this.getRule('dev', options1);
+        if (!rule) return [];
+        return rule.resolvedOptions().pluralCategories.sort((pluralCategory1, pluralCategory2)=>suffixesOrder[pluralCategory1] - suffixesOrder[pluralCategory2]).map((pluralCategory)=>"".concat(this.options.prepend).concat(options1.ordinal ? "ordinal".concat(this.options.prepend) : '').concat(pluralCategory));
+    }
+    getSuffix(code, count) {
+        let options1 = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
+        const rule = this.getRule(code, options1);
+        if (rule) {
+            return "".concat(this.options.prepend).concat(options1.ordinal ? "ordinal".concat(this.options.prepend) : '').concat(rule.select(count));
+        }
+        this.logger.warn("no plural rule found for: ".concat(code));
+        return this.getSuffix('dev', count, options1);
+    }
+    constructor(languageUtils, options1 = {}){
+        this.languageUtils = languageUtils;
+        this.options = options1;
+        this.logger = baseLogger.create('pluralResolver');
+        this.pluralRulesCache = {};
+    }
+}
+const deepFindWithDefaults = function(data, defaultData, key) {
+    let keySeparator = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : '.', ignoreJSONStructure = arguments.length > 4 && arguments[4] !== void 0 ? arguments[4] : true;
+    let path = getPathWithDefaults(data, defaultData, key);
+    if (!path && ignoreJSONStructure && isString(key)) {
+        path = deepFind(data, key, keySeparator);
+        if (path === undefined) path = deepFind(defaultData, key, keySeparator);
+    }
+    return path;
+};
+const regexSafe = (val)=>val.replace(/\$/g, '$$$$');
+class Interpolator {
+    init() {
+        let options1 = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
+        if (!options1.interpolation) options1.interpolation = {
+            escapeValue: true
+        };
+        const { escape: escape$1, escapeValue, useRawValueToEscape, prefix, prefixEscaped, suffix, suffixEscaped, formatSeparator, unescapeSuffix, unescapePrefix, nestingPrefix, nestingPrefixEscaped, nestingSuffix, nestingSuffixEscaped, nestingOptionsSeparator, maxReplaces, alwaysFormat } = options1.interpolation;
+        this.escape = escape$1 !== undefined ? escape$1 : escape;
+        this.escapeValue = escapeValue !== undefined ? escapeValue : true;
+        this.useRawValueToEscape = useRawValueToEscape !== undefined ? useRawValueToEscape : false;
+        this.prefix = prefix ? regexEscape(prefix) : prefixEscaped || '{{';
+        this.suffix = suffix ? regexEscape(suffix) : suffixEscaped || '}}';
+        this.formatSeparator = formatSeparator || ',';
+        this.unescapePrefix = unescapeSuffix ? '' : unescapePrefix || '-';
+        this.unescapeSuffix = this.unescapePrefix ? '' : unescapeSuffix || '';
+        this.nestingPrefix = nestingPrefix ? regexEscape(nestingPrefix) : nestingPrefixEscaped || regexEscape('$t(');
+        this.nestingSuffix = nestingSuffix ? regexEscape(nestingSuffix) : nestingSuffixEscaped || regexEscape(')');
+        this.nestingOptionsSeparator = nestingOptionsSeparator || ',';
+        this.maxReplaces = maxReplaces || 1000;
+        this.alwaysFormat = alwaysFormat !== undefined ? alwaysFormat : false;
+        this.resetRegExp();
+    }
+    reset() {
+        if (this.options) this.init(this.options);
+    }
+    resetRegExp() {
+        const getOrResetRegExp = (existingRegExp, pattern)=>{
+            if ((existingRegExp === null || existingRegExp === void 0 ? void 0 : existingRegExp.source) === pattern) {
+                existingRegExp.lastIndex = 0;
+                return existingRegExp;
+            }
+            return new RegExp(pattern, 'g');
+        };
+        this.regexp = getOrResetRegExp(this.regexp, "".concat(this.prefix, "(.+?)").concat(this.suffix));
+        this.regexpUnescape = getOrResetRegExp(this.regexpUnescape, "".concat(this.prefix).concat(this.unescapePrefix, "(.+?)").concat(this.unescapeSuffix).concat(this.suffix));
+        this.nestingRegexp = getOrResetRegExp(this.nestingRegexp, "".concat(this.nestingPrefix, "((?:[^()\"']+|\"[^\"]*\"|'[^']*'|\\((?:[^()]|\"[^\"]*\"|'[^']*')*\\))*?)").concat(this.nestingSuffix));
+    }
+    interpolate(str, data, lng, options1) {
+        var _options_interpolation;
+        let match;
+        let value;
+        let replaces;
+        const defaultData = this.options && this.options.interpolation && this.options.interpolation.defaultVariables || {};
+        const handleFormat = (key)=>{
+            if (key.indexOf(this.formatSeparator) < 0) {
+                const path = deepFindWithDefaults(data, defaultData, key, this.options.keySeparator, this.options.ignoreJSONStructure);
+                return this.alwaysFormat ? this.format(path, undefined, lng, {
+                    ...options1,
+                    ...data,
+                    interpolationkey: key
+                }) : path;
+            }
+            const p = key.split(this.formatSeparator);
+            const k = p.shift().trim();
+            const f = p.join(this.formatSeparator).trim();
+            return this.format(deepFindWithDefaults(data, defaultData, k, this.options.keySeparator, this.options.ignoreJSONStructure), f, lng, {
+                ...options1,
+                ...data,
+                interpolationkey: k
+            });
+        };
+        this.resetRegExp();
+        const missingInterpolationHandler = (options1 === null || options1 === void 0 ? void 0 : options1.missingInterpolationHandler) || this.options.missingInterpolationHandler;
+        const skipOnVariables = (options1 === null || options1 === void 0 ? void 0 : (_options_interpolation = options1.interpolation) === null || _options_interpolation === void 0 ? void 0 : _options_interpolation.skipOnVariables) !== undefined ? options1.interpolation.skipOnVariables : this.options.interpolation.skipOnVariables;
+        const todos = [
+            {
+                regex: this.regexpUnescape,
+                safeValue: (val)=>regexSafe(val)
+            },
+            {
+                regex: this.regexp,
+                safeValue: (val)=>this.escapeValue ? regexSafe(this.escape(val)) : regexSafe(val)
+            }
+        ];
+        todos.forEach((todo)=>{
+            replaces = 0;
+            while(match = todo.regex.exec(str)){
+                const matchedVar = match[1].trim();
+                value = handleFormat(matchedVar);
+                if (value === undefined) {
+                    if (typeof missingInterpolationHandler === 'function') {
+                        const temp = missingInterpolationHandler(str, match, options1);
+                        value = isString(temp) ? temp : '';
+                    } else if (options1 && Object.prototype.hasOwnProperty.call(options1, matchedVar)) {
+                        value = '';
+                    } else if (skipOnVariables) {
+                        value = match[0];
+                        continue;
+                    } else {
+                        this.logger.warn("missed to pass in variable ".concat(matchedVar, " for interpolating ").concat(str));
+                        value = '';
+                    }
+                } else if (!isString(value) && !this.useRawValueToEscape) {
+                    value = makeString(value);
+                }
+                const safeValue = todo.safeValue(value);
+                str = str.replace(match[0], safeValue);
+                if (skipOnVariables) {
+                    todo.regex.lastIndex += value.length;
+                    todo.regex.lastIndex -= match[0].length;
+                } else {
+                    todo.regex.lastIndex = 0;
+                }
+                replaces++;
+                if (replaces >= this.maxReplaces) {
+                    break;
+                }
+            }
+        });
+        return str;
+    }
+    nest(str, fc) {
+        let options1 = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {};
+        let match;
+        let value;
+        let clonedOptions;
+        const handleHasOptions = (key, inheritedOptions)=>{
+            const sep = this.nestingOptionsSeparator;
+            if (key.indexOf(sep) < 0) return key;
+            const c = key.split(new RegExp("".concat(sep, "[ ]*{")));
+            let optionsString = "{".concat(c[1]);
+            key = c[0];
+            optionsString = this.interpolate(optionsString, clonedOptions);
+            const matchedSingleQuotes = optionsString.match(/'/g);
+            const matchedDoubleQuotes = optionsString.match(/"/g);
+            var _matchedSingleQuotes_length;
+            if (((_matchedSingleQuotes_length = matchedSingleQuotes === null || matchedSingleQuotes === void 0 ? void 0 : matchedSingleQuotes.length) !== null && _matchedSingleQuotes_length !== void 0 ? _matchedSingleQuotes_length : 0) % 2 === 0 && !matchedDoubleQuotes || matchedDoubleQuotes.length % 2 !== 0) {
+                optionsString = optionsString.replace(/'/g, '"');
+            }
+            try {
+                clonedOptions = JSON.parse(optionsString);
+                if (inheritedOptions) clonedOptions = {
+                    ...inheritedOptions,
+                    ...clonedOptions
+                };
+            } catch (e) {
+                this.logger.warn("failed parsing options string in nesting for key ".concat(key), e);
+                return "".concat(key).concat(sep).concat(optionsString);
+            }
+            if (clonedOptions.defaultValue && clonedOptions.defaultValue.indexOf(this.prefix) > -1) delete clonedOptions.defaultValue;
+            return key;
+        };
+        while(match = this.nestingRegexp.exec(str)){
+            let formatters = [];
+            clonedOptions = {
+                ...options1
+            };
+            clonedOptions = clonedOptions.replace && !isString(clonedOptions.replace) ? clonedOptions.replace : clonedOptions;
+            clonedOptions.applyPostProcessor = false;
+            delete clonedOptions.defaultValue;
+            const keyEndIndex = /{.*}/.test(match[1]) ? match[1].lastIndexOf('}') + 1 : match[1].indexOf(this.formatSeparator);
+            if (keyEndIndex !== -1) {
+                formatters = match[1].slice(keyEndIndex).split(this.formatSeparator).map((elem)=>elem.trim()).filter(Boolean);
+                match[1] = match[1].slice(0, keyEndIndex);
+            }
+            value = fc(handleHasOptions.call(this, match[1].trim(), clonedOptions), clonedOptions);
+            if (value && match[0] === str && !isString(value)) return value;
+            if (!isString(value)) value = makeString(value);
+            if (!value) {
+                this.logger.warn("missed to resolve ".concat(match[1], " for nesting ").concat(str));
+                value = '';
+            }
+            if (formatters.length) {
+                value = formatters.reduce((v, f)=>this.format(v, f, options1.lng, {
+                        ...options1,
+                        interpolationkey: match[1].trim()
+                    }), value.trim());
+            }
+            str = str.replace(match[0], value);
+            this.regexp.lastIndex = 0;
+        }
+        return str;
+    }
+    constructor(options1 = {}){
+        var _options_interpolation;
+        this.logger = baseLogger.create('interpolator');
+        this.options = options1;
+        this.format = (options1 === null || options1 === void 0 ? void 0 : (_options_interpolation = options1.interpolation) === null || _options_interpolation === void 0 ? void 0 : _options_interpolation.format) || ((value)=>value);
+        this.init(options1);
+    }
+}
+const parseFormatStr = (formatStr)=>{
+    let formatName = formatStr.toLowerCase().trim();
+    const formatOptions = {};
+    if (formatStr.indexOf('(') > -1) {
+        const p = formatStr.split('(');
+        formatName = p[0].toLowerCase().trim();
+        const optStr = p[1].substring(0, p[1].length - 1);
+        if (formatName === 'currency' && optStr.indexOf(':') < 0) {
+            if (!formatOptions.currency) formatOptions.currency = optStr.trim();
+        } else if (formatName === 'relativetime' && optStr.indexOf(':') < 0) {
+            if (!formatOptions.range) formatOptions.range = optStr.trim();
+        } else {
+            const opts = optStr.split(';');
+            opts.forEach((opt)=>{
+                if (opt) {
+                    const [key, ...rest] = opt.split(':');
+                    const val = rest.join(':').trim().replace(/^'+|'+$/g, '');
+                    const trimmedKey = key.trim();
+                    if (!formatOptions[trimmedKey]) formatOptions[trimmedKey] = val;
+                    if (val === 'false') formatOptions[trimmedKey] = false;
+                    if (val === 'true') formatOptions[trimmedKey] = true;
+                    if (!isNaN(val)) formatOptions[trimmedKey] = parseInt(val, 10);
+                }
+            });
+        }
+    }
+    return {
+        formatName,
+        formatOptions
+    };
+};
+const createCachedFormatter = (fn)=>{
+    const cache = {};
+    return (v, l, o)=>{
+        let optForCache = o;
+        if (o && o.interpolationkey && o.formatParams && o.formatParams[o.interpolationkey] && o[o.interpolationkey]) {
+            optForCache = {
+                ...optForCache,
+                [o.interpolationkey]: undefined
+            };
+        }
+        const key = l + JSON.stringify(optForCache);
+        let frm = cache[key];
+        if (!frm) {
+            frm = fn(getCleanedCode(l), o);
+            cache[key] = frm;
+        }
+        return frm(v);
+    };
+};
+const createNonCachedFormatter = (fn)=>(v, l, o)=>fn(getCleanedCode(l), o)(v);
+class Formatter {
+    init(services) {
+        let options1 = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {
+            interpolation: {}
+        };
+        this.formatSeparator = options1.interpolation.formatSeparator || ',';
+        const cf = options1.cacheInBuiltFormats ? createCachedFormatter : createNonCachedFormatter;
+        this.formats = {
+            number: cf((lng, opt)=>{
+                const formatter = new Intl.NumberFormat(lng, {
+                    ...opt
+                });
+                return (val)=>formatter.format(val);
+            }),
+            currency: cf((lng, opt)=>{
+                const formatter = new Intl.NumberFormat(lng, {
+                    ...opt,
+                    style: 'currency'
+                });
+                return (val)=>formatter.format(val);
+            }),
+            datetime: cf((lng, opt)=>{
+                const formatter = new Intl.DateTimeFormat(lng, {
+                    ...opt
+                });
+                return (val)=>formatter.format(val);
+            }),
+            relativetime: cf((lng, opt)=>{
+                const formatter = new Intl.RelativeTimeFormat(lng, {
+                    ...opt
+                });
+                return (val)=>formatter.format(val, opt.range || 'day');
+            }),
+            list: cf((lng, opt)=>{
+                const formatter = new Intl.ListFormat(lng, {
+                    ...opt
+                });
+                return (val)=>formatter.format(val);
+            })
+        };
+    }
+    add(name, fc) {
+        this.formats[name.toLowerCase().trim()] = fc;
+    }
+    addCached(name, fc) {
+        this.formats[name.toLowerCase().trim()] = createCachedFormatter(fc);
+    }
+    format(value, format, lng) {
+        let options1 = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {};
+        const formats = format.split(this.formatSeparator);
+        if (formats.length > 1 && formats[0].indexOf('(') > 1 && formats[0].indexOf(')') < 0 && formats.find((f)=>f.indexOf(')') > -1)) {
+            const lastIndex = formats.findIndex((f)=>f.indexOf(')') > -1);
+            formats[0] = [
+                formats[0],
+                ...formats.splice(1, lastIndex)
+            ].join(this.formatSeparator);
+        }
+        const result = formats.reduce((mem, f)=>{
+            const { formatName, formatOptions } = parseFormatStr(f);
+            if (this.formats[formatName]) {
+                let formatted = mem;
+                try {
+                    var _options_formatParams;
+                    const valOptions = (options1 === null || options1 === void 0 ? void 0 : (_options_formatParams = options1.formatParams) === null || _options_formatParams === void 0 ? void 0 : _options_formatParams[options1.interpolationkey]) || {};
+                    const l = valOptions.locale || valOptions.lng || options1.locale || options1.lng || lng;
+                    formatted = this.formats[formatName](mem, l, {
+                        ...formatOptions,
+                        ...options1,
+                        ...valOptions
+                    });
+                } catch (error) {
+                    this.logger.warn(error);
+                }
+                return formatted;
+            } else {
+                this.logger.warn("there was no format function for ".concat(formatName));
+            }
+            return mem;
+        }, value);
+        return result;
+    }
+    constructor(options1 = {}){
+        this.logger = baseLogger.create('formatter');
+        this.options = options1;
+        this.init(options1);
+    }
+}
+const removePending = (q, name)=>{
+    if (q.pending[name] !== undefined) {
+        delete q.pending[name];
+        q.pendingCount--;
+    }
+};
+class Connector extends EventEmitter {
+    queueLoad(languages, namespaces, options1, callback) {
+        const toLoad = {};
+        const pending = {};
+        const toLoadLanguages = {};
+        const toLoadNamespaces = {};
+        languages.forEach((lng)=>{
+            let hasAllNamespaces = true;
+            namespaces.forEach((ns)=>{
+                const name = "".concat(lng, "|").concat(ns);
+                if (!options1.reload && this.store.hasResourceBundle(lng, ns)) {
+                    this.state[name] = 2;
+                } else if (this.state[name] < 0) ;
+                else if (this.state[name] === 1) {
+                    if (pending[name] === undefined) pending[name] = true;
+                } else {
+                    this.state[name] = 1;
+                    hasAllNamespaces = false;
+                    if (pending[name] === undefined) pending[name] = true;
+                    if (toLoad[name] === undefined) toLoad[name] = true;
+                    if (toLoadNamespaces[ns] === undefined) toLoadNamespaces[ns] = true;
+                }
+            });
+            if (!hasAllNamespaces) toLoadLanguages[lng] = true;
+        });
+        if (Object.keys(toLoad).length || Object.keys(pending).length) {
+            this.queue.push({
+                pending,
+                pendingCount: Object.keys(pending).length,
+                loaded: {},
+                errors: [],
+                callback
+            });
+        }
+        return {
+            toLoad: Object.keys(toLoad),
+            pending: Object.keys(pending),
+            toLoadLanguages: Object.keys(toLoadLanguages),
+            toLoadNamespaces: Object.keys(toLoadNamespaces)
+        };
+    }
+    loaded(name, err, data) {
+        const s = name.split('|');
+        const lng = s[0];
+        const ns = s[1];
+        if (err) this.emit('failedLoading', lng, ns, err);
+        if (!err && data) {
+            this.store.addResourceBundle(lng, ns, data, undefined, undefined, {
+                skipCopy: true
+            });
+        }
+        this.state[name] = err ? -1 : 2;
+        if (err && data) this.state[name] = 0;
+        const loaded = {};
+        this.queue.forEach((q)=>{
+            pushPath(q.loaded, [
+                lng
+            ], ns);
+            removePending(q, name);
+            if (err) q.errors.push(err);
+            if (q.pendingCount === 0 && !q.done) {
+                Object.keys(q.loaded).forEach((l)=>{
+                    if (!loaded[l]) loaded[l] = {};
+                    const loadedKeys = q.loaded[l];
+                    if (loadedKeys.length) {
+                        loadedKeys.forEach((n)=>{
+                            if (loaded[l][n] === undefined) loaded[l][n] = true;
+                        });
+                    }
+                });
+                q.done = true;
+                if (q.errors.length) {
+                    q.callback(q.errors);
+                } else {
+                    q.callback();
+                }
+            }
+        });
+        this.emit('loaded', loaded);
+        this.queue = this.queue.filter((q)=>!q.done);
+    }
+    read(lng, ns, fcName) {
+        let tried = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : 0, wait = arguments.length > 4 && arguments[4] !== void 0 ? arguments[4] : this.retryTimeout, callback = arguments.length > 5 ? arguments[5] : void 0;
+        if (!lng.length) return callback(null, {});
+        if (this.readingCalls >= this.maxParallelReads) {
+            this.waitingReads.push({
+                lng,
+                ns,
+                fcName,
+                tried,
+                wait,
+                callback
+            });
+            return;
+        }
+        this.readingCalls++;
+        const resolver = (err, data)=>{
+            this.readingCalls--;
+            if (this.waitingReads.length > 0) {
+                const next = this.waitingReads.shift();
+                this.read(next.lng, next.ns, next.fcName, next.tried, next.wait, next.callback);
+            }
+            if (err && data && tried < this.maxRetries) {
+                setTimeout(()=>{
+                    this.read.call(this, lng, ns, fcName, tried + 1, wait * 2, callback);
+                }, wait);
+                return;
+            }
+            callback(err, data);
+        };
+        const fc = this.backend[fcName].bind(this.backend);
+        if (fc.length === 2) {
+            try {
+                const r = fc(lng, ns);
+                if (r && typeof r.then === 'function') {
+                    r.then((data)=>resolver(null, data)).catch(resolver);
+                } else {
+                    resolver(null, r);
+                }
+            } catch (err) {
+                resolver(err);
+            }
+            return;
+        }
+        return fc(lng, ns, resolver);
+    }
+    prepareLoading(languages, namespaces) {
+        let options1 = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : {}, callback = arguments.length > 3 ? arguments[3] : void 0;
+        if (!this.backend) {
+            this.logger.warn('No backend was added via i18next.use. Will not load resources.');
+            return callback && callback();
+        }
+        if (isString(languages)) languages = this.languageUtils.toResolveHierarchy(languages);
+        if (isString(namespaces)) namespaces = [
+            namespaces
+        ];
+        const toLoad = this.queueLoad(languages, namespaces, options1, callback);
+        if (!toLoad.toLoad.length) {
+            if (!toLoad.pending.length) callback();
+            return null;
+        }
+        toLoad.toLoad.forEach((name)=>{
+            this.loadOne(name);
+        });
+    }
+    load(languages, namespaces, callback) {
+        this.prepareLoading(languages, namespaces, {}, callback);
+    }
+    reload(languages, namespaces, callback) {
+        this.prepareLoading(languages, namespaces, {
+            reload: true
+        }, callback);
+    }
+    loadOne(name) {
+        let prefix = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : '';
+        const s = name.split('|');
+        const lng = s[0];
+        const ns = s[1];
+        this.read(lng, ns, 'read', undefined, undefined, (err, data)=>{
+            if (err) this.logger.warn("".concat(prefix, "loading namespace ").concat(ns, " for language ").concat(lng, " failed"), err);
+            if (!err && data) this.logger.log("".concat(prefix, "loaded namespace ").concat(ns, " for language ").concat(lng), data);
+            this.loaded(name, err, data);
+        });
+    }
+    saveMissing(languages, namespace, key, fallbackValue, isUpdate) {
+        let options1 = arguments.length > 5 && arguments[5] !== void 0 ? arguments[5] : {}, clb = arguments.length > 6 && arguments[6] !== void 0 ? arguments[6] : ()=>{};
+        var _this_services_utils, _this_services, _this_services_utils1, _this_services1, _this_backend;
+        if (((_this_services = this.services) === null || _this_services === void 0 ? void 0 : (_this_services_utils = _this_services.utils) === null || _this_services_utils === void 0 ? void 0 : _this_services_utils.hasLoadedNamespace) && !((_this_services1 = this.services) === null || _this_services1 === void 0 ? void 0 : (_this_services_utils1 = _this_services1.utils) === null || _this_services_utils1 === void 0 ? void 0 : _this_services_utils1.hasLoadedNamespace(namespace))) {
+            this.logger.warn('did not save key "'.concat(key, '" as the namespace "').concat(namespace, '" was not yet loaded'), 'This means something IS WRONG in your setup. You access the t function before i18next.init / i18next.loadNamespace / i18next.changeLanguage was done. Wait for the callback or Promise to resolve before accessing it!!!');
+            return;
+        }
+        if (key === undefined || key === null || key === '') return;
+        if ((_this_backend = this.backend) === null || _this_backend === void 0 ? void 0 : _this_backend.create) {
+            const opts = {
+                ...options1,
+                isUpdate
+            };
+            const fc = this.backend.create.bind(this.backend);
+            if (fc.length < 6) {
+                try {
+                    let r;
+                    if (fc.length === 5) {
+                        r = fc(languages, namespace, key, fallbackValue, opts);
+                    } else {
+                        r = fc(languages, namespace, key, fallbackValue);
+                    }
+                    if (r && typeof r.then === 'function') {
+                        r.then((data)=>clb(null, data)).catch(clb);
+                    } else {
+                        clb(null, r);
+                    }
+                } catch (err) {
+                    clb(err);
+                }
+            } else {
+                fc(languages, namespace, key, fallbackValue, clb, opts);
+            }
+        }
+        if (!languages || !languages[0]) return;
+        this.store.addResource(languages[0], namespace, key, fallbackValue);
+    }
+    constructor(backend, store, services, options1 = {}){
+        var _this_backend_init, _this_backend;
+        super();
+        this.backend = backend;
+        this.store = store;
+        this.services = services;
+        this.languageUtils = services.languageUtils;
+        this.options = options1;
+        this.logger = baseLogger.create('backendConnector');
+        this.waitingReads = [];
+        this.maxParallelReads = options1.maxParallelReads || 10;
+        this.readingCalls = 0;
+        this.maxRetries = options1.maxRetries >= 0 ? options1.maxRetries : 5;
+        this.retryTimeout = options1.retryTimeout >= 1 ? options1.retryTimeout : 350;
+        this.state = {};
+        this.queue = [];
+        (_this_backend = this.backend) === null || _this_backend === void 0 ? void 0 : (_this_backend_init = _this_backend.init) === null || _this_backend_init === void 0 ? void 0 : _this_backend_init.call(_this_backend, services, options1.backend, options1);
+    }
+}
+const get = ()=>({
+        debug: false,
+        initAsync: true,
+        ns: [
+            'translation'
+        ],
+        defaultNS: [
+            'translation'
+        ],
+        fallbackLng: [
+            'dev'
+        ],
+        fallbackNS: false,
+        supportedLngs: false,
+        nonExplicitSupportedLngs: false,
+        load: 'all',
+        preload: false,
+        simplifyPluralSuffix: true,
+        keySeparator: '.',
+        nsSeparator: ':',
+        pluralSeparator: '_',
+        contextSeparator: '_',
+        partialBundledLanguages: false,
+        saveMissing: false,
+        updateMissing: false,
+        saveMissingTo: 'fallback',
+        saveMissingPlurals: true,
+        missingKeyHandler: false,
+        missingInterpolationHandler: false,
+        postProcess: false,
+        postProcessPassResolved: false,
+        returnNull: false,
+        returnEmptyString: true,
+        returnObjects: false,
+        joinArrays: false,
+        returnedObjectHandler: false,
+        parseMissingKeyHandler: false,
+        appendNamespaceToMissingKey: false,
+        appendNamespaceToCIMode: false,
+        overloadTranslationOptionHandler: (args)=>{
+            let ret = {};
+            if (typeof args[1] === 'object') ret = args[1];
+            if (isString(args[1])) ret.defaultValue = args[1];
+            if (isString(args[2])) ret.tDescription = args[2];
+            if (typeof args[2] === 'object' || typeof args[3] === 'object') {
+                const options1 = args[3] || args[2];
+                Object.keys(options1).forEach((key)=>{
+                    ret[key] = options1[key];
+                });
+            }
+            return ret;
+        },
+        interpolation: {
+            escapeValue: true,
+            format: (value)=>value,
+            prefix: '{{',
+            suffix: '}}',
+            formatSeparator: ',',
+            unescapePrefix: '-',
+            nestingPrefix: '$t(',
+            nestingSuffix: ')',
+            nestingOptionsSeparator: ',',
+            maxReplaces: 1000,
+            skipOnVariables: true
+        },
+        cacheInBuiltFormats: true
+    });
+const transformOptions = (options1)=>{
+    var _options_supportedLngs_indexOf, _options_supportedLngs;
+    if (isString(options1.ns)) options1.ns = [
+        options1.ns
+    ];
+    if (isString(options1.fallbackLng)) options1.fallbackLng = [
+        options1.fallbackLng
+    ];
+    if (isString(options1.fallbackNS)) options1.fallbackNS = [
+        options1.fallbackNS
+    ];
+    if (((_options_supportedLngs = options1.supportedLngs) === null || _options_supportedLngs === void 0 ? void 0 : (_options_supportedLngs_indexOf = _options_supportedLngs.indexOf) === null || _options_supportedLngs_indexOf === void 0 ? void 0 : _options_supportedLngs_indexOf.call(_options_supportedLngs, 'cimode')) < 0) {
+        options1.supportedLngs = options1.supportedLngs.concat([
+            'cimode'
+        ]);
+    }
+    if (typeof options1.initImmediate === 'boolean') options1.initAsync = options1.initImmediate;
+    return options1;
+};
+const noop = ()=>{};
+const bindMemberFunctions = (inst)=>{
+    const mems = Object.getOwnPropertyNames(Object.getPrototypeOf(inst));
+    mems.forEach((mem)=>{
+        if (typeof inst[mem] === 'function') {
+            inst[mem] = inst[mem].bind(inst);
+        }
+    });
+};
+class I18n extends EventEmitter {
+    init() {
+        let options1 = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {}, callback = arguments.length > 1 ? arguments[1] : void 0;
+        this.isInitializing = true;
+        if (typeof options1 === 'function') {
+            callback = options1;
+            options1 = {};
+        }
+        if (options1.defaultNS == null && options1.ns) {
+            if (isString(options1.ns)) {
+                options1.defaultNS = options1.ns;
+            } else if (options1.ns.indexOf('translation') < 0) {
+                options1.defaultNS = options1.ns[0];
+            }
+        }
+        const defOpts = get();
+        this.options = {
+            ...defOpts,
+            ...this.options,
+            ...transformOptions(options1)
+        };
+        this.options.interpolation = {
+            ...defOpts.interpolation,
+            ...this.options.interpolation
+        };
+        if (options1.keySeparator !== undefined) {
+            this.options.userDefinedKeySeparator = options1.keySeparator;
+        }
+        if (options1.nsSeparator !== undefined) {
+            this.options.userDefinedNsSeparator = options1.nsSeparator;
+        }
+        const createClassOnDemand = (ClassOrObject)=>{
+            if (!ClassOrObject) return null;
+            if (typeof ClassOrObject === 'function') return new ClassOrObject();
+            return ClassOrObject;
+        };
+        if (!this.options.isClone) {
+            var _this = this;
+            if (this.modules.logger) {
+                baseLogger.init(createClassOnDemand(this.modules.logger), this.options);
+            } else {
+                baseLogger.init(null, this.options);
+            }
+            let formatter;
+            if (this.modules.formatter) {
+                formatter = this.modules.formatter;
+            } else {
+                formatter = Formatter;
+            }
+            const lu = new LanguageUtil(this.options);
+            this.store = new ResourceStore(this.options.resources, this.options);
+            const s = this.services;
+            s.logger = baseLogger;
+            s.resourceStore = this.store;
+            s.languageUtils = lu;
+            s.pluralResolver = new PluralResolver(lu, {
+                prepend: this.options.pluralSeparator,
+                simplifyPluralSuffix: this.options.simplifyPluralSuffix
+            });
+            const usingLegacyFormatFunction = this.options.interpolation.format && this.options.interpolation.format !== defOpts.interpolation.format;
+            if (usingLegacyFormatFunction) {
+                this.logger.deprecate("init: you are still using the legacy format function, please use the new approach: https://www.i18next.com/translation-function/formatting");
+            }
+            if (formatter && (!this.options.interpolation.format || this.options.interpolation.format === defOpts.interpolation.format)) {
+                s.formatter = createClassOnDemand(formatter);
+                if (s.formatter.init) s.formatter.init(s, this.options);
+                this.options.interpolation.format = s.formatter.format.bind(s.formatter);
+            }
+            s.interpolator = new Interpolator(this.options);
+            s.utils = {
+                hasLoadedNamespace: this.hasLoadedNamespace.bind(this)
+            };
+            s.backendConnector = new Connector(createClassOnDemand(this.modules.backend), s.resourceStore, s, this.options);
+            s.backendConnector.on('*', function(event) {
+                for(var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++){
+                    args[_key - 1] = arguments[_key];
+                }
+                _this.emit(event, ...args);
+            });
+            if (this.modules.languageDetector) {
+                s.languageDetector = createClassOnDemand(this.modules.languageDetector);
+                if (s.languageDetector.init) s.languageDetector.init(s, this.options.detection, this.options);
+            }
+            if (this.modules.i18nFormat) {
+                s.i18nFormat = createClassOnDemand(this.modules.i18nFormat);
+                if (s.i18nFormat.init) s.i18nFormat.init(this);
+            }
+            this.translator = new Translator(this.services, this.options);
+            this.translator.on('*', function(event) {
+                for(var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++){
+                    args[_key - 1] = arguments[_key];
+                }
+                _this.emit(event, ...args);
+            });
+            this.modules.external.forEach((m)=>{
+                if (m.init) m.init(this);
+            });
+        }
+        this.format = this.options.interpolation.format;
+        if (!callback) callback = noop;
+        if (this.options.fallbackLng && !this.services.languageDetector && !this.options.lng) {
+            const codes = this.services.languageUtils.getFallbackCodes(this.options.fallbackLng);
+            if (codes.length > 0 && codes[0] !== 'dev') this.options.lng = codes[0];
+        }
+        if (!this.services.languageDetector && !this.options.lng) {
+            this.logger.warn('init: no languageDetector is used and no lng is defined');
+        }
+        const storeApi = [
+            'getResource',
+            'hasResourceBundle',
+            'getResourceBundle',
+            'getDataByLanguage'
+        ];
+        storeApi.forEach((fcName)=>{
+            var _this = this;
+            this[fcName] = function() {
+                for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++){
+                    args[_key] = arguments[_key];
+                }
+                return _this.store[fcName](...args);
+            };
+        });
+        const storeApiChained = [
+            'addResource',
+            'addResources',
+            'addResourceBundle',
+            'removeResourceBundle'
+        ];
+        storeApiChained.forEach((fcName)=>{
+            var _this = this;
+            this[fcName] = function() {
+                for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++){
+                    args[_key] = arguments[_key];
+                }
+                _this.store[fcName](...args);
+                return _this;
+            };
+        });
+        const deferred = defer();
+        const load = ()=>{
+            const finish = (err, t)=>{
+                this.isInitializing = false;
+                if (this.isInitialized && !this.initializedStoreOnce) this.logger.warn('init: i18next is already initialized. You should call init just once!');
+                this.isInitialized = true;
+                if (!this.options.isClone) this.logger.log('initialized', this.options);
+                this.emit('initialized', this.options);
+                deferred.resolve(t);
+                callback(err, t);
+            };
+            if (this.languages && !this.isInitialized) return finish(null, this.t.bind(this));
+            this.changeLanguage(this.options.lng, finish);
+        };
+        if (this.options.resources || !this.options.initAsync) {
+            load();
+        } else {
+            setTimeout(load, 0);
+        }
+        return deferred;
+    }
+    loadResources(language) {
+        let callback = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : noop;
+        let usedCallback = callback;
+        const usedLng = isString(language) ? language : this.language;
+        if (typeof language === 'function') usedCallback = language;
+        if (!this.options.resources || this.options.partialBundledLanguages) {
+            var _this_options_preload_forEach, _this_options_preload;
+            if ((usedLng === null || usedLng === void 0 ? void 0 : usedLng.toLowerCase()) === 'cimode' && (!this.options.preload || this.options.preload.length === 0)) return usedCallback();
+            const toLoad = [];
+            const append = (lng)=>{
+                if (!lng) return;
+                if (lng === 'cimode') return;
+                const lngs = this.services.languageUtils.toResolveHierarchy(lng);
+                lngs.forEach((l)=>{
+                    if (l === 'cimode') return;
+                    if (toLoad.indexOf(l) < 0) toLoad.push(l);
+                });
+            };
+            if (!usedLng) {
+                const fallbacks = this.services.languageUtils.getFallbackCodes(this.options.fallbackLng);
+                fallbacks.forEach((l)=>append(l));
+            } else {
+                append(usedLng);
+            }
+            (_this_options_preload = this.options.preload) === null || _this_options_preload === void 0 ? void 0 : (_this_options_preload_forEach = _this_options_preload.forEach) === null || _this_options_preload_forEach === void 0 ? void 0 : _this_options_preload_forEach.call(_this_options_preload, (l)=>append(l));
+            this.services.backendConnector.load(toLoad, this.options.ns, (e)=>{
+                if (!e && !this.resolvedLanguage && this.language) this.setResolvedLanguage(this.language);
+                usedCallback(e);
+            });
+        } else {
+            usedCallback(null);
+        }
+    }
+    reloadResources(lngs, ns, callback) {
+        const deferred = defer();
+        if (typeof lngs === 'function') {
+            callback = lngs;
+            lngs = undefined;
+        }
+        if (typeof ns === 'function') {
+            callback = ns;
+            ns = undefined;
+        }
+        if (!lngs) lngs = this.languages;
+        if (!ns) ns = this.options.ns;
+        if (!callback) callback = noop;
+        this.services.backendConnector.reload(lngs, ns, (err)=>{
+            deferred.resolve();
+            callback(err);
+        });
+        return deferred;
+    }
+    use(module) {
+        if (!module) throw new Error('You are passing an undefined module! Please check the object you are passing to i18next.use()');
+        if (!module.type) throw new Error('You are passing a wrong module! Please check the object you are passing to i18next.use()');
+        if (module.type === 'backend') {
+            this.modules.backend = module;
+        }
+        if (module.type === 'logger' || module.log && module.warn && module.error) {
+            this.modules.logger = module;
+        }
+        if (module.type === 'languageDetector') {
+            this.modules.languageDetector = module;
+        }
+        if (module.type === 'i18nFormat') {
+            this.modules.i18nFormat = module;
+        }
+        if (module.type === 'postProcessor') {
+            postProcessor.addPostProcessor(module);
+        }
+        if (module.type === 'formatter') {
+            this.modules.formatter = module;
+        }
+        if (module.type === '3rdParty') {
+            this.modules.external.push(module);
+        }
+        return this;
+    }
+    setResolvedLanguage(l) {
+        if (!l || !this.languages) return;
+        if ([
+            'cimode',
+            'dev'
+        ].indexOf(l) > -1) return;
+        for(let li = 0; li < this.languages.length; li++){
+            const lngInLngs = this.languages[li];
+            if ([
+                'cimode',
+                'dev'
+            ].indexOf(lngInLngs) > -1) continue;
+            if (this.store.hasLanguageSomeTranslations(lngInLngs)) {
+                this.resolvedLanguage = lngInLngs;
+                break;
+            }
+        }
+        if (!this.resolvedLanguage && this.languages.indexOf(l) < 0 && this.store.hasLanguageSomeTranslations(l)) {
+            this.resolvedLanguage = l;
+            this.languages.unshift(l);
+        }
+    }
+    changeLanguage(lng, callback) {
+        this.isLanguageChangingTo = lng;
+        const deferred = defer();
+        this.emit('languageChanging', lng);
+        const setLngProps = (l)=>{
+            this.language = l;
+            this.languages = this.services.languageUtils.toResolveHierarchy(l);
+            this.resolvedLanguage = undefined;
+            this.setResolvedLanguage(l);
+        };
+        const done = (err, l)=>{
+            var _this = this;
+            if (l) {
+                if (this.isLanguageChangingTo === lng) {
+                    setLngProps(l);
+                    this.translator.changeLanguage(l);
+                    this.isLanguageChangingTo = undefined;
+                    this.emit('languageChanged', l);
+                    this.logger.log('languageChanged', l);
+                }
+            } else {
+                this.isLanguageChangingTo = undefined;
+            }
+            deferred.resolve(function() {
+                for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++){
+                    args[_key] = arguments[_key];
+                }
+                return _this.t(...args);
+            });
+            if (callback) callback(err, function() {
+                for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++){
+                    args[_key] = arguments[_key];
+                }
+                return _this.t(...args);
+            });
+        };
+        const setLng = (lngs)=>{
+            if (!lng && !lngs && this.services.languageDetector) lngs = [];
+            const fl = isString(lngs) ? lngs : lngs && lngs[0];
+            const l = this.store.hasLanguageSomeTranslations(fl) ? fl : this.services.languageUtils.getBestMatchFromCodes(isString(lngs) ? [
+                lngs
+            ] : lngs);
+            if (l) {
+                var _this_services_languageDetector_cacheUserLanguage, _this_services_languageDetector;
+                if (!this.language) {
+                    setLngProps(l);
+                }
+                if (!this.translator.language) this.translator.changeLanguage(l);
+                (_this_services_languageDetector = this.services.languageDetector) === null || _this_services_languageDetector === void 0 ? void 0 : (_this_services_languageDetector_cacheUserLanguage = _this_services_languageDetector.cacheUserLanguage) === null || _this_services_languageDetector_cacheUserLanguage === void 0 ? void 0 : _this_services_languageDetector_cacheUserLanguage.call(_this_services_languageDetector, l);
+            }
+            this.loadResources(l, (err)=>{
+                done(err, l);
+            });
+        };
+        if (!lng && this.services.languageDetector && !this.services.languageDetector.async) {
+            setLng(this.services.languageDetector.detect());
+        } else if (!lng && this.services.languageDetector && this.services.languageDetector.async) {
+            if (this.services.languageDetector.detect.length === 0) {
+                this.services.languageDetector.detect().then(setLng);
+            } else {
+                this.services.languageDetector.detect(setLng);
+            }
+        } else {
+            setLng(lng);
+        }
+        return deferred;
+    }
+    getFixedT(lng, ns, keyPrefix) {
+        var _this = this;
+        const fixedT = function(key, opts) {
+            for(var _len = arguments.length, rest = new Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++){
+                rest[_key - 2] = arguments[_key];
+            }
+            let o;
+            if (typeof opts !== 'object') {
+                o = _this.options.overloadTranslationOptionHandler([
+                    key,
+                    opts
+                ].concat(rest));
+            } else {
+                o = {
+                    ...opts
+                };
+            }
+            o.lng = o.lng || fixedT.lng;
+            o.lngs = o.lngs || fixedT.lngs;
+            o.ns = o.ns || fixedT.ns;
+            if (o.keyPrefix !== '') o.keyPrefix = o.keyPrefix || keyPrefix || fixedT.keyPrefix;
+            const keySeparator = _this.options.keySeparator || '.';
+            let resultKey;
+            if (o.keyPrefix && Array.isArray(key)) {
+                resultKey = key.map((k)=>"".concat(o.keyPrefix).concat(keySeparator).concat(k));
+            } else {
+                resultKey = o.keyPrefix ? "".concat(o.keyPrefix).concat(keySeparator).concat(key) : key;
+            }
+            return _this.t(resultKey, o);
+        };
+        if (isString(lng)) {
+            fixedT.lng = lng;
+        } else {
+            fixedT.lngs = lng;
+        }
+        fixedT.ns = ns;
+        fixedT.keyPrefix = keyPrefix;
+        return fixedT;
+    }
+    t() {
+        for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++){
+            args[_key] = arguments[_key];
+        }
+        var _this_translator;
+        return (_this_translator = this.translator) === null || _this_translator === void 0 ? void 0 : _this_translator.translate(...args);
+    }
+    exists() {
+        for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++){
+            args[_key] = arguments[_key];
+        }
+        var _this_translator;
+        return (_this_translator = this.translator) === null || _this_translator === void 0 ? void 0 : _this_translator.exists(...args);
+    }
+    setDefaultNamespace(ns) {
+        this.options.defaultNS = ns;
+    }
+    hasLoadedNamespace(ns) {
+        let options1 = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+        if (!this.isInitialized) {
+            this.logger.warn('hasLoadedNamespace: i18next was not initialized', this.languages);
+            return false;
+        }
+        if (!this.languages || !this.languages.length) {
+            this.logger.warn('hasLoadedNamespace: i18n.languages were undefined or empty', this.languages);
+            return false;
+        }
+        const lng = options1.lng || this.resolvedLanguage || this.languages[0];
+        const fallbackLng = this.options ? this.options.fallbackLng : false;
+        const lastLng = this.languages[this.languages.length - 1];
+        if (lng.toLowerCase() === 'cimode') return true;
+        const loadNotPending = (l, n)=>{
+            const loadState = this.services.backendConnector.state["".concat(l, "|").concat(n)];
+            return loadState === -1 || loadState === 0 || loadState === 2;
+        };
+        if (options1.precheck) {
+            const preResult = options1.precheck(this, loadNotPending);
+            if (preResult !== undefined) return preResult;
+        }
+        if (this.hasResourceBundle(lng, ns)) return true;
+        if (!this.services.backendConnector.backend || this.options.resources && !this.options.partialBundledLanguages) return true;
+        if (loadNotPending(lng, ns) && (!fallbackLng || loadNotPending(lastLng, ns))) return true;
+        return false;
+    }
+    loadNamespaces(ns, callback) {
+        const deferred = defer();
+        if (!this.options.ns) {
+            if (callback) callback();
+            return Promise.resolve();
+        }
+        if (isString(ns)) ns = [
+            ns
+        ];
+        ns.forEach((n)=>{
+            if (this.options.ns.indexOf(n) < 0) this.options.ns.push(n);
+        });
+        this.loadResources((err)=>{
+            deferred.resolve();
+            if (callback) callback(err);
+        });
+        return deferred;
+    }
+    loadLanguages(lngs, callback) {
+        const deferred = defer();
+        if (isString(lngs)) lngs = [
+            lngs
+        ];
+        const preloaded = this.options.preload || [];
+        const newLngs = lngs.filter((lng)=>preloaded.indexOf(lng) < 0 && this.services.languageUtils.isSupportedCode(lng));
+        if (!newLngs.length) {
+            if (callback) callback();
+            return Promise.resolve();
+        }
+        this.options.preload = preloaded.concat(newLngs);
+        this.loadResources((err)=>{
+            deferred.resolve();
+            if (callback) callback(err);
+        });
+        return deferred;
+    }
+    dir(lng) {
+        var _this_languages, _this_services;
+        if (!lng) lng = this.resolvedLanguage || (((_this_languages = this.languages) === null || _this_languages === void 0 ? void 0 : _this_languages.length) > 0 ? this.languages[0] : this.language);
+        if (!lng) return 'rtl';
+        try {
+            const l = new Intl.Locale(lng);
+            if (l && l.getTextInfo) {
+                const ti = l.getTextInfo();
+                if (ti && ti.direction) return ti.direction;
+            }
+        } catch (e) {}
+        const rtlLngs = [
+            'ar',
+            'shu',
+            'sqr',
+            'ssh',
+            'xaa',
+            'yhd',
+            'yud',
+            'aao',
+            'abh',
+            'abv',
+            'acm',
+            'acq',
+            'acw',
+            'acx',
+            'acy',
+            'adf',
+            'ads',
+            'aeb',
+            'aec',
+            'afb',
+            'ajp',
+            'apc',
+            'apd',
+            'arb',
+            'arq',
+            'ars',
+            'ary',
+            'arz',
+            'auz',
+            'avl',
+            'ayh',
+            'ayl',
+            'ayn',
+            'ayp',
+            'bbz',
+            'pga',
+            'he',
+            'iw',
+            'ps',
+            'pbt',
+            'pbu',
+            'pst',
+            'prp',
+            'prd',
+            'ug',
+            'ur',
+            'ydd',
+            'yds',
+            'yih',
+            'ji',
+            'yi',
+            'hbo',
+            'men',
+            'xmn',
+            'fa',
+            'jpr',
+            'peo',
+            'pes',
+            'prs',
+            'dv',
+            'sam',
+            'ckb'
+        ];
+        const languageUtils = ((_this_services = this.services) === null || _this_services === void 0 ? void 0 : _this_services.languageUtils) || new LanguageUtil(get());
+        if (lng.toLowerCase().indexOf('-latn') > 1) return 'ltr';
+        return rtlLngs.indexOf(languageUtils.getLanguagePartFromCode(lng)) > -1 || lng.toLowerCase().indexOf('-arab') > 1 ? 'rtl' : 'ltr';
+    }
+    static createInstance() {
+        let options1 = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {}, callback = arguments.length > 1 ? arguments[1] : void 0;
+        return new I18n(options1, callback);
+    }
+    cloneInstance() {
+        let options1 = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {}, callback = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : noop;
+        const forkResourceStore = options1.forkResourceStore;
+        if (forkResourceStore) delete options1.forkResourceStore;
+        const mergedOptions = {
+            ...this.options,
+            ...options1,
+            ...{
+                isClone: true
+            }
+        };
+        const clone = new I18n(mergedOptions);
+        if (options1.debug !== undefined || options1.prefix !== undefined) {
+            clone.logger = clone.logger.clone(options1);
+        }
+        const membersToCopy = [
+            'store',
+            'services',
+            'language'
+        ];
+        membersToCopy.forEach((m)=>{
+            clone[m] = this[m];
+        });
+        clone.services = {
+            ...this.services
+        };
+        clone.services.utils = {
+            hasLoadedNamespace: clone.hasLoadedNamespace.bind(clone)
+        };
+        if (forkResourceStore) {
+            const clonedData = Object.keys(this.store.data).reduce((prev, l)=>{
+                prev[l] = {
+                    ...this.store.data[l]
+                };
+                prev[l] = Object.keys(prev[l]).reduce((acc, n)=>{
+                    acc[n] = {
+                        ...prev[l][n]
+                    };
+                    return acc;
+                }, prev[l]);
+                return prev;
+            }, {});
+            clone.store = new ResourceStore(clonedData, mergedOptions);
+            clone.services.resourceStore = clone.store;
+        }
+        clone.translator = new Translator(clone.services, mergedOptions);
+        clone.translator.on('*', function(event) {
+            for(var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++){
+                args[_key - 1] = arguments[_key];
+            }
+            clone.emit(event, ...args);
+        });
+        clone.init(mergedOptions, callback);
+        clone.translator.options = mergedOptions;
+        clone.translator.backendConnector.services.utils = {
+            hasLoadedNamespace: clone.hasLoadedNamespace.bind(clone)
+        };
+        return clone;
+    }
+    toJSON() {
+        return {
+            options: this.options,
+            store: this.store,
+            language: this.language,
+            languages: this.languages,
+            resolvedLanguage: this.resolvedLanguage
+        };
+    }
+    constructor(options1 = {}, callback){
+        super();
+        this.options = transformOptions(options1);
+        this.services = {};
+        this.logger = baseLogger;
+        this.modules = {
+            external: []
+        };
+        bindMemberFunctions(this);
+        if (callback && !this.isInitialized && !options1.isClone) {
+            if (!this.options.initAsync) {
+                this.init(options1, callback);
+                return this;
+            }
+            setTimeout(()=>{
+                this.init(options1, callback);
+            }, 0);
+        }
+    }
+}
+const instance = I18n.createInstance();
+instance.createInstance = I18n.createInstance;
+const createInstance = instance.createInstance;
+const dir = instance.dir;
+const init = instance.init;
+const loadResources = instance.loadResources;
+const reloadResources = instance.reloadResources;
+const use = instance.use;
+const changeLanguage = instance.changeLanguage;
+const getFixedT = instance.getFixedT;
+const t = instance.t;
+const exists = instance.exists;
+const setDefaultNamespace = instance.setDefaultNamespace;
+const hasLoadedNamespace = instance.hasLoadedNamespace;
+const loadNamespaces = instance.loadNamespaces;
+const loadLanguages = instance.loadLanguages;
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/i18next-http-backend/esm/utils.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "defaults",
+    ()=>defaults,
+    "hasXMLHttpRequest",
+    ()=>hasXMLHttpRequest,
+    "makePromise",
+    ()=>makePromise
+]);
+function _typeof(o) {
+    "@babel/helpers - typeof";
+    return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o) {
+        return typeof o;
+    } : function(o) {
+        return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
+    }, _typeof(o);
+}
+var arr = [];
+var each = arr.forEach;
+var slice = arr.slice;
+function defaults(obj) {
+    each.call(slice.call(arguments, 1), function(source) {
+        if (source) {
+            for(var prop in source){
+                if (obj[prop] === undefined) obj[prop] = source[prop];
+            }
+        }
+    });
+    return obj;
+}
+function hasXMLHttpRequest() {
+    return typeof XMLHttpRequest === 'function' || (typeof XMLHttpRequest === "undefined" ? "undefined" : _typeof(XMLHttpRequest)) === 'object';
+}
+function isPromise(maybePromise) {
+    return !!maybePromise && typeof maybePromise.then === 'function';
+}
+function makePromise(maybePromise) {
+    if (isPromise(maybePromise)) {
+        return maybePromise;
+    }
+    return Promise.resolve(maybePromise);
+}
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/i18next-http-backend/esm/request.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$i18next$2d$http$2d$backend$2f$esm$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/i18next-http-backend/esm/utils.js [app-client] (ecmascript)");
+function ownKeys(e, r) {
+    var t = Object.keys(e);
+    if (Object.getOwnPropertySymbols) {
+        var o = Object.getOwnPropertySymbols(e);
+        r && (o = o.filter(function(r) {
+            return Object.getOwnPropertyDescriptor(e, r).enumerable;
+        })), t.push.apply(t, o);
+    }
+    return t;
+}
+function _objectSpread(e) {
+    for(var r = 1; r < arguments.length; r++){
+        var t = null != arguments[r] ? arguments[r] : {};
+        r % 2 ? ownKeys(Object(t), !0).forEach(function(r) {
+            _defineProperty(e, r, t[r]);
+        }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function(r) {
+            Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
+        });
+    }
+    return e;
+}
+function _defineProperty(e, r, t) {
+    return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, {
+        value: t,
+        enumerable: !0,
+        configurable: !0,
+        writable: !0
+    }) : e[r] = t, e;
+}
+function _toPropertyKey(t) {
+    var i = _toPrimitive(t, "string");
+    return "symbol" == _typeof(i) ? i : i + "";
+}
+function _toPrimitive(t, r) {
+    if ("object" != _typeof(t) || !t) return t;
+    var e = t[Symbol.toPrimitive];
+    if (void 0 !== e) {
+        var i = e.call(t, r || "default");
+        if ("object" != _typeof(i)) return i;
+        throw new TypeError("@@toPrimitive must return a primitive value.");
+    }
+    return ("string" === r ? String : Number)(t);
+}
+function _typeof(o) {
+    "@babel/helpers - typeof";
+    return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o) {
+        return typeof o;
+    } : function(o) {
+        return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
+    }, _typeof(o);
+}
+;
+var fetchApi = typeof fetch === 'function' ? fetch : undefined;
+if (("TURBOPACK compile-time value", "object") !== 'undefined' && /*TURBOPACK member replacement*/ __turbopack_context__.g.fetch) {
+    fetchApi = /*TURBOPACK member replacement*/ __turbopack_context__.g.fetch;
+} else if (typeof window !== 'undefined' && window.fetch) {
+    fetchApi = window.fetch;
+}
+var XmlHttpRequestApi;
+if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$i18next$2d$http$2d$backend$2f$esm$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["hasXMLHttpRequest"])()) {
+    if (("TURBOPACK compile-time value", "object") !== 'undefined' && /*TURBOPACK member replacement*/ __turbopack_context__.g.XMLHttpRequest) {
+        XmlHttpRequestApi = /*TURBOPACK member replacement*/ __turbopack_context__.g.XMLHttpRequest;
+    } else if (typeof window !== 'undefined' && window.XMLHttpRequest) {
+        XmlHttpRequestApi = window.XMLHttpRequest;
+    }
+}
+var ActiveXObjectApi;
+if (typeof ActiveXObject === 'function') {
+    if (("TURBOPACK compile-time value", "object") !== 'undefined' && /*TURBOPACK member replacement*/ __turbopack_context__.g.ActiveXObject) {
+        ActiveXObjectApi = /*TURBOPACK member replacement*/ __turbopack_context__.g.ActiveXObject;
+    } else if (typeof window !== 'undefined' && window.ActiveXObject) {
+        ActiveXObjectApi = window.ActiveXObject;
+    }
+}
+if (typeof fetchApi !== 'function') fetchApi = undefined;
+if (!fetchApi && !XmlHttpRequestApi && !ActiveXObjectApi) {
+    try {
+        __turbopack_context__.A("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/cross-fetch/dist/browser-ponyfill.js [app-client] (ecmascript, async loader)").then(function(mod) {
+            fetchApi = mod.default;
+        }).catch(function() {});
+    } catch (e) {}
+}
+var addQueryString = function addQueryString(url, params) {
+    if (params && _typeof(params) === 'object') {
+        var queryString = '';
+        for(var paramName in params){
+            queryString += '&' + encodeURIComponent(paramName) + '=' + encodeURIComponent(params[paramName]);
+        }
+        if (!queryString) return url;
+        url = url + (url.indexOf('?') !== -1 ? '&' : '?') + queryString.slice(1);
+    }
+    return url;
+};
+var fetchIt = function fetchIt(url, fetchOptions, callback, altFetch) {
+    var resolver = function resolver(response) {
+        if (!response.ok) return callback(response.statusText || 'Error', {
+            status: response.status
+        });
+        response.text().then(function(data) {
+            callback(null, {
+                status: response.status,
+                data: data
+            });
+        }).catch(callback);
+    };
+    if (altFetch) {
+        var altResponse = altFetch(url, fetchOptions);
+        if (altResponse instanceof Promise) {
+            altResponse.then(resolver).catch(callback);
+            return;
+        }
+    }
+    if (typeof fetch === 'function') {
+        fetch(url, fetchOptions).then(resolver).catch(callback);
+    } else {
+        fetchApi(url, fetchOptions).then(resolver).catch(callback);
+    }
+};
+var omitFetchOptions = false;
+var requestWithFetch = function requestWithFetch(options, url, payload, callback) {
+    if (options.queryStringParams) {
+        url = addQueryString(url, options.queryStringParams);
+    }
+    var headers = _objectSpread({}, typeof options.customHeaders === 'function' ? options.customHeaders() : options.customHeaders);
+    if (typeof window === 'undefined' && ("TURBOPACK compile-time value", "object") !== 'undefined' && typeof /*TURBOPACK member replacement*/ __turbopack_context__.g.process !== 'undefined' && /*TURBOPACK member replacement*/ __turbopack_context__.g.process.versions && /*TURBOPACK member replacement*/ __turbopack_context__.g.process.versions.node) {
+        headers['User-Agent'] = "i18next-http-backend (node/".concat(/*TURBOPACK member replacement*/ __turbopack_context__.g.process.version, "; ").concat(/*TURBOPACK member replacement*/ __turbopack_context__.g.process.platform, " ").concat(/*TURBOPACK member replacement*/ __turbopack_context__.g.process.arch, ")");
+    }
+    if (payload) headers['Content-Type'] = 'application/json';
+    var reqOptions = typeof options.requestOptions === 'function' ? options.requestOptions(payload) : options.requestOptions;
+    var fetchOptions = _objectSpread({
+        method: payload ? 'POST' : 'GET',
+        body: payload ? options.stringify(payload) : undefined,
+        headers: headers
+    }, omitFetchOptions ? {} : reqOptions);
+    var altFetch = typeof options.alternateFetch === 'function' && options.alternateFetch.length >= 1 ? options.alternateFetch : undefined;
+    try {
+        fetchIt(url, fetchOptions, callback, altFetch);
+    } catch (e) {
+        if (!reqOptions || Object.keys(reqOptions).length === 0 || !e.message || e.message.indexOf('not implemented') < 0) {
+            return callback(e);
+        }
+        try {
+            Object.keys(reqOptions).forEach(function(opt) {
+                delete fetchOptions[opt];
+            });
+            fetchIt(url, fetchOptions, callback, altFetch);
+            omitFetchOptions = true;
+        } catch (err) {
+            callback(err);
+        }
+    }
+};
+var requestWithXmlHttpRequest = function requestWithXmlHttpRequest(options, url, payload, callback) {
+    if (payload && _typeof(payload) === 'object') {
+        payload = addQueryString('', payload).slice(1);
+    }
+    if (options.queryStringParams) {
+        url = addQueryString(url, options.queryStringParams);
+    }
+    try {
+        var x = XmlHttpRequestApi ? new XmlHttpRequestApi() : new ActiveXObjectApi('MSXML2.XMLHTTP.3.0');
+        x.open(payload ? 'POST' : 'GET', url, 1);
+        if (!options.crossDomain) {
+            x.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        }
+        x.withCredentials = !!options.withCredentials;
+        if (payload) {
+            x.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        }
+        if (x.overrideMimeType) {
+            x.overrideMimeType('application/json');
+        }
+        var h = options.customHeaders;
+        h = typeof h === 'function' ? h() : h;
+        if (h) {
+            for(var i in h){
+                x.setRequestHeader(i, h[i]);
+            }
+        }
+        x.onreadystatechange = function() {
+            x.readyState > 3 && callback(x.status >= 400 ? x.statusText : null, {
+                status: x.status,
+                data: x.responseText
+            });
+        };
+        x.send(payload);
+    } catch (e) {
+        console && console.log(e);
+    }
+};
+var request = function request(options, url, payload, callback) {
+    if (typeof payload === 'function') {
+        callback = payload;
+        payload = undefined;
+    }
+    callback = callback || function() {};
+    if (fetchApi && url.indexOf('file:') !== 0) {
+        return requestWithFetch(options, url, payload, callback);
+    }
+    if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$i18next$2d$http$2d$backend$2f$esm$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["hasXMLHttpRequest"])() || typeof ActiveXObject === 'function') {
+        return requestWithXmlHttpRequest(options, url, payload, callback);
+    }
+    callback(new Error('No fetch and no xhr implementation found!'));
+};
+const __TURBOPACK__default__export__ = request;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/i18next-http-backend/esm/index.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$i18next$2d$http$2d$backend$2f$esm$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/i18next-http-backend/esm/utils.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$i18next$2d$http$2d$backend$2f$esm$2f$request$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/i18next-http-backend/esm/request.js [app-client] (ecmascript)");
+function _typeof(o) {
+    "@babel/helpers - typeof";
+    return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o) {
+        return typeof o;
+    } : function(o) {
+        return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
+    }, _typeof(o);
+}
+function ownKeys(e, r) {
+    var t = Object.keys(e);
+    if (Object.getOwnPropertySymbols) {
+        var o = Object.getOwnPropertySymbols(e);
+        r && (o = o.filter(function(r) {
+            return Object.getOwnPropertyDescriptor(e, r).enumerable;
+        })), t.push.apply(t, o);
+    }
+    return t;
+}
+function _objectSpread(e) {
+    for(var r = 1; r < arguments.length; r++){
+        var t = null != arguments[r] ? arguments[r] : {};
+        r % 2 ? ownKeys(Object(t), !0).forEach(function(r) {
+            _defineProperty(e, r, t[r]);
+        }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function(r) {
+            Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
+        });
+    }
+    return e;
+}
+function _classCallCheck(a, n) {
+    if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function");
+}
+function _defineProperties(e, r) {
+    for(var t = 0; t < r.length; t++){
+        var o = r[t];
+        o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o);
+    }
+}
+function _createClass(e, r, t) {
+    return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", {
+        writable: !1
+    }), e;
+}
+function _defineProperty(e, r, t) {
+    return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, {
+        value: t,
+        enumerable: !0,
+        configurable: !0,
+        writable: !0
+    }) : e[r] = t, e;
+}
+function _toPropertyKey(t) {
+    var i = _toPrimitive(t, "string");
+    return "symbol" == _typeof(i) ? i : i + "";
+}
+function _toPrimitive(t, r) {
+    if ("object" != _typeof(t) || !t) return t;
+    var e = t[Symbol.toPrimitive];
+    if (void 0 !== e) {
+        var i = e.call(t, r || "default");
+        if ("object" != _typeof(i)) return i;
+        throw new TypeError("@@toPrimitive must return a primitive value.");
+    }
+    return ("string" === r ? String : Number)(t);
+}
+;
+;
+var getDefaults = function getDefaults() {
+    return {
+        loadPath: '/locales/{{lng}}/{{ns}}.json',
+        addPath: '/locales/add/{{lng}}/{{ns}}',
+        parse: function parse(data) {
+            return JSON.parse(data);
+        },
+        stringify: JSON.stringify,
+        parsePayload: function parsePayload(namespace, key, fallbackValue) {
+            return _defineProperty({}, key, fallbackValue || '');
+        },
+        parseLoadPayload: function parseLoadPayload(languages, namespaces) {
+            return undefined;
+        },
+        request: __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$i18next$2d$http$2d$backend$2f$esm$2f$request$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"],
+        reloadInterval: typeof window !== 'undefined' ? false : 60 * 60 * 1000,
+        customHeaders: {},
+        queryStringParams: {},
+        crossDomain: false,
+        withCredentials: false,
+        overrideMimeType: false,
+        requestOptions: {
+            mode: 'cors',
+            credentials: 'same-origin',
+            cache: 'default'
+        }
+    };
+};
+var Backend = function() {
+    function Backend(services) {
+        var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+        var allOptions = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+        _classCallCheck(this, Backend);
+        this.services = services;
+        this.options = options;
+        this.allOptions = allOptions;
+        this.type = 'backend';
+        this.init(services, options, allOptions);
+    }
+    return _createClass(Backend, [
+        {
+            key: "init",
+            value: function init(services) {
+                var _this = this;
+                var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+                var allOptions = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+                this.services = services;
+                this.options = _objectSpread(_objectSpread(_objectSpread({}, getDefaults()), this.options || {}), options);
+                this.allOptions = allOptions;
+                if (this.services && this.options.reloadInterval) {
+                    var timer = setInterval(function() {
+                        return _this.reload();
+                    }, this.options.reloadInterval);
+                    if (_typeof(timer) === 'object' && typeof timer.unref === 'function') timer.unref();
+                }
+            }
+        },
+        {
+            key: "readMulti",
+            value: function readMulti(languages, namespaces, callback) {
+                this._readAny(languages, languages, namespaces, namespaces, callback);
+            }
+        },
+        {
+            key: "read",
+            value: function read(language, namespace, callback) {
+                this._readAny([
+                    language
+                ], language, [
+                    namespace
+                ], namespace, callback);
+            }
+        },
+        {
+            key: "_readAny",
+            value: function _readAny(languages, loadUrlLanguages, namespaces, loadUrlNamespaces, callback) {
+                var _this2 = this;
+                var loadPath = this.options.loadPath;
+                if (typeof this.options.loadPath === 'function') {
+                    loadPath = this.options.loadPath(languages, namespaces);
+                }
+                loadPath = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$i18next$2d$http$2d$backend$2f$esm$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["makePromise"])(loadPath);
+                loadPath.then(function(resolvedLoadPath) {
+                    if (!resolvedLoadPath) return callback(null, {});
+                    var url = _this2.services.interpolator.interpolate(resolvedLoadPath, {
+                        lng: languages.join('+'),
+                        ns: namespaces.join('+')
+                    });
+                    _this2.loadUrl(url, callback, loadUrlLanguages, loadUrlNamespaces);
+                });
+            }
+        },
+        {
+            key: "loadUrl",
+            value: function loadUrl(url, callback, languages, namespaces) {
+                var _this3 = this;
+                var lng = typeof languages === 'string' ? [
+                    languages
+                ] : languages;
+                var ns = typeof namespaces === 'string' ? [
+                    namespaces
+                ] : namespaces;
+                var payload = this.options.parseLoadPayload(lng, ns);
+                this.options.request(this.options, url, payload, function(err, res) {
+                    if (res && (res.status >= 500 && res.status < 600 || !res.status)) return callback('failed loading ' + url + '; status code: ' + res.status, true);
+                    if (res && res.status >= 400 && res.status < 500) return callback('failed loading ' + url + '; status code: ' + res.status, false);
+                    if (!res && err && err.message) {
+                        var errorMessage = err.message.toLowerCase();
+                        var isNetworkError = [
+                            'failed',
+                            'fetch',
+                            'network',
+                            'load'
+                        ].find(function(term) {
+                            return errorMessage.indexOf(term) > -1;
+                        });
+                        if (isNetworkError) {
+                            return callback('failed loading ' + url + ': ' + err.message, true);
+                        }
+                    }
+                    if (err) return callback(err, false);
+                    var ret, parseErr;
+                    try {
+                        if (typeof res.data === 'string') {
+                            ret = _this3.options.parse(res.data, languages, namespaces);
+                        } else {
+                            ret = res.data;
+                        }
+                    } catch (e) {
+                        parseErr = 'failed parsing ' + url + ' to json';
+                    }
+                    if (parseErr) return callback(parseErr, false);
+                    callback(null, ret);
+                });
+            }
+        },
+        {
+            key: "create",
+            value: function create(languages, namespace, key, fallbackValue, callback) {
+                var _this4 = this;
+                if (!this.options.addPath) return;
+                if (typeof languages === 'string') languages = [
+                    languages
+                ];
+                var payload = this.options.parsePayload(namespace, key, fallbackValue);
+                var finished = 0;
+                var dataArray = [];
+                var resArray = [];
+                languages.forEach(function(lng) {
+                    var addPath = _this4.options.addPath;
+                    if (typeof _this4.options.addPath === 'function') {
+                        addPath = _this4.options.addPath(lng, namespace);
+                    }
+                    var url = _this4.services.interpolator.interpolate(addPath, {
+                        lng: lng,
+                        ns: namespace
+                    });
+                    _this4.options.request(_this4.options, url, payload, function(data, res) {
+                        finished += 1;
+                        dataArray.push(data);
+                        resArray.push(res);
+                        if (finished === languages.length) {
+                            if (typeof callback === 'function') callback(dataArray, resArray);
+                        }
+                    });
+                });
+            }
+        },
+        {
+            key: "reload",
+            value: function reload() {
+                var _this5 = this;
+                var _this$services = this.services, backendConnector = _this$services.backendConnector, languageUtils = _this$services.languageUtils, logger = _this$services.logger;
+                var currentLanguage = backendConnector.language;
+                if (currentLanguage && currentLanguage.toLowerCase() === 'cimode') return;
+                var toLoad = [];
+                var append = function append(lng) {
+                    var lngs = languageUtils.toResolveHierarchy(lng);
+                    lngs.forEach(function(l) {
+                        if (toLoad.indexOf(l) < 0) toLoad.push(l);
+                    });
+                };
+                append(currentLanguage);
+                if (this.allOptions.preload) this.allOptions.preload.forEach(function(l) {
+                    return append(l);
+                });
+                toLoad.forEach(function(lng) {
+                    _this5.allOptions.ns.forEach(function(ns) {
+                        backendConnector.read(lng, ns, 'read', null, null, function(err, data) {
+                            if (err) logger.warn("loading namespace ".concat(ns, " for language ").concat(lng, " failed"), err);
+                            if (!err && data) logger.log("loaded namespace ".concat(ns, " for language ").concat(lng), data);
+                            backendConnector.loaded("".concat(lng, "|").concat(ns), err, data);
+                        });
+                    });
+                });
+            }
+        }
+    ]);
+}();
+Backend.type = 'backend';
+const __TURBOPACK__default__export__ = Backend;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/i18next-browser-languagedetector/dist/esm/i18nextBrowserLanguageDetector.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>Browser
+]);
+const { slice, forEach } = [];
+function defaults(obj) {
+    forEach.call(slice.call(arguments, 1), (source)=>{
+        if (source) {
+            for(const prop in source){
+                if (obj[prop] === undefined) obj[prop] = source[prop];
+            }
+        }
+    });
+    return obj;
+}
+function hasXSS(input) {
+    if (typeof input !== 'string') return false;
+    // Common XSS attack patterns
+    const xssPatterns = [
+        /<\s*script.*?>/i,
+        /<\s*\/\s*script\s*>/i,
+        /<\s*img.*?on\w+\s*=/i,
+        /<\s*\w+\s*on\w+\s*=.*?>/i,
+        /javascript\s*:/i,
+        /vbscript\s*:/i,
+        /expression\s*\(/i,
+        /eval\s*\(/i,
+        /alert\s*\(/i,
+        /document\.cookie/i,
+        /document\.write\s*\(/i,
+        /window\.location/i,
+        /innerHTML/i
+    ];
+    return xssPatterns.some((pattern)=>pattern.test(input));
+}
+// eslint-disable-next-line no-control-regex
+const fieldContentRegExp = /^[\u0009\u0020-\u007e\u0080-\u00ff]+$/;
+const serializeCookie = function(name, val) {
+    let options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {
+        path: '/'
+    };
+    const opt = options;
+    const value = encodeURIComponent(val);
+    let str = "".concat(name, "=").concat(value);
+    if (opt.maxAge > 0) {
+        const maxAge = opt.maxAge - 0;
+        if (Number.isNaN(maxAge)) throw new Error('maxAge should be a Number');
+        str += "; Max-Age=".concat(Math.floor(maxAge));
+    }
+    if (opt.domain) {
+        if (!fieldContentRegExp.test(opt.domain)) {
+            throw new TypeError('option domain is invalid');
+        }
+        str += "; Domain=".concat(opt.domain);
+    }
+    if (opt.path) {
+        if (!fieldContentRegExp.test(opt.path)) {
+            throw new TypeError('option path is invalid');
+        }
+        str += "; Path=".concat(opt.path);
+    }
+    if (opt.expires) {
+        if (typeof opt.expires.toUTCString !== 'function') {
+            throw new TypeError('option expires is invalid');
+        }
+        str += "; Expires=".concat(opt.expires.toUTCString());
+    }
+    if (opt.httpOnly) str += '; HttpOnly';
+    if (opt.secure) str += '; Secure';
+    if (opt.sameSite) {
+        const sameSite = typeof opt.sameSite === 'string' ? opt.sameSite.toLowerCase() : opt.sameSite;
+        switch(sameSite){
+            case true:
+                str += '; SameSite=Strict';
+                break;
+            case 'lax':
+                str += '; SameSite=Lax';
+                break;
+            case 'strict':
+                str += '; SameSite=Strict';
+                break;
+            case 'none':
+                str += '; SameSite=None';
+                break;
+            default:
+                throw new TypeError('option sameSite is invalid');
+        }
+    }
+    if (opt.partitioned) str += '; Partitioned';
+    return str;
+};
+const cookie = {
+    create (name, value, minutes, domain) {
+        let cookieOptions = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : {
+            path: '/',
+            sameSite: 'strict'
+        };
+        if (minutes) {
+            cookieOptions.expires = new Date();
+            cookieOptions.expires.setTime(cookieOptions.expires.getTime() + minutes * 60 * 1000);
+        }
+        if (domain) cookieOptions.domain = domain;
+        document.cookie = serializeCookie(name, value, cookieOptions);
+    },
+    read (name) {
+        const nameEQ = "".concat(name, "=");
+        const ca = document.cookie.split(';');
+        for(let i = 0; i < ca.length; i++){
+            let c = ca[i];
+            while(c.charAt(0) === ' ')c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    },
+    remove (name, domain) {
+        this.create(name, '', -1, domain);
+    }
+};
+var cookie$1 = {
+    name: 'cookie',
+    // Deconstruct the options object and extract the lookupCookie property
+    lookup (_ref) {
+        let { lookupCookie } = _ref;
+        if (lookupCookie && typeof document !== 'undefined') {
+            return cookie.read(lookupCookie) || undefined;
+        }
+        return undefined;
+    },
+    // Deconstruct the options object and extract the lookupCookie, cookieMinutes, cookieDomain, and cookieOptions properties
+    cacheUserLanguage (lng, _ref2) {
+        let { lookupCookie, cookieMinutes, cookieDomain, cookieOptions } = _ref2;
+        if (lookupCookie && typeof document !== 'undefined') {
+            cookie.create(lookupCookie, lng, cookieMinutes, cookieDomain, cookieOptions);
+        }
+    }
+};
+var querystring = {
+    name: 'querystring',
+    // Deconstruct the options object and extract the lookupQuerystring property
+    lookup (_ref) {
+        let { lookupQuerystring } = _ref;
+        let found;
+        if (typeof window !== 'undefined') {
+            var _window_location_hash;
+            let { search } = window.location;
+            if (!window.location.search && ((_window_location_hash = window.location.hash) === null || _window_location_hash === void 0 ? void 0 : _window_location_hash.indexOf('?')) > -1) {
+                search = window.location.hash.substring(window.location.hash.indexOf('?'));
+            }
+            const query = search.substring(1);
+            const params = query.split('&');
+            for(let i = 0; i < params.length; i++){
+                const pos = params[i].indexOf('=');
+                if (pos > 0) {
+                    const key = params[i].substring(0, pos);
+                    if (key === lookupQuerystring) {
+                        found = params[i].substring(pos + 1);
+                    }
+                }
+            }
+        }
+        return found;
+    }
+};
+var hash = {
+    name: 'hash',
+    // Deconstruct the options object and extract the lookupHash property and the lookupFromHashIndex property
+    lookup (_ref) {
+        let { lookupHash, lookupFromHashIndex } = _ref;
+        let found;
+        if (typeof window !== 'undefined') {
+            const { hash } = window.location;
+            if (hash && hash.length > 2) {
+                const query = hash.substring(1);
+                if (lookupHash) {
+                    const params = query.split('&');
+                    for(let i = 0; i < params.length; i++){
+                        const pos = params[i].indexOf('=');
+                        if (pos > 0) {
+                            const key = params[i].substring(0, pos);
+                            if (key === lookupHash) {
+                                found = params[i].substring(pos + 1);
+                            }
+                        }
+                    }
+                }
+                if (found) return found;
+                if (!found && lookupFromHashIndex > -1) {
+                    var _language_index;
+                    const language = hash.match(/\/([a-zA-Z-]*)/g);
+                    if (!Array.isArray(language)) return undefined;
+                    const index = typeof lookupFromHashIndex === 'number' ? lookupFromHashIndex : 0;
+                    return (_language_index = language[index]) === null || _language_index === void 0 ? void 0 : _language_index.replace('/', '');
+                }
+            }
+        }
+        return found;
+    }
+};
+let hasLocalStorageSupport = null;
+const localStorageAvailable = ()=>{
+    if (hasLocalStorageSupport !== null) return hasLocalStorageSupport;
+    try {
+        hasLocalStorageSupport = typeof window !== 'undefined' && window.localStorage !== null;
+        if (!hasLocalStorageSupport) {
+            return false;
+        }
+        const testKey = 'i18next.translate.boo';
+        window.localStorage.setItem(testKey, 'foo');
+        window.localStorage.removeItem(testKey);
+    } catch (e) {
+        hasLocalStorageSupport = false;
+    }
+    return hasLocalStorageSupport;
+};
+var localStorage = {
+    name: 'localStorage',
+    // Deconstruct the options object and extract the lookupLocalStorage property
+    lookup (_ref) {
+        let { lookupLocalStorage } = _ref;
+        if (lookupLocalStorage && localStorageAvailable()) {
+            return window.localStorage.getItem(lookupLocalStorage) || undefined; // Undefined ensures type consistency with the previous version of this function
+        }
+        return undefined;
+    },
+    // Deconstruct the options object and extract the lookupLocalStorage property
+    cacheUserLanguage (lng, _ref2) {
+        let { lookupLocalStorage } = _ref2;
+        if (lookupLocalStorage && localStorageAvailable()) {
+            window.localStorage.setItem(lookupLocalStorage, lng);
+        }
+    }
+};
+let hasSessionStorageSupport = null;
+const sessionStorageAvailable = ()=>{
+    if (hasSessionStorageSupport !== null) return hasSessionStorageSupport;
+    try {
+        hasSessionStorageSupport = typeof window !== 'undefined' && window.sessionStorage !== null;
+        if (!hasSessionStorageSupport) {
+            return false;
+        }
+        const testKey = 'i18next.translate.boo';
+        window.sessionStorage.setItem(testKey, 'foo');
+        window.sessionStorage.removeItem(testKey);
+    } catch (e) {
+        hasSessionStorageSupport = false;
+    }
+    return hasSessionStorageSupport;
+};
+var sessionStorage = {
+    name: 'sessionStorage',
+    lookup (_ref) {
+        let { lookupSessionStorage } = _ref;
+        if (lookupSessionStorage && sessionStorageAvailable()) {
+            return window.sessionStorage.getItem(lookupSessionStorage) || undefined;
+        }
+        return undefined;
+    },
+    cacheUserLanguage (lng, _ref2) {
+        let { lookupSessionStorage } = _ref2;
+        if (lookupSessionStorage && sessionStorageAvailable()) {
+            window.sessionStorage.setItem(lookupSessionStorage, lng);
+        }
+    }
+};
+var navigator$1 = {
+    name: 'navigator',
+    lookup (options) {
+        const found = [];
+        if (typeof navigator !== 'undefined') {
+            const { languages, userLanguage, language } = navigator;
+            if (languages) {
+                // chrome only; not an array, so can't use .push.apply instead of iterating
+                for(let i = 0; i < languages.length; i++){
+                    found.push(languages[i]);
+                }
+            }
+            if (userLanguage) {
+                found.push(userLanguage);
+            }
+            if (language) {
+                found.push(language);
+            }
+        }
+        return found.length > 0 ? found : undefined;
+    }
+};
+var htmlTag = {
+    name: 'htmlTag',
+    // Deconstruct the options object and extract the htmlTag property
+    lookup (_ref) {
+        let { htmlTag } = _ref;
+        let found;
+        const internalHtmlTag = htmlTag || (typeof document !== 'undefined' ? document.documentElement : null);
+        if (internalHtmlTag && typeof internalHtmlTag.getAttribute === 'function') {
+            found = internalHtmlTag.getAttribute('lang');
+        }
+        return found;
+    }
+};
+var path = {
+    name: 'path',
+    // Deconstruct the options object and extract the lookupFromPathIndex property
+    lookup (_ref) {
+        var _language_index;
+        let { lookupFromPathIndex } = _ref;
+        if (typeof window === 'undefined') return undefined;
+        const language = window.location.pathname.match(/\/([a-zA-Z-]*)/g);
+        if (!Array.isArray(language)) return undefined;
+        const index = typeof lookupFromPathIndex === 'number' ? lookupFromPathIndex : 0;
+        return (_language_index = language[index]) === null || _language_index === void 0 ? void 0 : _language_index.replace('/', '');
+    }
+};
+var subdomain = {
+    name: 'subdomain',
+    lookup (_ref) {
+        var _window_location_hostname, _window_location;
+        let { lookupFromSubdomainIndex } = _ref;
+        // If given get the subdomain index else 1
+        const internalLookupFromSubdomainIndex = typeof lookupFromSubdomainIndex === 'number' ? lookupFromSubdomainIndex + 1 : 1;
+        // get all matches if window.location. is existing
+        // first item of match is the match itself and the second is the first group match which should be the first subdomain match
+        // is the hostname no public domain get the or option of localhost
+        const language = typeof window !== 'undefined' && ((_window_location = window.location) === null || _window_location === void 0 ? void 0 : (_window_location_hostname = _window_location.hostname) === null || _window_location_hostname === void 0 ? void 0 : _window_location_hostname.match(/^(\w{2,5})\.(([a-z0-9-]{1,63}\.[a-z]{2,6})|localhost)/i));
+        // if there is no match (null) return undefined
+        if (!language) return undefined;
+        // return the given group match
+        return language[internalLookupFromSubdomainIndex];
+    }
+};
+// some environments, throws when accessing document.cookie
+let canCookies = false;
+try {
+    // eslint-disable-next-line no-unused-expressions
+    document.cookie;
+    canCookies = true;
+// eslint-disable-next-line no-empty
+} catch (e) {}
+const order = [
+    'querystring',
+    'cookie',
+    'localStorage',
+    'sessionStorage',
+    'navigator',
+    'htmlTag'
+];
+if (!canCookies) order.splice(1, 1);
+const getDefaults = ()=>({
+        order,
+        lookupQuerystring: 'lng',
+        lookupCookie: 'i18next',
+        lookupLocalStorage: 'i18nextLng',
+        lookupSessionStorage: 'i18nextLng',
+        // cache user language
+        caches: [
+            'localStorage'
+        ],
+        excludeCacheFor: [
+            'cimode'
+        ],
+        // cookieMinutes: 10,
+        // cookieDomain: 'myDomain'
+        convertDetectedLanguage: (l)=>l
+    });
+class Browser {
+    init() {
+        let services = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
+            languageUtils: {}
+        };
+        let options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+        let i18nOptions = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+        this.services = services;
+        this.options = defaults(options, this.options || {}, getDefaults());
+        if (typeof this.options.convertDetectedLanguage === 'string' && this.options.convertDetectedLanguage.indexOf('15897') > -1) {
+            this.options.convertDetectedLanguage = (l)=>l.replace('-', '_');
+        }
+        // backwards compatibility
+        if (this.options.lookupFromUrlIndex) this.options.lookupFromPathIndex = this.options.lookupFromUrlIndex;
+        this.i18nOptions = i18nOptions;
+        this.addDetector(cookie$1);
+        this.addDetector(querystring);
+        this.addDetector(localStorage);
+        this.addDetector(sessionStorage);
+        this.addDetector(navigator$1);
+        this.addDetector(htmlTag);
+        this.addDetector(path);
+        this.addDetector(subdomain);
+        this.addDetector(hash);
+    }
+    addDetector(detector) {
+        this.detectors[detector.name] = detector;
+        return this;
+    }
+    detect() {
+        let detectionOrder = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : this.options.order;
+        let detected = [];
+        detectionOrder.forEach((detectorName)=>{
+            if (this.detectors[detectorName]) {
+                let lookup = this.detectors[detectorName].lookup(this.options);
+                if (lookup && typeof lookup === 'string') lookup = [
+                    lookup
+                ];
+                if (lookup) detected = detected.concat(lookup);
+            }
+        });
+        detected = detected.filter((d)=>d !== undefined && d !== null && !hasXSS(d)).map((d)=>this.options.convertDetectedLanguage(d));
+        if (this.services && this.services.languageUtils && this.services.languageUtils.getBestMatchFromCodes) return detected; // new i18next v19.5.0
+        return detected.length > 0 ? detected[0] : null; // a little backward compatibility
+    }
+    cacheUserLanguage(lng) {
+        let caches = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.options.caches;
+        if (!caches) return;
+        if (this.options.excludeCacheFor && this.options.excludeCacheFor.indexOf(lng) > -1) return;
+        caches.forEach((cacheName)=>{
+            if (this.detectors[cacheName]) this.detectors[cacheName].cacheUserLanguage(lng, this.options);
+        });
+    }
+    constructor(services){
+        let options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+        this.type = 'languageDetector';
+        this.detectors = {};
+        this.init(services, options);
+    }
+}
+Browser.type = 'languageDetector';
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/clsx/dist/clsx.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "clsx",
+    ()=>clsx,
+    "default",
+    ()=>__TURBOPACK__default__export__
+]);
+function r(e) {
+    var t, f, n = "";
+    if ("string" == typeof e || "number" == typeof e) n += e;
+    else if ("object" == typeof e) if (Array.isArray(e)) {
+        var o = e.length;
+        for(t = 0; t < o; t++)e[t] && (f = r(e[t])) && (n && (n += " "), n += f);
+    } else for(f in e)e[f] && (n && (n += " "), n += f);
+    return n;
+}
+function clsx() {
+    for(var e, t, f = 0, n = "", o = arguments.length; f < o; f++)(e = arguments[f]) && (t = r(e)) && (n && (n += " "), n += t);
+    return n;
+}
+const __TURBOPACK__default__export__ = clsx;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/extends.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>_extends
+]);
+function _extends() {
+    return _extends = ("TURBOPACK compile-time truthy", 1) ? Object.assign.bind() : "TURBOPACK unreachable", _extends.apply(null, arguments);
+}
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/typeof.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>_typeof
+]);
+function _typeof(o) {
+    "@babel/helpers - typeof";
+    return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(o) {
+        return typeof o;
+    } : function(o) {
+        return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
+    }, _typeof(o);
+}
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/toPrimitive.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>toPrimitive
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$typeof$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/typeof.js [app-client] (ecmascript)");
+;
+function toPrimitive(t, r) {
+    if ("object" != (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$typeof$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(t) || !t) return t;
+    var e = t[Symbol.toPrimitive];
+    if (void 0 !== e) {
+        var i = e.call(t, r || "default");
+        if ("object" != (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$typeof$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(i)) return i;
+        throw new TypeError("@@toPrimitive must return a primitive value.");
+    }
+    return ("string" === r ? String : Number)(t);
+}
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/toPropertyKey.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>toPropertyKey
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$typeof$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/typeof.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$toPrimitive$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/toPrimitive.js [app-client] (ecmascript)");
+;
+;
+function toPropertyKey(t) {
+    var i = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$toPrimitive$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(t, "string");
+    return "symbol" == (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$typeof$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(i) ? i : i + "";
+}
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/defineProperty.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>_defineProperty
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$toPropertyKey$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/toPropertyKey.js [app-client] (ecmascript)");
+;
+function _defineProperty(e, r, t) {
+    return (r = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$toPropertyKey$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(r)) in e ? Object.defineProperty(e, r, {
+        value: t,
+        enumerable: !0,
+        configurable: !0,
+        writable: !0
+    }) : e[r] = t, e;
+}
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>_arrayLikeToArray
+]);
+function _arrayLikeToArray(r, a) {
+    (null == a || a > r.length) && (a = r.length);
+    for(var e = 0, n = Array(a); e < a; e++)n[e] = r[e];
+    return n;
+}
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>_arrayWithoutHoles
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$arrayLikeToArray$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js [app-client] (ecmascript)");
+;
+function _arrayWithoutHoles(r) {
+    if (Array.isArray(r)) return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$arrayLikeToArray$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(r);
+}
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/iterableToArray.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>_iterableToArray
+]);
+function _iterableToArray(r) {
+    if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r);
+}
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>_unsupportedIterableToArray
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$arrayLikeToArray$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js [app-client] (ecmascript)");
+;
+function _unsupportedIterableToArray(r, a) {
+    if (r) {
+        if ("string" == typeof r) return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$arrayLikeToArray$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(r, a);
+        var t = ({}).toString.call(r).slice(8, -1);
+        return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$arrayLikeToArray$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(r, a) : void 0;
+    }
+}
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>_nonIterableSpread
+]);
+function _nonIterableSpread() {
+    throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/toConsumableArray.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>_toConsumableArray
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$arrayWithoutHoles$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$iterableToArray$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/iterableToArray.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$unsupportedIterableToArray$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$nonIterableSpread$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js [app-client] (ecmascript)");
+;
+;
+;
+;
+function _toConsumableArray(r) {
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$arrayWithoutHoles$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(r) || (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$iterableToArray$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(r) || (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$unsupportedIterableToArray$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(r) || (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$nonIterableSpread$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])();
+}
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>_arrayWithHoles
+]);
+function _arrayWithHoles(r) {
+    if (Array.isArray(r)) return r;
+}
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>_iterableToArrayLimit
+]);
+function _iterableToArrayLimit(r, l) {
+    var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"];
+    if (null != t) {
+        var e, n, i, u, a = [], f = !0, o = !1;
+        try {
+            if (i = (t = t.call(r)).next, 0 === l) {
+                if (Object(t) !== t) return;
+                f = !1;
+            } else for(; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0);
+        } catch (r) {
+            o = !0, n = r;
+        } finally{
+            try {
+                if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return;
+            } finally{
+                if (o) throw n;
+            }
+        }
+        return a;
+    }
+}
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/nonIterableRest.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>_nonIterableRest
+]);
+function _nonIterableRest() {
+    throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/slicedToArray.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>_slicedToArray
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$arrayWithHoles$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$iterableToArrayLimit$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$unsupportedIterableToArray$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$nonIterableRest$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/nonIterableRest.js [app-client] (ecmascript)");
+;
+;
+;
+;
+function _slicedToArray(r, e) {
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$arrayWithHoles$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(r) || (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$iterableToArrayLimit$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(r, e) || (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$unsupportedIterableToArray$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(r, e) || (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$nonIterableRest$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])();
+}
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>_objectWithoutPropertiesLoose
+]);
+function _objectWithoutPropertiesLoose(r, e) {
+    if (null == r) return {};
+    var t = {};
+    for(var n in r)if (({}).hasOwnProperty.call(r, n)) {
+        if (-1 !== e.indexOf(n)) continue;
+        t[n] = r[n];
+    }
+    return t;
+}
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>_objectWithoutProperties
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$objectWithoutPropertiesLoose$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js [app-client] (ecmascript)");
+;
+function _objectWithoutProperties(e, t) {
+    if (null == e) return {};
+    var o, r, i = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$objectWithoutPropertiesLoose$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(e, t);
+    if (Object.getOwnPropertySymbols) {
+        var n = Object.getOwnPropertySymbols(e);
+        for(r = 0; r < n.length; r++)o = n[r], -1 === t.indexOf(o) && ({}).propertyIsEnumerable.call(e, o) && (i[o] = e[o]);
+    }
+    return i;
+}
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-is/cjs/react-is.development.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+/** @license React v16.13.1
+ * react-is.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+'use strict';
+if ("TURBOPACK compile-time truthy", 1) {
+    (function() {
+        'use strict';
+        // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+        // nor polyfill, then a plain number is used for performance.
+        var hasSymbol = typeof Symbol === 'function' && Symbol.for;
+        var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;
+        var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 0xeaca;
+        var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 0xeacb;
+        var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 0xeacc;
+        var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 0xead2;
+        var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;
+        var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
+        // (unstable) APIs that have been removed. Can we remove the symbols?
+        var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 0xeacf;
+        var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 0xeacf;
+        var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;
+        var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 0xead1;
+        var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for('react.suspense_list') : 0xead8;
+        var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 0xead3;
+        var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 0xead4;
+        var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for('react.block') : 0xead9;
+        var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for('react.fundamental') : 0xead5;
+        var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for('react.responder') : 0xead6;
+        var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for('react.scope') : 0xead7;
+        function isValidElementType(type) {
+            return typeof type === 'string' || typeof type === 'function' || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
+            type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
+        }
+        function typeOf(object) {
+            if (typeof object === 'object' && object !== null) {
+                var $$typeof = object.$$typeof;
+                switch($$typeof){
+                    case REACT_ELEMENT_TYPE:
+                        var type = object.type;
+                        switch(type){
+                            case REACT_ASYNC_MODE_TYPE:
+                            case REACT_CONCURRENT_MODE_TYPE:
+                            case REACT_FRAGMENT_TYPE:
+                            case REACT_PROFILER_TYPE:
+                            case REACT_STRICT_MODE_TYPE:
+                            case REACT_SUSPENSE_TYPE:
+                                return type;
+                            default:
+                                var $$typeofType = type && type.$$typeof;
+                                switch($$typeofType){
+                                    case REACT_CONTEXT_TYPE:
+                                    case REACT_FORWARD_REF_TYPE:
+                                    case REACT_LAZY_TYPE:
+                                    case REACT_MEMO_TYPE:
+                                    case REACT_PROVIDER_TYPE:
+                                        return $$typeofType;
+                                    default:
+                                        return $$typeof;
+                                }
+                        }
+                    case REACT_PORTAL_TYPE:
+                        return $$typeof;
+                }
+            }
+            return undefined;
+        } // AsyncMode is deprecated along with isAsyncMode
+        var AsyncMode = REACT_ASYNC_MODE_TYPE;
+        var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
+        var ContextConsumer = REACT_CONTEXT_TYPE;
+        var ContextProvider = REACT_PROVIDER_TYPE;
+        var Element = REACT_ELEMENT_TYPE;
+        var ForwardRef = REACT_FORWARD_REF_TYPE;
+        var Fragment = REACT_FRAGMENT_TYPE;
+        var Lazy = REACT_LAZY_TYPE;
+        var Memo = REACT_MEMO_TYPE;
+        var Portal = REACT_PORTAL_TYPE;
+        var Profiler = REACT_PROFILER_TYPE;
+        var StrictMode = REACT_STRICT_MODE_TYPE;
+        var Suspense = REACT_SUSPENSE_TYPE;
+        var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
+        function isAsyncMode(object) {
+            {
+                if (!hasWarnedAboutDeprecatedIsAsyncMode) {
+                    hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
+                    console['warn']('The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
+                }
+            }
+            return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
+        }
+        function isConcurrentMode(object) {
+            return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
+        }
+        function isContextConsumer(object) {
+            return typeOf(object) === REACT_CONTEXT_TYPE;
+        }
+        function isContextProvider(object) {
+            return typeOf(object) === REACT_PROVIDER_TYPE;
+        }
+        function isElement(object) {
+            return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+        }
+        function isForwardRef(object) {
+            return typeOf(object) === REACT_FORWARD_REF_TYPE;
+        }
+        function isFragment(object) {
+            return typeOf(object) === REACT_FRAGMENT_TYPE;
+        }
+        function isLazy(object) {
+            return typeOf(object) === REACT_LAZY_TYPE;
+        }
+        function isMemo(object) {
+            return typeOf(object) === REACT_MEMO_TYPE;
+        }
+        function isPortal(object) {
+            return typeOf(object) === REACT_PORTAL_TYPE;
+        }
+        function isProfiler(object) {
+            return typeOf(object) === REACT_PROFILER_TYPE;
+        }
+        function isStrictMode(object) {
+            return typeOf(object) === REACT_STRICT_MODE_TYPE;
+        }
+        function isSuspense(object) {
+            return typeOf(object) === REACT_SUSPENSE_TYPE;
+        }
+        exports.AsyncMode = AsyncMode;
+        exports.ConcurrentMode = ConcurrentMode;
+        exports.ContextConsumer = ContextConsumer;
+        exports.ContextProvider = ContextProvider;
+        exports.Element = Element;
+        exports.ForwardRef = ForwardRef;
+        exports.Fragment = Fragment;
+        exports.Lazy = Lazy;
+        exports.Memo = Memo;
+        exports.Portal = Portal;
+        exports.Profiler = Profiler;
+        exports.StrictMode = StrictMode;
+        exports.Suspense = Suspense;
+        exports.isAsyncMode = isAsyncMode;
+        exports.isConcurrentMode = isConcurrentMode;
+        exports.isContextConsumer = isContextConsumer;
+        exports.isContextProvider = isContextProvider;
+        exports.isElement = isElement;
+        exports.isForwardRef = isForwardRef;
+        exports.isFragment = isFragment;
+        exports.isLazy = isLazy;
+        exports.isMemo = isMemo;
+        exports.isPortal = isPortal;
+        exports.isProfiler = isProfiler;
+        exports.isStrictMode = isStrictMode;
+        exports.isSuspense = isSuspense;
+        exports.isValidElementType = isValidElementType;
+        exports.typeOf = typeOf;
+    })();
+}
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-is/index.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+'use strict';
+if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+;
+else {
+    module.exports = __turbopack_context__.r("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-is/cjs/react-is.development.js [app-client] (ecmascript)");
+}
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
+"use strict";
+
+var reactIs = __turbopack_context__.r("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-is/index.js [app-client] (ecmascript)");
+/**
+ * Copyright 2015, Yahoo! Inc.
+ * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
+ */ var REACT_STATICS = {
+    childContextTypes: true,
+    contextType: true,
+    contextTypes: true,
+    defaultProps: true,
+    displayName: true,
+    getDefaultProps: true,
+    getDerivedStateFromError: true,
+    getDerivedStateFromProps: true,
+    mixins: true,
+    propTypes: true,
+    type: true
+};
+var KNOWN_STATICS = {
+    name: true,
+    length: true,
+    prototype: true,
+    caller: true,
+    callee: true,
+    arguments: true,
+    arity: true
+};
+var FORWARD_REF_STATICS = {
+    '$$typeof': true,
+    render: true,
+    defaultProps: true,
+    displayName: true,
+    propTypes: true
+};
+var MEMO_STATICS = {
+    '$$typeof': true,
+    compare: true,
+    defaultProps: true,
+    displayName: true,
+    propTypes: true,
+    type: true
+};
+var TYPE_STATICS = {};
+TYPE_STATICS[reactIs.ForwardRef] = FORWARD_REF_STATICS;
+TYPE_STATICS[reactIs.Memo] = MEMO_STATICS;
+function getStatics(component) {
+    // React v16.11 and below
+    if (reactIs.isMemo(component)) {
+        return MEMO_STATICS;
+    } // React v16.12 and above
+    return TYPE_STATICS[component['$$typeof']] || REACT_STATICS;
+}
+var defineProperty = Object.defineProperty;
+var getOwnPropertyNames = Object.getOwnPropertyNames;
+var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+var getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
+var getPrototypeOf = Object.getPrototypeOf;
+var objectPrototype = Object.prototype;
+function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
+    if (typeof sourceComponent !== 'string') {
+        // don't hoist over string (html) components
+        if (objectPrototype) {
+            var inheritedComponent = getPrototypeOf(sourceComponent);
+            if (inheritedComponent && inheritedComponent !== objectPrototype) {
+                hoistNonReactStatics(targetComponent, inheritedComponent, blacklist);
+            }
+        }
+        var keys = getOwnPropertyNames(sourceComponent);
+        if (getOwnPropertySymbols) {
+            keys = keys.concat(getOwnPropertySymbols(sourceComponent));
+        }
+        var targetStatics = getStatics(targetComponent);
+        var sourceStatics = getStatics(sourceComponent);
+        for(var i = 0; i < keys.length; ++i){
+            var key = keys[i];
+            if (!KNOWN_STATICS[key] && !(blacklist && blacklist[key]) && !(sourceStatics && sourceStatics[key]) && !(targetStatics && targetStatics[key])) {
+                var descriptor = getOwnPropertyDescriptor(sourceComponent, key);
+                try {
+                    // Avoid failures from read-only properties
+                    defineProperty(targetComponent, key, descriptor);
+                } catch (e) {}
+            }
+        }
+    }
+    return targetComponent;
+}
+module.exports = hoistNonReactStatics;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next-i18next/dist/esm/config/defaultConfig.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "defaultConfig",
+    ()=>defaultConfig
+]);
+var DEFAULT_LOCALE = 'en';
+var LOCALES = [
+    'en'
+];
+var DEFAULT_NAMESPACE = 'common';
+var LOCALE_PATH = './public/locales';
+var LOCALE_STRUCTURE = '{{lng}}/{{ns}}';
+var LOCALE_EXTENSION = 'json';
+var defaultConfig = {
+    defaultNS: DEFAULT_NAMESPACE,
+    errorStackTraceLimit: 0,
+    i18n: {
+        defaultLocale: DEFAULT_LOCALE,
+        locales: LOCALES
+    },
+    get initImmediate () {
+        // i18next < 24
+        return typeof window !== 'undefined';
+    },
+    get initAsync () {
+        return typeof window !== 'undefined';
+    },
+    interpolation: {
+        escapeValue: false
+    },
+    load: 'currentOnly',
+    localeExtension: LOCALE_EXTENSION,
+    localePath: LOCALE_PATH,
+    localeStructure: LOCALE_STRUCTURE,
+    react: {
+        useSuspense: false
+    },
+    reloadOnPrerender: false,
+    serializeConfig: true,
+    use: []
+};
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next-i18next/dist/esm/utils.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "getFallbackForLng",
+    ()=>getFallbackForLng,
+    "unique",
+    ()=>unique,
+    "useIsomorphicLayoutEffect",
+    ()=>useIsomorphicLayoutEffect
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$toConsumableArray$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/toConsumableArray.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$typeof$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/typeof.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+;
+;
+;
+var getFallbackForLng = function getFallbackForLng(lng, fallbackLng) {
+    if (typeof fallbackLng === 'string') {
+        return [
+            fallbackLng
+        ];
+    }
+    if (Array.isArray(fallbackLng)) {
+        return fallbackLng;
+    }
+    if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$typeof$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(fallbackLng) === 'object') {
+        var fallbackList = fallbackLng[lng];
+        var fallbackDefault = fallbackLng["default"];
+        return [].concat((0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$toConsumableArray$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(fallbackList !== null && fallbackList !== void 0 ? fallbackList : []), (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$toConsumableArray$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(fallbackDefault !== null && fallbackDefault !== void 0 ? fallbackDefault : []));
+    }
+    if (typeof fallbackLng === 'function') {
+        return getFallbackForLng(lng, fallbackLng(lng));
+    }
+    return [];
+};
+var unique = function unique(list) {
+    return Array.from(new Set(list));
+};
+var useIsomorphicLayoutEffect = typeof window !== 'undefined' ? __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useLayoutEffect"] : __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"];
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next-i18next/dist/esm/config/createConfig.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "createConfig",
+    ()=>createConfig
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$toConsumableArray$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/toConsumableArray.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$typeof$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/typeof.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$slicedToArray$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/slicedToArray.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$defineProperty$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/defineProperty.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$objectWithoutProperties$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2d$i18next$2f$dist$2f$esm$2f$config$2f$defaultConfig$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next-i18next/dist/esm/config/defaultConfig.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2d$i18next$2f$dist$2f$esm$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next-i18next/dist/esm/utils.js [app-client] (ecmascript)");
+;
+;
+;
+;
+;
+var _excluded = [
+    "i18n"
+], _excluded2 = [
+    "i18n"
+];
+function _createForOfIteratorHelper(o, allowArrayLike) {
+    var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"];
+    if (!it) {
+        if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {
+            if (it) o = it;
+            var i = 0;
+            var F = function F() {};
+            return {
+                s: F,
+                n: function n() {
+                    if (i >= o.length) return {
+                        done: true
+                    };
+                    return {
+                        done: false,
+                        value: o[i++]
+                    };
+                },
+                e: function e(_e) {
+                    throw _e;
+                },
+                f: F
+            };
+        }
+        throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+    }
+    var normalCompletion = true, didErr = false, err;
+    return {
+        s: function s() {
+            it = it.call(o);
+        },
+        n: function n() {
+            var step = it.next();
+            normalCompletion = step.done;
+            return step;
+        },
+        e: function e(_e2) {
+            didErr = true;
+            err = _e2;
+        },
+        f: function f() {
+            try {
+                if (!normalCompletion && it["return"] != null) it["return"]();
+            } finally{
+                if (didErr) throw err;
+            }
+        }
+    };
+}
+function _unsupportedIterableToArray(o, minLen) {
+    if (!o) return;
+    if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+    var n = Object.prototype.toString.call(o).slice(8, -1);
+    if (n === "Object" && o.constructor) n = o.constructor.name;
+    if (n === "Map" || n === "Set") return Array.from(o);
+    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+function _arrayLikeToArray(arr, len) {
+    if (len == null || len > arr.length) len = arr.length;
+    for(var i = 0, arr2 = new Array(len); i < len; i++)arr2[i] = arr[i];
+    return arr2;
+}
+function ownKeys(e, r) {
+    var t = Object.keys(e);
+    if (Object.getOwnPropertySymbols) {
+        var o = Object.getOwnPropertySymbols(e);
+        r && (o = o.filter(function(r) {
+            return Object.getOwnPropertyDescriptor(e, r).enumerable;
+        })), t.push.apply(t, o);
+    }
+    return t;
+}
+function _objectSpread(e) {
+    for(var r = 1; r < arguments.length; r++){
+        var t = null != arguments[r] ? arguments[r] : {};
+        r % 2 ? ownKeys(Object(t), !0).forEach(function(r) {
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$defineProperty$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(e, r, t[r]);
+        }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function(r) {
+            Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
+        });
+    }
+    return e;
+}
+;
+;
+var deepMergeObjects = [
+    'backend',
+    'detection'
+];
+var createConfig = function createConfig(userConfig) {
+    var _userConfig$interpola, _userConfig$interpola2, _userConfig$use;
+    if (typeof (userConfig === null || userConfig === void 0 ? void 0 : userConfig.lng) !== 'string') {
+        throw new Error('config.lng was not passed into createConfig');
+    }
+    //
+    // Initial merge of default and user-provided config
+    //
+    var userI18n = userConfig.i18n, userConfigStripped = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$objectWithoutProperties$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(userConfig, _excluded);
+    var defaultI18n = __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2d$i18next$2f$dist$2f$esm$2f$config$2f$defaultConfig$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["defaultConfig"].i18n, defaultConfigStripped = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$objectWithoutProperties$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2d$i18next$2f$dist$2f$esm$2f$config$2f$defaultConfig$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["defaultConfig"], _excluded2);
+    var combinedConfig = _objectSpread(_objectSpread(_objectSpread(_objectSpread({}, defaultConfigStripped), userConfigStripped), defaultI18n), userI18n);
+    var defaultNS = combinedConfig.defaultNS, lng = combinedConfig.lng, localeExtension = combinedConfig.localeExtension, localePath = combinedConfig.localePath, nonExplicitSupportedLngs = combinedConfig.nonExplicitSupportedLngs;
+    var locales = combinedConfig.locales.filter(function(l) {
+        return l !== 'default';
+    });
+    /**
+   * Skips translation file resolution while in cimode
+   * https://github.com/i18next/next-i18next/pull/851#discussion_r503113620
+   */ if (lng === 'cimode') {
+        return combinedConfig;
+    }
+    if (typeof combinedConfig.fallbackLng === 'undefined') {
+        combinedConfig.fallbackLng = combinedConfig.defaultLocale;
+        if (combinedConfig.fallbackLng === 'default') {
+            var _locales = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$slicedToArray$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(locales, 1);
+            combinedConfig.fallbackLng = _locales[0];
+        }
+    }
+    var userPrefix = userConfig === null || userConfig === void 0 || (_userConfig$interpola = userConfig.interpolation) === null || _userConfig$interpola === void 0 ? void 0 : _userConfig$interpola.prefix;
+    var userSuffix = userConfig === null || userConfig === void 0 || (_userConfig$interpola2 = userConfig.interpolation) === null || _userConfig$interpola2 === void 0 ? void 0 : _userConfig$interpola2.suffix;
+    var prefix = userPrefix !== null && userPrefix !== void 0 ? userPrefix : '{{';
+    var suffix = userSuffix !== null && userSuffix !== void 0 ? userSuffix : '}}';
+    if (typeof (userConfig === null || userConfig === void 0 ? void 0 : userConfig.localeStructure) !== 'string' && (userPrefix || userSuffix)) {
+        combinedConfig.localeStructure = "".concat(prefix, "lng").concat(suffix, "/").concat(prefix, "ns").concat(suffix);
+    }
+    var fallbackLng = combinedConfig.fallbackLng, localeStructure = combinedConfig.localeStructure;
+    if (nonExplicitSupportedLngs) {
+        var createFallbackObject = function createFallbackObject(acc, l) {
+            var _l$split = l.split('-'), _l$split2 = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$slicedToArray$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(_l$split, 1), locale = _l$split2[0];
+            acc[l] = [
+                locale
+            ];
+            return acc;
+        };
+        if (typeof fallbackLng === 'string') {
+            combinedConfig.fallbackLng = combinedConfig.locales.filter(function(l) {
+                return l.includes('-');
+            }).reduce(createFallbackObject, {
+                "default": [
+                    fallbackLng
+                ]
+            });
+        } else if (Array.isArray(fallbackLng)) {
+            combinedConfig.fallbackLng = combinedConfig.locales.filter(function(l) {
+                return l.includes('-');
+            }).reduce(createFallbackObject, {
+                "default": fallbackLng
+            });
+        } else if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$typeof$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(fallbackLng) === 'object') {
+            combinedConfig.fallbackLng = Object.entries(combinedConfig.fallbackLng).reduce(function(acc, _ref) {
+                var _ref2 = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$slicedToArray$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(_ref, 2), l = _ref2[0], f = _ref2[1];
+                acc[l] = l.includes('-') ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2d$i18next$2f$dist$2f$esm$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["unique"])([
+                    l.split('-')[0]
+                ].concat((0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$toConsumableArray$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(f))) : f;
+                return acc;
+            }, fallbackLng);
+        } else if (typeof fallbackLng === 'function') {
+            throw new Error('If nonExplicitSupportedLngs is true, no functions are allowed for fallbackLng');
+        }
+    }
+    var hasCustomBackend = userConfig === null || userConfig === void 0 || (_userConfig$use = userConfig.use) === null || _userConfig$use === void 0 ? void 0 : _userConfig$use.some(function(b) {
+        return b.type === 'backend';
+    });
+    if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+    {
+        var fs;
+        var path;
+        var defaultLocaleStructure;
+        var defaultFile;
+        var defaultNSPath;
+        var defaultNSExists;
+        var fallback;
+        var defaultFallbackNSExists;
+        var _defaultNSPath;
+        var _defaultNSExists;
+        var _fallback;
+        var _defaultFallbackNSExists;
+        var getNamespaces;
+    } else {
+        //
+        // Set client side backend, if there is no custom backend
+        //
+        if (!hasCustomBackend) {
+            if (typeof localePath === 'string') {
+                combinedConfig.backend = {
+                    addPath: "".concat(localePath, "/").concat(localeStructure, ".missing.").concat(localeExtension),
+                    loadPath: "".concat(localePath, "/").concat(localeStructure, ".").concat(localeExtension)
+                };
+            } else if (typeof localePath === 'function') {
+                combinedConfig.backend = {
+                    addPath: function addPath(locale, namespace) {
+                        return localePath(locale, namespace, true);
+                    },
+                    loadPath: function loadPath(locale, namespace) {
+                        return localePath(locale, namespace, false);
+                    }
+                };
+            }
+        }
+        if (typeof combinedConfig.ns !== 'string' && !Array.isArray(combinedConfig.ns)) {
+            combinedConfig.ns = [
+                defaultNS
+            ];
+        }
+    }
+    //
+    // Deep merge with overwrite - goes last
+    //
+    deepMergeObjects.forEach(function(obj) {
+        if (userConfig[obj]) {
+            combinedConfig[obj] = _objectSpread(_objectSpread({}, combinedConfig[obj]), userConfig[obj]);
+        }
+    });
+    return combinedConfig;
+};
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next-i18next/dist/esm/createClient/browser.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$i18next$2f$dist$2f$esm$2f$i18next$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/i18next/dist/esm/i18next.js [app-client] (ecmascript)");
+;
+const __TURBOPACK__default__export__ = function(config) {
+    if (config.ns === undefined) config.ns = [];
+    var instance = __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$i18next$2f$dist$2f$esm$2f$i18next$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].createInstance(config);
+    var initPromise;
+    if (!instance.isInitialized) {
+        var _config$use;
+        config === null || config === void 0 || (_config$use = config.use) === null || _config$use === void 0 || _config$use.forEach(function(x) {
+            return instance.use(x);
+        });
+        if (typeof config.onPreInitI18next === 'function') {
+            config.onPreInitI18next(instance);
+        }
+        initPromise = instance.init(config);
+    } else {
+        initPromise = Promise.resolve(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$i18next$2f$dist$2f$esm$2f$i18next$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].t);
+    }
+    return {
+        i18n: instance,
+        initPromise: initPromise
+    };
+};
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next-i18next/dist/esm/appWithTranslation.js [app-client] (ecmascript) <locals>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "appWithTranslation",
+    ()=>appWithTranslation,
+    "globalI18n",
+    ()=>globalI18n
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$extends$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/extends.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$defineProperty$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@babel/runtime/helpers/esm/defineProperty.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$hoist$2d$non$2d$react$2d$statics$2f$dist$2f$hoist$2d$non$2d$react$2d$statics$2e$cjs$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/index.js [app-client] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$I18nextProvider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/I18nextProvider.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2d$i18next$2f$dist$2f$esm$2f$config$2f$createConfig$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next-i18next/dist/esm/config/createConfig.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2d$i18next$2f$dist$2f$esm$2f$createClient$2f$browser$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next-i18next/dist/esm/createClient/browser.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2d$i18next$2f$dist$2f$esm$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next-i18next/dist/esm/utils.js [app-client] (ecmascript)");
+;
+;
+var __jsx = __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].createElement;
+function ownKeys(e, r) {
+    var t = Object.keys(e);
+    if (Object.getOwnPropertySymbols) {
+        var o = Object.getOwnPropertySymbols(e);
+        r && (o = o.filter(function(r) {
+            return Object.getOwnPropertyDescriptor(e, r).enumerable;
+        })), t.push.apply(t, o);
+    }
+    return t;
+}
+function _objectSpread(e) {
+    for(var r = 1; r < arguments.length; r++){
+        var t = null != arguments[r] ? arguments[r] : {};
+        r % 2 ? ownKeys(Object(t), !0).forEach(function(r) {
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$defineProperty$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(e, r, t[r]);
+        }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function(r) {
+            Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
+        });
+    }
+    return e;
+}
+;
+;
+;
+;
+;
+;
+;
+var globalI18n = null;
+var addResourcesToI18next = function addResourcesToI18next(instance, resources) {
+    if (resources && instance.isInitialized) {
+        for(var _i = 0, _Object$keys = Object.keys(resources); _i < _Object$keys.length; _i++){
+            var locale = _Object$keys[_i];
+            for(var _i2 = 0, _Object$keys2 = Object.keys(resources[locale]); _i2 < _Object$keys2.length; _i2++){
+                var _instance$store;
+                var ns = _Object$keys2[_i2];
+                if (!(instance !== null && instance !== void 0 && (_instance$store = instance.store) !== null && _instance$store !== void 0 && _instance$store.data) || !instance.store.data[locale] || !instance.store.data[locale][ns]) {
+                    instance.addResourceBundle(locale, ns, resources[locale][ns], true, true);
+                }
+            }
+        }
+    }
+};
+var appWithTranslation = function appWithTranslation(WrappedComponent) {
+    var configOverride = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+    var AppWithTranslation = function AppWithTranslation(props) {
+        var _nextI18Next$initialL, _props$router;
+        var _ref = props.pageProps || {}, _nextI18Next = _ref._nextI18Next; // pageProps may be undefined on strange setups, i.e. https://github.com/i18next/next-i18next/issues/2109
+        var locale = (_nextI18Next$initialL = _nextI18Next === null || _nextI18Next === void 0 ? void 0 : _nextI18Next.initialLocale) !== null && _nextI18Next$initialL !== void 0 ? _nextI18Next$initialL : props === null || props === void 0 || (_props$router = props.router) === null || _props$router === void 0 ? void 0 : _props$router.locale;
+        var ns = _nextI18Next === null || _nextI18Next === void 0 ? void 0 : _nextI18Next.ns;
+        var instanceRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+        /**
+     * Memoize i18n instance and reuse it rather than creating new instance.
+     * When the locale or resources are changed after instance was created,
+     * we will update the instance by calling addResourceBundle method on it.
+     */ var i18n = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
+            "appWithTranslation.AppWithTranslation.useMemo[i18n]": function() {
+                var _userConfig$i18n;
+                if (!_nextI18Next && !configOverride) return null;
+                var userConfig = configOverride !== null && configOverride !== void 0 ? configOverride : _nextI18Next === null || _nextI18Next === void 0 ? void 0 : _nextI18Next.userConfig;
+                if (!userConfig) {
+                    throw new Error('appWithTranslation was called without a next-i18next config');
+                }
+                if (!(userConfig !== null && userConfig !== void 0 && userConfig.i18n)) {
+                    throw new Error('appWithTranslation was called without config.i18n');
+                }
+                if (!(userConfig !== null && userConfig !== void 0 && (_userConfig$i18n = userConfig.i18n) !== null && _userConfig$i18n !== void 0 && _userConfig$i18n.defaultLocale)) {
+                    throw new Error('config.i18n does not include a defaultLocale property');
+                }
+                var _ref2 = _nextI18Next || {}, initialI18nStore = _ref2.initialI18nStore;
+                var resources = configOverride !== null && configOverride !== void 0 && configOverride.resources ? configOverride.resources : initialI18nStore;
+                if (!locale) locale = userConfig.i18n.defaultLocale;
+                var instance = instanceRef.current;
+                if (instance) {
+                    addResourcesToI18next(instance, resources);
+                } else {
+                    instance = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2d$i18next$2f$dist$2f$esm$2f$createClient$2f$browser$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(_objectSpread(_objectSpread(_objectSpread({}, (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2d$i18next$2f$dist$2f$esm$2f$config$2f$createConfig$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createConfig"])(_objectSpread(_objectSpread({}, userConfig), {}, {
+                        lng: locale
+                    }))), {}, {
+                        lng: locale
+                    }, ns && {
+                        ns: ns
+                    }), {}, {
+                        resources: resources
+                    })).i18n;
+                    addResourcesToI18next(instance, resources);
+                    globalI18n = instance;
+                    instanceRef.current = instance;
+                }
+                return instance;
+            }
+        }["appWithTranslation.AppWithTranslation.useMemo[i18n]"], [
+            _nextI18Next,
+            locale,
+            ns
+        ]);
+        /**
+     * Since calling changeLanguage method on existing i18n instance cause state update in react,
+     * we need to call the method in `useLayoutEffect` to prevent state update in render phase.
+     */ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2d$i18next$2f$dist$2f$esm$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useIsomorphicLayoutEffect"])({
+            "appWithTranslation.AppWithTranslation.useIsomorphicLayoutEffect": function() {
+                if (!i18n || !locale) return;
+                i18n.changeLanguage(locale);
+            }
+        }["appWithTranslation.AppWithTranslation.useIsomorphicLayoutEffect"], [
+            i18n,
+            locale
+        ]);
+        return i18n !== null ? __jsx(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$I18nextProvider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["I18nextProvider"], {
+            i18n: i18n
+        }, __jsx(WrappedComponent, props)) : __jsx(WrappedComponent, (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$babel$2f$runtime$2f$helpers$2f$esm$2f$extends$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])({
+            key: locale
+        }, props));
+    };
+    return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$hoist$2d$non$2d$react$2d$statics$2f$dist$2f$hoist$2d$non$2d$react$2d$statics$2e$cjs$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(AppWithTranslation, WrappedComponent);
+};
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next-i18next/dist/esm/index.js [app-client] (ecmascript) <locals>", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$react$2d$i18next$2f$dist$2f$es$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/react-i18next/dist/es/index.js [app-client] (ecmascript) <locals>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2d$i18next$2f$dist$2f$esm$2f$appWithTranslation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$locals$3e$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next-i18next/dist/esm/appWithTranslation.js [app-client] (ecmascript) <locals>");
+;
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/minisearch/dist/es/index.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/** @ignore */ __turbopack_context__.s([
+    "default",
+    ()=>MiniSearch
+]);
+const ENTRIES = 'ENTRIES';
+/** @ignore */ const KEYS = 'KEYS';
+/** @ignore */ const VALUES = 'VALUES';
+/** @ignore */ const LEAF = '';
+/**
+ * @private
+ */ class TreeIterator {
+    next() {
+        const value = this.dive();
+        this.backtrack();
+        return value;
+    }
+    dive() {
+        if (this._path.length === 0) {
+            return {
+                done: true,
+                value: undefined
+            };
+        }
+        const { node, keys } = last$1(this._path);
+        if (last$1(keys) === LEAF) {
+            return {
+                done: false,
+                value: this.result()
+            };
+        }
+        const child = node.get(last$1(keys));
+        this._path.push({
+            node: child,
+            keys: Array.from(child.keys())
+        });
+        return this.dive();
+    }
+    backtrack() {
+        if (this._path.length === 0) {
+            return;
+        }
+        const keys = last$1(this._path).keys;
+        keys.pop();
+        if (keys.length > 0) {
+            return;
+        }
+        this._path.pop();
+        this.backtrack();
+    }
+    key() {
+        return this.set._prefix + this._path.map((param)=>{
+            let { keys } = param;
+            return last$1(keys);
+        }).filter((key)=>key !== LEAF).join('');
+    }
+    value() {
+        return last$1(this._path).node.get(LEAF);
+    }
+    result() {
+        switch(this._type){
+            case VALUES:
+                return this.value();
+            case KEYS:
+                return this.key();
+            default:
+                return [
+                    this.key(),
+                    this.value()
+                ];
+        }
+    }
+    [Symbol.iterator]() {
+        return this;
+    }
+    constructor(set, type){
+        const node = set._tree;
+        const keys = Array.from(node.keys());
+        this.set = set;
+        this._type = type;
+        this._path = keys.length > 0 ? [
+            {
+                node,
+                keys
+            }
+        ] : [];
+    }
+}
+const last$1 = (array)=>{
+    return array[array.length - 1];
+};
+/* eslint-disable no-labels */ /**
+ * @ignore
+ */ const fuzzySearch = (node, query, maxDistance)=>{
+    const results = new Map();
+    if (query === undefined) return results;
+    // Number of columns in the Levenshtein matrix.
+    const n = query.length + 1;
+    // Matching terms can never be longer than N + maxDistance.
+    const m = n + maxDistance;
+    // Fill first matrix row and column with numbers: 0 1 2 3 ...
+    const matrix = new Uint8Array(m * n).fill(maxDistance + 1);
+    for(let j = 0; j < n; ++j)matrix[j] = j;
+    for(let i = 1; i < m; ++i)matrix[i * n] = i;
+    recurse(node, query, maxDistance, results, matrix, 1, n, '');
+    return results;
+};
+// Modified version of http://stevehanov.ca/blog/?id=114
+// This builds a Levenshtein matrix for a given query and continuously updates
+// it for nodes in the radix tree that fall within the given maximum edit
+// distance. Keeping the same matrix around is beneficial especially for larger
+// edit distances.
+//
+//           k   a   t   e   <-- query
+//       0   1   2   3   4
+//   c   1   1   2   3   4
+//   a   2   2   1   2   3
+//   t   3   3   2   1  [2]  <-- edit distance
+//   ^
+//   ^ term in radix tree, rows are added and removed as needed
+const recurse = (node, query, maxDistance, results, matrix, m, n, prefix)=>{
+    const offset = m * n;
+    key: for (const key of node.keys()){
+        if (key === LEAF) {
+            // We've reached a leaf node. Check if the edit distance acceptable and
+            // store the result if it is.
+            const distance = matrix[offset - 1];
+            if (distance <= maxDistance) {
+                results.set(prefix, [
+                    node.get(key),
+                    distance
+                ]);
+            }
+        } else {
+            // Iterate over all characters in the key. Update the Levenshtein matrix
+            // and check if the minimum distance in the last row is still within the
+            // maximum edit distance. If it is, we can recurse over all child nodes.
+            let i = m;
+            for(let pos = 0; pos < key.length; ++pos, ++i){
+                const char = key[pos];
+                const thisRowOffset = n * i;
+                const prevRowOffset = thisRowOffset - n;
+                // Set the first column based on the previous row, and initialize the
+                // minimum distance in the current row.
+                let minDistance = matrix[thisRowOffset];
+                const jmin = Math.max(0, i - maxDistance - 1);
+                const jmax = Math.min(n - 1, i + maxDistance);
+                // Iterate over remaining columns (characters in the query).
+                for(let j = jmin; j < jmax; ++j){
+                    const different = char !== query[j];
+                    // It might make sense to only read the matrix positions used for
+                    // deletion/insertion if the characters are different. But we want to
+                    // avoid conditional reads for performance reasons.
+                    const rpl = matrix[prevRowOffset + j] + +different;
+                    const del = matrix[prevRowOffset + j + 1] + 1;
+                    const ins = matrix[thisRowOffset + j] + 1;
+                    const dist = matrix[thisRowOffset + j + 1] = Math.min(rpl, del, ins);
+                    if (dist < minDistance) minDistance = dist;
+                }
+                // Because distance will never decrease, we can stop. There will be no
+                // matching child nodes.
+                if (minDistance > maxDistance) {
+                    continue key;
+                }
+            }
+            recurse(node.get(key), query, maxDistance, results, matrix, i, n, prefix + key);
+        }
+    }
+};
+/* eslint-disable no-labels */ /**
+ * A class implementing the same interface as a standard JavaScript
+ * [`Map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
+ * with string keys, but adding support for efficiently searching entries with
+ * prefix or fuzzy search. This class is used internally by {@link MiniSearch}
+ * as the inverted index data structure. The implementation is a radix tree
+ * (compressed prefix tree).
+ *
+ * Since this class can be of general utility beyond _MiniSearch_, it is
+ * exported by the `minisearch` package and can be imported (or required) as
+ * `minisearch/SearchableMap`.
+ *
+ * @typeParam T  The type of the values stored in the map.
+ */ class SearchableMap {
+    /**
+     * Creates and returns a mutable view of this {@link SearchableMap},
+     * containing only entries that share the given prefix.
+     *
+     * ### Usage:
+     *
+     * ```javascript
+     * let map = new SearchableMap()
+     * map.set("unicorn", 1)
+     * map.set("universe", 2)
+     * map.set("university", 3)
+     * map.set("unique", 4)
+     * map.set("hello", 5)
+     *
+     * let uni = map.atPrefix("uni")
+     * uni.get("unique") // => 4
+     * uni.get("unicorn") // => 1
+     * uni.get("hello") // => undefined
+     *
+     * let univer = map.atPrefix("univer")
+     * univer.get("unique") // => undefined
+     * univer.get("universe") // => 2
+     * univer.get("university") // => 3
+     * ```
+     *
+     * @param prefix  The prefix
+     * @return A {@link SearchableMap} representing a mutable view of the original
+     * Map at the given prefix
+     */ atPrefix(prefix) {
+        if (!prefix.startsWith(this._prefix)) {
+            throw new Error('Mismatched prefix');
+        }
+        const [node, path] = trackDown(this._tree, prefix.slice(this._prefix.length));
+        if (node === undefined) {
+            const [parentNode, key] = last(path);
+            for (const k of parentNode.keys()){
+                if (k !== LEAF && k.startsWith(key)) {
+                    const node = new Map();
+                    node.set(k.slice(key.length), parentNode.get(k));
+                    return new SearchableMap(node, prefix);
+                }
+            }
+        }
+        return new SearchableMap(node, prefix);
+    }
+    /**
+     * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/clear
+     */ clear() {
+        this._size = undefined;
+        this._tree.clear();
+    }
+    /**
+     * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/delete
+     * @param key  Key to delete
+     */ delete(key) {
+        this._size = undefined;
+        return remove(this._tree, key);
+    }
+    /**
+     * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/entries
+     * @return An iterator iterating through `[key, value]` entries.
+     */ entries() {
+        return new TreeIterator(this, ENTRIES);
+    }
+    /**
+     * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/forEach
+     * @param fn  Iteration function
+     */ forEach(fn) {
+        for (const [key, value] of this){
+            fn(key, value, this);
+        }
+    }
+    /**
+     * Returns a Map of all the entries that have a key within the given edit
+     * distance from the search key. The keys of the returned Map are the matching
+     * keys, while the values are two-element arrays where the first element is
+     * the value associated to the key, and the second is the edit distance of the
+     * key to the search key.
+     *
+     * ### Usage:
+     *
+     * ```javascript
+     * let map = new SearchableMap()
+     * map.set('hello', 'world')
+     * map.set('hell', 'yeah')
+     * map.set('ciao', 'mondo')
+     *
+     * // Get all entries that match the key 'hallo' with a maximum edit distance of 2
+     * map.fuzzyGet('hallo', 2)
+     * // => Map(2) { 'hello' => ['world', 1], 'hell' => ['yeah', 2] }
+     *
+     * // In the example, the "hello" key has value "world" and edit distance of 1
+     * // (change "e" to "a"), the key "hell" has value "yeah" and edit distance of 2
+     * // (change "e" to "a", delete "o")
+     * ```
+     *
+     * @param key  The search key
+     * @param maxEditDistance  The maximum edit distance (Levenshtein)
+     * @return A Map of the matching keys to their value and edit distance
+     */ fuzzyGet(key, maxEditDistance) {
+        return fuzzySearch(this._tree, key, maxEditDistance);
+    }
+    /**
+     * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/get
+     * @param key  Key to get
+     * @return Value associated to the key, or `undefined` if the key is not
+     * found.
+     */ get(key) {
+        const node = lookup(this._tree, key);
+        return node !== undefined ? node.get(LEAF) : undefined;
+    }
+    /**
+     * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/has
+     * @param key  Key
+     * @return True if the key is in the map, false otherwise
+     */ has(key) {
+        const node = lookup(this._tree, key);
+        return node !== undefined && node.has(LEAF);
+    }
+    /**
+     * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/keys
+     * @return An `Iterable` iterating through keys
+     */ keys() {
+        return new TreeIterator(this, KEYS);
+    }
+    /**
+     * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/set
+     * @param key  Key to set
+     * @param value  Value to associate to the key
+     * @return The {@link SearchableMap} itself, to allow chaining
+     */ set(key, value) {
+        if (typeof key !== 'string') {
+            throw new Error('key must be a string');
+        }
+        this._size = undefined;
+        const node = createPath(this._tree, key);
+        node.set(LEAF, value);
+        return this;
+    }
+    /**
+     * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/size
+     */ get size() {
+        if (this._size) {
+            return this._size;
+        }
+        /** @ignore */ this._size = 0;
+        const iter = this.entries();
+        while(!iter.next().done)this._size += 1;
+        return this._size;
+    }
+    /**
+     * Updates the value at the given key using the provided function. The function
+     * is called with the current value at the key, and its return value is used as
+     * the new value to be set.
+     *
+     * ### Example:
+     *
+     * ```javascript
+     * // Increment the current value by one
+     * searchableMap.update('somekey', (currentValue) => currentValue == null ? 0 : currentValue + 1)
+     * ```
+     *
+     * If the value at the given key is or will be an object, it might not require
+     * re-assignment. In that case it is better to use `fetch()`, because it is
+     * faster.
+     *
+     * @param key  The key to update
+     * @param fn  The function used to compute the new value from the current one
+     * @return The {@link SearchableMap} itself, to allow chaining
+     */ update(key, fn) {
+        if (typeof key !== 'string') {
+            throw new Error('key must be a string');
+        }
+        this._size = undefined;
+        const node = createPath(this._tree, key);
+        node.set(LEAF, fn(node.get(LEAF)));
+        return this;
+    }
+    /**
+     * Fetches the value of the given key. If the value does not exist, calls the
+     * given function to create a new value, which is inserted at the given key
+     * and subsequently returned.
+     *
+     * ### Example:
+     *
+     * ```javascript
+     * const map = searchableMap.fetch('somekey', () => new Map())
+     * map.set('foo', 'bar')
+     * ```
+     *
+     * @param key  The key to update
+     * @param initial  A function that creates a new value if the key does not exist
+     * @return The existing or new value at the given key
+     */ fetch(key, initial) {
+        if (typeof key !== 'string') {
+            throw new Error('key must be a string');
+        }
+        this._size = undefined;
+        const node = createPath(this._tree, key);
+        let value = node.get(LEAF);
+        if (value === undefined) {
+            node.set(LEAF, value = initial());
+        }
+        return value;
+    }
+    /**
+     * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/values
+     * @return An `Iterable` iterating through values.
+     */ values() {
+        return new TreeIterator(this, VALUES);
+    }
+    /**
+     * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/@@iterator
+     */ [Symbol.iterator]() {
+        return this.entries();
+    }
+    /**
+     * Creates a {@link SearchableMap} from an `Iterable` of entries
+     *
+     * @param entries  Entries to be inserted in the {@link SearchableMap}
+     * @return A new {@link SearchableMap} with the given entries
+     */ static from(entries) {
+        const tree = new SearchableMap();
+        for (const [key, value] of entries){
+            tree.set(key, value);
+        }
+        return tree;
+    }
+    /**
+     * Creates a {@link SearchableMap} from the iterable properties of a JavaScript object
+     *
+     * @param object  Object of entries for the {@link SearchableMap}
+     * @return A new {@link SearchableMap} with the given entries
+     */ static fromObject(object) {
+        return SearchableMap.from(Object.entries(object));
+    }
+    /**
+     * The constructor is normally called without arguments, creating an empty
+     * map. In order to create a {@link SearchableMap} from an iterable or from an
+     * object, check {@link SearchableMap.from} and {@link
+     * SearchableMap.fromObject}.
+     *
+     * The constructor arguments are for internal use, when creating derived
+     * mutable views of a map at a prefix.
+     */ constructor(tree = new Map(), prefix = ''){
+        this._size = undefined;
+        this._tree = tree;
+        this._prefix = prefix;
+    }
+}
+const trackDown = function(tree, key) {
+    let path = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : [];
+    if (key.length === 0 || tree == null) {
+        return [
+            tree,
+            path
+        ];
+    }
+    for (const k of tree.keys()){
+        if (k !== LEAF && key.startsWith(k)) {
+            path.push([
+                tree,
+                k
+            ]); // performance: update in place
+            return trackDown(tree.get(k), key.slice(k.length), path);
+        }
+    }
+    path.push([
+        tree,
+        key
+    ]); // performance: update in place
+    return trackDown(undefined, '', path);
+};
+const lookup = (tree, key)=>{
+    if (key.length === 0 || tree == null) {
+        return tree;
+    }
+    for (const k of tree.keys()){
+        if (k !== LEAF && key.startsWith(k)) {
+            return lookup(tree.get(k), key.slice(k.length));
+        }
+    }
+};
+// Create a path in the radix tree for the given key, and returns the deepest
+// node. This function is in the hot path for indexing. It avoids unnecessary
+// string operations and recursion for performance.
+const createPath = (node, key)=>{
+    const keyLength = key.length;
+    outer: for(let pos = 0; node && pos < keyLength;){
+        for (const k of node.keys()){
+            // Check whether this key is a candidate: the first characters must match.
+            if (k !== LEAF && key[pos] === k[0]) {
+                const len = Math.min(keyLength - pos, k.length);
+                // Advance offset to the point where key and k no longer match.
+                let offset = 1;
+                while(offset < len && key[pos + offset] === k[offset])++offset;
+                const child = node.get(k);
+                if (offset === k.length) {
+                    // The existing key is shorter than the key we need to create.
+                    node = child;
+                } else {
+                    // Partial match: we need to insert an intermediate node to contain
+                    // both the existing subtree and the new node.
+                    const intermediate = new Map();
+                    intermediate.set(k.slice(offset), child);
+                    node.set(key.slice(pos, pos + offset), intermediate);
+                    node.delete(k);
+                    node = intermediate;
+                }
+                pos += offset;
+                continue outer;
+            }
+        }
+        // Create a final child node to contain the final suffix of the key.
+        const child = new Map();
+        node.set(key.slice(pos), child);
+        return child;
+    }
+    return node;
+};
+const remove = (tree, key)=>{
+    const [node, path] = trackDown(tree, key);
+    if (node === undefined) {
+        return;
+    }
+    node.delete(LEAF);
+    if (node.size === 0) {
+        cleanup(path);
+    } else if (node.size === 1) {
+        const [key, value] = node.entries().next().value;
+        merge(path, key, value);
+    }
+};
+const cleanup = (path)=>{
+    if (path.length === 0) {
+        return;
+    }
+    const [node, key] = last(path);
+    node.delete(key);
+    if (node.size === 0) {
+        cleanup(path.slice(0, -1));
+    } else if (node.size === 1) {
+        const [key, value] = node.entries().next().value;
+        if (key !== LEAF) {
+            merge(path.slice(0, -1), key, value);
+        }
+    }
+};
+const merge = (path, key, value)=>{
+    if (path.length === 0) {
+        return;
+    }
+    const [node, nodeKey] = last(path);
+    node.set(nodeKey + key, value);
+    node.delete(nodeKey);
+};
+const last = (array)=>{
+    return array[array.length - 1];
+};
+const OR = 'or';
+const AND = 'and';
+const AND_NOT = 'and_not';
+/**
+ * {@link MiniSearch} is the main entrypoint class, implementing a full-text
+ * search engine in memory.
+ *
+ * @typeParam T  The type of the documents being indexed.
+ *
+ * ### Basic example:
+ *
+ * ```javascript
+ * const documents = [
+ *   {
+ *     id: 1,
+ *     title: 'Moby Dick',
+ *     text: 'Call me Ishmael. Some years ago...',
+ *     category: 'fiction'
+ *   },
+ *   {
+ *     id: 2,
+ *     title: 'Zen and the Art of Motorcycle Maintenance',
+ *     text: 'I can see by my watch...',
+ *     category: 'fiction'
+ *   },
+ *   {
+ *     id: 3,
+ *     title: 'Neuromancer',
+ *     text: 'The sky above the port was...',
+ *     category: 'fiction'
+ *   },
+ *   {
+ *     id: 4,
+ *     title: 'Zen and the Art of Archery',
+ *     text: 'At first sight it must seem...',
+ *     category: 'non-fiction'
+ *   },
+ *   // ...and more
+ * ]
+ *
+ * // Create a search engine that indexes the 'title' and 'text' fields for
+ * // full-text search. Search results will include 'title' and 'category' (plus the
+ * // id field, that is always stored and returned)
+ * const miniSearch = new MiniSearch({
+ *   fields: ['title', 'text'],
+ *   storeFields: ['title', 'category']
+ * })
+ *
+ * // Add documents to the index
+ * miniSearch.addAll(documents)
+ *
+ * // Search for documents:
+ * let results = miniSearch.search('zen art motorcycle')
+ * // => [
+ * //   { id: 2, title: 'Zen and the Art of Motorcycle Maintenance', category: 'fiction', score: 2.77258 },
+ * //   { id: 4, title: 'Zen and the Art of Archery', category: 'non-fiction', score: 1.38629 }
+ * // ]
+ * ```
+ */ class MiniSearch {
+    /**
+     * Adds a document to the index
+     *
+     * @param document  The document to be indexed
+     */ add(document) {
+        const { extractField, tokenize, processTerm, fields, idField } = this._options;
+        const id = extractField(document, idField);
+        if (id == null) {
+            throw new Error('MiniSearch: document does not have ID field "'.concat(idField, '"'));
+        }
+        if (this._idToShortId.has(id)) {
+            throw new Error("MiniSearch: duplicate ID ".concat(id));
+        }
+        const shortDocumentId = this.addDocumentId(id);
+        this.saveStoredFields(shortDocumentId, document);
+        for (const field of fields){
+            const fieldValue = extractField(document, field);
+            if (fieldValue == null) continue;
+            const tokens = tokenize(fieldValue.toString(), field);
+            const fieldId = this._fieldIds[field];
+            const uniqueTerms = new Set(tokens).size;
+            this.addFieldLength(shortDocumentId, fieldId, this._documentCount - 1, uniqueTerms);
+            for (const term of tokens){
+                const processedTerm = processTerm(term, field);
+                if (Array.isArray(processedTerm)) {
+                    for (const t of processedTerm){
+                        this.addTerm(fieldId, shortDocumentId, t);
+                    }
+                } else if (processedTerm) {
+                    this.addTerm(fieldId, shortDocumentId, processedTerm);
+                }
+            }
+        }
+    }
+    /**
+     * Adds all the given documents to the index
+     *
+     * @param documents  An array of documents to be indexed
+     */ addAll(documents) {
+        for (const document of documents)this.add(document);
+    }
+    /**
+     * Adds all the given documents to the index asynchronously.
+     *
+     * Returns a promise that resolves (to `undefined`) when the indexing is done.
+     * This method is useful when index many documents, to avoid blocking the main
+     * thread. The indexing is performed asynchronously and in chunks.
+     *
+     * @param documents  An array of documents to be indexed
+     * @param options  Configuration options
+     * @return A promise resolving to `undefined` when the indexing is done
+     */ addAllAsync(documents) {
+        let options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+        const { chunkSize = 10 } = options;
+        const acc = {
+            chunk: [],
+            promise: Promise.resolve()
+        };
+        const { chunk, promise } = documents.reduce((param, document, i)=>{
+            let { chunk, promise } = param;
+            chunk.push(document);
+            if ((i + 1) % chunkSize === 0) {
+                return {
+                    chunk: [],
+                    promise: promise.then(()=>new Promise((resolve)=>setTimeout(resolve, 0))).then(()=>this.addAll(chunk))
+                };
+            } else {
+                return {
+                    chunk,
+                    promise
+                };
+            }
+        }, acc);
+        return promise.then(()=>this.addAll(chunk));
+    }
+    /**
+     * Removes the given document from the index.
+     *
+     * The document to remove must NOT have changed between indexing and removal,
+     * otherwise the index will be corrupted.
+     *
+     * This method requires passing the full document to be removed (not just the
+     * ID), and immediately removes the document from the inverted index, allowing
+     * memory to be released. A convenient alternative is {@link
+     * MiniSearch#discard}, which needs only the document ID, and has the same
+     * visible effect, but delays cleaning up the index until the next vacuuming.
+     *
+     * @param document  The document to be removed
+     */ remove(document) {
+        const { tokenize, processTerm, extractField, fields, idField } = this._options;
+        const id = extractField(document, idField);
+        if (id == null) {
+            throw new Error('MiniSearch: document does not have ID field "'.concat(idField, '"'));
+        }
+        const shortId = this._idToShortId.get(id);
+        if (shortId == null) {
+            throw new Error("MiniSearch: cannot remove document with ID ".concat(id, ": it is not in the index"));
+        }
+        for (const field of fields){
+            const fieldValue = extractField(document, field);
+            if (fieldValue == null) continue;
+            const tokens = tokenize(fieldValue.toString(), field);
+            const fieldId = this._fieldIds[field];
+            const uniqueTerms = new Set(tokens).size;
+            this.removeFieldLength(shortId, fieldId, this._documentCount, uniqueTerms);
+            for (const term of tokens){
+                const processedTerm = processTerm(term, field);
+                if (Array.isArray(processedTerm)) {
+                    for (const t of processedTerm){
+                        this.removeTerm(fieldId, shortId, t);
+                    }
+                } else if (processedTerm) {
+                    this.removeTerm(fieldId, shortId, processedTerm);
+                }
+            }
+        }
+        this._storedFields.delete(shortId);
+        this._documentIds.delete(shortId);
+        this._idToShortId.delete(id);
+        this._fieldLength.delete(shortId);
+        this._documentCount -= 1;
+    }
+    /**
+     * Removes all the given documents from the index. If called with no arguments,
+     * it removes _all_ documents from the index.
+     *
+     * @param documents  The documents to be removed. If this argument is omitted,
+     * all documents are removed. Note that, for removing all documents, it is
+     * more efficient to call this method with no arguments than to pass all
+     * documents.
+     */ removeAll(documents) {
+        if (documents) {
+            for (const document of documents)this.remove(document);
+        } else if (arguments.length > 0) {
+            throw new Error('Expected documents to be present. Omit the argument to remove all documents.');
+        } else {
+            this._index = new SearchableMap();
+            this._documentCount = 0;
+            this._documentIds = new Map();
+            this._idToShortId = new Map();
+            this._fieldLength = new Map();
+            this._avgFieldLength = [];
+            this._storedFields = new Map();
+            this._nextId = 0;
+        }
+    }
+    /**
+     * Discards the document with the given ID, so it won't appear in search results
+     *
+     * It has the same visible effect of {@link MiniSearch.remove} (both cause the
+     * document to stop appearing in searches), but a different effect on the
+     * internal data structures:
+     *
+     *   - {@link MiniSearch#remove} requires passing the full document to be
+     *   removed as argument, and removes it from the inverted index immediately.
+     *
+     *   - {@link MiniSearch#discard} instead only needs the document ID, and
+     *   works by marking the current version of the document as discarded, so it
+     *   is immediately ignored by searches. This is faster and more convenient
+     *   than {@link MiniSearch#remove}, but the index is not immediately
+     *   modified. To take care of that, vacuuming is performed after a certain
+     *   number of documents are discarded, cleaning up the index and allowing
+     *   memory to be released.
+     *
+     * After discarding a document, it is possible to re-add a new version, and
+     * only the new version will appear in searches. In other words, discarding
+     * and re-adding a document works exactly like removing and re-adding it. The
+     * {@link MiniSearch.replace} method can also be used to replace a document
+     * with a new version.
+     *
+     * #### Details about vacuuming
+     *
+     * Repetite calls to this method would leave obsolete document references in
+     * the index, invisible to searches. Two mechanisms take care of cleaning up:
+     * clean up during search, and vacuuming.
+     *
+     *   - Upon search, whenever a discarded ID is found (and ignored for the
+     *   results), references to the discarded document are removed from the
+     *   inverted index entries for the search terms. This ensures that subsequent
+     *   searches for the same terms do not need to skip these obsolete references
+     *   again.
+     *
+     *   - In addition, vacuuming is performed automatically by default (see the
+     *   `autoVacuum` field in {@link Options}) after a certain number of
+     *   documents are discarded. Vacuuming traverses all terms in the index,
+     *   cleaning up all references to discarded documents. Vacuuming can also be
+     *   triggered manually by calling {@link MiniSearch#vacuum}.
+     *
+     * @param id  The ID of the document to be discarded
+     */ discard(id) {
+        const shortId = this._idToShortId.get(id);
+        if (shortId == null) {
+            throw new Error("MiniSearch: cannot discard document with ID ".concat(id, ": it is not in the index"));
+        }
+        this._idToShortId.delete(id);
+        this._documentIds.delete(shortId);
+        this._storedFields.delete(shortId);
+        (this._fieldLength.get(shortId) || []).forEach((fieldLength, fieldId)=>{
+            this.removeFieldLength(shortId, fieldId, this._documentCount, fieldLength);
+        });
+        this._fieldLength.delete(shortId);
+        this._documentCount -= 1;
+        this._dirtCount += 1;
+        this.maybeAutoVacuum();
+    }
+    maybeAutoVacuum() {
+        if (this._options.autoVacuum === false) {
+            return;
+        }
+        const { minDirtFactor, minDirtCount, batchSize, batchWait } = this._options.autoVacuum;
+        this.conditionalVacuum({
+            batchSize,
+            batchWait
+        }, {
+            minDirtCount,
+            minDirtFactor
+        });
+    }
+    /**
+     * Discards the documents with the given IDs, so they won't appear in search
+     * results
+     *
+     * It is equivalent to calling {@link MiniSearch#discard} for all the given
+     * IDs, but with the optimization of triggering at most one automatic
+     * vacuuming at the end.
+     *
+     * Note: to remove all documents from the index, it is faster and more
+     * convenient to call {@link MiniSearch.removeAll} with no argument, instead
+     * of passing all IDs to this method.
+     */ discardAll(ids) {
+        const autoVacuum = this._options.autoVacuum;
+        try {
+            this._options.autoVacuum = false;
+            for (const id of ids){
+                this.discard(id);
+            }
+        } finally{
+            this._options.autoVacuum = autoVacuum;
+        }
+        this.maybeAutoVacuum();
+    }
+    /**
+     * It replaces an existing document with the given updated version
+     *
+     * It works by discarding the current version and adding the updated one, so
+     * it is functionally equivalent to calling {@link MiniSearch#discard}
+     * followed by {@link MiniSearch#add}. The ID of the updated document should
+     * be the same as the original one.
+     *
+     * Since it uses {@link MiniSearch#discard} internally, this method relies on
+     * vacuuming to clean up obsolete document references from the index, allowing
+     * memory to be released (see {@link MiniSearch#discard}).
+     *
+     * @param updatedDocument  The updated document to replace the old version
+     * with
+     */ replace(updatedDocument) {
+        const { idField, extractField } = this._options;
+        const id = extractField(updatedDocument, idField);
+        this.discard(id);
+        this.add(updatedDocument);
+    }
+    /**
+     * Triggers a manual vacuuming, cleaning up references to discarded documents
+     * from the inverted index
+     *
+     * Vacuuming is only useful for applications that use the {@link
+     * MiniSearch#discard} or {@link MiniSearch#replace} methods.
+     *
+     * By default, vacuuming is performed automatically when needed (controlled by
+     * the `autoVacuum` field in {@link Options}), so there is usually no need to
+     * call this method, unless one wants to make sure to perform vacuuming at a
+     * specific moment.
+     *
+     * Vacuuming traverses all terms in the inverted index in batches, and cleans
+     * up references to discarded documents from the posting list, allowing memory
+     * to be released.
+     *
+     * The method takes an optional object as argument with the following keys:
+     *
+     *   - `batchSize`: the size of each batch (1000 by default)
+     *
+     *   - `batchWait`: the number of milliseconds to wait between batches (10 by
+     *   default)
+     *
+     * On large indexes, vacuuming could have a non-negligible cost: batching
+     * avoids blocking the thread for long, diluting this cost so that it is not
+     * negatively affecting the application. Nonetheless, this method should only
+     * be called when necessary, and relying on automatic vacuuming is usually
+     * better.
+     *
+     * It returns a promise that resolves (to undefined) when the clean up is
+     * completed. If vacuuming is already ongoing at the time this method is
+     * called, a new one is enqueued immediately after the ongoing one, and a
+     * corresponding promise is returned. However, no more than one vacuuming is
+     * enqueued on top of the ongoing one, even if this method is called more
+     * times (enqueuing multiple ones would be useless).
+     *
+     * @param options  Configuration options for the batch size and delay. See
+     * {@link VacuumOptions}.
+     */ vacuum() {
+        let options = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {};
+        return this.conditionalVacuum(options);
+    }
+    conditionalVacuum(options, conditions) {
+        // If a vacuum is already ongoing, schedule another as soon as it finishes,
+        // unless there's already one enqueued. If one was already enqueued, do not
+        // enqueue another on top, but make sure that the conditions are the
+        // broadest.
+        if (this._currentVacuum) {
+            this._enqueuedVacuumConditions = this._enqueuedVacuumConditions && conditions;
+            if (this._enqueuedVacuum != null) {
+                return this._enqueuedVacuum;
+            }
+            this._enqueuedVacuum = this._currentVacuum.then(()=>{
+                const conditions = this._enqueuedVacuumConditions;
+                this._enqueuedVacuumConditions = defaultVacuumConditions;
+                return this.performVacuuming(options, conditions);
+            });
+            return this._enqueuedVacuum;
+        }
+        if (this.vacuumConditionsMet(conditions) === false) {
+            return Promise.resolve();
+        }
+        this._currentVacuum = this.performVacuuming(options);
+        return this._currentVacuum;
+    }
+    async performVacuuming(options, conditions) {
+        const initialDirtCount = this._dirtCount;
+        if (this.vacuumConditionsMet(conditions)) {
+            const batchSize = options.batchSize || defaultVacuumOptions.batchSize;
+            const batchWait = options.batchWait || defaultVacuumOptions.batchWait;
+            let i = 1;
+            for (const [term, fieldsData] of this._index){
+                for (const [fieldId, fieldIndex] of fieldsData){
+                    for (const [shortId] of fieldIndex){
+                        if (this._documentIds.has(shortId)) {
+                            continue;
+                        }
+                        if (fieldIndex.size <= 1) {
+                            fieldsData.delete(fieldId);
+                        } else {
+                            fieldIndex.delete(shortId);
+                        }
+                    }
+                }
+                if (this._index.get(term).size === 0) {
+                    this._index.delete(term);
+                }
+                if (i % batchSize === 0) {
+                    await new Promise((resolve)=>setTimeout(resolve, batchWait));
+                }
+                i += 1;
+            }
+            this._dirtCount -= initialDirtCount;
+        }
+        // Make the next lines always async, so they execute after this function returns
+        await null;
+        this._currentVacuum = this._enqueuedVacuum;
+        this._enqueuedVacuum = null;
+    }
+    vacuumConditionsMet(conditions) {
+        if (conditions == null) {
+            return true;
+        }
+        let { minDirtCount, minDirtFactor } = conditions;
+        minDirtCount = minDirtCount || defaultAutoVacuumOptions.minDirtCount;
+        minDirtFactor = minDirtFactor || defaultAutoVacuumOptions.minDirtFactor;
+        return this.dirtCount >= minDirtCount && this.dirtFactor >= minDirtFactor;
+    }
+    /**
+     * Is `true` if a vacuuming operation is ongoing, `false` otherwise
+     */ get isVacuuming() {
+        return this._currentVacuum != null;
+    }
+    /**
+     * The number of documents discarded since the most recent vacuuming
+     */ get dirtCount() {
+        return this._dirtCount;
+    }
+    /**
+     * A number between 0 and 1 giving an indication about the proportion of
+     * documents that are discarded, and can therefore be cleaned up by vacuuming.
+     * A value close to 0 means that the index is relatively clean, while a higher
+     * value means that the index is relatively dirty, and vacuuming could release
+     * memory.
+     */ get dirtFactor() {
+        return this._dirtCount / (1 + this._documentCount + this._dirtCount);
+    }
+    /**
+     * Returns `true` if a document with the given ID is present in the index and
+     * available for search, `false` otherwise
+     *
+     * @param id  The document ID
+     */ has(id) {
+        return this._idToShortId.has(id);
+    }
+    /**
+     * Returns the stored fields (as configured in the `storeFields` constructor
+     * option) for the given document ID. Returns `undefined` if the document is
+     * not present in the index.
+     *
+     * @param id  The document ID
+     */ getStoredFields(id) {
+        const shortId = this._idToShortId.get(id);
+        if (shortId == null) {
+            return undefined;
+        }
+        return this._storedFields.get(shortId);
+    }
+    /**
+     * Search for documents matching the given search query.
+     *
+     * The result is a list of scored document IDs matching the query, sorted by
+     * descending score, and each including data about which terms were matched and
+     * in which fields.
+     *
+     * ### Basic usage:
+     *
+     * ```javascript
+     * // Search for "zen art motorcycle" with default options: terms have to match
+     * // exactly, and individual terms are joined with OR
+     * miniSearch.search('zen art motorcycle')
+     * // => [ { id: 2, score: 2.77258, match: { ... } }, { id: 4, score: 1.38629, match: { ... } } ]
+     * ```
+     *
+     * ### Restrict search to specific fields:
+     *
+     * ```javascript
+     * // Search only in the 'title' field
+     * miniSearch.search('zen', { fields: ['title'] })
+     * ```
+     *
+     * ### Field boosting:
+     *
+     * ```javascript
+     * // Boost a field
+     * miniSearch.search('zen', { boost: { title: 2 } })
+     * ```
+     *
+     * ### Prefix search:
+     *
+     * ```javascript
+     * // Search for "moto" with prefix search (it will match documents
+     * // containing terms that start with "moto" or "neuro")
+     * miniSearch.search('moto neuro', { prefix: true })
+     * ```
+     *
+     * ### Fuzzy search:
+     *
+     * ```javascript
+     * // Search for "ismael" with fuzzy search (it will match documents containing
+     * // terms similar to "ismael", with a maximum edit distance of 0.2 term.length
+     * // (rounded to nearest integer)
+     * miniSearch.search('ismael', { fuzzy: 0.2 })
+     * ```
+     *
+     * ### Combining strategies:
+     *
+     * ```javascript
+     * // Mix of exact match, prefix search, and fuzzy search
+     * miniSearch.search('ismael mob', {
+     *  prefix: true,
+     *  fuzzy: 0.2
+     * })
+     * ```
+     *
+     * ### Advanced prefix and fuzzy search:
+     *
+     * ```javascript
+     * // Perform fuzzy and prefix search depending on the search term. Here
+     * // performing prefix and fuzzy search only on terms longer than 3 characters
+     * miniSearch.search('ismael mob', {
+     *  prefix: term => term.length > 3
+     *  fuzzy: term => term.length > 3 ? 0.2 : null
+     * })
+     * ```
+     *
+     * ### Combine with AND:
+     *
+     * ```javascript
+     * // Combine search terms with AND (to match only documents that contain both
+     * // "motorcycle" and "art")
+     * miniSearch.search('motorcycle art', { combineWith: 'AND' })
+     * ```
+     *
+     * ### Combine with AND_NOT:
+     *
+     * There is also an AND_NOT combinator, that finds documents that match the
+     * first term, but do not match any of the other terms. This combinator is
+     * rarely useful with simple queries, and is meant to be used with advanced
+     * query combinations (see later for more details).
+     *
+     * ### Filtering results:
+     *
+     * ```javascript
+     * // Filter only results in the 'fiction' category (assuming that 'category'
+     * // is a stored field)
+     * miniSearch.search('motorcycle art', {
+     *   filter: (result) => result.category === 'fiction'
+     * })
+     * ```
+     *
+     * ### Wildcard query
+     *
+     * Searching for an empty string (assuming the default tokenizer) returns no
+     * results. Sometimes though, one needs to match all documents, like in a
+     * "wildcard" search. This is possible by passing the special value
+     * {@link MiniSearch.wildcard} as the query:
+     *
+     * ```javascript
+     * // Return search results for all documents
+     * miniSearch.search(MiniSearch.wildcard)
+     * ```
+     *
+     * Note that search options such as `filter` and `boostDocument` are still
+     * applied, influencing which results are returned, and their order:
+     *
+     * ```javascript
+     * // Return search results for all documents in the 'fiction' category
+     * miniSearch.search(MiniSearch.wildcard, {
+     *   filter: (result) => result.category === 'fiction'
+     * })
+     * ```
+     *
+     * ### Advanced combination of queries:
+     *
+     * It is possible to combine different subqueries with OR, AND, and AND_NOT,
+     * and even with different search options, by passing a query expression
+     * tree object as the first argument, instead of a string.
+     *
+     * ```javascript
+     * // Search for documents that contain "zen" and ("motorcycle" or "archery")
+     * miniSearch.search({
+     *   combineWith: 'AND',
+     *   queries: [
+     *     'zen',
+     *     {
+     *       combineWith: 'OR',
+     *       queries: ['motorcycle', 'archery']
+     *     }
+     *   ]
+     * })
+     *
+     * // Search for documents that contain ("apple" or "pear") but not "juice" and
+     * // not "tree"
+     * miniSearch.search({
+     *   combineWith: 'AND_NOT',
+     *   queries: [
+     *     {
+     *       combineWith: 'OR',
+     *       queries: ['apple', 'pear']
+     *     },
+     *     'juice',
+     *     'tree'
+     *   ]
+     * })
+     * ```
+     *
+     * Each node in the expression tree can be either a string, or an object that
+     * supports all {@link SearchOptions} fields, plus a `queries` array field for
+     * subqueries.
+     *
+     * Note that, while this can become complicated to do by hand for complex or
+     * deeply nested queries, it provides a formalized expression tree API for
+     * external libraries that implement a parser for custom query languages.
+     *
+     * @param query  Search query
+     * @param searchOptions  Search options. Each option, if not given, defaults to the corresponding value of `searchOptions` given to the constructor, or to the library default.
+     */ search(query) {
+        let searchOptions = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+        const { searchOptions: globalSearchOptions } = this._options;
+        const searchOptionsWithDefaults = {
+            ...globalSearchOptions,
+            ...searchOptions
+        };
+        const rawResults = this.executeQuery(query, searchOptions);
+        const results = [];
+        for (const [docId, { score, terms, match }] of rawResults){
+            // terms are the matched query terms, which will be returned to the user
+            // as queryTerms. The quality is calculated based on them, as opposed to
+            // the matched terms in the document (which can be different due to
+            // prefix and fuzzy match)
+            const quality = terms.length || 1;
+            const result = {
+                id: this._documentIds.get(docId),
+                score: score * quality,
+                terms: Object.keys(match),
+                queryTerms: terms,
+                match
+            };
+            Object.assign(result, this._storedFields.get(docId));
+            if (searchOptionsWithDefaults.filter == null || searchOptionsWithDefaults.filter(result)) {
+                results.push(result);
+            }
+        }
+        // If it's a wildcard query, and no document boost is applied, skip sorting
+        // the results, as all results have the same score of 1
+        if (query === MiniSearch.wildcard && searchOptionsWithDefaults.boostDocument == null) {
+            return results;
+        }
+        results.sort(byScore);
+        return results;
+    }
+    /**
+     * Provide suggestions for the given search query
+     *
+     * The result is a list of suggested modified search queries, derived from the
+     * given search query, each with a relevance score, sorted by descending score.
+     *
+     * By default, it uses the same options used for search, except that by
+     * default it performs prefix search on the last term of the query, and
+     * combine terms with `'AND'` (requiring all query terms to match). Custom
+     * options can be passed as a second argument. Defaults can be changed upon
+     * calling the {@link MiniSearch} constructor, by passing a
+     * `autoSuggestOptions` option.
+     *
+     * ### Basic usage:
+     *
+     * ```javascript
+     * // Get suggestions for 'neuro':
+     * miniSearch.autoSuggest('neuro')
+     * // => [ { suggestion: 'neuromancer', terms: [ 'neuromancer' ], score: 0.46240 } ]
+     * ```
+     *
+     * ### Multiple words:
+     *
+     * ```javascript
+     * // Get suggestions for 'zen ar':
+     * miniSearch.autoSuggest('zen ar')
+     * // => [
+     * //  { suggestion: 'zen archery art', terms: [ 'zen', 'archery', 'art' ], score: 1.73332 },
+     * //  { suggestion: 'zen art', terms: [ 'zen', 'art' ], score: 1.21313 }
+     * // ]
+     * ```
+     *
+     * ### Fuzzy suggestions:
+     *
+     * ```javascript
+     * // Correct spelling mistakes using fuzzy search:
+     * miniSearch.autoSuggest('neromancer', { fuzzy: 0.2 })
+     * // => [ { suggestion: 'neuromancer', terms: [ 'neuromancer' ], score: 1.03998 } ]
+     * ```
+     *
+     * ### Filtering:
+     *
+     * ```javascript
+     * // Get suggestions for 'zen ar', but only within the 'fiction' category
+     * // (assuming that 'category' is a stored field):
+     * miniSearch.autoSuggest('zen ar', {
+     *   filter: (result) => result.category === 'fiction'
+     * })
+     * // => [
+     * //  { suggestion: 'zen archery art', terms: [ 'zen', 'archery', 'art' ], score: 1.73332 },
+     * //  { suggestion: 'zen art', terms: [ 'zen', 'art' ], score: 1.21313 }
+     * // ]
+     * ```
+     *
+     * @param queryString  Query string to be expanded into suggestions
+     * @param options  Search options. The supported options and default values
+     * are the same as for the {@link MiniSearch#search} method, except that by
+     * default prefix search is performed on the last term in the query, and terms
+     * are combined with `'AND'`.
+     * @return  A sorted array of suggestions sorted by relevance score.
+     */ autoSuggest(queryString) {
+        let options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+        options = {
+            ...this._options.autoSuggestOptions,
+            ...options
+        };
+        const suggestions = new Map();
+        for (const { score, terms } of this.search(queryString, options)){
+            const phrase = terms.join(' ');
+            const suggestion = suggestions.get(phrase);
+            if (suggestion != null) {
+                suggestion.score += score;
+                suggestion.count += 1;
+            } else {
+                suggestions.set(phrase, {
+                    score,
+                    terms,
+                    count: 1
+                });
+            }
+        }
+        const results = [];
+        for (const [suggestion, { score, terms, count }] of suggestions){
+            results.push({
+                suggestion,
+                terms,
+                score: score / count
+            });
+        }
+        results.sort(byScore);
+        return results;
+    }
+    /**
+     * Total number of documents available to search
+     */ get documentCount() {
+        return this._documentCount;
+    }
+    /**
+     * Number of terms in the index
+     */ get termCount() {
+        return this._index.size;
+    }
+    /**
+     * Deserializes a JSON index (serialized with `JSON.stringify(miniSearch)`)
+     * and instantiates a MiniSearch instance. It should be given the same options
+     * originally used when serializing the index.
+     *
+     * ### Usage:
+     *
+     * ```javascript
+     * // If the index was serialized with:
+     * let miniSearch = new MiniSearch({ fields: ['title', 'text'] })
+     * miniSearch.addAll(documents)
+     *
+     * const json = JSON.stringify(miniSearch)
+     * // It can later be deserialized like this:
+     * miniSearch = MiniSearch.loadJSON(json, { fields: ['title', 'text'] })
+     * ```
+     *
+     * @param json  JSON-serialized index
+     * @param options  configuration options, same as the constructor
+     * @return An instance of MiniSearch deserialized from the given JSON.
+     */ static loadJSON(json, options) {
+        if (options == null) {
+            throw new Error('MiniSearch: loadJSON should be given the same options used when serializing the index');
+        }
+        return this.loadJS(JSON.parse(json), options);
+    }
+    /**
+     * Async equivalent of {@link MiniSearch.loadJSON}
+     *
+     * This function is an alternative to {@link MiniSearch.loadJSON} that returns
+     * a promise, and loads the index in batches, leaving pauses between them to avoid
+     * blocking the main thread. It tends to be slower than the synchronous
+     * version, but does not block the main thread, so it can be a better choice
+     * when deserializing very large indexes.
+     *
+     * @param json  JSON-serialized index
+     * @param options  configuration options, same as the constructor
+     * @return A Promise that will resolve to an instance of MiniSearch deserialized from the given JSON.
+     */ static async loadJSONAsync(json, options) {
+        if (options == null) {
+            throw new Error('MiniSearch: loadJSON should be given the same options used when serializing the index');
+        }
+        return this.loadJSAsync(JSON.parse(json), options);
+    }
+    /**
+     * Returns the default value of an option. It will throw an error if no option
+     * with the given name exists.
+     *
+     * @param optionName  Name of the option
+     * @return The default value of the given option
+     *
+     * ### Usage:
+     *
+     * ```javascript
+     * // Get default tokenizer
+     * MiniSearch.getDefault('tokenize')
+     *
+     * // Get default term processor
+     * MiniSearch.getDefault('processTerm')
+     *
+     * // Unknown options will throw an error
+     * MiniSearch.getDefault('notExisting')
+     * // => throws 'MiniSearch: unknown option "notExisting"'
+     * ```
+     */ static getDefault(optionName) {
+        if (defaultOptions.hasOwnProperty(optionName)) {
+            return getOwnProperty(defaultOptions, optionName);
+        } else {
+            throw new Error('MiniSearch: unknown option "'.concat(optionName, '"'));
+        }
+    }
+    /**
+     * @ignore
+     */ static loadJS(js, options) {
+        const { index, documentIds, fieldLength, storedFields, serializationVersion } = js;
+        const miniSearch = this.instantiateMiniSearch(js, options);
+        miniSearch._documentIds = objectToNumericMap(documentIds);
+        miniSearch._fieldLength = objectToNumericMap(fieldLength);
+        miniSearch._storedFields = objectToNumericMap(storedFields);
+        for (const [shortId, id] of miniSearch._documentIds){
+            miniSearch._idToShortId.set(id, shortId);
+        }
+        for (const [term, data] of index){
+            const dataMap = new Map();
+            for (const fieldId of Object.keys(data)){
+                let indexEntry = data[fieldId];
+                // Version 1 used to nest the index entry inside a field called ds
+                if (serializationVersion === 1) {
+                    indexEntry = indexEntry.ds;
+                }
+                dataMap.set(parseInt(fieldId, 10), objectToNumericMap(indexEntry));
+            }
+            miniSearch._index.set(term, dataMap);
+        }
+        return miniSearch;
+    }
+    /**
+     * @ignore
+     */ static async loadJSAsync(js, options) {
+        const { index, documentIds, fieldLength, storedFields, serializationVersion } = js;
+        const miniSearch = this.instantiateMiniSearch(js, options);
+        miniSearch._documentIds = await objectToNumericMapAsync(documentIds);
+        miniSearch._fieldLength = await objectToNumericMapAsync(fieldLength);
+        miniSearch._storedFields = await objectToNumericMapAsync(storedFields);
+        for (const [shortId, id] of miniSearch._documentIds){
+            miniSearch._idToShortId.set(id, shortId);
+        }
+        let count = 0;
+        for (const [term, data] of index){
+            const dataMap = new Map();
+            for (const fieldId of Object.keys(data)){
+                let indexEntry = data[fieldId];
+                // Version 1 used to nest the index entry inside a field called ds
+                if (serializationVersion === 1) {
+                    indexEntry = indexEntry.ds;
+                }
+                dataMap.set(parseInt(fieldId, 10), await objectToNumericMapAsync(indexEntry));
+            }
+            if (++count % 1000 === 0) await wait(0);
+            miniSearch._index.set(term, dataMap);
+        }
+        return miniSearch;
+    }
+    /**
+     * @ignore
+     */ static instantiateMiniSearch(js, options) {
+        const { documentCount, nextId, fieldIds, averageFieldLength, dirtCount, serializationVersion } = js;
+        if (serializationVersion !== 1 && serializationVersion !== 2) {
+            throw new Error('MiniSearch: cannot deserialize an index created with an incompatible version');
+        }
+        const miniSearch = new MiniSearch(options);
+        miniSearch._documentCount = documentCount;
+        miniSearch._nextId = nextId;
+        miniSearch._idToShortId = new Map();
+        miniSearch._fieldIds = fieldIds;
+        miniSearch._avgFieldLength = averageFieldLength;
+        miniSearch._dirtCount = dirtCount || 0;
+        miniSearch._index = new SearchableMap();
+        return miniSearch;
+    }
+    /**
+     * @ignore
+     */ executeQuery(query) {
+        let searchOptions = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+        if (query === MiniSearch.wildcard) {
+            return this.executeWildcardQuery(searchOptions);
+        }
+        if (typeof query !== 'string') {
+            const options = {
+                ...searchOptions,
+                ...query,
+                queries: undefined
+            };
+            const results = query.queries.map((subquery)=>this.executeQuery(subquery, options));
+            return this.combineResults(results, options.combineWith);
+        }
+        const { tokenize, processTerm, searchOptions: globalSearchOptions } = this._options;
+        const options = {
+            tokenize,
+            processTerm,
+            ...globalSearchOptions,
+            ...searchOptions
+        };
+        const { tokenize: searchTokenize, processTerm: searchProcessTerm } = options;
+        const terms = searchTokenize(query).flatMap((term)=>searchProcessTerm(term)).filter((term)=>!!term);
+        const queries = terms.map(termToQuerySpec(options));
+        const results = queries.map((query)=>this.executeQuerySpec(query, options));
+        return this.combineResults(results, options.combineWith);
+    }
+    /**
+     * @ignore
+     */ executeQuerySpec(query, searchOptions) {
+        const options = {
+            ...this._options.searchOptions,
+            ...searchOptions
+        };
+        const boosts = (options.fields || this._options.fields).reduce((boosts, field)=>({
+                ...boosts,
+                [field]: getOwnProperty(options.boost, field) || 1
+            }), {});
+        const { boostDocument, weights, maxFuzzy, bm25: bm25params } = options;
+        const { fuzzy: fuzzyWeight, prefix: prefixWeight } = {
+            ...defaultSearchOptions.weights,
+            ...weights
+        };
+        const data = this._index.get(query.term);
+        const results = this.termResults(query.term, query.term, 1, query.termBoost, data, boosts, boostDocument, bm25params);
+        let prefixMatches;
+        let fuzzyMatches;
+        if (query.prefix) {
+            prefixMatches = this._index.atPrefix(query.term);
+        }
+        if (query.fuzzy) {
+            const fuzzy = query.fuzzy === true ? 0.2 : query.fuzzy;
+            const maxDistance = fuzzy < 1 ? Math.min(maxFuzzy, Math.round(query.term.length * fuzzy)) : fuzzy;
+            if (maxDistance) fuzzyMatches = this._index.fuzzyGet(query.term, maxDistance);
+        }
+        if (prefixMatches) {
+            for (const [term, data] of prefixMatches){
+                const distance = term.length - query.term.length;
+                if (!distance) {
+                    continue;
+                } // Skip exact match.
+                // Delete the term from fuzzy results (if present) if it is also a
+                // prefix result. This entry will always be scored as a prefix result.
+                fuzzyMatches === null || fuzzyMatches === void 0 ? void 0 : fuzzyMatches.delete(term);
+                // Weight gradually approaches 0 as distance goes to infinity, with the
+                // weight for the hypothetical distance 0 being equal to prefixWeight.
+                // The rate of change is much lower than that of fuzzy matches to
+                // account for the fact that prefix matches stay more relevant than
+                // fuzzy matches for longer distances.
+                const weight = prefixWeight * term.length / (term.length + 0.3 * distance);
+                this.termResults(query.term, term, weight, query.termBoost, data, boosts, boostDocument, bm25params, results);
+            }
+        }
+        if (fuzzyMatches) {
+            for (const term of fuzzyMatches.keys()){
+                const [data, distance] = fuzzyMatches.get(term);
+                if (!distance) {
+                    continue;
+                } // Skip exact match.
+                // Weight gradually approaches 0 as distance goes to infinity, with the
+                // weight for the hypothetical distance 0 being equal to fuzzyWeight.
+                const weight = fuzzyWeight * term.length / (term.length + distance);
+                this.termResults(query.term, term, weight, query.termBoost, data, boosts, boostDocument, bm25params, results);
+            }
+        }
+        return results;
+    }
+    /**
+     * @ignore
+     */ executeWildcardQuery(searchOptions) {
+        const results = new Map();
+        const options = {
+            ...this._options.searchOptions,
+            ...searchOptions
+        };
+        for (const [shortId, id] of this._documentIds){
+            const score = options.boostDocument ? options.boostDocument(id, '', this._storedFields.get(shortId)) : 1;
+            results.set(shortId, {
+                score,
+                terms: [],
+                match: {}
+            });
+        }
+        return results;
+    }
+    /**
+     * @ignore
+     */ combineResults(results) {
+        let combineWith = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : OR;
+        if (results.length === 0) {
+            return new Map();
+        }
+        const operator = combineWith.toLowerCase();
+        const combinator = combinators[operator];
+        if (!combinator) {
+            throw new Error("Invalid combination operator: ".concat(combineWith));
+        }
+        return results.reduce(combinator) || new Map();
+    }
+    /**
+     * Allows serialization of the index to JSON, to possibly store it and later
+     * deserialize it with {@link MiniSearch.loadJSON}.
+     *
+     * Normally one does not directly call this method, but rather call the
+     * standard JavaScript `JSON.stringify()` passing the {@link MiniSearch}
+     * instance, and JavaScript will internally call this method. Upon
+     * deserialization, one must pass to {@link MiniSearch.loadJSON} the same
+     * options used to create the original instance that was serialized.
+     *
+     * ### Usage:
+     *
+     * ```javascript
+     * // Serialize the index:
+     * let miniSearch = new MiniSearch({ fields: ['title', 'text'] })
+     * miniSearch.addAll(documents)
+     * const json = JSON.stringify(miniSearch)
+     *
+     * // Later, to deserialize it:
+     * miniSearch = MiniSearch.loadJSON(json, { fields: ['title', 'text'] })
+     * ```
+     *
+     * @return A plain-object serializable representation of the search index.
+     */ toJSON() {
+        const index = [];
+        for (const [term, fieldIndex] of this._index){
+            const data = {};
+            for (const [fieldId, freqs] of fieldIndex){
+                data[fieldId] = Object.fromEntries(freqs);
+            }
+            index.push([
+                term,
+                data
+            ]);
+        }
+        return {
+            documentCount: this._documentCount,
+            nextId: this._nextId,
+            documentIds: Object.fromEntries(this._documentIds),
+            fieldIds: this._fieldIds,
+            fieldLength: Object.fromEntries(this._fieldLength),
+            averageFieldLength: this._avgFieldLength,
+            storedFields: Object.fromEntries(this._storedFields),
+            dirtCount: this._dirtCount,
+            index,
+            serializationVersion: 2
+        };
+    }
+    /**
+     * @ignore
+     */ termResults(sourceTerm, derivedTerm, termWeight, termBoost, fieldTermData, fieldBoosts, boostDocumentFn, bm25params) {
+        let results = arguments.length > 8 && arguments[8] !== void 0 ? arguments[8] : new Map();
+        if (fieldTermData == null) return results;
+        for (const field of Object.keys(fieldBoosts)){
+            const fieldBoost = fieldBoosts[field];
+            const fieldId = this._fieldIds[field];
+            const fieldTermFreqs = fieldTermData.get(fieldId);
+            if (fieldTermFreqs == null) continue;
+            let matchingFields = fieldTermFreqs.size;
+            const avgFieldLength = this._avgFieldLength[fieldId];
+            for (const docId of fieldTermFreqs.keys()){
+                if (!this._documentIds.has(docId)) {
+                    this.removeTerm(fieldId, docId, derivedTerm);
+                    matchingFields -= 1;
+                    continue;
+                }
+                const docBoost = boostDocumentFn ? boostDocumentFn(this._documentIds.get(docId), derivedTerm, this._storedFields.get(docId)) : 1;
+                if (!docBoost) continue;
+                const termFreq = fieldTermFreqs.get(docId);
+                const fieldLength = this._fieldLength.get(docId)[fieldId];
+                // NOTE: The total number of fields is set to the number of documents
+                // `this._documentCount`. It could also make sense to use the number of
+                // documents where the current field is non-blank as a normalization
+                // factor. This will make a difference in scoring if the field is rarely
+                // present. This is currently not supported, and may require further
+                // analysis to see if it is a valid use case.
+                const rawScore = calcBM25Score(termFreq, matchingFields, this._documentCount, fieldLength, avgFieldLength, bm25params);
+                const weightedScore = termWeight * termBoost * fieldBoost * docBoost * rawScore;
+                const result = results.get(docId);
+                if (result) {
+                    result.score += weightedScore;
+                    assignUniqueTerm(result.terms, sourceTerm);
+                    const match = getOwnProperty(result.match, derivedTerm);
+                    if (match) {
+                        match.push(field);
+                    } else {
+                        result.match[derivedTerm] = [
+                            field
+                        ];
+                    }
+                } else {
+                    results.set(docId, {
+                        score: weightedScore,
+                        terms: [
+                            sourceTerm
+                        ],
+                        match: {
+                            [derivedTerm]: [
+                                field
+                            ]
+                        }
+                    });
+                }
+            }
+        }
+        return results;
+    }
+    /**
+     * @ignore
+     */ addTerm(fieldId, documentId, term) {
+        const indexData = this._index.fetch(term, createMap);
+        let fieldIndex = indexData.get(fieldId);
+        if (fieldIndex == null) {
+            fieldIndex = new Map();
+            fieldIndex.set(documentId, 1);
+            indexData.set(fieldId, fieldIndex);
+        } else {
+            const docs = fieldIndex.get(documentId);
+            fieldIndex.set(documentId, (docs || 0) + 1);
+        }
+    }
+    /**
+     * @ignore
+     */ removeTerm(fieldId, documentId, term) {
+        if (!this._index.has(term)) {
+            this.warnDocumentChanged(documentId, fieldId, term);
+            return;
+        }
+        const indexData = this._index.fetch(term, createMap);
+        const fieldIndex = indexData.get(fieldId);
+        if (fieldIndex == null || fieldIndex.get(documentId) == null) {
+            this.warnDocumentChanged(documentId, fieldId, term);
+        } else if (fieldIndex.get(documentId) <= 1) {
+            if (fieldIndex.size <= 1) {
+                indexData.delete(fieldId);
+            } else {
+                fieldIndex.delete(documentId);
+            }
+        } else {
+            fieldIndex.set(documentId, fieldIndex.get(documentId) - 1);
+        }
+        if (this._index.get(term).size === 0) {
+            this._index.delete(term);
+        }
+    }
+    /**
+     * @ignore
+     */ warnDocumentChanged(shortDocumentId, fieldId, term) {
+        for (const fieldName of Object.keys(this._fieldIds)){
+            if (this._fieldIds[fieldName] === fieldId) {
+                this._options.logger('warn', "MiniSearch: document with ID ".concat(this._documentIds.get(shortDocumentId), ' has changed before removal: term "').concat(term, '" was not present in field "').concat(fieldName, '". Removing a document after it has changed can corrupt the index!'), 'version_conflict');
+                return;
+            }
+        }
+    }
+    /**
+     * @ignore
+     */ addDocumentId(documentId) {
+        const shortDocumentId = this._nextId;
+        this._idToShortId.set(documentId, shortDocumentId);
+        this._documentIds.set(shortDocumentId, documentId);
+        this._documentCount += 1;
+        this._nextId += 1;
+        return shortDocumentId;
+    }
+    /**
+     * @ignore
+     */ addFields(fields) {
+        for(let i = 0; i < fields.length; i++){
+            this._fieldIds[fields[i]] = i;
+        }
+    }
+    /**
+     * @ignore
+     */ addFieldLength(documentId, fieldId, count, length) {
+        let fieldLengths = this._fieldLength.get(documentId);
+        if (fieldLengths == null) this._fieldLength.set(documentId, fieldLengths = []);
+        fieldLengths[fieldId] = length;
+        const averageFieldLength = this._avgFieldLength[fieldId] || 0;
+        const totalFieldLength = averageFieldLength * count + length;
+        this._avgFieldLength[fieldId] = totalFieldLength / (count + 1);
+    }
+    /**
+     * @ignore
+     */ removeFieldLength(documentId, fieldId, count, length) {
+        if (count === 1) {
+            this._avgFieldLength[fieldId] = 0;
+            return;
+        }
+        const totalFieldLength = this._avgFieldLength[fieldId] * count - length;
+        this._avgFieldLength[fieldId] = totalFieldLength / (count - 1);
+    }
+    /**
+     * @ignore
+     */ saveStoredFields(documentId, doc) {
+        const { storeFields, extractField } = this._options;
+        if (storeFields == null || storeFields.length === 0) {
+            return;
+        }
+        let documentFields = this._storedFields.get(documentId);
+        if (documentFields == null) this._storedFields.set(documentId, documentFields = {});
+        for (const fieldName of storeFields){
+            const fieldValue = extractField(doc, fieldName);
+            if (fieldValue !== undefined) documentFields[fieldName] = fieldValue;
+        }
+    }
+    /**
+     * @param options  Configuration options
+     *
+     * ### Examples:
+     *
+     * ```javascript
+     * // Create a search engine that indexes the 'title' and 'text' fields of your
+     * // documents:
+     * const miniSearch = new MiniSearch({ fields: ['title', 'text'] })
+     * ```
+     *
+     * ### ID Field:
+     *
+     * ```javascript
+     * // Your documents are assumed to include a unique 'id' field, but if you want
+     * // to use a different field for document identification, you can set the
+     * // 'idField' option:
+     * const miniSearch = new MiniSearch({ idField: 'key', fields: ['title', 'text'] })
+     * ```
+     *
+     * ### Options and defaults:
+     *
+     * ```javascript
+     * // The full set of options (here with their default value) is:
+     * const miniSearch = new MiniSearch({
+     *   // idField: field that uniquely identifies a document
+     *   idField: 'id',
+     *
+     *   // extractField: function used to get the value of a field in a document.
+     *   // By default, it assumes the document is a flat object with field names as
+     *   // property keys and field values as string property values, but custom logic
+     *   // can be implemented by setting this option to a custom extractor function.
+     *   extractField: (document, fieldName) => document[fieldName],
+     *
+     *   // tokenize: function used to split fields into individual terms. By
+     *   // default, it is also used to tokenize search queries, unless a specific
+     *   // `tokenize` search option is supplied. When tokenizing an indexed field,
+     *   // the field name is passed as the second argument.
+     *   tokenize: (string, _fieldName) => string.split(SPACE_OR_PUNCTUATION),
+     *
+     *   // processTerm: function used to process each tokenized term before
+     *   // indexing. It can be used for stemming and normalization. Return a falsy
+     *   // value in order to discard a term. By default, it is also used to process
+     *   // search queries, unless a specific `processTerm` option is supplied as a
+     *   // search option. When processing a term from a indexed field, the field
+     *   // name is passed as the second argument.
+     *   processTerm: (term, _fieldName) => term.toLowerCase(),
+     *
+     *   // searchOptions: default search options, see the `search` method for
+     *   // details
+     *   searchOptions: undefined,
+     *
+     *   // fields: document fields to be indexed. Mandatory, but not set by default
+     *   fields: undefined
+     *
+     *   // storeFields: document fields to be stored and returned as part of the
+     *   // search results.
+     *   storeFields: []
+     * })
+     * ```
+     */ constructor(options){
+        if ((options === null || options === void 0 ? void 0 : options.fields) == null) {
+            throw new Error('MiniSearch: option "fields" must be provided');
+        }
+        const autoVacuum = options.autoVacuum == null || options.autoVacuum === true ? defaultAutoVacuumOptions : options.autoVacuum;
+        this._options = {
+            ...defaultOptions,
+            ...options,
+            autoVacuum,
+            searchOptions: {
+                ...defaultSearchOptions,
+                ...options.searchOptions || {}
+            },
+            autoSuggestOptions: {
+                ...defaultAutoSuggestOptions,
+                ...options.autoSuggestOptions || {}
+            }
+        };
+        this._index = new SearchableMap();
+        this._documentCount = 0;
+        this._documentIds = new Map();
+        this._idToShortId = new Map();
+        // Fields are defined during initialization, don't change, are few in
+        // number, rarely need iterating over, and have string keys. Therefore in
+        // this case an object is a better candidate than a Map to store the mapping
+        // from field key to ID.
+        this._fieldIds = {};
+        this._fieldLength = new Map();
+        this._avgFieldLength = [];
+        this._nextId = 0;
+        this._storedFields = new Map();
+        this._dirtCount = 0;
+        this._currentVacuum = null;
+        this._enqueuedVacuum = null;
+        this._enqueuedVacuumConditions = defaultVacuumConditions;
+        this.addFields(this._options.fields);
+    }
+}
+/**
+ * The special wildcard symbol that can be passed to {@link MiniSearch#search}
+ * to match all documents
+ */ MiniSearch.wildcard = Symbol('*');
+const getOwnProperty = (object, property)=>Object.prototype.hasOwnProperty.call(object, property) ? object[property] : undefined;
+const combinators = {
+    [OR]: (a, b)=>{
+        for (const docId of b.keys()){
+            const existing = a.get(docId);
+            if (existing == null) {
+                a.set(docId, b.get(docId));
+            } else {
+                const { score, terms, match } = b.get(docId);
+                existing.score = existing.score + score;
+                existing.match = Object.assign(existing.match, match);
+                assignUniqueTerms(existing.terms, terms);
+            }
+        }
+        return a;
+    },
+    [AND]: (a, b)=>{
+        const combined = new Map();
+        for (const docId of b.keys()){
+            const existing = a.get(docId);
+            if (existing == null) continue;
+            const { score, terms, match } = b.get(docId);
+            assignUniqueTerms(existing.terms, terms);
+            combined.set(docId, {
+                score: existing.score + score,
+                terms: existing.terms,
+                match: Object.assign(existing.match, match)
+            });
+        }
+        return combined;
+    },
+    [AND_NOT]: (a, b)=>{
+        for (const docId of b.keys())a.delete(docId);
+        return a;
+    }
+};
+const defaultBM25params = {
+    k: 1.2,
+    b: 0.7,
+    d: 0.5
+};
+const calcBM25Score = (termFreq, matchingCount, totalCount, fieldLength, avgFieldLength, bm25params)=>{
+    const { k, b, d } = bm25params;
+    const invDocFreq = Math.log(1 + (totalCount - matchingCount + 0.5) / (matchingCount + 0.5));
+    return invDocFreq * (d + termFreq * (k + 1) / (termFreq + k * (1 - b + b * fieldLength / avgFieldLength)));
+};
+const termToQuerySpec = (options)=>(term, i, terms)=>{
+        const fuzzy = typeof options.fuzzy === 'function' ? options.fuzzy(term, i, terms) : options.fuzzy || false;
+        const prefix = typeof options.prefix === 'function' ? options.prefix(term, i, terms) : options.prefix === true;
+        const termBoost = typeof options.boostTerm === 'function' ? options.boostTerm(term, i, terms) : 1;
+        return {
+            term,
+            fuzzy,
+            prefix,
+            termBoost
+        };
+    };
+const defaultOptions = {
+    idField: 'id',
+    extractField: (document, fieldName)=>document[fieldName],
+    tokenize: (text)=>text.split(SPACE_OR_PUNCTUATION),
+    processTerm: (term)=>term.toLowerCase(),
+    fields: undefined,
+    searchOptions: undefined,
+    storeFields: [],
+    logger: (level, message)=>{
+        if (typeof (console === null || console === void 0 ? void 0 : console[level]) === 'function') console[level](message);
+    },
+    autoVacuum: true
+};
+const defaultSearchOptions = {
+    combineWith: OR,
+    prefix: false,
+    fuzzy: false,
+    maxFuzzy: 6,
+    boost: {},
+    weights: {
+        fuzzy: 0.45,
+        prefix: 0.375
+    },
+    bm25: defaultBM25params
+};
+const defaultAutoSuggestOptions = {
+    combineWith: AND,
+    prefix: (term, i, terms)=>i === terms.length - 1
+};
+const defaultVacuumOptions = {
+    batchSize: 1000,
+    batchWait: 10
+};
+const defaultVacuumConditions = {
+    minDirtFactor: 0.1,
+    minDirtCount: 20
+};
+const defaultAutoVacuumOptions = {
+    ...defaultVacuumOptions,
+    ...defaultVacuumConditions
+};
+const assignUniqueTerm = (target, term)=>{
+    // Avoid adding duplicate terms.
+    if (!target.includes(term)) target.push(term);
+};
+const assignUniqueTerms = (target, source)=>{
+    for (const term of source){
+        // Avoid adding duplicate terms.
+        if (!target.includes(term)) target.push(term);
+    }
+};
+const byScore = (param, param1)=>{
+    let { score: a } = param, { score: b } = param1;
+    return b - a;
+};
+const createMap = ()=>new Map();
+const objectToNumericMap = (object)=>{
+    const map = new Map();
+    for (const key of Object.keys(object)){
+        map.set(parseInt(key, 10), object[key]);
+    }
+    return map;
+};
+const objectToNumericMapAsync = async (object)=>{
+    const map = new Map();
+    let count = 0;
+    for (const key of Object.keys(object)){
+        map.set(parseInt(key, 10), object[key]);
+        if (++count % 1000 === 0) {
+            await wait(0);
+        }
+    }
+    return map;
+};
+const wait = (ms)=>new Promise((resolve)=>setTimeout(resolve, ms));
+// This regular expression matches any Unicode space, newline, or punctuation
+// character
+const SPACE_OR_PUNCTUATION = RegExp("[\\n\\r\\p{Z}\\p{P}]+", "u");
+;
+ //# sourceMappingURL=index.js.map
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/clamp.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "clamp",
+    ()=>clamp
+]);
+const clamp = (min, max, v)=>{
+    if (v > max) return max;
+    if (v < min) return min;
+    return v;
+};
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/format-error-message.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "formatErrorMessage",
+    ()=>formatErrorMessage
+]);
+function formatErrorMessage(message, errorCode) {
+    return errorCode ? "".concat(message, ". For more information and steps for solving, visit https://motion.dev/troubleshooting/").concat(errorCode) : message;
+}
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/errors.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "invariant",
+    ()=>invariant,
+    "warning",
+    ()=>warning
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = /*#__PURE__*/ __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$format$2d$error$2d$message$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/format-error-message.mjs [app-client] (ecmascript)");
+;
+let warning = ()=>{};
+let invariant = ()=>{};
+if ("TURBOPACK compile-time truthy", 1) {
+    warning = (check, message, errorCode)=>{
+        if (!check && typeof console !== "undefined") {
+            console.warn((0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$format$2d$error$2d$message$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["formatErrorMessage"])(message, errorCode));
+        }
+    };
+    invariant = (check, message, errorCode)=>{
+        if (!check) {
+            throw new Error((0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$format$2d$error$2d$message$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["formatErrorMessage"])(message, errorCode));
+        }
+    };
+}
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/is-numerical-string.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * Check if value is a numerical string, ie a string that is purely a number eg "100" or "-100.1"
+ */ __turbopack_context__.s([
+    "isNumericalString",
+    ()=>isNumericalString
+]);
+const isNumericalString = (v)=>/^-?(?:\d+(?:\.\d+)?|\.\d+)$/u.test(v);
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/noop.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/*#__NO_SIDE_EFFECTS__*/ __turbopack_context__.s([
+    "noop",
+    ()=>noop
+]);
+const noop = (any)=>any;
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/global-config.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "MotionGlobalConfig",
+    ()=>MotionGlobalConfig
+]);
+const MotionGlobalConfig = {};
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/is-zero-value-string.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * Check if the value is a zero value string like "0px" or "0%"
+ */ __turbopack_context__.s([
+    "isZeroValueString",
+    ()=>isZeroValueString
+]);
+const isZeroValueString = (v)=>/^0[^.\s]+$/u.test(v);
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/warn-once.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "hasWarned",
+    ()=>hasWarned,
+    "warnOnce",
+    ()=>warnOnce
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$format$2d$error$2d$message$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/format-error-message.mjs [app-client] (ecmascript)");
+;
+const warned = new Set();
+function hasWarned(message) {
+    return warned.has(message);
+}
+function warnOnce(condition, message, errorCode) {
+    if (condition || warned.has(message)) return;
+    console.warn((0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$format$2d$error$2d$message$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["formatErrorMessage"])(message, errorCode));
+    warned.add(message);
+}
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/array.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "addUniqueItem",
+    ()=>addUniqueItem,
+    "moveItem",
+    ()=>moveItem,
+    "removeItem",
+    ()=>removeItem
+]);
+function addUniqueItem(arr, item) {
+    if (arr.indexOf(item) === -1) arr.push(item);
+}
+function removeItem(arr, item) {
+    const index = arr.indexOf(item);
+    if (index > -1) arr.splice(index, 1);
+}
+// Adapted from array-move
+function moveItem(param, fromIndex, toIndex) {
+    let [...arr] = param;
+    const startIndex = fromIndex < 0 ? arr.length + fromIndex : fromIndex;
+    if (startIndex >= 0 && startIndex < arr.length) {
+        const endIndex = toIndex < 0 ? arr.length + toIndex : toIndex;
+        const [item] = arr.splice(fromIndex, 1);
+        arr.splice(endIndex, 0, item);
+    }
+    return arr;
+}
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/subscription-manager.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "SubscriptionManager",
+    ()=>SubscriptionManager
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$array$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/array.mjs [app-client] (ecmascript)");
+;
+class SubscriptionManager {
+    add(handler) {
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$array$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["addUniqueItem"])(this.subscriptions, handler);
+        return ()=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$array$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["removeItem"])(this.subscriptions, handler);
+    }
+    notify(a, b, c) {
+        const numSubscriptions = this.subscriptions.length;
+        if (!numSubscriptions) return;
+        if (numSubscriptions === 1) {
+            /**
+             * If there's only a single handler we can just call it without invoking a loop.
+             */ this.subscriptions[0](a, b, c);
+        } else {
+            for(let i = 0; i < numSubscriptions; i++){
+                /**
+                 * Check whether the handler exists before firing as it's possible
+                 * the subscriptions were modified during this loop running.
+                 */ const handler = this.subscriptions[i];
+                handler && handler(a, b, c);
+            }
+        }
+    }
+    getSize() {
+        return this.subscriptions.length;
+    }
+    clear() {
+        this.subscriptions.length = 0;
+    }
+    constructor(){
+        this.subscriptions = [];
+    }
+}
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/velocity-per-second.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/*
+  Convert velocity into velocity per second
+
+  @param [number]: Unit per frame
+  @param [number]: Frame duration in ms
+*/ __turbopack_context__.s([
+    "velocityPerSecond",
+    ()=>velocityPerSecond
+]);
+function velocityPerSecond(velocity, frameDuration) {
+    return frameDuration ? velocity * (1000 / frameDuration) : 0;
+}
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/pipe.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * Pipe
+ * Compose other transformers to run linearily
+ * pipe(min(20), max(40))
+ * @param  {...functions} transformers
+ * @return {function}
+ */ __turbopack_context__.s([
+    "pipe",
+    ()=>pipe
+]);
+const combineFunctions = (a, b)=>(v)=>b(a(v));
+const pipe = function() {
+    for(var _len = arguments.length, transformers = new Array(_len), _key = 0; _key < _len; _key++){
+        transformers[_key] = arguments[_key];
+    }
+    return transformers.reduce(combineFunctions);
+};
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/time-conversion.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/**
+ * Converts seconds to milliseconds
+ *
+ * @param seconds - Time in seconds.
+ * @return milliseconds - Converted time in milliseconds.
+ */ /*#__NO_SIDE_EFFECTS__*/ __turbopack_context__.s([
+    "millisecondsToSeconds",
+    ()=>millisecondsToSeconds,
+    "secondsToMilliseconds",
+    ()=>secondsToMilliseconds
+]);
+const secondsToMilliseconds = (seconds)=>seconds * 1000;
+/*#__NO_SIDE_EFFECTS__*/ const millisecondsToSeconds = (milliseconds)=>milliseconds / 1000;
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/easing/cubic-bezier.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "cubicBezier",
+    ()=>cubicBezier
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$noop$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/noop.mjs [app-client] (ecmascript)");
+;
+/*
+  Bezier function generator
+  This has been modified from Gaëtan Renaudeau's BezierEasing
+  https://github.com/gre/bezier-easing/blob/master/src/index.js
+  https://github.com/gre/bezier-easing/blob/master/LICENSE
+  
+  I've removed the newtonRaphsonIterate algo because in benchmarking it
+  wasn't noticeably faster than binarySubdivision, indeed removing it
+  usually improved times, depending on the curve.
+  I also removed the lookup table, as for the added bundle size and loop we're
+  only cutting ~4 or so subdivision iterations. I bumped the max iterations up
+  to 12 to compensate and this still tended to be faster for no perceivable
+  loss in accuracy.
+  Usage
+    const easeOut = cubicBezier(.17,.67,.83,.67);
+    const x = easeOut(0.5); // returns 0.627...
+*/ // Returns x(t) given t, x1, and x2, or y(t) given t, y1, and y2.
+const calcBezier = (t, a1, a2)=>(((1.0 - 3.0 * a2 + 3.0 * a1) * t + (3.0 * a2 - 6.0 * a1)) * t + 3.0 * a1) * t;
+const subdivisionPrecision = 0.0000001;
+const subdivisionMaxIterations = 12;
+function binarySubdivide(x, lowerBound, upperBound, mX1, mX2) {
+    let currentX;
+    let currentT;
+    let i = 0;
+    do {
+        currentT = lowerBound + (upperBound - lowerBound) / 2.0;
+        currentX = calcBezier(currentT, mX1, mX2) - x;
+        if (currentX > 0.0) {
+            upperBound = currentT;
+        } else {
+            lowerBound = currentT;
+        }
+    }while (Math.abs(currentX) > subdivisionPrecision && ++i < subdivisionMaxIterations)
+    return currentT;
+}
+function cubicBezier(mX1, mY1, mX2, mY2) {
+    // If this is a linear gradient, return linear easing
+    if (mX1 === mY1 && mX2 === mY2) return __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$noop$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["noop"];
+    const getTForX = (aX)=>binarySubdivide(aX, 0, 1, mX1, mX2);
+    // If animation is at start/end, return t without easing
+    return (t)=>t === 0 || t === 1 ? t : calcBezier(getTForX(t), mY1, mY2);
+}
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/easing/ease.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "easeIn",
+    ()=>easeIn,
+    "easeInOut",
+    ()=>easeInOut,
+    "easeOut",
+    ()=>easeOut
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$easing$2f$cubic$2d$bezier$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/easing/cubic-bezier.mjs [app-client] (ecmascript)");
+;
+const easeIn = /*@__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$easing$2f$cubic$2d$bezier$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cubicBezier"])(0.42, 0, 1, 1);
+const easeOut = /*@__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$easing$2f$cubic$2d$bezier$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cubicBezier"])(0, 0, 0.58, 1);
+const easeInOut = /*@__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$easing$2f$cubic$2d$bezier$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cubicBezier"])(0.42, 0, 0.58, 1);
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/easing/utils/is-easing-array.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "isEasingArray",
+    ()=>isEasingArray
+]);
+const isEasingArray = (ease)=>{
+    return Array.isArray(ease) && typeof ease[0] !== "number";
+};
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/easing/modifiers/mirror.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+// Accepts an easing function and returns a new one that outputs mirrored values for
+// the second half of the animation. Turns easeIn into easeInOut.
+__turbopack_context__.s([
+    "mirrorEasing",
+    ()=>mirrorEasing
+]);
+const mirrorEasing = (easing)=>(p)=>p <= 0.5 ? easing(2 * p) / 2 : (2 - easing(2 * (1 - p))) / 2;
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/easing/modifiers/reverse.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+// Accepts an easing function and returns a new one that outputs reversed values.
+// Turns easeIn into easeOut.
+__turbopack_context__.s([
+    "reverseEasing",
+    ()=>reverseEasing
+]);
+const reverseEasing = (easing)=>(p)=>1 - easing(1 - p);
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/easing/back.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "backIn",
+    ()=>backIn,
+    "backInOut",
+    ()=>backInOut,
+    "backOut",
+    ()=>backOut
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$easing$2f$cubic$2d$bezier$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/easing/cubic-bezier.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$easing$2f$modifiers$2f$mirror$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/easing/modifiers/mirror.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$easing$2f$modifiers$2f$reverse$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/easing/modifiers/reverse.mjs [app-client] (ecmascript)");
+;
+;
+;
+const backOut = /*@__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$easing$2f$cubic$2d$bezier$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cubicBezier"])(0.33, 1.53, 0.69, 0.99);
+const backIn = /*@__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$easing$2f$modifiers$2f$reverse$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["reverseEasing"])(backOut);
+const backInOut = /*@__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$easing$2f$modifiers$2f$mirror$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["mirrorEasing"])(backIn);
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/easing/anticipate.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "anticipate",
+    ()=>anticipate
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$easing$2f$back$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/easing/back.mjs [app-client] (ecmascript)");
+;
+const anticipate = (p)=>(p *= 2) < 1 ? 0.5 * (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$easing$2f$back$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["backIn"])(p) : 0.5 * (2 - Math.pow(2, -10 * (p - 1)));
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/easing/circ.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "circIn",
+    ()=>circIn,
+    "circInOut",
+    ()=>circInOut,
+    "circOut",
+    ()=>circOut
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$easing$2f$modifiers$2f$mirror$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/easing/modifiers/mirror.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$easing$2f$modifiers$2f$reverse$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/easing/modifiers/reverse.mjs [app-client] (ecmascript)");
+;
+;
+const circIn = (p)=>1 - Math.sin(Math.acos(p));
+const circOut = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$easing$2f$modifiers$2f$reverse$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["reverseEasing"])(circIn);
+const circInOut = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$easing$2f$modifiers$2f$mirror$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["mirrorEasing"])(circIn);
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/easing/utils/is-bezier-definition.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "isBezierDefinition",
+    ()=>isBezierDefinition
+]);
+const isBezierDefinition = (easing)=>Array.isArray(easing) && typeof easing[0] === "number";
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/easing/utils/map.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "easingDefinitionToFunction",
+    ()=>easingDefinitionToFunction
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$errors$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/errors.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$noop$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/noop.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$easing$2f$anticipate$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/easing/anticipate.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$easing$2f$back$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/easing/back.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$easing$2f$circ$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/easing/circ.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$easing$2f$cubic$2d$bezier$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/easing/cubic-bezier.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$easing$2f$ease$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/easing/ease.mjs [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$easing$2f$utils$2f$is$2d$bezier$2d$definition$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/easing/utils/is-bezier-definition.mjs [app-client] (ecmascript)");
+;
+;
+;
+;
+;
+;
+;
+;
+const easingLookup = {
+    linear: __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$noop$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["noop"],
+    easeIn: __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$easing$2f$ease$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["easeIn"],
+    easeInOut: __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$easing$2f$ease$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["easeInOut"],
+    easeOut: __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$easing$2f$ease$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["easeOut"],
+    circIn: __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$easing$2f$circ$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["circIn"],
+    circInOut: __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$easing$2f$circ$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["circInOut"],
+    circOut: __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$easing$2f$circ$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["circOut"],
+    backIn: __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$easing$2f$back$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["backIn"],
+    backInOut: __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$easing$2f$back$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["backInOut"],
+    backOut: __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$easing$2f$back$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["backOut"],
+    anticipate: __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$easing$2f$anticipate$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["anticipate"]
+};
+const isValidEasing = (easing)=>{
+    return typeof easing === "string";
+};
+const easingDefinitionToFunction = (definition)=>{
+    if ((0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$easing$2f$utils$2f$is$2d$bezier$2d$definition$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["isBezierDefinition"])(definition)) {
+        // If cubic bezier definition, create bezier curve
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$errors$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["invariant"])(definition.length === 4, "Cubic bezier arrays must contain four numerical values.", "cubic-bezier-length");
+        const [x1, y1, x2, y2] = definition;
+        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$easing$2f$cubic$2d$bezier$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["cubicBezier"])(x1, y1, x2, y2);
+    } else if (isValidEasing(definition)) {
+        // Else lookup from table
+        (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f$motion$2d$utils$2f$dist$2f$es$2f$errors$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["invariant"])(easingLookup[definition] !== undefined, "Invalid easing type '".concat(definition, "'"), "invalid-easing-type");
+        return easingLookup[definition];
+    }
+    return definition;
+};
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/progress.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/*
+  Progress within given range
+
+  Given a lower limit and an upper limit, we return the progress
+  (expressed as a number 0-1) represented by the given value, and
+  limit that progress to within 0-1.
+
+  @param [number]: Lower limit
+  @param [number]: Upper limit
+  @param [number]: Value to find progress within given range
+  @return [number]: Progress of value within range as expressed 0-1
+*/ /*#__NO_SIDE_EFFECTS__*/ __turbopack_context__.s([
+    "progress",
+    ()=>progress
+]);
+const progress = (from, to, value)=>{
+    const toFromDifference = to - from;
+    return toFromDifference === 0 ? 1 : (value - from) / toFromDifference;
+};
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/memo.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+/*#__NO_SIDE_EFFECTS__*/ __turbopack_context__.s([
+    "memo",
+    ()=>memo
+]);
+function memo(callback) {
+    let result;
+    return ()=>{
+        if (result === undefined) result = callback();
+        return result;
+    };
+}
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/motion-utils/dist/es/is-object.mjs [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "isObject",
+    ()=>isObject
+]);
+function isObject(value) {
+    return typeof value === "object" && value !== null;
+}
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@emotion/memoize/dist/emotion-memoize.esm.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>memoize
+]);
+function memoize(fn) {
+    var cache = Object.create(null);
+    return function(arg) {
+        if (cache[arg] === undefined) cache[arg] = fn(arg);
+        return cache[arg];
+    };
+}
+;
+}),
+"[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@emotion/is-prop-valid/dist/emotion-is-prop-valid.esm.js [app-client] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>isPropValid
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$emotion$2f$memoize$2f$dist$2f$emotion$2d$memoize$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/@emotion/memoize/dist/emotion-memoize.esm.js [app-client] (ecmascript)");
+;
+// eslint-disable-next-line no-undef
+var reactPropsRegex = /^((children|dangerouslySetInnerHTML|key|ref|autoFocus|defaultValue|defaultChecked|innerHTML|suppressContentEditableWarning|suppressHydrationWarning|valueLink|abbr|accept|acceptCharset|accessKey|action|allow|allowUserMedia|allowPaymentRequest|allowFullScreen|allowTransparency|alt|async|autoComplete|autoPlay|capture|cellPadding|cellSpacing|challenge|charSet|checked|cite|classID|className|cols|colSpan|content|contentEditable|contextMenu|controls|controlsList|coords|crossOrigin|data|dateTime|decoding|default|defer|dir|disabled|disablePictureInPicture|disableRemotePlayback|download|draggable|encType|enterKeyHint|fetchpriority|fetchPriority|form|formAction|formEncType|formMethod|formNoValidate|formTarget|frameBorder|headers|height|hidden|high|href|hrefLang|htmlFor|httpEquiv|id|inputMode|integrity|is|keyParams|keyType|kind|label|lang|list|loading|loop|low|marginHeight|marginWidth|max|maxLength|media|mediaGroup|method|min|minLength|multiple|muted|name|nonce|noValidate|open|optimum|pattern|placeholder|playsInline|popover|popoverTarget|popoverTargetAction|poster|preload|profile|radioGroup|readOnly|referrerPolicy|rel|required|reversed|role|rows|rowSpan|sandbox|scope|scoped|scrolling|seamless|selected|shape|size|sizes|slot|span|spellCheck|src|srcDoc|srcLang|srcSet|start|step|style|summary|tabIndex|target|title|translate|type|useMap|value|width|wmode|wrap|about|datatype|inlist|prefix|property|resource|typeof|vocab|autoCapitalize|autoCorrect|autoSave|color|incremental|fallback|inert|itemProp|itemScope|itemType|itemID|itemRef|on|option|results|security|unselectable|accentHeight|accumulate|additive|alignmentBaseline|allowReorder|alphabetic|amplitude|arabicForm|ascent|attributeName|attributeType|autoReverse|azimuth|baseFrequency|baselineShift|baseProfile|bbox|begin|bias|by|calcMode|capHeight|clip|clipPathUnits|clipPath|clipRule|colorInterpolation|colorInterpolationFilters|colorProfile|colorRendering|contentScriptType|contentStyleType|cursor|cx|cy|d|decelerate|descent|diffuseConstant|direction|display|divisor|dominantBaseline|dur|dx|dy|edgeMode|elevation|enableBackground|end|exponent|externalResourcesRequired|fill|fillOpacity|fillRule|filter|filterRes|filterUnits|floodColor|floodOpacity|focusable|fontFamily|fontSize|fontSizeAdjust|fontStretch|fontStyle|fontVariant|fontWeight|format|from|fr|fx|fy|g1|g2|glyphName|glyphOrientationHorizontal|glyphOrientationVertical|glyphRef|gradientTransform|gradientUnits|hanging|horizAdvX|horizOriginX|ideographic|imageRendering|in|in2|intercept|k|k1|k2|k3|k4|kernelMatrix|kernelUnitLength|kerning|keyPoints|keySplines|keyTimes|lengthAdjust|letterSpacing|lightingColor|limitingConeAngle|local|markerEnd|markerMid|markerStart|markerHeight|markerUnits|markerWidth|mask|maskContentUnits|maskUnits|mathematical|mode|numOctaves|offset|opacity|operator|order|orient|orientation|origin|overflow|overlinePosition|overlineThickness|panose1|paintOrder|pathLength|patternContentUnits|patternTransform|patternUnits|pointerEvents|points|pointsAtX|pointsAtY|pointsAtZ|preserveAlpha|preserveAspectRatio|primitiveUnits|r|radius|refX|refY|renderingIntent|repeatCount|repeatDur|requiredExtensions|requiredFeatures|restart|result|rotate|rx|ry|scale|seed|shapeRendering|slope|spacing|specularConstant|specularExponent|speed|spreadMethod|startOffset|stdDeviation|stemh|stemv|stitchTiles|stopColor|stopOpacity|strikethroughPosition|strikethroughThickness|string|stroke|strokeDasharray|strokeDashoffset|strokeLinecap|strokeLinejoin|strokeMiterlimit|strokeOpacity|strokeWidth|surfaceScale|systemLanguage|tableValues|targetX|targetY|textAnchor|textDecoration|textRendering|textLength|to|transform|u1|u2|underlinePosition|underlineThickness|unicode|unicodeBidi|unicodeRange|unitsPerEm|vAlphabetic|vHanging|vIdeographic|vMathematical|values|vectorEffect|version|vertAdvY|vertOriginX|vertOriginY|viewBox|viewTarget|visibility|widths|wordSpacing|writingMode|x|xHeight|x1|x2|xChannelSelector|xlinkActuate|xlinkArcrole|xlinkHref|xlinkRole|xlinkShow|xlinkTitle|xlinkType|xmlBase|xmlns|xmlnsXlink|xmlLang|xmlSpace|y|y1|y2|yChannelSelector|z|zoomAndPan|for|class|autofocus)|(([Dd][Aa][Tt][Aa]|[Aa][Rr][Ii][Aa]|x)-.*))$/; // https://esbench.com/bench/5bfee68a4cd7e6009ef61d23
+var isPropValid = /* #__PURE__ */ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$bissbay$2d$new$2d$main$2f$bissbay$2d$new$2d$main$2f$node_modules$2f40$emotion$2f$memoize$2f$dist$2f$emotion$2d$memoize$2e$esm$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"])(function(prop) {
+    return reactPropsRegex.test(prop) || prop.charCodeAt(0) === 111 && prop.charCodeAt(1) === 110 && prop.charCodeAt(2) < 91;
+});
+;
+}),
+]);
+
+//# sourceMappingURL=8406e_e7a9a8e3._.js.map

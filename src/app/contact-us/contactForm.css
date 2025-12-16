@@ -1,0 +1,341 @@
+:root {
+  --primary: #ff4200;
+}
+
+/* input:not([type="checkbox"]):focus, textarea:focus, select:focus {
+  outline: 1px solid #ff4200 !important;
+}
+
+input[type="checkbox"]:focus {
+  outline: none !important;
+}
+ */
+
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.border-primary {
+  border-color: var(--primary);
+}
+
+.focus\:border-primary:focus {
+  border-color: var(--primary);
+}
+
+.accent-primary {
+  accent-color: var(--primary);
+}
+
+.intl-tel-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.intl-tel-input-container {
+  position: relative;
+  width: 100%;
+}
+
+.custom-flag-dropdown {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  z-index: 10;
+}
+
+.selected-flag {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 10px;
+  background: transparent;
+  border: none;
+  border-right: 1px solid #d1d5db;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.selected-flag:hover {
+  background-color: #f9fafb;
+}
+
+.fi {
+  font-size: 18px;
+  width: 20px;
+  display: inline-block;
+}
+
+.arrow-icon {
+  font-size: 12px;
+  color: #6b7280;
+  transition: transform 0.2s;
+  margin-left: 2px;
+}
+
+.selected-flag[aria-expanded="true"] .arrow-icon {
+  transform: rotate(180deg);
+}
+
+.country-list-dropdown {
+  position: fixed;
+  width: 300px;
+  max-height: 320px;
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 10000;
+}
+
+.country-list-dropdown-up {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 0;
+  width: 300px;
+  max-height: 320px;
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 100;
+}
+
+.search-box {
+  padding: 8px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f9fafb;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-input:focus {
+  border-color: var(--primary);
+}
+
+.country-list {
+  max-height: 260px;
+  overflow-y: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.country-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.country-item:hover {
+  background-color: #f3f4f6;
+}
+
+.country-item:last-child {
+  border-bottom: none;
+}
+
+.country-name {
+  flex: 1;
+  font-size: 14px;
+  color: #111827;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dial-code {
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.no-results {
+  padding: 20px;
+  text-align: center;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.phone-input-field {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  width: 100%;
+  padding: 12px 16px 12px 70px;
+  font-weight: 600;
+  transition: border-color .2s;
+}
+
+.phone-input-field:focus {
+  border-color: var(--primary);
+}
+
+.country-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.country-list::-webkit-scrollbar-track {
+  background: #f3f4f6;
+}
+
+.country-list::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+}
+
+.country-list::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+@media (max-width: 768px) {
+  .country-list-dropdown {
+    width: 280px;
+  }
+
+  .phone-input-field {
+    font-size: 16px;
+  }
+}
+
+/* Prevent layout shift and ensure smooth loading */
+.fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading skeleton animation */
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Ensure form container maintains minimum height */
+.request-proposal-container {
+  min-height: 600px;
+  background-color: white;
+  position: relative;
+}
+
+/* Smooth transitions for dynamic content */
+.stepper-content {
+  transition: height 0.3s ease-in-out;
+}
+
+/* Prevent FOUC (Flash of Unstyled Content) */
+.stepper-wrapper {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Ensure consistent spacing during load */
+.form-section {
+  min-height: 400px;
+}
+
+/* Fix for input fields to prevent layout jump */
+input, textarea, select {
+  box-sizing: border-box;
+}
+
+/* Ensure buttons don't shift during state changes */
+button {
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+/* Prevent ReCAPTCHA from causing layout shift */
+.g-recaptcha {
+  min-height: 78px;
+  min-width: 304px;
+}
+
+/* Ensure phone input maintains consistent height */
+.intl-tel-input-wrapper {
+  min-height: 48px;
+}
+
+/* Prevent dropdown from causing reflow */
+.country-list-dropdown {
+  position: absolute;
+  z-index: 1000;
+}
+
+/* Smooth transitions for conditional rendering */
+.conditional-fields {
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+  }
+}
+
+/* Ensure consistent white background */
+html, body {
+  background-color: #f5f5f5; /* or your desired background */
+}
+
+/* Form container specific styles */
+.proposal-form-container {
+  background-color: white;
+  min-height: 100vh;
+  padding-top: 6rem; /* py-24 equivalent */
+  padding-bottom: 6rem;
+}
+
+@media (min-width: 768px) {
+  .proposal-form-container {
+    padding-top: 10rem; /* md:py-40 equivalent */
+    padding-bottom: 10rem;
+  }
+}

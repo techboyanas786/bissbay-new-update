@@ -1,0 +1,244 @@
+{
+  "navbar": {
+    "titles": {
+      "whatWeDo": "Was Wir Tun",
+      "audiences": "Zielgruppen",
+      "whoWeHelp": "Wem Wir Helfen",
+      "resources": "Ressourcen",
+      "company": "Unternehmen",
+      "language": "Sprache"
+    },
+    "dropdown": {
+      "whatWeDo": {
+        "titles": {
+          "abm": "Account-Based Marketing (ABM)",
+          "appointment": "Terminvereinbarung",
+          "content": "Content-Syndizierung",
+          "data": "Intelligente Datenanreicherungslösungen",
+          "demand": "Nachfragesteigerung",
+          "ads": "Digitale Werbung",
+          "email": "E-Mail-Marketing",
+          "events": "Events (Seminare & Webinare)",
+          "intent": "Intent-Daten",
+          "lead": "Lead-Generierung"
+        },
+        "descriptions": {
+          "abm": "Gewinnen und entwickeln Sie Ihre wertvollsten Kunden mit hyperpersonalisierten Marketingstrategien.",
+          "appointment": "Sichern Sie qualifizierte Meetings mit wichtigen Entscheidungsträgern, um Ihren Verkaufszyklus zu beschleunigen.",
+          "content": "Verstärken Sie die Reichweite und Autorität Ihrer Inhalte, indem Sie sie in gezielten externen Netzwerken verbreiten.",
+          "data": "Ermöglichen Sie präzises Marketing und Vertrieb mit sauberen, vollständigen und verwertbaren Erkenntnissen für besseres Targeting.",
+          "demand": "Schaffen und erfassen Sie anhaltendes Marktinteresse, um eine planbare Umsatzpipeline aufzubauen.",
+          "ads": "Steigern Sie Ihre Online-Sichtbarkeit und gewinnen Sie Leads mit hoher Kaufabsicht durch strategische Such- und Paid-Media-Kampagnen.",
+          "email": "Pflegen Sie Leads, binden Sie Abonnenten und fördern Sie Conversions direkt durch zielgerichtete Nachrichten im Posteingang.",
+          "events": "Generieren Sie hochqualifizierte Leads durch mitreißende Live- oder virtuelle Veranstaltungen.",
+          "intent": "Identifizieren und erreichen Sie Interessenten, die aktiv nach Ihren Lösungen suchen.",
+          "lead": "Füllen Sie Ihre Vertriebspipeline mit einem konstanten Strom hochwertiger, validierter Interessenten."
+        }
+      },
+      "audiences": {
+        "titles": {
+          "bfsi": "Unsere BFSI-Zielgruppe",
+          "healthcare": "Unsere Gesundheitsbranche-Zielgruppe",
+          "hr": "Unsere HR-Zielgruppe",
+          "it": "Unsere IT-Zielgruppe",
+          "manufacturing": "Unsere Produktionsbranche-Zielgruppe",
+          "marketing": "Unsere Marketing-Zielgruppe",
+          "sales": "Unsere Vertriebs-Zielgruppe"
+        },
+        "descriptions": {
+          "bfsi": "BFSI Engagieren Sie Entscheidungsträger mit hoher Kaufabsicht im BFSI-Bereich.",
+          "healthcare": "Gesundheitsbranche Erreichen Sie wichtige Entscheidungsträger in großem Umfang.",
+          "hr": "HR Vernetzen Sie sich mit HR-Entscheidungsträgern, die nach Lösungen suchen.",
+          "it": "IT Beeinflussen Sie Top-IT-Käufer mit einem datengesteuerten Ansatz.",
+          "manufacturing": "Produktion Binden Sie Führungskräfte ein, die bereit zum Kauf sind.",
+          "marketing": "Marketing Finden Sie Käufer, die bereit für Ihre Lösungen sind – exklusiv mit BISSBAY.",
+          "sales": "Vertrieb Intelligentes Engagement von Interessenten, die kaufbereit sind."
+        }
+      },
+      "whoWeHelp": {
+        "titles": {
+          "enterprises": "Unternehmen",
+          "founders": "Gründer",
+          "marketingLeaders": "Marketingverantwortliche",
+          "ventureCapital": "Risikokapital"
+        },
+        "descriptions": {
+          "enterprises": "Neue Märkte, optimierte Abläufe, messbare Ergebnisse. Wir verwandeln Möglichkeiten in Leistung.",
+          "founders": "Ihr Markteintritt setzt den Ton für alles. Machen wir ihn unschlagbar.",
+          "marketingLeaders": "Stärken Sie Ihr Team, um Ziele zu übertreffen und Wirkung in Einfluss zu verwandeln.",
+          "ventureCapital": "Jedes Portfolio-Unternehmen verdient exponentielles Wachstum. Wir helfen dabei, es zu erreichen."
+        }
+      },
+      "resources": {
+        "titles": {
+          "blog": "Blog",
+          "caseStudies": "Fallstudien",
+          "glossary": "Glossar",
+          "infographics": "Infografiken",
+          "mediaKit": "Medienkit",
+          "proposal": "Angebotsanfrage",
+          "roiCalculator": "ROI-Rechner",
+          "siteMap": "Seitenübersicht",
+          "trustSite": "Vertrauensseite"
+        }
+      },
+      "company": {
+        "titles": {
+          "about": "Über Uns",
+          "brand": "Markenrichtlinien",
+          "career": "Karriere",
+          "contact": "Kontakt",
+          "process": "Unser Prozess",
+          "standards": "Standard der Exzellenz"
+        }
+      },
+      "language": {
+        "choose": "Wählen Sie Ihre Sprache",
+        "Arabic": "Arabisch",
+        "Dutch": "Niederländisch",
+        "English": "Englisch",
+        "French": "Französisch",
+        "German": "Deutsch",
+        "Italian": "Italienisch",
+        "Japanese": "Japanisch",
+        "Spanish": "Spanisch"
+      }
+    },
+    "button": "Kontakt"
+  },
+
+  "hero": {
+    "tagline": {
+      "part1": "Wo",
+      "highlight1": "Intelligenz",
+      "part2": "auf",
+      "highlight2": "Verbindungen trifft"
+    },
+    "description1": "Beschleunigen Sie die Nachfrage, binden Sie wichtige Entscheidungsträger ein und maximieren Sie Ihre Vertriebspipeline mit Präzision und Leistung, angetrieben von Intelligenz.",
+    "description2": "Mit über 570.000 qualifizierten Leads jährlich ermöglichen die KI-gesteuerten Omnichannel-Strategien von BISSBAY Unternehmen schneller und intelligenter zu skalieren.",
+    "button": "Angebot anfordern",
+    "description3": "BISSBAY verwandelt Echtzeit-Intent-Daten und KI-gestützte Ansprache in planbare Umsätze, vertraut von Vertriebs- und Marketingleitern weltweit."
+  },
+
+  "card": {
+    "tagline": "Integrierte B2B-Lösungen, die leistungsstarke Ergebnisse liefern",
+    "description-part1": "Datengetriebene Lösungen, entwickelt um Ihre ideale Zielgruppe anzuziehen, Pipeline-Wachstum zu fördern und zu beschleunigen",
+    "description-part2": "unterstützt durch Intent-Daten, Omnichannel-Kampagnen, CRM-Integration und Echtzeit-Analysen.",
+
+    "card1-title": "Account-Based Marketing (ABM)",
+    "card1-description": "Binden Sie hochwertige Konten mit personalisierten Strategien ein, die echtes Geschäftswachstum vorantreiben.",
+
+    "card2-title": "Terminvereinbarung",
+    "card2-description": "Sichern Sie Meetings mit wichtigen Entscheidungsträgern, um Ihre Vertriebspipeline zu beschleunigen.",
+
+    "card3-title": "Content-Syndizierung",
+    "card3-description": "Erweitern Sie Ihre Reichweite, indem Sie wertvolle Inhalte an die richtige Zielgruppe liefern.",
+
+    "card4-title": "Datenlösungen",
+    "card4-description": "Stärken Sie Ihre Datenbank mit genauen, verwertbaren Erkenntnissen für besseres Targeting.",
+
+    "card5-title": "Nachfragesteigerung",
+    "card5-description": "Schaffen Sie Nachfrage, pflegen Sie Interessenten und steigern Sie den Umsatz mit zielgerichteten Kampagnen.",
+
+    "card6-title": "E-Mail-Marketing gesucht",
+    "card6-description": "Binden Sie Ihr Publikum ein und konvertieren Sie es mit strategischen, datengetriebenen E-Mail-Kampagnen.",
+
+    "card7-title": "Lead-Generierung",
+    "card7-description": "Liefern Sie hochwertige Leads, die Geschäftswachstum und Vertriebserfolg antreiben.",
+
+    "card8-title": "Events (Seminare & Webinare)",
+    "card8-description": "Wir veranstalten wirkungsvolle Events, die informieren, binden und Leads mit hoher Kaufabsicht generieren.",
+
+    "card9-title": "Intent-Daten",
+    "card9-description": "Identifizieren und erreichen Sie Interessenten, die aktiv nach Ihren Lösungen suchen.",
+
+    "button": "Mehr erfahren"
+  },
+
+  "map": {
+    "tagline": "Wir verbinden Unternehmen mit einem weltweiten Netzwerk von Chancen",
+    "description1": "BISSBAY baut seit fast einem Jahrzehnt maßgeschneiderte Zielgruppen auf und schafft ein globales Netzwerk hoch engagierter Technologie-Käufer und Influencer für maximalen Impact.",
+    "description2": "Wo breite Reichweite auf intelligente Präzision trifft und jede Verbindung zählt.",
+    "button": "WEITER ERKUNDEN"
+  },
+
+  "solutions": {
+    "tagline1": "Viele unserer Kunden hatten Pipeline-Lücken, bis BISSBAY eingeschritten ist.",
+    "tagline2": "Wir spezialisieren uns auf skalierbare Go-to-Market-Strategien, die Herausforderungen in Umsatz verwandeln.",
+    "description1": "Hatten Sie die gleichen Probleme?",
+    "description2": "Lassen Sie uns helfen, diese Hürden zu überwinden.",
+    "description3": "Wir führen Ihre Go-to-Market-Strategie präzise und zielgerichtet aus, während wir die Herausforderungen übernehmen.",
+    "description4": "Beschleunigen Sie Wachstum mit einer bewährten Strategie",
+
+    "h1-title": "Umsatzstagnation",
+    "h1-desc": "Stagnierendes Umsatzwachstum begrenzt Ihre Expansion.",
+    "h1-bold": "Lassen Sie uns diese Stagnation durchbrechen.",
+
+    "h2-title": "Langsame Deal-Abschlüsse",
+    "h2-desc": "Ihr Verkaufszyklus zieht sich, verzögert Einnahmen und kostet wertvolle Chancen.",
+    "h2-bold": "Wir helfen Ihnen, schneller abzuschließen.",
+
+    "h3-title": "Getrennte Vertriebs- und Marketingabteilungen",
+    "h3-desc": "Wenn Vertrieb und Marketing nicht abgestimmt sind, gehen Leads verloren.",
+    "h3-bold": "Ausrichtung ist der Schlüssel zum Wachstum.",
+
+    "h4-title": "Interne Einschränkungen und Engpässe",
+    "h4-desc": "Betriebliche Ineffizienzen halten Sie zurück.",
+    "h4-bold": "Lassen Sie uns Hindernisse beseitigen und schneller skalieren.",
+
+    "h5-title": "Inkonsistente Lead-Qualität",
+    "h5-desc": "Unqualifizierte Leads binden Ressourcen.",
+    "h5-bold": "Es ist Zeit, die richtigen Interessenten anzuziehen und Konversionen zu steigern.",
+
+    "h6-title": "Frustrierende Erfahrungen mit früheren Anbietern",
+    "h6-desc": "Wenn frühere Anbieter Sie enttäuscht haben, ist es Zeit, mit einem Team zu arbeiten, das echte, messbare Ergebnisse liefert.",
+    "h6-bold": "Sie verdienen bessere.",
+
+    "s1-title": "Klare Ziele definieren",
+    "s1-desc": "Wir analysieren Ihre Wachstumsziele und vergangene Leistungen, um eine strategische Roadmap zu erstellen, die mit Ihrer Unternehmensvision übereinstimmt und messbaren Erfolg sichert.",
+
+    "s2-title": "Ihre idealen Kunden bestimmen",
+    "s2-desc": "Durch datengesteuerte Forschung identifizieren wir Ihr ideales Kundenprofil (ICP) und die wichtigsten Entscheidungsträger – damit Sie von Anfang an die richtigen Interessenten ansprechen.",
+
+    "s3-title": "Positionierung & Messaging schärfen",
+    "s3-desc": "In enger Zusammenarbeit mit Ihrem Vertriebsteam decken wir echte Kundenprobleme auf und erstellen überzeugende, konversionsorientierte Botschaften, die Vertrauen schaffen.",
+
+    "s4-title": "Die richtigen Kanäle aktivieren",
+    "s4-desc": "Ihre Zielgruppe sucht aktiv nach Lösungen – wir positionieren Sie dort, wo es am wichtigsten ist, fangen sofortige Chancen ein und etablieren ein konsistentes Nachfragegenerierungssystem.",
+
+    "s5-title": "Wirksame, leadgenerierende Inhalte erstellen",
+    "s5-desc": "Von Thought Leadership bis zu vertriebsorientierten Materialien entwickeln wir wertvolle Inhalte, die binden, pflegen und Sie als vertrauenswürdigen Branchenführer positionieren.",
+
+    "s6-title": "Testen, verfeinern & skalieren für maximalen ROI",
+    "s6-desc": "Marketing ist nicht statisch. Wir testen, optimieren und skalieren Kampagnen kontinuierlich – verfeinern Kreativität, Botschaften und Targeting, um Konversionen und Umsatzwachstum zu beschleunigen."
+  },
+
+  "booking": {
+    "title": "Loslegen",
+    "subtitle": "Buchen Sie noch heute Ihre kostenlose Beratung",
+    "pickYourSpot": "Wählen Sie Ihren Termin",
+    "availability": "Verfügbarkeit für {{date}}",
+    "showAll": "Alle Sitzungen anzeigen",
+    "showLess": "Weniger Sitzungen anzeigen",
+    "serviceDetails": "Service-Details",
+    "freeConsultation": "Kostenlose Beratung",
+    "location": "Indien",
+    "staff": "Mitarbeiter #1",
+    "duration": "1 Std.",
+    "next": "Weiter",
+    "days": {
+      "sun": "So",
+      "mon": "Mo",
+      "tue": "Di",
+      "wed": "Mi",
+      "thu": "Do",
+      "fri": "Fr",
+      "sat": "Sa"
+    },
+    "button": "Termin buchen"
+  },
+
+  "footer": {
+    "text": "Ihr Firmenname. Alle Rechte vorbehalten."
+  }
+}

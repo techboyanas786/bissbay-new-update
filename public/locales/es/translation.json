@@ -1,0 +1,244 @@
+{
+  "navbar": {
+    "titles": {
+      "whatWeDo": "Lo Que Hacemos",
+      "audiences": "Audiencias",
+      "whoWeHelp": "A Quién Ayudamos",
+      "resources": "Recursos",
+      "company": "Empresa",
+      "language": "Idioma"
+    },
+    "dropdown": {
+      "whatWeDo": {
+        "titles": {
+          "abm": "Marketing Basado en Cuentas (ABM)",
+          "appointment": "Agendamiento de Citas",
+          "content": "Sindicación de Contenidos",
+          "data": "Soluciones Inteligentes de Enriquecimiento de Datos",
+          "demand": "Generación de Demanda",
+          "ads": "Publicidad Digital",
+          "email": "Email Marketing",
+          "events": "Eventos (Seminarios y Webinars)",
+          "intent": "Datos de Intención",
+          "lead": "Generación de Leads"
+        },
+        "descriptions": {
+          "abm": "Gane y haga crecer sus cuentas de mayor valor con estrategias de marketing hiperpersonalizadas.",
+          "appointment": "Asegure reuniones calificadas con los tomadores de decisiones clave para acelerar su ciclo de ventas.",
+          "content": "Amplíe el alcance y la autoridad de su contenido distribuyéndolo a través de redes externas dirigidas.",
+          "data": "Impulse un marketing y ventas de precisión con información limpia, completa y accionable para un mejor enfoque.",
+          "demand": "Cree y capture interés sostenido en el mercado para construir un pipeline de ingresos predecible.",
+          "ads": "Impulse la visibilidad en línea y atraiga leads con alta intención mediante campañas estratégicas de búsqueda y medios pagados.",
+          "email": "Nutra leads, comprometa suscriptores y genere conversiones directamente mediante mensajes dirigidos al inbox.",
+          "events": "Genere leads con alta intención a través de experiencias en vivo o virtuales atractivas.",
+          "intent": "Identifique y comprometa prospectos que buscan activamente sus soluciones.",
+          "lead": "Llena su pipeline de ventas con un flujo constante de prospectos validados y de alta calidad."
+        }
+      },
+      "audiences": {
+        "titles": {
+          "bfsi": "Nuestra audiencia BFSI",
+          "healthcare": "Nuestra audiencia de Salud",
+          "hr": "Nuestra audiencia de RRHH",
+          "it": "Nuestra audiencia de TI",
+          "manufacturing": "Nuestra audiencia de Manufactura",
+          "marketing": "Nuestra audiencia de Marketing",
+          "sales": "Nuestra audiencia de Ventas"
+        },
+        "descriptions": {
+          "bfsi": "BFSI Involucre a tomadores de decisiones con alta intención en BFSI.",
+          "healthcare": "Salud Alcance a tomadores de decisiones clave a gran escala.",
+          "hr": "RRHH Conéctese con tomadores de decisiones de RRHH que buscan soluciones.",
+          "it": "TI Influya en los principales compradores de TI con un enfoque basado en datos.",
+          "manufacturing": "Manufactura Involucre a líderes listos para comprar.",
+          "marketing": "Marketing Encuentre compradores listos para sus soluciones — exclusivamente con BISSBAY.",
+          "sales": "Ventas Involucre inteligentemente a prospectos que están listos para comprar."
+        }
+      },
+      "whoWeHelp": {
+        "titles": {
+          "enterprises": "Empresas",
+          "founders": "Fundadores",
+          "marketingLeaders": "Líderes de Marketing",
+          "ventureCapital": "Capital de Riesgo"
+        },
+        "descriptions": {
+          "enterprises": "Nuevos mercados, operaciones optimizadas, resultados medibles. Convertimos posibilidades en rendimiento.",
+          "founders": "Su entrada al mercado marca el tono para todo. Hagámosla imbatible.",
+          "marketingLeaders": "Empodere a su equipo para romper metas y convertir impacto en influencia.",
+          "ventureCapital": "Cada empresa en cartera merece un crecimiento exponencial. Ayudamos a lograrlo."
+        }
+      },
+      "resources": {
+        "titles": {
+          "blog": "Blog",
+          "caseStudies": "Estudios de Caso",
+          "glossary": "Glosario",
+          "infographics": "Infografías",
+          "mediaKit": "Kit de Medios",
+          "proposal": "Solicitar Propuesta",
+          "roiCalculator": "Calculadora de ROI",
+          "siteMap": "Mapa del Sitio",
+          "trustSite": "Sitio de Confianza"
+        }
+      },
+      "company": {
+        "titles": {
+          "about": "Acerca de",
+          "brand": "Guías de Marca",
+          "career": "Carrera",
+          "contact": "Contacto",
+          "process": "Nuestro Proceso",
+          "standards": "Estándar de Excelencia"
+        }
+      },
+      "language": {
+        "choose": "Elija su idioma",
+        "Arabic": "Árabe",
+        "Dutch": "Neerlandés",
+        "English": "Inglés",
+        "French": "Francés",
+        "German": "Alemán",
+        "Italian": "Italiano",
+        "Japanese": "Japonés",
+        "Spanish": "Español"
+      }
+    },
+    "button": "Contáctenos"
+  },
+
+  "hero": {
+    "tagline": {
+      "part1": "Donde",
+      "highlight1": "Inteligencia",
+      "part2": "Se Encuentra con",
+      "highlight2": "Conexiones"
+    },
+    "description1": "Acelere la demanda, involucre a tomadores de decisiones clave y maximice su pipeline de ventas con precisión y rendimiento impulsados por Inteligencia.",
+    "description2": "Con más de 570K leads calificados entregados anualmente, las estrategias omnicanal impulsadas por IA de BISSBAY empoderan a las empresas para escalar más rápido e inteligentemente.",
+    "button": "Solicitar Cotización",
+    "description3": "Bissbay convierte datos de intención en tiempo real y alcance impulsado por IA en ingresos predecibles, confiado por líderes de ventas y marketing a nivel mundial."
+  },
+
+  "card": {
+    "tagline": "Soluciones B2B Integradas Que Entregan Resultados Potentes de ingresos",
+    "description-part1": "Soluciones basadas en datos diseñadas para atraer a su audiencia ideal, impulsar el crecimiento del pipeline y acelerar",
+    "description-part2": "impulsadas por datos de intención, campañas omnicanal, integración CRM y análisis en tiempo real.",
+
+    "card1-title": "Marketing Basado en Cuentas (ABM)",
+    "card1-description": "Involucre cuentas de alto valor con estrategias personalizadas que impulsan un crecimiento real del negocio.",
+
+    "card2-title": "Agendamiento de Citas",
+    "card2-description": "Asegure reuniones con tomadores de decisiones clave para acelerar su pipeline de ventas.",
+
+    "card3-title": "Sindicación de Contenidos",
+    "card3-description": "Amplíe su alcance entregando contenido valioso a la audiencia correcta.",
+
+    "card4-title": "Soluciones de Datos",
+    "card4-description": "Fortalezca su base de datos con insights precisos y accionables para un mejor enfoque.",
+
+    "card5-title": "Generación de Demanda",
+    "card5-description": "Cree demanda, nutra prospectos y genere ingresos con campañas dirigidas.",
+
+    "card6-title": "Marketing por Email",
+    "card6-description": "Involucre y convierta a su audiencia con campañas de email estratégicas y basadas en datos.",
+
+    "card7-title": "Generación de Leads",
+    "card7-description": "Entregando leads de alta calidad que impulsan el crecimiento del negocio y el éxito en ventas.",
+
+    "card8-title": "Eventos (Seminarios y Webinars)",
+    "card8-description": "Organizamos eventos impactantes que educan, comprometen y generan leads con alta intención.",
+
+    "card9-title": "Datos de Intención",
+    "card9-description": "Identifique y comprometa prospectos que buscan activamente sus soluciones.",
+
+    "button": "Aprender Más"
+  },
+
+  "map": {
+    "tagline": "Conectando negocios a una red mundial de oportunidades",
+    "description1": "BISSBAY ha estado creando audiencias personalizadas por casi una década, creando una red global de compradores e influencers tecnológicos altamente comprometidos para máximo impacto.",
+    "description2": "Donde el amplio alcance se encuentra con la precisión inteligente, haciendo que cada conexión cuente.",
+    "button": "EXPLORAR MÁS"
+  },
+
+  "solutions": {
+    "tagline1": "Muchos de nuestros clientes enfrentaban brechas en el pipeline hasta que BISSBAY intervino.",
+    "tagline2": "Nos especializamos en estrategias escalables de go-to-market que convierten desafíos en ingresos.",
+    "description1": "¿Ha enfrentado lo mismo?",
+    "description2": "Permítanos ayudarle a superar estos obstáculos.",
+    "description3": "Ejecute su go-to-market con precisión y propósito, mientras confía los desafíos a nosotros.",
+    "description4": "Acelere el Crecimiento con una Estrategia Comprobada",
+
+    "h1-title": "Estancamiento de Ingresos",
+    "h1-desc": "El crecimiento estancado de ingresos limita su expansión.",
+    "h1-bold": "Rompamos este estancamiento.",
+
+    "h2-title": "Cierre Lento de Tratos",
+    "h2-desc": "Su ciclo de ventas se está alargando, retrasando ingresos y costándole oportunidades valiosas.",
+    "h2-bold": "Le ayudamos a cerrar más rápido.",
+
+    "h3-title": "Desconexión entre Ventas y Marketing",
+    "h3-desc": "Cuando ventas y marketing no están alineados, los leads se pierden.",
+    "h3-bold": "La alineación es clave para desbloquear el crecimiento.",
+
+    "h4-title": "Limitaciones y Cuellos de Botella Internos",
+    "h4-desc": "Las ineficiencias operativas lo están frenando.",
+    "h4-bold": "Eliminemos obstáculos y escalemos más rápido.",
+
+    "h5-title": "Calidad Inconsistente de Leads",
+    "h5-desc": "Los leads no calificados están drenando recursos.",
+    "h5-bold": "Es hora de atraer a los prospectos correctos y aumentar las conversiones.",
+
+    "h6-title": "Experiencia Frustrante con un Proveedor Anterior",
+    "h6-desc": "Si proveedores anteriores le fallaron, es momento de trabajar con un equipo que entrega resultados reales y medibles.",
+    "h6-bold": "Necesita mejores.",
+
+    "s1-title": "Definición de Metas Claras",
+    "s1-desc": "Analizamos sus objetivos de crecimiento y desempeño pasado para crear una hoja de ruta estratégica que se alinee con su visión empresarial, asegurando éxito medible.",
+
+    "s2-title": "Identificación de sus Clientes Ideales",
+    "s2-desc": "Mediante investigación basada en datos, identificamos su Perfil de Cliente Ideal (ICP) y tomadores de decisiones clave, para que se enfoque en los prospectos correctos desde el día uno.",
+
+    "s3-title": "Afinación de Posicionamiento y Mensajes",
+    "s3-desc": "Trabajando de cerca con su equipo de ventas, descubrimos los verdaderos puntos de dolor del cliente y creamos mensajes persuasivos, orientados a la conversión, que generan confianza.",
+
+    "s4-title": "Activación de los Canales Correctos",
+    "s4-desc": "Su audiencia busca activamente soluciones: lo posicionamos donde más importa, capturando oportunidades inmediatas y estableciendo un sistema constante de generación de demanda.",
+
+    "s5-title": "Creación de Contenido Impactante que Genera Leads",
+    "s5-desc": "Desde liderazgo de pensamiento hasta activos para ventas, desarrollamos contenido de alto valor que compromete, nutre y lo posiciona como un líder confiable en la industria.",
+
+    "s6-title": "Pruebas, Refinamiento y Escalado para Máximo ROI",
+    "s6-desc": "El marketing no es estático. Probamos, optimizamos y escalamos campañas continuamente, refinando creatividad, mensajes y enfoque para acelerar conversiones y crecimiento de ingresos."
+  },
+
+  "booking": {
+    "title": "Comience",
+    "subtitle": "Reserve su consulta gratuita hoy",
+    "pickYourSpot": "Elija su horario",
+    "availability": "Disponibilidad para {{date}}",
+    "showAll": "Mostrar todas las sesiones",
+    "showLess": "Mostrar menos sesiones",
+    "serviceDetails": "Detalles del Servicio",
+    "freeConsultation": "Consulta Gratuita",
+    "location": "India",
+    "staff": "Miembro del personal #1",
+    "duration": "1 hr",
+    "next": "Siguiente",
+    "days": {
+      "sun": "Dom",
+      "mon": "Lun",
+      "tue": "Mar",
+      "wed": "Mié",
+      "thu": "Jue",
+      "fri": "Vie",
+      "sat": "Sáb"
+    },
+    "button": "Reservar llamada"
+  },
+
+  "footer": {
+    "text": "El Nombre de Su Empresa. Todos los derechos reservados."
+  }
+}
