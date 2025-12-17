@@ -140,7 +140,7 @@ const Fit = () => {
           </div>
         </div>
         <div className="container mx-auto mt-4 md:mt-12 animate-on-scroll">
-          <div className="shadow-xl mx-auto duration-500 transition-all !border-[#FF4200] hover:border-2 rounded-2xl p-4 md:p-6 border-2  relative overflow-hidden">
+          <div className="hover:scale-3d !p-4 md:!p-6 card shadow-lg shadow-md border-2 border-[#FF4200] md:border-gray-200 md:hover:border-[#FF4200] transition-all duration-300">
             <div className="text-center mb-4 md:mb-6 relative z-10">
               <h2 className="section-title mb-4 md:!mb-6">
                 Our <span className="text-primary">Promise</span>

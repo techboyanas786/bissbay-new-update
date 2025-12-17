@@ -20,8 +20,6 @@ function page() {
       <Insights />
       <span className="bg-primary h-1 w-full"></span>
       <Assets />
-      <span className="bg-primary h-1 w-full"></span>
-      <Newsletter/>
     </div>
   );
 }

@@ -11,7 +11,7 @@ const AnimatedTimeline = dynamic(() => import('./AnimatedTimeline'), { ssr: fals
 
 function Page() {
   return (
-    <div className="container px-4 lg:px-2 mx-auto pt-[115px] flex flex-col gap-4 md:gap-12">
+    <div className="container px-4 lg:px-2 mx-auto pt-[115px] mb-4 md:mb-8 flex flex-col gap-4 md:gap-12">
       <div className='flex flex-col gap-4 lg:gap-8'>
         <Hero />
         <Mission />

@@ -112,14 +112,14 @@ function Marketing() {
             </div>
           </div>
         <div className="container mx-auto mt-4 md:mt-12 animate-on-scroll opacity-0 ">
-          <div className="mx-auto duration-500 transition-all !border-[#FF4200] rounded-2xl p-4 md:p-6 border-2  relative overflow-hidden">
+          <div className="hover:scale-3d !p-4 md:!p-6 card shadow-lg shadow-md border-2 border-[#FF4200] md:border-gray-200 md:hover:border-[#FF4200] transition-all duration-300">
             {/* Background tech pattern */}
 
             <div className="text-center mb-4 md:mb-6 relative z-10">
               <h2 className="section-title mb-4 md:mb-6">
                 Our <span className="text-primary">Promise</span>
               </h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              <p className="text-black-700 font-medium font-bold">
                 We operate with precision and focus, ensuring every effort
                 translates into measurable business impact.
               </p>

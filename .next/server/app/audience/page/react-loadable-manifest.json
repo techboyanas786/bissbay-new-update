@@ -1,9 +1,9 @@
 {
-  "[project]/Downloads/bissbay-new-main/bissbay-new-main/src/components/MapComponent.js [app-client] (ecmascript, next/dynamic entry)": {
-    "id": "[project]/Downloads/bissbay-new-main/bissbay-new-main/src/components/MapComponent.js [app-client] (ecmascript, next/dynamic entry)",
+  "[project]/src/components/MapComponent.js [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/src/components/MapComponent.js [app-client] (ecmascript, next/dynamic entry)",
     "files": [
-      "static/chunks/Downloads_bissbay-new-main_bissbay-new-main_2f6ac505._.js",
-      "static/chunks/Downloads_bissbay-new-main_bissbay-new-main_src_components_MapComponent_8ebdf282.js"
+      "static/chunks/_5dc9110b._.js",
+      "static/chunks/src_components_MapComponent_76ba587f.js"
     ]
   }
 }

@@ -14,7 +14,7 @@ import MapSection from "./MapSection";
 function page() {
   return (
     <>
-      <div className="container px-4 lg:px-2 mx-auto pt-[115px] flex flex-col gap-4 md:gap-12 mb-4 md:mb-6">
+      <div className="container px-4 lg:px-2 mx-auto pt-[115px] mb-4 md:mb-8 flex flex-col gap-4 md:gap-12 mb-4 md:mb-6">
         <MapSection />
         <span className="bg-primary h-1 w-full"></span>
         <Hero2 />

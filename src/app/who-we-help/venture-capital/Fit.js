@@ -121,7 +121,7 @@ const Fit = () => {
         </div>
 
         <div className="container mx-auto transition-all duration-1000 delay-300">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 items-center mb-12">
             <div className="h-auto md:h-full bg-gray-50 rounded-xl p-4 md:p-6 text-black relative overflow-hidden">
               <h5 className="font-bold !text-center text-black mb-4 md:mb-6">
                 Our
@@ -199,7 +199,7 @@ const Fit = () => {
           </div>
         </div>
 
-        <div className="max-w-5xl card !p-4 sm:!p-6 hover-card !border-[#FF4200] sm:mt-12 mx-auto text-center">
+        <div className=" max-w-5xl hover:scale-3d !p-4 md:!p-6 card shadow-lg shadow-md border-2 border-[#FF4200] md:border-gray-200 md:hover:border-[#FF4200] transition-all duration-300 mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-black mb-4 md:mb-6">
             We’re Not Here to Just Say
             <span className="text-primary"> “yes.”</span>

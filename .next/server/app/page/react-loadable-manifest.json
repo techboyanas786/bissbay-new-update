@@ -1,16 +1,16 @@
 {
-  "[project]/Downloads/bissbay-new-main/bissbay-new-main/src/components/MapComponent.js [app-client] (ecmascript, next/dynamic entry)": {
-    "id": "[project]/Downloads/bissbay-new-main/bissbay-new-main/src/components/MapComponent.js [app-client] (ecmascript, next/dynamic entry)",
+  "[project]/src/components/MapComponent.js [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/src/components/MapComponent.js [app-client] (ecmascript, next/dynamic entry)",
     "files": [
-      "static/chunks/Downloads_bissbay-new-main_bissbay-new-main_27958b1e._.js",
-      "static/chunks/Downloads_bissbay-new-main_bissbay-new-main_src_components_MapComponent_d44f405c.js"
+      "static/chunks/_7fac971b._.js",
+      "static/chunks/src_components_MapComponent_3056c6b6.js"
     ]
   },
-  "[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/lottie-react/build/index.umd.js [app-client] (ecmascript, next/dynamic entry)": {
-    "id": "[project]/Downloads/bissbay-new-main/bissbay-new-main/node_modules/lottie-react/build/index.umd.js [app-client] (ecmascript, next/dynamic entry)",
+  "[project]/node_modules/lottie-react/build/index.umd.js [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/node_modules/lottie-react/build/index.umd.js [app-client] (ecmascript, next/dynamic entry)",
     "files": [
-      "static/chunks/8406e_b92fab70._.js",
-      "static/chunks/8406e_lottie-react_build_index_umd_d44f405c.js"
+      "static/chunks/node_modules_7f24c5d4._.js",
+      "static/chunks/node_modules_lottie-react_build_index_umd_3056c6b6.js"
     ]
   }
 }

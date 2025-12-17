@@ -1,0 +1,16 @@
+{
+  "[project]/src/app/audiences/marketing/WorldCloud.js [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/src/app/audiences/marketing/WorldCloud.js [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/src_app_audiences_marketing_WorldCloud_8228e799.js",
+      "static/chunks/src_app_audiences_marketing_WorldCloud_9007064c.js"
+    ]
+  },
+  "[project]/node_modules/lottie-react/build/index.umd.js [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/node_modules/lottie-react/build/index.umd.js [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/node_modules_7f24c5d4._.js",
+      "static/chunks/node_modules_lottie-react_build_index_umd_9007064c.js"
+    ]
+  }
+}

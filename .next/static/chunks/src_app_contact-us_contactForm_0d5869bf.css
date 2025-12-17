@@ -1,0 +1,315 @@
+/* [project]/src/app/contact-us/contactForm.css [app-client] (css) */
+:root {
+  --primary: #ff4200;
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.border-primary, .focus\:border-primary:focus {
+  border-color: var(--primary);
+}
+
+.accent-primary {
+  accent-color: var(--primary);
+}
+
+.intl-tel-input-wrapper, .intl-tel-input-container {
+  width: 100%;
+  position: relative;
+}
+
+.custom-flag-dropdown {
+  z-index: 10;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.selected-flag {
+  cursor: pointer;
+  background: none;
+  border: none;
+  border-right: 1px solid #d1d5db;
+  align-items: center;
+  height: 100%;
+  padding: 0 10px;
+  transition: background-color .2s;
+  display: flex;
+}
+
+.selected-flag:hover {
+  background-color: #f9fafb;
+}
+
+.fi {
+  width: 20px;
+  font-size: 18px;
+  display: inline-block;
+}
+
+.arrow-icon {
+  color: #6b7280;
+  margin-left: 2px;
+  font-size: 12px;
+  transition: transform .2s;
+}
+
+.selected-flag[aria-expanded="true"] .arrow-icon {
+  transform: rotate(180deg);
+}
+
+.country-list-dropdown {
+  z-index: 10000;
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  width: 300px;
+  max-height: 320px;
+  position: fixed;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, .1);
+}
+
+.country-list-dropdown-up {
+  z-index: 100;
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  width: 300px;
+  max-height: 320px;
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 0;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, .1);
+}
+
+.search-box {
+  z-index: 1;
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 8px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.search-input {
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  outline: none;
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 14px;
+  transition: border-color .2s;
+}
+
+.search-input:focus {
+  border-color: var(--primary);
+}
+
+.country-list {
+  max-height: 260px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-y: auto;
+}
+
+.country-item {
+  cursor: pointer;
+  border-bottom: 1px solid #f3f4f6;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  transition: background-color .2s;
+  display: flex;
+}
+
+.country-item:hover {
+  background-color: #f3f4f6;
+}
+
+.country-item:last-child {
+  border-bottom: none;
+}
+
+.country-name {
+  color: #111827;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  font-size: 14px;
+  overflow: hidden;
+}
+
+.dial-code {
+  color: #6b7280;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.no-results {
+  text-align: center;
+  color: #6b7280;
+  padding: 20px;
+  font-size: 14px;
+}
+
+.phone-input-field {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  width: 100%;
+  padding: 12px 16px 12px 70px;
+  font-weight: 600;
+  transition: border-color .2s;
+}
+
+.phone-input-field:focus {
+  border-color: var(--primary);
+}
+
+.country-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.country-list::-webkit-scrollbar-track {
+  background: #f3f4f6;
+}
+
+.country-list::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+}
+
+.country-list::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+@media (max-width: 768px) {
+  .country-list-dropdown {
+    width: 280px;
+  }
+
+  .phone-input-field {
+    font-size: 16px;
+  }
+}
+
+.fade-in {
+  animation: .3s ease-in fadeIn;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-pulse {
+  animation: 2s cubic-bezier(.4, 0, .6, 1) infinite pulse;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .5;
+  }
+}
+
+.request-proposal-container {
+  background-color: #fff;
+  min-height: 600px;
+  position: relative;
+}
+
+.stepper-content {
+  transition: height .3s ease-in-out;
+}
+
+.stepper-wrapper {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity .3s ease-in-out;
+}
+
+.form-section {
+  min-height: 400px;
+}
+
+input, textarea, select {
+  box-sizing: border-box;
+}
+
+button {
+  transition: all .2s;
+  position: relative;
+}
+
+.g-recaptcha {
+  min-width: 304px;
+  min-height: 78px;
+}
+
+.intl-tel-input-wrapper {
+  min-height: 48px;
+}
+
+.country-list-dropdown {
+  z-index: 1000;
+  position: absolute;
+}
+
+.conditional-fields {
+  animation: .3s ease-out slideDown;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  to {
+    opacity: 1;
+    max-height: 500px;
+  }
+}
+
+html, body {
+  background-color: #f5f5f5;
+}
+
+.proposal-form-container {
+  background-color: #fff;
+  min-height: 100vh;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+@media (min-width: 768px) {
+  .proposal-form-container {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+  }
+}
+
+/*# sourceMappingURL=src_app_contact-us_contactForm_0d5869bf.css.map*/

@@ -231,7 +231,7 @@ function Demand() {
         </p>
 
         {/* Desktop Cards - Original Design */}
-        <div className="hidden md:grid grid-cols-2 max-w-6xl mx-auto lg:grid-cols-3 gap-4 md:gap-8">
+        <div className="hidden md:grid grid-cols-2 max-w-6xl mx-auto lg:grid-cols-3 gap-4 md:gap-8 mb-12">
           {services.map((service, index) => (
             <div
               key={index}
@@ -258,7 +258,7 @@ function Demand() {
         </div>
 
         {/* Mobile Cards - Animated Design */}
-        <div className="grid md:hidden grid-cols-2 max-w-6xl mx-auto gap-4">
+        <div className="grid md:hidden grid-cols-2 max-w-6xl mx-auto gap-4 mb-4">
           {services.map((service, index) => (
             <div key={index} className="border-2 hover:border-2 hover:border-primary border-transparent rounded-xl">
               <AnimatedCard
@@ -280,7 +280,7 @@ function Demand() {
           ))}
         </div>
       </div>
-      <div className="max-w-5xl card hover-card !border-[#FF4200] !p-4 sm:!p-6 mt-6 md:mt-12 md-8 mx-auto text-center">
+      <div className="max-w-5xl card hover:scale-3d !p-4 md:!p-6 card shadow-md border-2 border-[#FF4200] md:border-gray-200 md:hover:border-[#FF4200] transition-all duration-300 mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-black mb-4 md:mb-6">
           We're not here to just say
           <span className="text-primary"> "yes."</span>

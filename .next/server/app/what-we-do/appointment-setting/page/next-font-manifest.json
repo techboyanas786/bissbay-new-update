@@ -1,7 +1,7 @@
 {
   "pages": {},
   "app": {
-    "[project]/Downloads/bissbay-new-main/bissbay-new-main/src/app/what-we-do/appointment-setting/page": []
+    "[project]/src/app/what-we-do/appointment-setting/page": []
   },
   "appUsingSizeAdjust": false,
   "pagesUsingSizeAdjust": false

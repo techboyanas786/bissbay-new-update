@@ -1,7 +1,7 @@
 {
   "pages": {},
   "app": {
-    "[project]/Downloads/bissbay-new-main/bissbay-new-main/src/app/audience/page": []
+    "[project]/src/app/audience/page": []
   },
   "appUsingSizeAdjust": false,
   "pagesUsingSizeAdjust": false

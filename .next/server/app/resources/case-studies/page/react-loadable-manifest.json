@@ -1,0 +1,12 @@
+{
+  "[project]/src/components/CustomIntlTelInput.jsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/src/components/CustomIntlTelInput.jsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/node_modules_libphonenumber-js-utils_dist_libphonenumber_ce86123c.js",
+      "static/chunks/node_modules_684c1aa5._.js",
+      "static/chunks/_fb47d149._.js",
+      "static/chunks/node_modules_93e36cc9._.css",
+      "static/chunks/src_components_CustomIntlTelInput_jsx_19d019b7._.js"
+    ]
+  }
+}

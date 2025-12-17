@@ -288,7 +288,7 @@ const Stats = () => {
                       </div>
                     ))}
                   </div>
-                  <p className="!text-center mt-4 md:mt-6 !text-xl hover:scale-105 duration-300 transition-all hover:!text-primary !font-bold">
+                  <p className="!text-center !text-xl hover:scale-105 duration-300 transition-all hover:!text-primary !font-bold">
                     Put your content where your buyers are
                   </p>
                 </div>

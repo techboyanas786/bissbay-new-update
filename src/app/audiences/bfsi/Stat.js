@@ -271,7 +271,7 @@ const Stats = () => {
               )}
 
               {stat.label === "Assets Read" && (
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center mb-4 md:mb-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 place-items-start gap-4 md:gap-8 md:grid-cols-5">
                     {assetsContent.map((content, index) => (
                       <div
@@ -292,9 +292,9 @@ const Stats = () => {
                       </div>
                     ))}
                   </div>
-                  <p className="!text-center mt-4 md:mt-6 !text-xl hover:scale-105 duration-300 transition-all hover:!text-primary !font-bold">
+                  <h3 className="!text-center !text-xl hover:scale-105 duration-300 transition-all hover:!text-primary !font-bold gap-4 md:gap-8">
                     Put your content where your buyers are
-                  </p>
+                  </h3>
                 </div>
               )}
 

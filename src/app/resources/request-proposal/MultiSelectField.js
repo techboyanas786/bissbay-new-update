@@ -1,9 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
 
-const MultiSelectField = ({ name, values = [], value = "", className, onChange, placeholder, options, required, isMulti = true, dropUp = false }) => {
+const MultiSelectField = ({
+  name,
+  values = [],
+  value = "",
+  className,
+  onChange,
+  placeholder,
+  options,
+  required,
+  isMulti = true,
+  dropUp = false,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [shouldOpen, setShouldOpen] = useState(false);
-  const [dropdownPosition, setDropdownPosition] = useState({ top: 0, left: 0, width: 0 });
   const dropdownRef = useRef(null);
   const buttonRef = useRef(null);
 
@@ -11,7 +20,6 @@ const MultiSelectField = ({ name, values = [], value = "", className, onChange, 
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setIsOpen(false);
-        setShouldOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -20,17 +28,7 @@ const MultiSelectField = ({ name, values = [], value = "", className, onChange, 
 
   const handleToggle = (e) => {
     e.preventDefault();
-    const newOpenState = !isOpen;
-    if (newOpenState && buttonRef.current) {
-      const rect = buttonRef.current.getBoundingClientRect();
-      setDropdownPosition({
-        top: rect.bottom + 4,
-        left: rect.left,
-        width: rect.width,
-      });
-    }
-    setIsOpen(newOpenState);
-    setShouldOpen(newOpenState);
+    setIsOpen((prev) => !prev);
   };
 
   const handleCheckboxChange = (option, checked) => {
@@ -43,7 +41,6 @@ const MultiSelectField = ({ name, values = [], value = "", className, onChange, 
   const handleSingleSelect = (option) => {
     onChange({ target: { name, value: option === placeholder ? "" : option } });
     setIsOpen(false);
-    setShouldOpen(false);
   };
 
   return (
@@ -79,18 +76,12 @@ const MultiSelectField = ({ name, values = [], value = "", className, onChange, 
         </span>
       </button>
       
-      {shouldOpen && (
+      {isOpen && (
         <div
-          className={`multi-select-dropdown fixed z-[10000] bg-white border border-gray-300 rounded-xl max-h-80 overflow-auto transition-all duration-200 ease-in-out ${
-            isOpen
-              ? 'opacity-100 transform translate-y-0'
-              : 'opacity-0 transform -translate-y-2 pointer-events-none'
+          className={`multi-select-dropdown absolute z-[1000] bg-white border border-gray-300 rounded-xl max-h-80 overflow-auto mt-1 transition-all duration-200 ease-in-out ${
+            dropUp ? "bottom-full mb-1" : "top-full"
           }`}
-          style={{
-            top: `${dropdownPosition.top}px`,
-            left: `${dropdownPosition.left}px`,
-            width: `${dropdownPosition.width}px`,
-          }}
+          style={{ left: 0, right: 0 }}
         >
           {isMulti ? (
             <>

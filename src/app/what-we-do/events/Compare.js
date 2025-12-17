@@ -74,7 +74,7 @@ const ComparisonTable = () => {
       </div>
 
       {/* Responsive Table */}
-      <div className="bg-gray-50 w-fit mx-auto rounded-xl overflow-hidden shadow-xl">
+      <div className="bg-gray-50 w-[calc(100vw-3rem)] max-w-5xl mx-auto rounded-xl overflow-hidden shadow-xl">
         <div  >
           <table className="w-full">
             {/* Table Header */}

@@ -18,7 +18,7 @@ export const TrafficMetrics = () => {
   }) => {
     return (
       <div
-        className="card backdrop-blur-sm bg-white rounded-xl p-4 md:p-6 hover-card hover:scale-105 text-black fade-in"
+        className="hover:scale-105 !p-4 md:!p-6 card shadow-lg shadow-md border-3 border-[#FF4200] md:border-gray-100 md:hover:border-[#FF4200] transition-all duration-300 text-center"
         style={{
           animationDelay: `${delay}s`,
           animationFillMode: "forwards",
@@ -75,15 +75,14 @@ export const TrafficMetrics = () => {
 
   return (
     <div
-      className={`transition-all duration-1000 mb-4 md:mb- ${
-        isVisible ? "fade-in-up" : ""
+      className={`hover:scale-3d !p-4 md:!p-6 card shadow-lg shadow-md border-3 border-[#FF4200] md:border-gray-200 md:hover:border-[#FF4200] transition-all duration-300 text-center"
       }`}
     >
       <h2 className="text-center mb-4 md:mb-6">
         Engaged Audience, Extended Visits
       </h2>
 
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+      <div className=" justify-center items-centers grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         <MetricCard2
           title="Monthly Traffic"
           value="500"

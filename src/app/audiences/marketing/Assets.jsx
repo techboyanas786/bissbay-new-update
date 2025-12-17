@@ -70,7 +70,7 @@ function Assets() {
 
             {/* Bottom Section */}
             <div className="flex flex-col items-center">
-                <div className="grid grid-cols-1 sm:grid-cols-2 place-items-start gap-4 md:gap-8 md:grid-cols-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 place-items-start gap-4 md:gap-8 md:grid-cols-5 mb-4 md:mb-6">
                     {assetsContent.map((content, index) => (
                         <div
                             key={index}
@@ -90,10 +90,22 @@ function Assets() {
                         </div>
                     ))}
                 </div>
-                <p className="!text-center mt-4 md:mt-6 !text-xl hover:scale-105 duration-300 transition-all hover:!text-primary !font-bold">
+                <p className="!text-center !text-xl hover:scale-105 duration-300 transition-all hover:!text-primary !font-bold">
                     Put your content where your buyers are
                 </p>
             </div>
+            <div className="container mx-auto">
+        <div className="relative overflow-hidden w-full max-w-4xl mx-auto flex flex-col items-center">
+          <div className="flex flex-col justify-center items-center gap-2">
+            <h4 className="!text-black !text-center">
+                <span className="hover:text-[#ff4200] text-center transition-colors duration-200 cursor-pointer">Sign up{" "}</span>for the BFSI Professionals Newsletter
+              </h4>
+            <div className="flex flex-row justify-center items-center gap-3 mb-2">
+            <p className="text-center">Stay ahead in BFSI with insights delivered straight to your inbox.</p>
+            </div>
+          </div>
+        </div>
+      </div>
         </div>
     );
 }

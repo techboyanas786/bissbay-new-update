@@ -18,9 +18,7 @@ function page() {
       <span className="bg-primary h-1 w-full"></span>
       <Insights />
       <span className="bg-primary h-1 w-full"></span>
-      <Assets />
-      <span className="bg-primary h-1 w-full"></span>
-      <Newsletter />
+        <Assets />
     </div>
   );
 }

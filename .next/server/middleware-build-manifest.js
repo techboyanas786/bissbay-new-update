@@ -5,19 +5,19 @@ globalThis.__BUILD_MANIFEST = {
   "devFiles": [],
   "ampDevFiles": [],
   "polyfillFiles": [
-    "static/chunks/8406e_next_dist_build_polyfills_polyfill-nomodule.js"
+    "static/chunks/node_modules_next_dist_build_polyfills_polyfill-nomodule.js"
   ],
   "lowPriorityFiles": [],
   "rootMainFiles": [
-    "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_76b55d29._.js",
-    "static/chunks/8406e_next_dist_compiled_react-dom_0bcd6357._.js",
-    "static/chunks/8406e_next_dist_compiled_next-devtools_index_6fd82dd9.js",
-    "static/chunks/8406e_next_dist_compiled_b18c05e3._.js",
-    "static/chunks/8406e_next_dist_client_c50be5ff._.js",
-    "static/chunks/8406e_next_dist_d09da21b._.js",
-    "static/chunks/8406e_@swc_helpers_cjs_9d76dba3._.js",
-    "static/chunks/Downloads_bissbay-new-main_bissbay-new-main_a0ff3932._.js",
-    "static/chunks/turbopack-Downloads_bissbay-new-main_bissbay-new-main_3d0bb1b8._.js"
+    "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_57d40746._.js",
+    "static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js",
+    "static/chunks/node_modules_next_dist_compiled_next-devtools_index_a9cb0712.js",
+    "static/chunks/node_modules_next_dist_compiled_5150ccfd._.js",
+    "static/chunks/node_modules_next_dist_client_cf1d9188._.js",
+    "static/chunks/node_modules_next_dist_b0daae9a._.js",
+    "static/chunks/node_modules_@swc_helpers_cjs_b3dc30d6._.js",
+    "static/chunks/_a0ff3932._.js",
+    "static/chunks/turbopack-_cdba956c._.js"
   ],
   "ampFirstPages": []
 };
