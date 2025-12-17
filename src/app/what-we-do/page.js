@@ -235,7 +235,7 @@ const serviceCardsData = [
 ];
   return (
     <>
-      <main className="class="container px-4 lg:px-2 mx-auto pt-[115px] flex flex-col gap-4 md:gap-12"">
+      <main className="container px-4 lg:px-2 mx-auto pt-115px flex flex-col gap-4 ">
         <div className="flex flex-col lg:h-[500px] lg:flex-row items-center gap-4 lg:gap-8">
           <div className="w-full lg:w-1/2 mb-0">
             <h3

@@ -10,7 +10,7 @@ export const UnifiedFunnel = () => {
   return (
     <>
       <section className="animate-on-scroll">
-        <div className="max-w-4xl mx-auto p-4 lg:p-6 bg-gradient-to-br from-[rgb(255,66,0)] to-[rgb(200,50,0)] text-white rounded-xl shadow-xl relative overflow-hidden">
+        <div className="max-w-4xl mx-auto p-4 lg:p-6 bg-gradient-to-br from-[rgb(255,66,0)] to-[rgb(200,50,0)] text-white rounded-xl shadow-xl relative mb-8 overflow-hidden">
           <div className="relative z-10">
             <h3 className="!font-semibold text-center mb-4 md:mb-6 !text-white">
               The Unified Funnel: Marketing & Sales Working Together

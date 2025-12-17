@@ -22,6 +22,7 @@
   "/what-we-do/intelligent-data-enrichment/page": "app/what-we-do/intelligent-data-enrichment/page.js",
   "/what-we-do/intent-data/page": "app/what-we-do/intent-data/page.js",
   "/what-we-do/lead-generation/page": "app/what-we-do/lead-generation/page.js",
+  "/what-we-do/page": "app/what-we-do/page.js",
   "/who-we-help/ambitious-founders/page": "app/who-we-help/ambitious-founders/page.js",
   "/who-we-help/enterprises/page": "app/who-we-help/enterprises/page.js",
   "/who-we-help/marketing-leaders/page": "app/who-we-help/marketing-leaders/page.js",
